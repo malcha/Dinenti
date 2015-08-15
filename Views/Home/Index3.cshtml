@@ -1,0 +1,72 @@
+﻿@using MvcApplication2.Resource;
+@{
+    ViewBag.Title = "Dinenti Home Page";
+}
+
+
+@section PageScripts{
+@*    <link href="/Content/datatable/css/demo_table.css" rel="stylesheet" type="text/css" />
+    <script src="/Content/datatable/js/jquery.dataTables.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#mydatatable').dataTable({
+                "oLanguage": {
+                    "sUrl": "../../Content/datatable/international/dataTables.spanish.txt"
+                }
+            });
+        });
+    </script>*@
+    <script type="text/javascript" src="/Scripts/jquery-1.2.3.pack.js"></script>
+	<script type="text/javascript" src="/Scripts/jquery.jcarousel.pack.js"></script>
+	<script type="text/javascript">
+	    jQuery(document).ready(function () {
+	        jQuery('#mycarousel').jcarousel({
+	            scroll: 1,
+	            animation: "slow",
+	            wrap: "both"
+	        });
+	    });		
+	</script>
+}
+
+<h2>@ViewBag.Message</h2>
+<p>
+    @*@ResourceHome.WelcomeMessage*@
+</p>
+
+<!-- Carousel -->
+		<div id="slider">
+			<ul id="mycarousel">
+			    <li>
+			    <div class="img-cnt">
+			    	<a href="#"><img src="/Content/images/home/portfolio-item-1.gif" alt="" /> </a>		
+		    	</div>				    	
+		    	</li>
+			    <li>
+			    <div class="img-cnt">
+			    	<a href="#"><img src="/Content/images/home/portfolio-item-2.gif" alt="" /> </a>		
+		    	</div>				    	
+		    	</li>
+			    <li>
+			    <div class="img-cnt">
+			    	<a href="#"><img src="/Content/images/home/portfolio-item-3.gif" alt="" /> </a>		
+		    	</div>				    	
+		    	</li>
+			    <li>
+			    <div class="img-cnt">
+			    	<a href="#"><img src="/Content/images/home/portfolio-item-1.gif" alt="" /> </a>		
+		    	</div>				    	
+		    	</li>
+			    <li>
+			    <div class="img-cnt">
+			    	<a href="#"><img src="/Content/images/home/portfolio-item-2.gif" alt="" /> </a>		
+		    	</div>				    	
+		    	</li>
+			    <li>
+			    <div class="img-cnt">
+			    	<a href="#"><img src="/Content/images/home/portfolio-item-3.gif" alt="" /> </a>		
+		    	</div>				    	
+		    	</li>
+			</ul>
+		</div>
+		<!-- End Carousel -->

@@ -1,0 +1,611 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EC5F8087-F19F-415A-A879-7250A70837DB}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MvcApplication2</RootNamespace>
+    <AssemblyName>MvcApplication2</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <TypeScriptToolsVersion>1.1</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.6.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Mvc.3.0.50813.1\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Razor.1.0.20105.408\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BabiesController.cs" />
+    <Compile Include="Controllers\BebasController.cs" />
+    <Compile Include="Controllers\BebesController.cs" />
+    <Compile Include="Controllers\ClouthController.cs" />
+    <Compile Include="Controllers\ContactsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HyalcoreController.cs" />
+    <Compile Include="Controllers\MailerController.cs" />
+    <Compile Include="Controllers\MinibebesController.cs" />
+    <Compile Include="Controllers\NenaController.cs" />
+    <Compile Include="Controllers\VaronController.cs" />
+    <Compile Include="DataLoad\ClouthDataLoader.cs" />
+    <Compile Include="DTO\Email.cs" />
+    <Compile Include="Filters\DinentiAuthorizeAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Cookies.cs" />
+    <Compile Include="Helpers\Mvc\HtmlHelperModelConversionExtensions.cs" />
+    <Compile Include="Helpers\Mvc\WebRequestExtension.cs" />
+    <Compile Include="Manager\ClouthManager.cs" />
+    <Compile Include="Manager\UserManager.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Clouth.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\DTO\Recommendation.cs" />
+    <Compile Include="Providers\Recommender\DTO\ModelAttribute.cs" />
+    <Compile Include="Providers\Recommender\Hyalcore.cs" />
+    <Compile Include="Resource\ResourceHome.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceHome.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\ClientViewModel.cs" />
+    <Compile Include="ViewModel\ClouthViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\HappyLayout\css\dev.css" />
+    <Content Include="Content\HappyLayout\css\main.css" />
+    <Content Include="Content\HappyLayout\css\main2.css" />
+    <Content Include="Content\HappyLayout\css\popUp.css" />
+    <Content Include="Content\HappyLayout\images\bg.jpg" />
+    <Content Include="Content\HappyLayout\images\bottom.jpg" />
+    <Content Include="Content\HappyLayout\images\green_bubbles.jpg" />
+    <Content Include="Content\HappyLayout\images\h2bg.jpg" />
+    <Content Include="Content\images\abrigos.gif" />
+    <Content Include="Content\images\altaNew\6801.jpg" />
+    <Content Include="Content\images\altaNew\6802.jpg" />
+    <Content Include="Content\images\altaNew\6803.jpg" />
+    <Content Include="Content\images\altaNew\6804.jpg" />
+    <Content Include="Content\images\altaNew\6805.jpg" />
+    <Content Include="Content\images\altaNew\6806.jpg" />
+    <Content Include="Content\images\altaNew\6807.jpg" />
+    <Content Include="Content\images\altaNew\6808.jpg" />
+    <Content Include="Content\images\altaNew\6809.jpg" />
+    <Content Include="Content\images\altaNew\6810.jpg" />
+    <Content Include="Content\images\altaNew\6811.jpg" />
+    <Content Include="Content\images\altaNew\6812.jpg" />
+    <Content Include="Content\images\altaNew\6813.jpg" />
+    <Content Include="Content\images\altaNew\6816.jpg" />
+    <Content Include="Content\images\altaNew\6817.jpg" />
+    <Content Include="Content\images\altaNew\6818.jpg" />
+    <Content Include="Content\images\altaNew\6819.jpg" />
+    <Content Include="Content\images\altaNew\6820.jpg" />
+    <Content Include="Content\images\altaNew\6821.jpg" />
+    <Content Include="Content\images\altaNew\6823.jpg" />
+    <Content Include="Content\images\altaNew\6824.jpg" />
+    <Content Include="Content\images\altaNew\6825.jpg" />
+    <Content Include="Content\images\altaNew\6826.jpg" />
+    <Content Include="Content\images\altaNew\6828.jpg" />
+    <Content Include="Content\images\altaNew\6830.jpg" />
+    <Content Include="Content\images\altaNew\6831.jpg" />
+    <Content Include="Content\images\altaNew\6832.jpg" />
+    <Content Include="Content\images\altaNew\6834.jpg" />
+    <Content Include="Content\images\altaNew\6835.jpg" />
+    <Content Include="Content\images\altaNew\6836.jpg" />
+    <Content Include="Content\images\altaNew\6837.jpg" />
+    <Content Include="Content\images\altaNew\6838.jpg" />
+    <Content Include="Content\images\altaNew\6840.jpg" />
+    <Content Include="Content\images\altaNew\6841.jpg" />
+    <Content Include="Content\images\altaNew\6842.jpg" />
+    <Content Include="Content\images\altaNew\6843.jpg" />
+    <Content Include="Content\images\altaNew\6844.jpg" />
+    <Content Include="Content\images\altaNew\6845.jpg" />
+    <Content Include="Content\images\altaNew\6846.jpg" />
+    <Content Include="Content\images\altaNew\6847.jpg" />
+    <Content Include="Content\images\altaNew\6848.jpg" />
+    <Content Include="Content\images\altaNew\6849.jpg" />
+    <Content Include="Content\images\altaNew\6850.jpg" />
+    <Content Include="Content\images\altaNew\6851.jpg" />
+    <Content Include="Content\images\altaNew\6852.jpg" />
+    <Content Include="Content\images\altaNew\6854.jpg" />
+    <Content Include="Content\images\altaNew\6855.jpg" />
+    <Content Include="Content\images\altaNew\6856.jpg" />
+    <Content Include="Content\images\altaNew\6857.jpg" />
+    <Content Include="Content\images\altaNew\6858.jpg" />
+    <Content Include="Content\images\altaNew\6859.jpg" />
+    <Content Include="Content\images\altaNew\6860.jpg" />
+    <Content Include="Content\images\altaNew\6861.jpg" />
+    <Content Include="Content\images\altaNew\6862.jpg" />
+    <Content Include="Content\images\altaNew\6863.jpg" />
+    <Content Include="Content\images\altaNew\6864.jpg" />
+    <Content Include="Content\images\altaNew\6865.jpg" />
+    <Content Include="Content\images\altaNew\6869.jpg" />
+    <Content Include="Content\images\altaNew\6870.jpg" />
+    <Content Include="Content\images\altaNew\6872.jpg" />
+    <Content Include="Content\images\altaNew\6873.jpg" />
+    <Content Include="Content\images\altaNew\6874.jpg" />
+    <Content Include="Content\images\altaNew\6876.jpg" />
+    <Content Include="Content\images\altaNew\6877.jpg" />
+    <Content Include="Content\images\altaNew\6878.jpg" />
+    <Content Include="Content\images\altaNew\6879.jpg" />
+    <Content Include="Content\images\altaNew\6880.jpg" />
+    <Content Include="Content\images\altaNew\6881.jpg" />
+    <Content Include="Content\images\altaNew\6882.jpg" />
+    <Content Include="Content\images\altaNew\6883.jpg" />
+    <Content Include="Content\images\altaNew\6884.jpg" />
+    <Content Include="Content\images\altaNew\6885.jpg" />
+    <Content Include="Content\images\altaNew\6887.jpg" />
+    <Content Include="Content\images\altaNew\6888.jpg" />
+    <Content Include="Content\images\altaNew\6889.jpg" />
+    <Content Include="Content\images\altaNew\6890.jpg" />
+    <Content Include="Content\images\altaNew\6891.jpg" />
+    <Content Include="Content\images\altaNew\6893.jpg" />
+    <Content Include="Content\images\altaNew\6894.jpg" />
+    <Content Include="Content\images\altaNew\6895.jpg" />
+    <Content Include="Content\images\altaNew\6896.jpg" />
+    <Content Include="Content\images\altaNew\6898.jpg" />
+    <Content Include="Content\images\altaNew\6899.jpg" />
+    <Content Include="Content\images\altaNew\6900.jpg" />
+    <Content Include="Content\images\altaNew\6901.jpg" />
+    <Content Include="Content\images\altaNew\6902.jpg" />
+    <Content Include="Content\images\altaNew\6903.jpg" />
+    <Content Include="Content\images\altaNew\6904.jpg" />
+    <Content Include="Content\images\altaNew\Untitled-14.jpg" />
+    <Content Include="Content\images\bajaNew\6801.gif" />
+    <Content Include="Content\images\bajaNew\6802.gif" />
+    <Content Include="Content\images\bajaNew\6803.gif" />
+    <Content Include="Content\images\bajaNew\6804.gif" />
+    <Content Include="Content\images\bajaNew\6805.gif" />
+    <Content Include="Content\images\bajaNew\6806.gif" />
+    <Content Include="Content\images\bajaNew\6807.gif" />
+    <Content Include="Content\images\bajaNew\6808.gif" />
+    <Content Include="Content\images\bajaNew\6809.gif" />
+    <Content Include="Content\images\bajaNew\6810.gif" />
+    <Content Include="Content\images\bajaNew\6811.gif" />
+    <Content Include="Content\images\bajaNew\6812.gif" />
+    <Content Include="Content\images\bajaNew\6813.gif" />
+    <Content Include="Content\images\bajaNew\6816.gif" />
+    <Content Include="Content\images\bajaNew\6817.gif" />
+    <Content Include="Content\images\bajaNew\6818.gif" />
+    <Content Include="Content\images\bajaNew\6819.gif" />
+    <Content Include="Content\images\bajaNew\6820.gif" />
+    <Content Include="Content\images\bajaNew\6821.gif" />
+    <Content Include="Content\images\bajaNew\6823.gif" />
+    <Content Include="Content\images\bajaNew\6824.gif" />
+    <Content Include="Content\images\bajaNew\6825.gif" />
+    <Content Include="Content\images\bajaNew\6826.gif" />
+    <Content Include="Content\images\bajaNew\6828.gif" />
+    <Content Include="Content\images\bajaNew\6830.gif" />
+    <Content Include="Content\images\bajaNew\6831.gif" />
+    <Content Include="Content\images\bajaNew\6832.gif" />
+    <Content Include="Content\images\bajaNew\6834.gif" />
+    <Content Include="Content\images\bajaNew\6835.gif" />
+    <Content Include="Content\images\bajaNew\6836.gif" />
+    <Content Include="Content\images\bajaNew\6837.gif" />
+    <Content Include="Content\images\bajaNew\6838.gif" />
+    <Content Include="Content\images\bajaNew\684.gif" />
+    <Content Include="Content\images\bajaNew\6840.gif" />
+    <Content Include="Content\images\bajaNew\6841.gif" />
+    <Content Include="Content\images\bajaNew\6842.gif" />
+    <Content Include="Content\images\bajaNew\6843.gif" />
+    <Content Include="Content\images\bajaNew\6844.gif" />
+    <Content Include="Content\images\bajaNew\6845.gif" />
+    <Content Include="Content\images\bajaNew\6846.gif" />
+    <Content Include="Content\images\bajaNew\6847.gif" />
+    <Content Include="Content\images\bajaNew\6848.gif" />
+    <Content Include="Content\images\bajaNew\6849.gif" />
+    <Content Include="Content\images\bajaNew\6850.gif" />
+    <Content Include="Content\images\bajaNew\6851.gif" />
+    <Content Include="Content\images\bajaNew\6852.gif" />
+    <Content Include="Content\images\bajaNew\6854.gif" />
+    <Content Include="Content\images\bajaNew\6855.gif" />
+    <Content Include="Content\images\bajaNew\6856.gif" />
+    <Content Include="Content\images\bajaNew\6857.gif" />
+    <Content Include="Content\images\bajaNew\6858.gif" />
+    <Content Include="Content\images\bajaNew\6859.gif" />
+    <Content Include="Content\images\bajaNew\6860.gif" />
+    <Content Include="Content\images\bajaNew\6861.gif" />
+    <Content Include="Content\images\bajaNew\6862.gif" />
+    <Content Include="Content\images\bajaNew\6863.gif" />
+    <Content Include="Content\images\bajaNew\6864.gif" />
+    <Content Include="Content\images\bajaNew\6865.gif" />
+    <Content Include="Content\images\bajaNew\6869.gif" />
+    <Content Include="Content\images\bajaNew\6870.gif" />
+    <Content Include="Content\images\bajaNew\6872.gif" />
+    <Content Include="Content\images\bajaNew\6873.gif" />
+    <Content Include="Content\images\bajaNew\6874.gif" />
+    <Content Include="Content\images\bajaNew\6876.gif" />
+    <Content Include="Content\images\bajaNew\6877.gif" />
+    <Content Include="Content\images\bajaNew\6878.gif" />
+    <Content Include="Content\images\bajaNew\6879.gif" />
+    <Content Include="Content\images\bajaNew\6880.gif" />
+    <Content Include="Content\images\bajaNew\6881.gif" />
+    <Content Include="Content\images\bajaNew\6882.gif" />
+    <Content Include="Content\images\bajaNew\6883.gif" />
+    <Content Include="Content\images\bajaNew\6884.gif" />
+    <Content Include="Content\images\bajaNew\6885.gif" />
+    <Content Include="Content\images\bajaNew\6887.gif" />
+    <Content Include="Content\images\bajaNew\6888.gif" />
+    <Content Include="Content\images\bajaNew\6889.gif" />
+    <Content Include="Content\images\bajaNew\6890.gif" />
+    <Content Include="Content\images\bajaNew\6891.gif" />
+    <Content Include="Content\images\bajaNew\6892.gif" />
+    <Content Include="Content\images\bajaNew\6893.gif" />
+    <Content Include="Content\images\bajaNew\6894.gif" />
+    <Content Include="Content\images\bajaNew\6895.gif" />
+    <Content Include="Content\images\bajaNew\6896.gif" />
+    <Content Include="Content\images\bajaNew\6898.gif" />
+    <Content Include="Content\images\bajaNew\6899.gif" />
+    <Content Include="Content\images\bajaNew\6900.gif" />
+    <Content Include="Content\images\bajaNew\6901.gif" />
+    <Content Include="Content\images\bajaNew\6902.gif" />
+    <Content Include="Content\images\bajaNew\6903.gif" />
+    <Content Include="Content\images\bajaNew\6904.gif" />
+    <Content Include="Content\images\botonera2.gif" />
+    <Content Include="Content\images\camisas.gif" />
+    <Content Include="Content\images\expo.jpg" />
+    <Content Include="Content\images\fotoh.jpg" />
+    <Content Include="Content\HappyLayout\images\pink_bubbles.jpg" />
+    <Content Include="Content\HappyLayout\images\white_bubbles.jpg" />
+    <Content Include="Content\HappyLayout\font\ALBAS.TTF" />
+    <Content Include="Content\HappyLayout\font\AirplanesintheNightSky.ttf" />
+    <Content Include="Content\HappyLayout\font\LittleBird.ttf" />
+    <Content Include="Content\HappyLayout\font\OratorStd.otf" />
+    <None Include="Content\HappyLayout\_Layout.cshtml" />
+    <Content Include="Content\images\home\next.gif" />
+    <Content Include="Content\images\home\portfolio-item-1.gif" />
+    <Content Include="Content\images\home\portfolio-item-2.gif" />
+    <Content Include="Content\images\home\portfolio-item-3.gif" />
+    <Content Include="Content\images\home\prev.gif" />
+    <Content Include="Content\images\logo.gif" />
+    <Content Include="Content\images\menu\AbrigoCamperasMIniDerecha.gif" />
+    <Content Include="Content\images\menu\AbrigoNenaDerecha.gif" />
+    <Content Include="Content\images\menu\abrigos.gif" />
+    <Content Include="Content\images\menu\AbrigosDerecha.gif" />
+    <Content Include="Content\images\menu\AbrigosHombres.jpg" />
+    <Content Include="Content\images\menu\AbrigosHombres2Derecha.gif" />
+    <Content Include="Content\images\menu\AbrigosHombresDerecha.gif" />
+    <Content Include="Content\images\menu\abrigosnenaMedio.jpg" />
+    <Content Include="Content\images\menu\BodyEnteritosIzq.gif" />
+    <Content Include="Content\images\menu\button_cancel.png" />
+    <Content Include="Content\images\menu\BuzoCamperanenemedio.jpg" />
+    <Content Include="Content\images\menu\camisaHombreSolo.jpg" />
+    <Content Include="Content\images\menu\camisasEnteritosMujer.gif" />
+    <Content Include="Content\images\menu\camisaspantalones.jpg" />
+    <Content Include="Content\images\menu\CamperaChalecoDerecha.gif" />
+    <Content Include="Content\images\menu\CamperasBuzoLARGEmedio.jpg" />
+    <Content Include="Content\images\menu\CamperasBuzomedio.jpg" />
+    <Content Include="Content\images\menu\camperasbuzos.gif" />
+    <Content Include="Content\images\menu\CamperasEnteritos.gif" />
+    <Content Include="Content\images\menu\camperastapados.gif" />
+    <Content Include="Content\images\menu\contactenos.gif" />
+    <Content Include="Content\images\menu\contactenos2.gif" />
+    <Content Include="Content\images\menu\ContactUs.jpg" />
+    <Content Include="Content\images\menu\MayaPantalon.gif" />
+    <Content Include="Content\images\menu\pantalonesCalza.jpg" />
+    <Content Include="Content\images\menu\pantalonesCalzaMujerMedio.jpg" />
+    <Content Include="Content\images\menu\pantalonescalzas.jpg" />
+    <Content Include="Content\images\menu\pantalonesHombreMedio.jpg" />
+    <Content Include="Content\images\menu\remera.gif" />
+    <Content Include="Content\images\menu\remeraCamisa.gif" />
+    <Content Include="Content\images\menu\remeraCamisasIzq.gif" />
+    <Content Include="Content\images\menu\remerasbuzos.gif" />
+    <Content Include="Content\images\menu\remeraschombas.gif" />
+    <Content Include="Content\images\menu\shortPant.gif" />
+    <Content Include="Content\images\menu\vestidos.jpg" />
+    <Content Include="Content\images\menu\vestidoscamisas.jpg" />
+    <Content Include="Content\images\menu\vestidosJumpersMedio.jpg" />
+    <Content Include="Content\images\menu\vestidossoleros.jpg" />
+    <Content Include="Content\images\pieh.jpg" />
+    <Content Include="Content\images\stand.gif" />
+    <Content Include="Content\jssor\cover\0001-B.png" />
+    <Content Include="Content\jssor\cover\0001-BL.png" />
+    <Content Include="Content\jssor\cover\0001-BR.png" />
+    <Content Include="Content\jssor\cover\0001-L.png" />
+    <Content Include="Content\jssor\cover\0001-R.png" />
+    <Content Include="Content\jssor\cover\0001-T.png" />
+    <Content Include="Content\jssor\cover\0001-TL.png" />
+    <Content Include="Content\jssor\cover\0001-TR.png" />
+    <Content Include="Content\jssor\Deselect.png" />
+    <Content Include="Content\jssor\loading.gif" />
+    <Content Include="Content\jssor\t01 - copia.png" />
+    <Content Include="Content\jssor\t01.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Global.asax" />
+    <Content Include="log4net.xml" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\fancybox\blank.gif" />
+    <Content Include="Scripts\fancybox\fancybox_loading%402x.gif" />
+    <Content Include="Scripts\fancybox\fancybox_loading.gif" />
+    <Content Include="Scripts\fancybox\fancybox_overlay.png" />
+    <Content Include="Scripts\fancybox\fancybox_sprite%402x.png" />
+    <Content Include="Scripts\fancybox\fancybox_sprite.png" />
+    <Content Include="Scripts\fancybox\helpers\fancybox_buttons.png" />
+    <Content Include="Scripts\fancybox\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="Scripts\fancybox\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="Scripts\fancybox\helpers\jquery.fancybox-media.js" />
+    <Content Include="Scripts\fancybox\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="Scripts\fancybox\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="Scripts\fancybox\jquery.fancybox.css" />
+    <Content Include="Scripts\fancybox\jquery.fancybox.js" />
+    <Content Include="Scripts\fancybox\jquery.fancybox.pack.js" />
+    <Content Include="Scripts\fancybox\jquery.mousewheel-3.0.6.pack.js" />
+    <Content Include="Scripts\Helpers\Api.js" />
+    <Content Include="Scripts\Helpers\Hyalcore.js" />
+    <Content Include="Scripts\jquery-1.10.1.min.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.min.js" />
+    <Content Include="Scripts\jquery-ui-1.9.1.custom.js" />
+    <Content Include="Scripts\jquery-ui-1.9.1.custom.min.js" />
+    <Content Include="Scripts\jquery.jcarousel.pack.js" />
+    <Content Include="Scripts\jquery.nivo.slider.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\modernizr-1.7.js" />
+    <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Scripts\slider\jssor.js" />
+    <Content Include="Scripts\slider\jssor.slider.mini.js" />
+    <Content Include="Scripts\Views\BaseModel.js" />
+    <Content Include="Scripts\Views\BaseView.js" />
+    <Content Include="Scripts\Views\Layout\Layout.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
+    <Content Include="Views\Account\LogOn.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Index3.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Clouth\Babies.cshtml" />
+    <Content Include="Views\Clouth\_DisplayClouth.cshtml" />
+    <Content Include="Views\Contacts\Index.cshtml" />
+    <Content Include="Views\Clouth\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Nena.cshtml" />
+    <Content Include="Views\Babies\Remeras.cshtml" />
+    <Content Include="Views\Bebes\Camperas.cshtml" />
+    <Content Include="Views\Bebes\Remeras.cshtml" />
+    <Content Include="Views\Bebes\Botonera.cshtml" />
+    <Content Include="Views\Bebes\Pantalones.cshtml" />
+    <Content Include="Views\Bebes\Abrigos.cshtml" />
+    <Content Include="Views\Bebas\Remeras.cshtml" />
+    <Content Include="Views\Bebas\Camisas.cshtml" />
+    <Content Include="Views\Bebas\Camperas.cshtml" />
+    <Content Include="Views\Bebas\Abrigos.cshtml" />
+    <Content Include="Views\Bebas\Botonera.cshtml" />
+    <Content Include="Views\Bebas\Vestidos.cshtml" />
+    <Content Include="Views\Bebas\Pantalones.cshtml" />
+    <Content Include="Views\Minibebes\Todos.cshtml" />
+    <None Include="Properties\PublishProfiles\release.pubxml" />
+    <Content Include="Views\Varon\Remeras.cshtml" />
+    <Content Include="Views\Varon\Botonera.cshtml" />
+    <Content Include="Views\Varon\Camperas.cshtml" />
+    <Content Include="Views\Varon\Pantalones.cshtml" />
+    <Content Include="Views\Varon\Abrigos.cshtml" />
+    <Content Include="Views\Nena\Remeras.cshtml" />
+    <Content Include="Views\Nena\Botonera.cshtml" />
+    <Content Include="Views\Nena\Pantalones.cshtml" />
+    <Content Include="Views\Nena\Vestidos.cshtml" />
+    <Content Include="Views\Nena\Camperas.cshtml" />
+    <Content Include="Views\Nena\Abrigos.cshtml" />
+    <Content Include="Views\Bebes\Camisas.cshtml" />
+    <Content Include="Views\Nena\Camisas.cshtml" />
+    <Content Include="Scripts\Views\BaseView.js.map" />
+    <Content Include="Scripts\Views\Layout\Layout.js.map" />
+    <Content Include="Scripts\Helpers\Api.js.map" />
+    <Content Include="Views\Minibebes\Botonera.cshtml" />
+    <Content Include="Views\Bebes\Todos.cshtml" />
+    <Content Include="Views\Bebas\Todos.cshtml" />
+    <Content Include="Views\Nena\Todos.cshtml" />
+    <Content Include="Views\Varon\Todos.cshtml" />
+    <None Include="Properties\PublishProfiles\test2.pubxml" />
+    <Content Include="Scripts\Views\BaseModel.js.map" />
+    <Content Include="Scripts\Helpers\Hyalcore.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="App_LocalResources\" />
+    <Folder Include="Content\HappyLayout\images\Home\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource\ResourceHome.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceHome.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\Helpers\Api.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\Views\BaseModel.ts" />
+    <TypeScriptCompile Include="Scripts\Views\BaseView.ts" />
+    <TypeScriptCompile Include="Scripts\Helpers\Hyalcore.ts" />
+    <TypeScriptCompile Include="Scripts\Views\Layout\Layout.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>48495</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

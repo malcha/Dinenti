@@ -1,0 +1,69 @@
+﻿@using MvcApplication2.Resource;
+@{
+    ViewBag.Title = "";
+}
+
+
+@section PageScripts{
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery('#mycarousel').jcarousel({
+                scroll: 1,
+                animation: "slow",
+                wrap: "both"
+            });
+            $("a[rel=example_group]").fancybox({
+                'transitionIn': 'none',
+                'transitionOut': 'none',
+                'titlePosition': 'over',
+                autoSize: false,
+                autoDimensions: false,
+                //'autoScale': false,
+                titleFormat: function (title, currentArray, currentIndex, currentOpts) {
+                    return '<span id="fancybox-title-over">Foto ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+                }
+            });
+
+
+        });
+
+
+	</script>
+}
+@{
+    Html.RenderPartial("Botonera",null);
+}
+
+<div style="clear:both; padding-top:10px">
+        <span class="clouthpage-title">Camisas para bebes </span>
+    </div>    
+    <div id="content_container">
+		<div id="productos_container">
+						
+			<div class="producto_container" style=""> 
+                <a rel="example_group" href="/Content/images/alta/6633.jpg" title="Art. 6633 – Camisa escocesa 1 bolsillo – Talles: 1 al 6 – Colores: Turquesa - Coral - Francia - Rojo" class="fancybox-image">
+                    <img src="/Content/images/baja/6633.gif" alt="" class="foto">
+                    <h2>Camisa escocesa 1 bolsillo</h2>
+					<div class="codigo">Art. 	6633</div>
+			    </a>
+			</div>
+		    <div class="producto_container" style=""> 
+		        <a rel="example_group" href="/Content/images/alta/6634.jpg" title="Art. 6634 – Camisa escocesa 2 bolsillo – Talles: 1 al 6 – Colores: Turquesa - Coral - Francia - Rojo">
+		            <img src="/Content/images/baja/6634.gif" alt="" class="foto">
+		            <h2>Camisa escocesa 2 bolsillo</h2>
+		            <div class="codigo">Art. 	6634</div>
+		        </a>
+		    </div>
+            
+			<div class="producto_container" style=""> 
+                <a rel="example_group" href="/Content/images/alta/6635.jpg" title="Art. 6635 – Camisa de Jean – Talles: 1 al 6 – Colores: Jean celeste localizado">
+                    <img src="/Content/images/baja/6635.gif" alt="" class="foto">
+                    <h2>Camisa de Jean</h2>
+					<div class="codigo">Art. 	6635</div>
+			    </a>
+			</div>	
+		    
+		    <div class="sep_gral"></div>
+			</div>
+		</div>

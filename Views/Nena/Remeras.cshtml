@@ -1,0 +1,95 @@
+﻿@using MvcApplication2.Resource;
+@{
+    ViewBag.Title = "";
+}
+
+
+@section PageScripts{
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery('#mycarousel').jcarousel({
+                scroll: 1,
+                animation: "slow",
+                wrap: "both"
+            });
+            $("a[rel=example_group]").fancybox({
+                'transitionIn': 'none',
+                'transitionOut': 'none',
+                'titlePosition': 'over',
+                autoSize: false,
+                autoDimensions: false,
+                //'autoScale': false,
+                titleFormat: function (title, currentArray, currentIndex, currentOpts) {
+                    return '<span id="fancybox-title-over">Foto ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+                }
+            });
+
+
+        });
+
+
+	</script>
+}
+
+    @{
+        Html.RenderPartial("Botonera",null);
+    }
+
+    <div style="clear:both; padding-top:10px">
+        <span class="clouthpage-title">Remeras para Nenas </span>
+    </div>    
+    <div id="content_container">
+		<div id="productos_container">
+						
+		    <div class="producto_container" style=""> 
+		        <a rel="example_group" href="/Content/images/alta/6653.jpg" title="Art. 6653 – Remera de corazones – Talles: 4 al 14 – Colores: Blanco – Crudo - Fucsia - Chicle - Coral" class="fancybox-image">
+		            <img src="/Content/images/baja/6653.gif" alt="" class="foto">
+		            <h2>Remera de corazones</h2>
+		            <div class="codigo">Art. 	6653</div>
+		        </a>
+		    </div>
+
+            
+						
+		    <div class="producto_container" style=""> 
+		        <a rel="example_group" href="/Content/images/alta/6654.jpg" title="Art. 6654 – Remera con nena – Talles: 4 al 14 – Colores: Blanco – Crudo - Fucsia - Chicle - Coral" class="fancybox-image">
+		            <img src="/Content/images/baja/6654.gif" alt="" class="foto">
+		            <h2>Remera con nena</h2>
+		            <div class="codigo">Art. 	6654</div>
+		        </a>
+		    </div>
+						
+		    <div class="producto_container" style=""> 
+		        <a rel="example_group" href="/Content/images/alta/6655.jpg" title="Art. 6655 – Remera estrella – Talles: 4 al 14 – Colores: Blanco – Crudo - Fucsia - Chicle - Coral" class="fancybox-image">
+		            <img src="/Content/images/baja/6655.gif" alt="" class="foto">
+		            <h2>Remera estrella</h2>
+		            <div class="codigo">Art. 	6655</div>
+		        </a>
+		    </div>
+						
+		    <div class="producto_container" style=""> 
+		        <a rel="example_group" href="/Content/images/alta/6656.jpg" title="Art. 6656 – Remera con broderie – Talles: 4 al 14 – Colores: Blanco – Fucsia - Coral" class="fancybox-image">
+		            <img src="/Content/images/baja/6656.gif" alt="" class="foto">
+		            <h2>Remera con broderie</h2>
+		            <div class="codigo">Art. 	6656</div>
+		        </a>
+		    </div>
+						
+		    <div class="producto_container" style=""> 
+		        <a rel="example_group" href="/Content/images/alta/6658.jpg" title="Art. 6658 – Remera sin manga  – Talles: 4 al 14 – Colores: Blanco – Crudo - Fucsia - Chicle - Coral" class="fancybox-image">
+		            <img src="/Content/images/baja/6658.gif" alt="" class="foto">
+		            <h2>Remera sin manga</h2>
+		            <div class="codigo">Art. 	6658</div>
+		        </a>
+		    </div>
+            
+            <div class="producto_container" style=""> 
+                <a rel="example_group" href="/Content/images/alta/6659.jpg" title="Art. 6659 – Remera sin manga rayada – Talles: 4 al 14 – Colores: Rayado Azul – Rayado Fucsia" class="fancybox-image">
+                    <img src="/Content/images/baja/6659.gif" alt="" class="foto">
+                    <h2>Remera sin manga</h2>
+					<div class="codigo">Art. 	6659</div>
+			    </a>
+			</div>
+		</div>
+	</div>

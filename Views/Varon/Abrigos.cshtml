@@ -1,0 +1,69 @@
+﻿@using MvcApplication2.Resource;
+@{
+    ViewBag.Title = "";
+}
+
+
+@section PageScripts{
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery('#mycarousel').jcarousel({
+                scroll: 1,
+                animation: "slow",
+                wrap: "both"
+            });
+            $("a[rel=example_group]").fancybox({
+                'transitionIn': 'none',
+                'transitionOut': 'none',
+                'titlePosition': 'over',
+                autoSize: false,
+                autoDimensions: false,
+                //'autoScale': false,
+                titleFormat: function (title, currentArray, currentIndex, currentOpts) {
+                    return '<span id="fancybox-title-over">Foto ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+                }
+            });
+
+
+        });
+
+
+	</script>
+}
+
+    @{
+        Html.RenderPartial("Botonera",null);
+    }
+
+    <div style="clear:both; padding-top:10px">
+        <span class="clouthpage-title">Abrigos con Wata para Varones </span>
+    </div>    
+    <div id="content_container">
+		<div id="productos_container">
+						
+		    <div class="producto_container" style=""> 
+		        <a rel="example_group" href="/Content/images/alta/5014.jpg" title="Art. 6481 – Chaleco combinado – Talles: 4 al 14" class="fancybox-image">
+		            <img src="/Content/images/baja/5014.gif" alt="" class="foto">
+		            <h2>Chaleco combinado</h2>
+		            <div class="codigo">Art. 	6481</div>
+		        </a>
+		    </div>          
+            
+            <div class="producto_container" style=""> 
+                <a rel="example_group" href="/Content/images/alta/5003.jpg" title="Art. 6482 – Campera combinada – Talles: 4 al 14" class="fancybox-image">
+                    <img src="/Content/images/baja/5003.gif" alt="" class="foto">
+                    <h2>Campera combinada</h2>
+					<div class="codigo">Art. 	6482</div>
+			    </a>
+			</div>
+                 
+		    <div class="producto_container" style=""> 
+		        <a rel="example_group" href="/Content/images/alta/5004.jpg" title="Art. 6483 – Campera 3 cierres – Talles: 4 al 14" class="fancybox-image">
+		            <img src="/Content/images/baja/5004.gif" alt="" class="foto">
+		            <h2>Campera 3 cierres</h2>
+		            <div class="codigo">Art. 	6483</div>
+		        </a>
+		    </div>
+		</div>
+	</div>

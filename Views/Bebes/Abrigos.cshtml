@@ -1,0 +1,63 @@
+﻿@using MvcApplication2.Resource;
+@{
+    ViewBag.Title = "";
+}
+
+
+@section PageScripts{
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery('#mycarousel').jcarousel({
+                scroll: 1,
+                animation: "slow",
+                wrap: "both"
+            });
+            $("a[rel=example_group]").fancybox({
+                'transitionIn': 'none',
+                'transitionOut': 'none',
+                'titlePosition': 'over',
+                autoSize: false,
+                autoDimensions: false,
+                //'autoScale': false,
+                titleFormat: function (title, currentArray, currentIndex, currentOpts) {
+                    return '<span id="fancybox-title-over">Foto ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+                }
+            });
+        });
+	</script>
+}
+@{
+    Html.RenderPartial("Botonera",null);
+}
+
+<div style="clear:both; padding-top:10px">
+        <span class="clouthpage-title">Abrigos con Wata para Bebes </span>
+    </div>    
+    <div id="content_container">
+		<div id="productos_container">
+						
+			<div class="producto_container" style=""> 
+                <a rel="example_group" href="/Content/images/alta/5032.jpg" title="Art. 6440 – Chaleco con Gamuza – Talles: 1 al 6 – Colores: Rojo – Francia - Gris - Marino" class="fancybox-image">
+                    <img src="/Content/images/baja/5032.gif" alt="" class="foto">
+                    <h2>Chaleco con Gamuza</h2>
+					<div class="codigo">Art. 	6440</div>
+			    </a>
+			</div>
+		    <div class="producto_container" style=""> 
+		        <a rel="example_group" href="/Content/images/alta/5033.jpg" title="Art. 6441 – Campera 3 cierres – Talles: 1 al 6 – Colores: Rojo – Francia - Gris - Marino">
+		            <img src="/Content/images/baja/5033.gif" alt="" class="foto">
+		            <h2>Campera 3 cierres</h2>
+		            <div class="codigo">Art. 	6441</div>
+		        </a>
+		    </div>
+            
+			<div class="producto_container" style=""> 
+                <a rel="example_group" href="/Content/images/alta/5034.jpg" title="Art. 6442 – Campera con Recortes – Talles: 1 al 6 – Colores: Rojo – Francia - Gris - Marino">
+                    <img src="/Content/images/baja/5034.gif" alt="" class="foto">
+                    <h2>Campera con Recortes</h2>
+					<div class="codigo">Art. 	6442</div>
+			    </a>
+			</div>	
+						<div class="sep_gral"></div>
+			</div>
+		</div>

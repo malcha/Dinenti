@@ -1,0 +1,474 @@
+﻿@using MvcApplication2.Resource;
+@{
+    ViewBag.Title = "";
+}
+
+
+@section PageScripts{
+@*    <link href="/Content/datatable/css/demo_table.css" rel="stylesheet" type="text/css" />
+    <script src="/Content/datatable/js/jquery.dataTables.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#mydatatable').dataTable({
+                "oLanguage": {
+                    "sUrl": "../../Content/datatable/international/dataTables.spanish.txt"
+                }
+            });
+        });
+    </script>*@
+
+@*    <script type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-1.2.3.pack.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.jcarousel.pack.js"></script>	*@
+
+    <script type="text/javascript">
+	    jQuery(document).ready(function () {
+	        jQuery('#mycarousel').jcarousel({
+	            scroll: 1,
+	            animation: "slow",
+	            wrap: "both"
+	        });
+	        $("a[rel=example_group]").fancybox({
+	            'transitionIn': 'none',
+	            'transitionOut': 'none',
+	            'titlePosition': 'over',
+	            autoSize: false,
+	            autoDimensions: false,
+	            //'autoScale': false,
+	            titleFormat: function (title, currentArray, currentIndex, currentOpts) {
+	                return '<span id="fancybox-title-over">Foto ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+	            }
+	        });
+
+	        //$("a[rel=example_group]").fancybox({
+	        //    helpers:  {
+	        //        thumbs : {
+	        //            width: 50,
+	        //            height: 50
+	        //        }
+	        //    },
+	        //    autoSize: true,
+	        //    autoDimensions: true,
+	        //    width: 630,
+	        //    height: 425,
+	        //    fitToView: true,
+	        //    padding: 0,
+	        //    title: this.title,
+	        //    href: $(this).attr('href'),
+	        //    type: 'iframe'
+	        //});
+
+	        //$("a[rel=example_group]").fancybox({
+	        //    'width': 500,
+	        //    'height': 500,
+	        //    'autoScale': false,         //if using older fancybox
+	        //    'autoSize': false,         //if using newer fancybox
+	        //    autoResize: false,
+	        //    'autoDimensions': false,
+	        //    'transitionIn': 'none',
+	        //    'transitionOut': 'none',
+	        //    'type': 'iframe',
+	        //    autoHeight: false,
+	        //    autoWeight: false,
+	        //    fitToView: false, // avoids scaling the image to fit in the viewport
+	        //    beforeShow: function () {
+	        //        // set size to (fancybox) img
+	        //        $(".fancybox-image").css({
+	        //            "width": 800,
+	        //            "height": 600
+	        //        });
+	        //        // set size for parent container
+	        //        this.width = 800;
+	        //        this.height = 600;
+	        //    }
+	        //});
+	        
+
+	    });
+	    
+
+	</script>
+}
+
+@*<p>
+    *@
+    @*        <div class="" align="left"> <img src="../../Content/images/expo.jpg" width="225" height="234" border="0"></div>
+        <div class="" align="justify"><table width="90%" cellspacing="10" cellpadding="0">
+                                           <tbody><tr>
+                                                      <td><span class="style6">Ropa con diseño actual</span></td>
+                                                  </tr>
+                                               <tr>
+                                                   <td class="style1"><div align="justify" class="style7">Dinenti produce una línea de prendas que abarca desde el nacimiento hasta meses a los 14 años. La colección que está realizada en tela de punto como plana, apunta a una ropa informal con diseño y coloridos modernos, con un toque de estilo europeo, adaptada al mercado local, que es conocido en toda América por su exigencia de buen gusto y calidad. </div></td>
+                                               </tr>
+                                           </tbody></table></div>
+        <div class="" align="right"><img src="../../Content/images/fotoh.jpg" width="228" height="201"></div>*@
+    
+
+<!-- Carousel -->
+		@*<div id="slider">
+			<ul id="mycarousel">
+			    <li>
+			    <div class="img-cnt">
+			    	<a rel="example_group" href="/Content/images/home/portfolio-item-1.gif" title="Art. 6126 – Remera California – Talles: 1 – 2 – 3 – 4 – 5 – 6 – Colores: Blanco – Melange – Francia – Rojo – Negro">
+			            <img src="/Content/images/home/portfolio-item-1.gif" alt="" width="206" height="146" border="0">
+			        </a>	
+		    	</div>				    	
+		    	</li>
+			    <li>
+			    <div class="img-cnt">
+                    <a rel="example_group" href="/Content/images/9586.jpg" title="Art. 6126 – Remera California – Talles: 1 – 2 – 3 – 4 – 5 – 6 – Colores: Blanco – Melange – Francia – Rojo – Negro">
+			            <img src="/Content/images/9586.jpg" alt="" width="206" height="146" border="0">
+			        </a>
+			    </div>				    	
+		    	</li>
+			    <li>
+			    <div class="img-cnt">
+			    	<a href="#"><img src="/Content/images/home/portfolio-item-3.gif" alt="" /> </a>		
+		    	</div>				    	
+		    	</li>
+			    <li>
+			    <div class="img-cnt">
+			    	<a href="#"><img src="/Content/images/home/portfolio-item-1.gif" alt="" /> </a>		
+		    	</div>				    	
+		    	</li>
+			    <li>
+			    <div class="img-cnt">
+			    	<a href="#"><img src="/Content/images/home/portfolio-item-2.gif" alt="" /> </a>		
+		    	</div>				    	
+		    	</li>
+			    <li>
+			    <div class="img-cnt">
+			    	<a href="#"><img src="/Content/images/home/portfolio-item-3.gif" alt="" /> </a>		
+		    	</div>				    	
+		    	</li>
+			</ul>
+		</div>*@
+<!-- End Carousel -->
+
+<div style="position:relative">
+
+    @*    <img src="/Content/images/botonera2.gif" alt="" class="botonera">*@
+@*    <a href="@Html.ActionLink("Bebes", "camperas", "Bebes")" >
+        <img src="/Content/images/menu/camperastapados.gif" alt="" class="botonera">
+    </a>*@
+
+    <img src="/Content/images/menu/camperastapados.gif" alt="" class="botonera">
+    <img src="/Content/images/menu/vestidoscamisas.jpg" alt="" class="botonera">
+    <img src="/Content/images/menu/pantalonescalzas.jpg" alt="" class="botonera">
+    <img src="/Content/images/menu/abrigos.gif" alt="" class="botonera">
+    <img src="/Content/images/menu/remerasbuzos.gif" alt="" class="botonera">
+    
+    
+    
+
+</div>
+
+    <div style="clear:both; padding-top:10px">
+        <span class="clouthpage-title">Remeras de Bebes </span>
+    </div>    
+    <div id="content_container">
+		<div id="productos_container">
+						
+			<div class="producto_container" style=""> 
+@*				<a href="bebes-35/pachi-237/babero-con-broche-3881.php" onclick="/*lightbox('producto_detalles.php?id_producto=3881&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/babero-broche-pachi-304-blunkijpg-1998286218_2.jpg" class="foto">
+					<h2>Babero con broche</h2>
+					<div class="codigo">Art. 	304</div>
+				</a> *@
+                <a rel="example_group" href="/Content/images/alta/5028.jpg" title="Art. 5028 – Remera sobrepuesta – Talles: 1 al 6 – Colores: Melange – Francia – Rojo" class="fancybox-image">
+                    <img src="/Content/images/bebes/remeras/low/5028.gif" alt="" class="foto">
+                    <h2>Remera sobrepuesta</h2>
+					<div class="codigo">Art. 	5028</div>
+			    </a>
+			</div>
+			<div class="producto_container" style=""> 
+                <a rel="example_group" href="/Content/images/alta/5024.jpg" title="Art. 5024 – Remera helicoptero – Talles: 1 al 6 – Colores: Bordeaux – Francia – Topo">
+                    <img src="/Content/images/bebes/remeras/low/5024.gif" alt="" class="foto">
+                    <h2>Remera helicoptero</h2>
+					<div class="codigo">Art. 	5024</div>
+			    </a>
+			</div>	
+			<div class="producto_container" style=""> 
+                <a rel="example_group" href="/Content/images/alta/5022.jpg" title="Art. 5022 – Camisa con remera – Talles: 1 al 6 – Colores: Francia – Marino – Rojo">
+                    <img src="/Content/images/bebes/remeras/low/5022.gif" alt="" class="foto">
+                    <h2>Camisa con remera</h2>
+					<div class="codigo">Art. 	5022</div>
+			    </a>
+			</div>	
+            <div class="producto_container" style=""> 
+                <a rel="example_group" href="/Content/images/alta/5024.jpg" title="Art. 5027 – Remera – Talles: 1 al 6 – Colores: Bordeaux – Francia – Topo">
+                    <img src="/Content/images/bebes/remeras/low/5027.gif" alt="" class="foto">
+                    <h2 >Remera</h2>
+					<div class="codigo">Art. 	5027</div>
+			    </a>
+            </div>	
+@*            <div class="producto_container" style=""> 
+                <a rel="example_group" href="/Content/images/9586.jpg" title="Art. 6126 – Remera California – Talles: 1 – 2 – 3 – 4 – 5 – 6 – Colores: Blanco – Melange – Francia – Rojo – Negro">
+                    <img src="/Content/images/9586.jpg" alt="" class="foto">
+                    <h2>Babero con broche</h2>
+					<div class="codigo">Art. 	304</div>
+			    </a>
+            </div>	
+            <div class="producto_container" style=""> 
+                <a rel="example_group" href="/Content/images/9586.jpg" title="Art. 6126 – Remera California – Talles: 1 – 2 – 3 – 4 – 5 – 6 – Colores: Blanco – Melange – Francia – Rojo – Negro">
+                    <img src="/Content/images/9586.jpg" alt="" class="foto">
+                    <h2>Babero con broche</h2>
+					<div class="codigo">Art. 	304</div>
+			    </a>
+            </div>	*@
+	
+		    @*			<div class="producto_container" style=""> 
+				<a href="futura-mama-que-sera-25/vestidos-y-camisas-66/blusa-embarazada-futura-mama-3862.php" onclick="/*lightbox('producto_detalles.php?id_producto=3862&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/blusa-embarazada-que-sera-1630-blunkijpg-866761182_2.jpg" class="foto">
+					<h2>Blusa embarazada futura mamá</h2>
+					<div class="codigo">Art. 	1630</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="bebes-35/gorditoo-172/zapatilla-polar-bebe-combinada-3815.php" onclick="/*lightbox('producto_detalles.php?id_producto=3815&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/botita-bebe-abrojo-polar-gorditoo-1086-blunkijpg-1140325953_2.jpg" class="foto">
+					<h2>Zapatilla polar bebé combinada</h2>
+					<div class="codigo">Art. 	1086</div>
+					</a> 
+					<a href="contacto.php?consulta=Deseo obtener más información sobre Zapatilla polar bebé combinada 1086 " class="precio">consultar</a> 				
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="bebes-35/gorditoo-172/botita-beba-con-lazo-3791.php" onclick="/*lightbox('producto_detalles.php?id_producto=3791&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/botita-beba-gorditoo-364-blunkijpg-2136026521_2.jpg" class="foto">
+					<h2>Botita beba con lazo</h2>
+					<div class="codigo">Art. 	364</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="bebes-35/pilim-141/chaleco-micropolar-bebe-3760.php" onclick="/*lightbox('producto_detalles.php?id_producto=3760&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/chaleco-micropolar-pilim-2730-blunkijpg-289157609_2.jpg" class="foto">
+					<h2>Chaleco micropolar bebé</h2>
+					<div class="codigo">Art. 	2730</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="bebes-35/pilim-141/conjunto-campera-y-pantalon-plush-3755.php" onclick="/*lightbox('producto_detalles.php?id_producto=3755&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/campera-pantalon-plush-pilim-2808-blunkijpg-1483608370_2.jpg" class="foto">
+					<h2>Conjunto campera y pantalón plush</h2>
+					<div class="codigo">Art. 	2808</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="bautismo-y-cortejo-52/vestidos-216/vestido-de-bautismo-o-cortejo-con-aplique-3711.php" onclick="/*lightbox('producto_detalles.php?id_producto=3711&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/vestido-bautismo-aplique-creaciones-nora-2706-blunkijpg-1895715268_2.jpg" class="foto">
+					<h2>Vestido de bautismo o cortejo con aplique</h2>
+					<div class="codigo">Art. 	2706</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="bebes-35/pilim-141/body-remera-con-aplique-3709.php" onclick="/*lightbox('producto_detalles.php?id_producto=3709&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/body-remera-aplique-pilim-2817-blunkijpg-2061211301_2.jpg" class="foto">
+					<h2>Body remera con aplique</h2>
+					<div class="codigo">Art. 	2817</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="bebes-35/pilim-141/set-regalo-para-bebe-3703.php" onclick="/*lightbox('producto_detalles.php?id_producto=3703&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/enterito-saquito-gorrito-caja-pilim-8901-blunkijpg-347868607_2.jpg" class="foto">
+					<h2>Set regalo para bebé</h2>
+					<div class="codigo">Art. 	8901</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="nenes-39/gepetto-245/remera-varon-con-estampa-3698.php" onclick="/*lightbox('producto_detalles.php?id_producto=3698&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/remera-varon-estampa-gepetto-57304-blunkijpg-393415590_2.jpg" class="foto">
+					<h2>Remera varón con estampa</h2>
+					<div class="codigo">Art. 	57304</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="bebes-35/gepetto-243/remera-manga-larga-bebe-tejida-3673.php" onclick="/*lightbox('producto_detalles.php?id_producto=3673&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/remera-bebe-tejida-gepetto-53300-blunkijpg-501772407_2.jpg" class="foto">
+					<h2>Remera manga larga bebé tejida</h2>
+					<div class="codigo">Art. 	53300</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="bebes-35/gepetto-243/buzo-beba-frisa-3663.php" onclick="/*lightbox('producto_detalles.php?id_producto=3663&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/buzo-beba-frisa-gepetto-51320-blunkijpg-422304209_2.jpg" class="foto">
+					<h2>Buzo beba frisa</h2>
+					<div class="codigo">Art. 	51320</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="bebes-35/chic-chac-170/camisa-beba-jean-3648.php" onclick="/*lightbox('producto_detalles.php?id_producto=3648&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/camisa-beba-jean-chic-chac-1594-blunkijpg-1114197397_2.jpg" class="foto">
+					<h2>Camisa beba jean</h2>
+					<div class="codigo">Art. 	1594</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="bebes-35/baby-cheito-142/enterito-con-capucha-microtoy-3637.php" onclick="/*lightbox('producto_detalles.php?id_producto=3637&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/enterito-capucha-microtoy-baby-cheito-5077-blunkijpg-1595273775_2.jpg" class="foto">
+					<h2>Enterito con capucha microtoy</h2>
+					<div class="codigo">Art. 	5077</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="bebes-35/baby-cheito-142/buzo-bebe-frisa-con-capucha-3631.php" onclick="/*lightbox('producto_detalles.php?id_producto=3631&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/buzo-bebe-capucha-frisa-baby-cheito-5095-blunkijpg-983680637_2.jpg" class="foto">
+					<h2>Buzo bebé frisa con capucha</h2>
+					<div class="codigo">Art. 	5095</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="bebes-35/gamise-140/conjunto-batita-y-medio-osito-3590.php" onclick="/*lightbox('producto_detalles.php?id_producto=3590&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/conjunto-batita-medio-osito-gamise-7014-blunkijpg-1034098180_2.jpg" class="foto">
+					<h2>Conjunto batita y medio osito</h2>
+					<div class="codigo">Art. 	7014</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="bebes-35/gamise-140/body-manga-larga-rayado-3562.php" onclick="/*lightbox('producto_detalles.php?id_producto=3562&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/body-manga-larga-rayado-bebe-gamise-3602-blunkijpg-116674616_2.jpg" class="foto">
+					<h2>Body manga larga rayado</h2>
+					<div class="codigo">Art. 	3602</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="bebes-35/naranjo-146/conjunto-batita-y-medio-osito-3524.php" onclick="/*lightbox('producto_detalles.php?id_producto=3524&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/conjunto-medio-osito-naranjo-1340-blunkijpg-1455912827_2.jpg" class="foto">
+					<h2>Conjunto batita y medio osito</h2>
+					<div class="codigo">Art. 	1340</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="bebes-35/baby-cheito-142/pack-de-regalo-3471.php" onclick="/*lightbox('producto_detalles.php?id_producto=3471&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/conjunto-2-piezas-cheito-5025-blunkijpg-250203437_2.jpg" class="foto">
+					<h2>Pack de regalo</h2>
+					<div class="codigo">Art. 	5025</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="uniformes-escolares-26/buzos-120/buzo-frisa-colegial-3462.php" onclick="/*lightbox('producto_detalles.php?id_producto=3462&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/buzo-frisa-colegial-ely-1233-blunkijpg-131943108_2.jpg" class="foto">
+					<h2>Buzo frisa colegial</h2>
+					<div class="codigo">Art. 	1233</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="uniformes-escolares-26/remeras-escolares-111/remera-pique-manga-corta-colegial-3447.php" onclick="/*lightbox('producto_detalles.php?id_producto=3447&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/remera-pique-ely-106-blunkijpg-104826526_2.jpg" class="foto">
+					<h2>Remera piqué manga corta colegial</h2>
+					<div class="codigo">Art. 	106</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="accesorios-bebes-32/baberos-187/babero-estampado-con-velcro-lateral-3345.php" onclick="/*lightbox('producto_detalles.php?id_producto=3345&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/babero-estampado-velcro-bebe-pilim-93-blunkijpg-1790089059_2.jpg" class="foto">
+					<h2>Babero estampado con velcro lateral</h2>
+					<div class="codigo">Art. 	93</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="futura-mama-que-sera-25/bermudas-y-capri-208/short-jean-embarazada-2945.php" onclick="/*lightbox('producto_detalles.php?id_producto=2945&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/short-faja-embarazada-que-sera-1486-blunki-422673920_2.jpg" class="foto">
+					<h2>Short jean embarazada</h2>
+					<div class="codigo">Art. 	1486</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="accesorios-bebes-32/bolsos-de-bebe-252/bolso-baul-kipling-2694.php" onclick="/*lightbox('producto_detalles.php?id_producto=2694&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/bolso-baul-kipling-pilim-5905-blunkijpg-861159814_2.jpg" class="foto">
+					<h2>Bolso baul kipling</h2>
+					<div class="codigo">Art. 	5905</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="accesorios-bebes-32/acolchados-para-bebe-258/set-acolchado-con-chichonera-cuna-funcional-2647.php" onclick="/*lightbox('producto_detalles.php?id_producto=2647&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/set-acolchado-chichonera-pilim-chicle-5747-blunkijpg-1920705257_2.jpg" class="foto">
+					<h2>Set acolchado con chichonera (cuna funcional)</h2>
+					<div class="codigo">Art. 	5747</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="uniformes-escolares-26/camisas-122/camisa-colegial-manga-larga-334.php" onclick="/*lightbox('producto_detalles.php?id_producto=334&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/camisa-colegial-rutilante-95-blunkijpg-859336433_2.jpg" class="foto">
+					<h2>Camisa colegial manga larga</h2>
+					<div class="codigo">Art. 	95</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="uniformes-escolares-26/bermudas-y-shorts-134/bermuda-tropical-332.php" onclick="/*lightbox('producto_detalles.php?id_producto=332&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/17719173024d2fc85e9891b_2.jpg" class="foto">
+					<h2>Bermuda tropical</h2>
+					<div class="codigo">Art. 	101</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="uniformes-escolares-26/pintorcitos-y-bolsitas-119/pintorcito-prendido-atras-329.php" onclick="/*lightbox('producto_detalles.php?id_producto=329&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/dsc0131jpg-85826599_2.jpg" class="foto">
+					<h2>Pintorcito prendido atrás</h2>
+					<div class="codigo">Art. 	</div>
+					</a> 
+			</div>
+				
+						
+			<div class="producto_container" style=""> 
+				<a href="uniformes-escolares-26/jumpers-y-polleras-115/jumper-de-sarga-327.php" onclick="/*lightbox('producto_detalles.php?id_producto=327&amp;op=2',808,461,0.4); return false;*/">
+					<img src="imagenes/productos/1724765684d2fc64798d17_2.jpg" class="foto">
+					<h2>Jumper de sarga</h2>
+					<div class="codigo">Art. 	</div>
+					</a> 
+			</div>*@
+				
+						<div class="sep_gral"></div>
+			</div>
+		</div>

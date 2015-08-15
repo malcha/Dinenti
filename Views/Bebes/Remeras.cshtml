@@ -1,0 +1,78 @@
+﻿@using MvcApplication2.Resource;
+@{
+    ViewBag.Title = "";
+}
+
+
+@section PageScripts{
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery('#mycarousel').jcarousel({
+                scroll: 1,
+                animation: "slow",
+                wrap: "both"
+            });
+            $("a[rel=example_group]").fancybox({
+                afterLoad: function () {
+                    alert("complete!");
+                },
+                'transitionIn': 'none',
+                'transitionOut': 'none',
+                'titlePosition': 'over',
+                autoSize: false,
+                autoDimensions: false,
+                //'autoScale': false,
+                titleFormat: function (title, currentArray, currentIndex, currentOpts) {
+                    return '<span id="fancybox-title-over">Foto ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+                }
+            });
+
+
+        });
+
+
+	</script>
+}
+
+    @{
+        Html.RenderPartial("Botonera",null);
+    }
+
+    <div style="clear:both; padding-top:10px">
+        <span class="clouthpage-title">Remeras y Chombas para Bebes </span>
+    </div>    
+    <div id="content_container">
+		<div id="productos_container">
+						
+			<div class="producto_container" style=""> 
+                <a rel="example_group" href="/Content/images/alta/6628.jpg" title="Art. 6628 – Remera Basica – Talles: 1 al 6 – Colores: Blanco - Melange – Turquesa - Verde menta class="fancybox-image">
+                    <img src="/Content/images/baja/6628.gif" alt="" class="foto">
+                    <h2>Remera Basica</h2>
+					<div class="codigo">Art. 	6628</div>
+			    </a>
+			</div>
+			<div class="producto_container" style=""> 
+                <a rel="example_group" href="/Content/images/alta/6630.jpg" title="Art. 6630 – Remera sin manga – Talles: 1 al 6 – Colores: Blanco - Melange – Turquesa - Verde menta">
+                    <img src="/Content/images/baja/6630.gif" alt="" class="foto">
+                    <h2>Remera sin manga</h2>
+					<div class="codigo">Art. 	6630</div>
+			    </a>
+			</div>	
+			<div class="producto_container" style=""> 
+                <a rel="example_group" href="/Content/images/alta/6631.jpg" title="Art. 6631 – Chomba lisa – Talles: 1 al 6 – Colores: Blanco con turquesa moline – Francia moline">
+                    <img src="/Content/images/baja/6631.gif" alt="" class="foto">
+                    <h2>Chomba lisa</h2>
+					<div class="codigo">Art. 	6631</div>
+			    </a>
+			</div>	
+            <div class="producto_container" style=""> 
+                <a rel="example_group" href="/Content/images/alta/6632.jpg" title="Art. 6632 – Chomba rayada – Talles: 1 al 6 – Colores: Turquesa con amarillo – Rojo con Francia">
+                    <img src="/Content/images/baja/6632.gif" alt="" class="foto">
+                    <h2 >Chomba rayada</h2>
+					<div class="codigo">Art. 	6632</div>
+			    </a>
+            </div>	
+		
+			</div>
+		</div>

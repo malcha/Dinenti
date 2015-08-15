@@ -1,0 +1,86 @@
+﻿@using Model
+@using MvcApplication2.ViewModel
+@model Contact
+@*@model ClientViewModel*@
+
+@*@section PageScripts
+{
+    <script src="@Url.Content("~/Scripts/jquery-1.8.2.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+}*@
+
+
+@{
+    ViewBag.Title = "Contactos";
+}
+
+        <div>
+            @*@using (Html.BeginForm())*@
+            @using (Html.BeginForm("SendContacts", "Contacts", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div>
+                    <span>
+                        @Html.LabelFor(model => model.LastName)
+                        @Html.EditorFor(model => model.LastName)
+                    </span>
+                    <span>
+                        @Html.ValidationMessageFor(model => model.LastName)
+                    </span>
+                </div>
+                <div>
+                    <span>
+                        @Html.LabelFor(model => model.Name)
+                        @Html.EditorFor(model => model.Name)
+                    </span>
+                    <span>
+                        @Html.ValidationMessageFor(model => model.Name)
+                    </span>
+                </div>
+                <div>
+                    <span>
+                        @Html.LabelFor(model => model.Email)
+                        @Html.EditorFor(model => model.Email)
+                    </span>
+                    <span>
+                        @Html.ValidationMessageFor(model => model.Email)
+                    </span>
+                </div>
+                <div>
+                    <span>
+                        @Html.LabelFor(model => model.Comment)
+                        @Html.EditorFor(model => model.Comment)
+                    </span>
+                    <span>
+                        @Html.ValidationMessageFor(model => model.Comment)
+                    </span>
+                </div>
+                @*<div>
+                    <span>
+                        @Html.LabelFor(model => model.Password)
+                        @Html.EditorFor(model => model.Password)
+                    </span>
+                    <span>
+                        @Html.ValidationMessageFor(model => model.Password)
+                    </span>
+                </div>
+                <div>
+                    <span>
+                        @Html.LabelFor(model => model.ConfirmPassword)
+                        @Html.EditorFor(model => model.ConfirmPassword)
+                    </span>
+                    <span>
+                        @Html.ValidationMessageFor(model => model.ConfirmPassword)
+                    </span>
+                </div>*@
+                <div>
+                    @Html.ValidationSummary()
+                </div>
+                <div>
+                    <input type="submit" name="SubmitEvent" value="Crear" />
+                </div>
+                
+            }
+              
+        </div>
+

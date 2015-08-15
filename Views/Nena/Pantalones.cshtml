@@ -1,0 +1,109 @@
+﻿@using MvcApplication2.Resource;
+@{
+    ViewBag.Title = "";
+}
+
+
+@section PageScripts{
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery('#mycarousel').jcarousel({
+                scroll: 1,
+                animation: "slow",
+                wrap: "both"
+            });
+            $("a[rel=example_group]").fancybox({
+                'transitionIn': 'none',
+                'transitionOut': 'none',
+                'titlePosition': 'over',
+                autoSize: false,
+                autoDimensions: false,
+                //'autoScale': false,
+                titleFormat: function (title, currentArray, currentIndex, currentOpts) {
+                    return '<span id="fancybox-title-over">Foto ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+                }
+            });
+
+
+        });
+
+
+	</script>
+}
+
+    @{
+        Html.RenderPartial("Botonera",null);
+    }
+
+    <div style="clear:both; padding-top:10px">
+        <span class="clouthpage-title">Pantalones y Calzas para Nenas </span>
+    </div>    
+    <div id="content_container">
+		<div id="productos_container">
+						
+		    <div class="producto_container" style=""> 
+		        <a rel="example_group" href="/Content/images/alta/6663.jpg" title="Art. 6663 – Pantalón elastizado estampado – Talles: 4 al 14 – Colores: Coral – Turquesa" class="fancybox-image">
+		            <img src="/Content/images/baja/6663.gif" alt="" class="foto">
+		            <h2>Pantalón elastizado estampado</h2>
+		            <div class="codigo">Art. 	6663</div>
+		        </a>
+		    </div>
+			
+		    <div class="producto_container" style=""> 
+		        <a rel="example_group" href="/Content/images/alta/6664.jpg" title="Art. 6664 – Pantalón Fibrana – Talles: 4 al 14 – Colores: Turquesa - Francia - Coral" class="fancybox-image">
+		            <img src="/Content/images/baja/6664.gif" alt="" class="foto">
+		            <h2>Pantalón Fibrana</h2>
+		            <div class="codigo">Art. 	6664</div>
+		        </a>
+		    </div>
+						
+		    <div class="producto_container" style=""> 
+		        <a rel="example_group" href="/Content/images/alta/6665.jpg" title="Art. 6665 – Short gabardina elastizado – Talles: 4 al 14 – Colores: Coral - Turquesa" class="fancybox-image">
+		            <img src="/Content/images/baja/6665.gif" alt="" class="foto">
+		            <h2>Short gabardina elastizado</h2>
+		            <div class="codigo">Art. 	6665</div>
+		        </a>
+		    </div>
+						
+		    <div class="producto_container" style=""> 
+		        <a rel="example_group" href="/Content/images/alta/6666.jpg" title="Art. 6666 – Short liso – Talles: 4 al 14 – Colores: Coral - Blanco - Fucsia" class="fancybox-image">
+		            <img src="/Content/images/baja/6666.gif" alt="" class="foto">
+		            <h2>Short liso</h2>
+		            <div class="codigo">Art. 	6666</div>
+		        </a>
+		    </div>
+						
+		    <div class="producto_container" style=""> 
+		        <a rel="example_group" href="/Content/images/alta/6669.jpg" title="Art. 6669 – Short microfibra – Talles: 4 al 14 – Colores: Fucsia - Coral - Turquesa" class="fancybox-image">
+		            <img src="/Content/images/baja/6669.gif" alt="" class="foto">
+		            <h2>Short microfibra</h2>
+		            <div class="codigo">Art. 	6669</div>
+		        </a>
+		    </div>
+            						
+		    <div class="producto_container" style=""> 
+		        <a rel="example_group" href="/Content/images/alta/6670.jpg" title="Art. 6670 – Short rústico elastizado – Talles: 4 al 14 – Colores: Fucsia - Coral - turquesa" class="fancybox-image">
+		            <img src="/Content/images/baja/6670.gif" alt="" class="foto">
+		            <h2>Short rústico elastizado</h2>
+		            <div class="codigo">Art. 	6670</div>
+		        </a>
+		    </div>
+            						
+		    <div class="producto_container" style=""> 
+		        <a rel="example_group" href="/Content/images/alta/6671.jpg" title="Art. 6671 – Pollera acampanada – Talles: 4 al 14 – Colores: Negro - Coral - Fucsia" class="fancybox-image">
+		            <img src="/Content/images/baja/6671.gif" alt="" class="foto">
+		            <h2>Pollera acampanada</h2>
+		            <div class="codigo">Art. 	6671</div>
+		        </a>
+		    </div>
+            
+            <div class="producto_container" style=""> 
+                <a rel="example_group" href="/Content/images/alta/6672.jpg" title="Art. 6672 – Calza estampada – Talles: 4 al 14 – Colores: Turquesa - Coral" class="fancybox-image">
+                    <img src="/Content/images/baja/6672.gif" alt="" class="foto">
+                    <h2>Calza estampada</h2>
+					<div class="codigo">Art. 	6672</div>
+			    </a>
+			</div>
+		</div>
+	</div>

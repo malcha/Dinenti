@@ -1,0 +1,110 @@
+﻿@using MvcApplication2.Resource;
+@{
+    ViewBag.Title = "";
+}
+
+
+@section PageScripts{
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery('#mycarousel').jcarousel({
+                scroll: 1,
+                animation: "slow",
+                wrap: "both"
+            });
+            $("a[rel=example_group]").fancybox({
+                'transitionIn': 'none',
+                'transitionOut': 'none',
+                'titlePosition': 'over',
+                autoSize: false,
+                autoDimensions: false,
+                //'autoScale': false,
+                titleFormat: function (title, currentArray, currentIndex, currentOpts) {
+                    return '<span id="fancybox-title-over">Foto ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+                }
+            });
+        });
+	</script>
+}
+@{
+    Html.RenderPartial("Botonera",null);
+}
+
+<div style="clear:both; padding-top:10px">
+        <span class="clouthpage-title">Vestidos y Soleros para Bebas </span>
+    </div>    
+    <div id="content_container">
+		<div id="productos_container">
+						
+			<div class="producto_container" style=""> 
+                <a rel="example_group" href="/Content/images/alta/6616.jpg" title="Art. 6616 – Vestido combinado – Talles: 1 al 6 – Colores: Fucsia - Coral" class="fancybox-image">
+                    <img src="/Content/images/baja/6616.gif" alt="" class="foto">
+                    <h2>Vestido combinado</h2>
+					<div class="codigo">Art. 	6616</div>
+			    </a>
+			</div>
+		    <div class="producto_container" style=""> 
+		        <a rel="example_group" href="/Content/images/alta/6617.jpg" title="Art. 6617 – Vestido estampado con broderie – Talles: 1 al 6 – Colores: Fucsia - Coral">
+		            <img src="/Content/images/baja/6617.gif" alt="" class="foto">
+		            <h2>Vestido estampado con broderie</h2>
+		            <div class="codigo">Art. 	6617</div>
+		        </a>
+		    </div>
+            
+			<div class="producto_container" style=""> 
+                <a rel="example_group" href="/Content/images/alta/6618.jpg" title="Art. 6618 – Vestido con broderie – Talles: 1 al 6 – Colores: Chicle - Salmón - Blanco ">
+                    <img src="/Content/images/baja/6618.gif" alt="" class="foto">
+                    <h2>Vestido con broderie</h2>
+					<div class="codigo">Art. 	6618</div>
+			    </a>
+			</div>	
+            
+            <div class="producto_container" style=""> 
+                <a rel="example_group" href="/Content/images/alta/6619.jpg" title="Art. 6619 – Vestido con guarda – Talles: 1 al 6" class="fancybox-image">
+                    <img src="/Content/images/baja/6619.gif" alt="" class="foto">
+                    <h2>Vestido con guarda</h2>
+					<div class="codigo">Art. 	6619</div>
+			    </a>
+			</div>
+		    <div class="producto_container" style=""> 
+		        <a rel="example_group" href="/Content/images/alta/6620.jpg" title="Art. 6620 – Vestido con mangas estampado – Talles: 1 al 6 – Colores de estampado: Rojo con francia - Turquesa con lila">
+		            <img src="/Content/images/baja/6620.gif" alt="" class="foto">
+		            <h2>Vestido con mangas estampado</h2>
+		            <div class="codigo">Art. 	6620</div>
+		        </a>
+		    </div>
+            
+		    <div class="producto_container" style=""> 
+                <a rel="example_group" href="/Content/images/alta/6622.jpg" title="Art. 6622 – Vestido combinado – Talles: 1 al 6 – Colores de estampado: Fucsia - Turquesa">
+                    <img src="/Content/images/baja/6622.gif" alt="" class="foto">
+                    <h2>Vestido combinado</h2>
+					<div class="codigo">Art. 	6622</div>
+			    </a>
+		    </div>	
+            
+            <div class="producto_container" style=""> 
+                <a rel="example_group" href="/Content/images/alta/6623.jpg" title="Art. 6623 – Vestido prechera stras – Talles: 1 al 6 – Colores: Blanco - Rosa - Chicle">
+                    <img src="/Content/images/baja/6623.gif" alt="" class="foto">
+                    <h2>Vestido prechera stras</h2>
+					<div class="codigo">Art. 	6623</div>
+			    </a>
+			</div>	
+            
+@*		    <div class="producto_container" style=""> 
+                <a rel="example_group" href="/Content/images/alta/6624.jpg" title="Art. 6624 – Vestido plumeti – Talles: 1 al 6 – Colores: Coral - Blanco - Manteca">
+                    <img src="/Content/images/baja/6624.gif" alt="" class="foto">
+                    <h2>Vestido plumeti</h2>
+					<div class="codigo">Art. 	6624</div>
+			    </a>
+			</div>	
+            *@
+                        
+			<div class="producto_container" style=""> 
+                <a rel="example_group" href="/Content/images/alta/6621.jpg" title="Art. 6621 – Solero estampado – Talles: 1 al 6 – Colores de estampado: Fucsia - Turquesa">
+                    <img src="/Content/images/baja/6621.gif" alt="" class="foto">
+                    <h2>Solero estampado</h2>
+					<div class="codigo">Art. 	6621</div>
+			    </a>
+			</div>	
+		</div>
+	</div>

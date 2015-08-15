@@ -1,0 +1,349 @@
+2015-03-12 19:13:07,897 - id: 6828
+date | 2015-03-13 14:10:38,353 | id| 6834
+date | 2015-03-13 14:10:47,253 | id| 6834
+date | 2015-03-13 18:27:56,038 | id | 6828 | fromRecommendation | false
+date | 2015-03-13 18:28:42,144 | id | 6834 | fromRecommendation | false
+date | 2015-03-13 18:35:25,793 | id | 6834 | fromRecommendation | false
+date | 2015-03-13 18:35:27,695 | id | 6835 | fromRecommendation | false
+date | 2015-03-13 18:38:14,816 | id | 6888 | fromRecommendation | false
+date | 2015-03-13 18:38:34,093 | id | 6889 | fromRecommendation | false
+date | 2015-03-13 19:35:09,059 | id | 6901 | fromRecommendation | false
+date | 2015-03-13 19:35:10,331 | id | 6890 | fromRecommendation | false
+date | 2015-03-13 19:35:11,213 | id | 6895 | fromRecommendation | false
+date | 2015-03-13 19:35:13,111 | id | 6826 | fromRecommendation | false
+date | 2015-03-13 19:35:14,226 | id | 6896 | fromRecommendation | false
+date | 2015-03-13 19:35:15,044 | id | 6901 | fromRecommendation | false
+date | 2015-03-13 19:35:15,785 | id | 6890 | fromRecommendation | false
+date | 2015-03-13 19:35:16,436 | id | 6895 | fromRecommendation | false
+date | 2015-03-13 19:35:17,000 | id | 6826 | fromRecommendation | false
+date | 2015-03-13 19:35:17,623 | id | 6896 | fromRecommendation | false
+date | 2015-03-13 19:35:18,153 | id | 6901 | fromRecommendation | false
+date | 2015-03-13 19:35:19,316 | id | 6896 | fromRecommendation | false
+date | 2015-03-13 20:26:35,025 | id | 6859 | fromRecommendation | false
+date | 2015-03-13 20:26:45,217 | id | 6901 | fromRecommendation | false
+date | 2015-03-13 20:26:47,042 | id | 6902 | fromRecommendation | false
+date | 2015-03-13 20:26:49,170 | id | 6863 | fromRecommendation | false
+date | 2015-03-14 11:25:08,001 | id | 6828 | fromRecommendation | false
+date | 2015-03-14 11:25:09,339 | id | 6834 | fromRecommendation | false
+date | 2015-03-14 11:25:11,244 | id | 6835 | fromRecommendation | false
+date | 2015-03-14 11:25:12,582 | id | 6888 | fromRecommendation | false
+date | 2015-03-14 11:25:13,740 | id | 6889 | fromRecommendation | false
+date | 2015-03-14 11:25:14,912 | id | 6828 | fromRecommendation | false
+date | 2015-03-14 11:25:16,065 | id | 6834 | fromRecommendation | false
+date | 2015-03-14 11:25:21,719 | id | 6828 | fromRecommendation | false
+date | 2015-03-14 11:25:42,977 | id | 6835 | fromRecommendation | false
+date | 2015-03-14 12:38:58,903 | id | 6873 | fromRecommendation | false
+date | 2015-03-14 12:38:58,941 | id | 6874 | fromRecommendation | false
+date | 2015-03-14 12:39:01,192 | id | 6884 | fromRecommendation | false
+date | 2015-03-14 12:39:02,334 | id | 6873 | fromRecommendation | false
+date | 2015-03-14 12:39:03,606 | id | 6873 | fromRecommendation | false
+date | 2015-03-14 12:39:08,469 | id | 6883 | fromRecommendation | false
+date | 2015-03-14 12:39:09,702 | id | 6882 | fromRecommendation | false
+date | 2015-03-14 12:39:10,963 | id | 6887 | fromRecommendation | false
+date | 2015-03-14 12:39:12,428 | id | 6883 | fromRecommendation | false
+date | 2015-03-14 12:39:16,884 | id | 6876 | fromRecommendation | false
+date | 2015-03-14 12:39:18,054 | id | 6877 | fromRecommendation | false
+date | 2015-03-14 12:39:19,087 | id | 6878 | fromRecommendation | false
+date | 2015-03-14 12:39:21,084 | id | 6879 | fromRecommendation | false
+date | 2015-03-14 12:39:22,145 | id | 6880 | fromRecommendation | false
+date | 2015-03-14 12:39:23,732 | id | 6881 | fromRecommendation | false
+date | 2015-03-14 12:39:24,908 | id | 6876 | fromRecommendation | false
+date | 2015-03-14 12:39:33,850 | id | 6887 | fromRecommendation | false
+date | 2015-03-14 12:40:27,027 | id | 6878 | fromRecommendation | false
+date | 2015-03-14 12:40:28,316 | id | 6879 | fromRecommendation | false
+date | 2015-03-14 12:40:29,618 | id | 6880 | fromRecommendation | false
+date | 2015-03-14 12:40:33,171 | id | 6894 | fromRecommendation | false
+date | 2015-03-14 12:40:34,459 | id | 6904 | fromRecommendation | false
+date | 2015-03-14 12:40:35,701 | id | 6903 | fromRecommendation | false
+date | 2015-03-14 12:40:36,822 | id | 6894 | fromRecommendation | false
+date | 2015-03-14 12:40:42,919 | id | 6836 | fromRecommendation | false
+date | 2015-03-14 12:40:43,919 | id | 6837 | fromRecommendation | false
+date | 2015-03-14 12:40:45,884 | id | 6838 | fromRecommendation | false
+date | 2015-03-14 12:40:47,592 | id | 6842 | fromRecommendation | false
+date | 2015-03-14 12:40:48,839 | id | 6843 | fromRecommendation | false
+date | 2015-03-14 12:40:54,205 | id | 6849 | fromRecommendation | false
+date | 2015-03-14 12:40:57,286 | id | 6840 | fromRecommendation | false
+date | 2015-03-14 12:40:58,212 | id | 6848 | fromRecommendation | false
+date | 2015-03-14 12:40:59,278 | id | 6840 | fromRecommendation | false
+date | 2015-03-14 12:41:00,373 | id | 6841 | fromRecommendation | false
+date | 2015-03-14 12:41:01,424 | id | 6844 | fromRecommendation | false
+date | 2015-03-14 12:41:02,433 | id | 6845 | fromRecommendation | false
+date | 2015-03-14 12:41:08,086 | id | 6852 | fromRecommendation | false
+date | 2015-03-14 12:41:09,355 | id | 6851 | fromRecommendation | false
+date | 2015-03-14 12:41:10,481 | id | 6854 | fromRecommendation | false
+date | 2015-03-14 12:41:11,653 | id | 6855 | fromRecommendation | false
+date | 2015-03-14 12:41:12,735 | id | 6847 | fromRecommendation | false
+date | 2015-03-14 12:41:14,002 | id | 6852 | fromRecommendation | false
+date | 2015-03-14 12:41:50,828 | id | 6893 | fromRecommendation | false
+date | 2015-03-14 12:41:52,347 | id | 6898 | fromRecommendation | false
+date | 2015-03-14 12:41:54,212 | id | 6899 | fromRecommendation | false
+date | 2015-03-14 12:41:55,850 | id | 6900 | fromRecommendation | false
+date | 2015-03-14 12:41:57,260 | id | 6850 | fromRecommendation | false
+date | 2015-03-14 12:42:11,234 | id | 6872 | fromRecommendation | false
+date | 2015-03-14 12:42:44,240 | id | 6870 | fromRecommendation | false
+date | 2015-03-14 12:42:46,261 | id | 6872 | fromRecommendation | false
+date | 2015-03-14 12:48:57,252 | id | 6872 | fromRecommendation | false
+date | 2015-03-14 12:48:58,301 | id | 6870 | fromRecommendation | false
+date | 2015-03-14 12:49:02,639 | id | 6872 | fromRecommendation | false
+date | 2015-03-14 12:49:12,444 | id | 6901 | fromRecommendation | false
+date | 2015-03-14 12:49:13,673 | id | 6902 | fromRecommendation | false
+date | 2015-03-14 12:49:46,379 | id | 6891 | fromRecommendation | false
+date | 2015-03-14 12:50:08,619 | id | 6801 | fromRecommendation | false
+date | 2015-03-14 12:50:09,682 | id | 6802 | fromRecommendation | false
+date | 2015-03-14 12:50:10,902 | id | 6803 | fromRecommendation | false
+date | 2015-03-14 12:50:15,018 | id | 6801 | fromRecommendation | false
+date | 2015-03-14 12:50:36,271 | id | 6803 | fromRecommendation | false
+date | 2015-03-14 12:50:38,248 | id | 6802 | fromRecommendation | false
+date | 2015-03-14 12:50:39,585 | id | 6801 | fromRecommendation | false
+date | 2015-03-14 12:50:44,236 | id | 6816 | fromRecommendation | false
+date | 2015-03-14 12:50:45,275 | id | 6817 | fromRecommendation | false
+date | 2015-03-14 12:50:46,531 | id | 6819 | fromRecommendation | false
+date | 2015-03-14 12:50:47,997 | id | 6820 | fromRecommendation | false
+date | 2015-03-14 12:50:50,686 | id | 6821 | fromRecommendation | false
+date | 2015-03-14 12:50:52,500 | id | 6823 | fromRecommendation | false
+date | 2015-03-14 12:50:53,720 | id | 6821 | fromRecommendation | false
+date | 2015-03-14 12:51:02,002 | id | 6805 | fromRecommendation | false
+date | 2015-03-14 12:51:04,773 | id | 6807 | fromRecommendation | false
+date | 2015-03-14 12:51:06,385 | id | 6808 | fromRecommendation | false
+date | 2015-03-14 12:51:07,604 | id | 6809 | fromRecommendation | false
+date | 2015-03-14 12:51:09,431 | id | 6806 | fromRecommendation | false
+date | 2015-03-14 12:51:10,873 | id | 6810 | fromRecommendation | false
+date | 2015-03-14 12:51:13,572 | id | 6811 | fromRecommendation | false
+date | 2015-03-14 12:51:15,560 | id | 6818 | fromRecommendation | false
+date | 2015-03-14 12:51:17,963 | id | 6818 | fromRecommendation | false
+date | 2015-03-14 12:51:19,973 | id | 6818 | fromRecommendation | false
+date | 2015-03-14 12:51:29,956 | id | 6818 | fromRecommendation | false
+date | 2015-03-14 12:51:43,354 | id | 6824 | fromRecommendation | false
+date | 2015-03-14 12:51:44,738 | id | 6825 | fromRecommendation | false
+date | 2015-03-14 12:51:46,454 | id | 6812 | fromRecommendation | false
+date | 2015-03-14 12:51:47,317 | id | 6813 | fromRecommendation | false
+date | 2015-03-14 12:51:49,272 | id | 6804 | fromRecommendation | false
+date | 2015-03-14 12:51:50,407 | id | 6824 | fromRecommendation | false
+date | 2015-03-14 12:51:58,997 | id | 6826 | fromRecommendation | false
+date | 2015-03-14 12:52:00,424 | id | 6896 | fromRecommendation | false
+date | 2015-03-14 12:52:02,233 | id | 6901 | fromRecommendation | false
+date | 2015-03-14 12:52:03,248 | id | 6890 | fromRecommendation | false
+date | 2015-03-14 12:52:04,859 | id | 6895 | fromRecommendation | false
+date | 2015-03-14 12:52:16,618 | id | 6828 | fromRecommendation | false
+date | 2015-03-14 12:52:17,769 | id | 6834 | fromRecommendation | false
+date | 2015-03-14 12:52:18,910 | id | 6835 | fromRecommendation | false
+date | 2015-03-14 12:52:20,548 | id | 6888 | fromRecommendation | false
+date | 2015-03-14 12:52:21,520 | id | 6889 | fromRecommendation | false
+date | 2015-03-14 12:52:25,604 | id | 6830 | fromRecommendation | false
+date | 2015-03-14 12:52:26,942 | id | 6831 | fromRecommendation | false
+date | 2015-03-14 12:52:28,037 | id | 6832 | fromRecommendation | false
+date | 2015-03-14 12:52:35,839 | id | 6831 | fromRecommendation | false
+date | 2015-03-14 12:52:37,458 | id | 6830 | fromRecommendation | false
+date | 2015-03-14 12:52:40,807 | id | 6832 | fromRecommendation | false
+date | 2015-03-14 12:52:42,184 | id | 6831 | fromRecommendation | false
+date | 2015-03-14 15:07:46,025 | id | 6828 | fromRecommendation | false
+date | 2015-03-14 15:07:47,262 | id | 6834 | fromRecommendation | false
+date | 2015-03-14 15:08:05,578 | id | 6834 | fromRecommendation | false
+date | 2015-03-14 15:08:07,568 | id | 6835 | fromRecommendation | false
+date | 2015-03-14 15:13:24,945 | id | 6828 | fromRecommendation | false
+date | 2015-03-14 15:13:28,793 | id | 6834 | fromRecommendation | false
+date | 2015-03-14 15:13:31,205 | id | 6835 | fromRecommendation | false
+date | 2015-03-14 15:20:59,006 | id | 6817 | fromRecommendation | false
+date | 2015-03-14 15:21:01,944 | id | 6819 | fromRecommendation | false
+date | 2015-03-14 15:21:03,618 | id | 6820 | fromRecommendation | false
+date | 2015-03-14 15:21:06,548 | id | 6821 | fromRecommendation | false
+date | 2015-03-14 15:21:08,747 | id | 6823 | fromRecommendation | false
+date | 2015-03-14 15:24:28,227 | id | 6895 | fromRecommendation | false
+date | 2015-03-14 15:24:51,906 | id | 6901 | fromRecommendation | false
+date | 2015-03-14 15:25:25,521 | id | 6872 | fromRecommendation | false
+date | 2015-03-14 15:25:34,828 | id | 6872 | fromRecommendation | false
+date | 2015-03-14 15:26:10,196 | id | 6859 | fromRecommendation | false
+date | 2015-03-14 15:26:25,703 | id | 6872 | fromRecommendation | false
+date | 2015-03-14 15:28:32,226 | id | 6846 | fromRecommendation | false
+date | 2015-03-14 15:28:59,715 | id | 6893 | fromRecommendation | false
+date | 2015-03-14 15:30:13,945 | id | 6885 | fromRecommendation | false
+date | 2015-03-14 15:30:19,497 | id | 6885 | fromRecommendation | false
+date | 2015-03-14 15:31:04,180 | id | 6903 | fromRecommendation | false
+date | 2015-03-14 15:32:54,537 | id | 6903 | fromRecommendation | false
+date | 2015-03-14 15:33:03,136 | id | 6903 | fromRecommendation | false
+date | 2015-03-14 15:34:34,216 | id | 6901 | fromRecommendation | false
+date | 2015-03-14 15:35:03,617 | id | 6901 | fromRecommendation | false
+date | 2015-03-14 15:35:09,257 | id | 6885 | fromRecommendation | false
+date | 2015-03-14 15:35:13,214 | id | 6903 | fromRecommendation | false
+date | 2015-03-14 15:36:11,510 | id | 6893 | fromRecommendation | false
+date | 2015-03-14 15:37:33,279 | id | 6890 | fromRecommendation | false
+date | 2015-03-14 15:37:46,307 | id | 6890 | fromRecommendation | false
+date | 2015-03-14 15:37:56,533 | id | 6901 | fromRecommendation | false
+date | 2015-03-14 15:38:02,885 | id | 6901 | fromRecommendation | false
+date | 2015-03-14 15:38:09,515 | id | 6903 | fromRecommendation | false
+date | 2015-03-14 15:38:14,951 | id | 6885 | fromRecommendation | false
+date | 2015-03-14 15:43:28,276 | id | 6893 | fromRecommendation | false
+date | 2015-03-14 15:50:48,018 | id | 6859 | fromRecommendation | false
+date | 2015-03-14 15:51:38,084 | id | 6872 | fromRecommendation | false
+date | 2015-03-14 15:59:49,176 | id | 6872 | fromRecommendation | false
+date | 2015-03-14 15:59:50,505 | id | 6870 | fromRecommendation | false
+date | 2015-03-14 15:59:52,113 | id | 6872 | fromRecommendation | false
+date | 2015-03-14 16:00:31,976 | id | 6891 | fromRecommendation | false
+date | 2015-03-14 16:01:35,404 | id | 6885 | fromRecommendation | false
+date | 2015-03-14 16:01:38,014 | id | 6885 | fromRecommendation | false
+date | 2015-03-14 16:01:40,177 | id | 6885 | fromRecommendation | false
+date | 2015-03-14 16:03:18,203 | id | 6885 | fromRecommendation | false
+date | 2015-03-15 12:02:54,643 | id | 6830 | fromRecommendation | false
+date | 2015-03-15 12:03:05,138 | id | 6828 | fromRecommendation | false
+date | 2015-03-15 12:03:06,594 | id | 6834 | fromRecommendation | false
+date | 2015-03-15 12:03:07,763 | id | 6835 | fromRecommendation | false
+date | 2015-03-15 12:03:08,833 | id | 6828 | fromRecommendation | false
+date | 2015-03-15 12:03:27,637 | id | 6828 | fromRecommendation | false
+date | 2015-03-15 12:03:36,750 | id | 6836 | fromRecommendation | false
+date | 2015-03-15 12:03:38,712 | id | 6837 | fromRecommendation | false
+date | 2015-03-15 12:03:39,674 | id | 6838 | fromRecommendation | false
+date | 2015-03-15 12:03:40,326 | id | 6842 | fromRecommendation | false
+date | 2015-03-15 12:03:40,955 | id | 6843 | fromRecommendation | false
+date | 2015-03-15 12:03:45,221 | id | 6849 | fromRecommendation | false
+date | 2015-03-15 12:03:48,470 | id | 6840 | fromRecommendation | false
+date | 2015-03-15 12:03:49,458 | id | 6848 | fromRecommendation | false
+date | 2015-03-15 12:03:50,106 | id | 6846 | fromRecommendation | false
+date | 2015-03-15 12:03:51,963 | id | 6841 | fromRecommendation | false
+date | 2015-03-15 12:03:53,053 | id | 6844 | fromRecommendation | false
+date | 2015-03-15 12:03:53,833 | id | 6845 | fromRecommendation | false
+date | 2015-03-15 12:03:57,557 | id | 6852 | fromRecommendation | false
+date | 2015-03-15 12:03:59,294 | id | 6851 | fromRecommendation | false
+date | 2015-03-15 12:04:00,530 | id | 6854 | fromRecommendation | false
+date | 2015-03-15 12:04:01,292 | id | 6855 | fromRecommendation | false
+date | 2015-03-15 12:04:03,326 | id | 6847 | fromRecommendation | false
+date | 2015-03-15 12:04:08,130 | id | 6893 | fromRecommendation | false
+date | 2015-03-15 12:04:09,107 | id | 6898 | fromRecommendation | false
+date | 2015-03-15 12:04:10,136 | id | 6899 | fromRecommendation | false
+date | 2015-03-15 12:04:10,810 | id | 6900 | fromRecommendation | false
+date | 2015-03-15 12:04:11,468 | id | 6850 | fromRecommendation | false
+date | 2015-03-15 12:04:27,244 | id | 6801 | fromRecommendation | false
+date | 2015-03-15 12:04:28,239 | id | 6802 | fromRecommendation | false
+date | 2015-03-15 12:04:29,112 | id | 6803 | fromRecommendation | false
+date | 2015-03-15 12:04:32,341 | id | 6816 | fromRecommendation | false
+date | 2015-03-15 12:04:33,261 | id | 6817 | fromRecommendation | false
+date | 2015-03-15 12:04:34,237 | id | 6819 | fromRecommendation | false
+date | 2015-03-15 12:04:35,279 | id | 6820 | fromRecommendation | false
+date | 2015-03-15 12:04:35,990 | id | 6821 | fromRecommendation | false
+date | 2015-03-15 12:04:36,654 | id | 6823 | fromRecommendation | false
+date | 2015-03-15 12:04:41,946 | id | 6805 | fromRecommendation | false
+date | 2015-03-15 12:04:49,766 | id | 6807 | fromRecommendation | false
+date | 2015-03-15 12:04:50,824 | id | 6808 | fromRecommendation | false
+date | 2015-03-15 12:04:54,453 | id | 6809 | fromRecommendation | false
+date | 2015-03-15 12:04:56,282 | id | 6806 | fromRecommendation | false
+date | 2015-03-15 12:05:00,099 | id | 6810 | fromRecommendation | false
+date | 2015-03-15 12:05:01,085 | id | 6811 | fromRecommendation | false
+date | 2015-03-15 12:05:08,724 | id | 6818 | fromRecommendation | false
+date | 2015-03-15 12:05:10,323 | id | 6805 | fromRecommendation | false
+date | 2015-03-15 12:05:11,589 | id | 6807 | fromRecommendation | false
+date | 2015-03-15 12:05:18,983 | id | 6824 | fromRecommendation | false
+date | 2015-03-15 12:05:19,885 | id | 6825 | fromRecommendation | false
+date | 2015-03-15 12:05:20,677 | id | 6812 | fromRecommendation | false
+date | 2015-03-15 12:05:21,331 | id | 6813 | fromRecommendation | false
+date | 2015-03-15 12:05:22,646 | id | 6804 | fromRecommendation | false
+date | 2015-03-15 12:05:26,601 | id | 6826 | fromRecommendation | false
+date | 2015-03-15 12:05:27,610 | id | 6896 | fromRecommendation | false
+date | 2015-03-15 12:05:29,570 | id | 6901 | fromRecommendation | false
+date | 2015-03-15 12:05:30,272 | id | 6890 | fromRecommendation | false
+date | 2015-03-15 12:05:32,341 | id | 6890 | fromRecommendation | false
+date | 2015-03-15 12:05:33,299 | id | 6895 | fromRecommendation | false
+date | 2015-03-15 12:05:39,839 | id | 6872 | fromRecommendation | false
+date | 2015-03-15 12:06:37,933 | id | 6856 | fromRecommendation | false
+date | 2015-03-15 12:06:39,122 | id | 6858 | fromRecommendation | false
+date | 2015-03-15 12:06:39,830 | id | 6860 | fromRecommendation | false
+date | 2015-03-15 12:06:40,523 | id | 6861 | fromRecommendation | false
+date | 2015-03-15 12:06:41,181 | id | 6862 | fromRecommendation | false
+date | 2015-03-15 12:06:41,767 | id | 6856 | fromRecommendation | false
+date | 2015-03-15 12:06:42,371 | id | 6857 | fromRecommendation | false
+date | 2015-03-15 12:06:42,958 | id | 6858 | fromRecommendation | false
+date | 2015-03-15 12:06:43,568 | id | 6860 | fromRecommendation | false
+date | 2015-03-15 12:06:45,736 | id | 6861 | fromRecommendation | false
+date | 2015-03-15 12:06:47,117 | id | 6862 | fromRecommendation | false
+date | 2015-03-15 12:06:50,207 | id | 6863 | fromRecommendation | false
+date | 2015-03-15 12:06:51,286 | id | 6864 | fromRecommendation | false
+date | 2015-03-15 12:06:51,926 | id | 6865 | fromRecommendation | false
+date | 2015-03-15 12:06:52,531 | id | 6869 | fromRecommendation | false
+date | 2015-03-15 12:06:53,109 | id | 6859 | fromRecommendation | false
+date | 2015-03-15 12:06:53,667 | id | 6863 | fromRecommendation | false
+date | 2015-03-15 12:06:56,796 | id | 6872 | fromRecommendation | false
+date | 2015-03-15 12:06:57,740 | id | 6870 | fromRecommendation | false
+date | 2015-03-15 12:07:01,635 | id | 6901 | fromRecommendation | false
+date | 2015-03-15 12:07:02,721 | id | 6902 | fromRecommendation | false
+date | 2015-03-15 12:07:03,655 | id | 6891 | fromRecommendation | false
+date | 2015-03-15 12:07:04,635 | id | 6901 | fromRecommendation | false
+date | 2015-03-15 12:07:11,193 | id | 6836 | fromRecommendation | false
+date | 2015-03-15 12:07:12,452 | id | 6837 | fromRecommendation | false
+date | 2015-03-15 12:07:13,420 | id | 6838 | fromRecommendation | false
+date | 2015-03-15 12:07:14,626 | id | 6842 | fromRecommendation | false
+date | 2015-03-15 12:07:15,805 | id | 6843 | fromRecommendation | false
+date | 2015-03-15 12:07:22,911 | id | 6873 | fromRecommendation | false
+date | 2015-03-15 12:07:24,179 | id | 6874 | fromRecommendation | false
+date | 2015-03-15 12:07:25,169 | id | 6884 | fromRecommendation | false
+date | 2015-03-15 12:07:25,795 | id | 6885 | fromRecommendation | false
+date | 2015-03-15 12:07:26,341 | id | 6873 | fromRecommendation | false
+date | 2015-03-15 12:07:39,577 | id | 6883 | fromRecommendation | false
+date | 2015-03-15 12:07:40,755 | id | 6882 | fromRecommendation | false
+date | 2015-03-15 12:07:41,810 | id | 6887 | fromRecommendation | false
+date | 2015-03-15 12:07:43,753 | id | 6883 | fromRecommendation | false
+date | 2015-03-15 12:07:48,008 | id | 6876 | fromRecommendation | false
+date | 2015-03-15 12:07:49,067 | id | 6877 | fromRecommendation | false
+date | 2015-03-15 12:07:54,586 | id | 6878 | fromRecommendation | false
+date | 2015-03-15 12:07:55,520 | id | 6879 | fromRecommendation | false
+date | 2015-03-15 12:07:57,246 | id | 6880 | fromRecommendation | false
+date | 2015-03-15 12:07:58,104 | id | 6881 | fromRecommendation | false
+date | 2015-03-15 12:08:02,868 | id | 6894 | fromRecommendation | false
+date | 2015-03-15 12:08:03,873 | id | 6904 | fromRecommendation | false
+date | 2015-03-15 12:08:04,780 | id | 6903 | fromRecommendation | false
+date | 2015-03-15 12:08:05,818 | id | 6894 | fromRecommendation | false
+date | 2015-03-15 22:28:39,692 | 13223 | 6828 | false
+date | 2015-03-15 22:29:02,078 | 13223 | 6828 | false
+date | 2015-03-15 22:34:35,245 | 13223 |  | false
+date | 2015-03-15 22:35:19,267 | 13223 |  | false
+date | 2015-03-15 22:35:39,011 | 13223 |  | false
+date | 2015-03-15 22:36:50,215 | 13223 | 6828 | true
+date | 2015-03-15 22:37:12,142 | 13223 | 6828 | false
+date | 2015-03-15 22:37:56,056 | 13223 | 6834 | false
+date | 2015-03-15 22:38:39,525 | UserId: 13223 |ItemId:  6835 |isrecommendation: false
+2015-03-15 22:39:32,771 | UserId: 13223 |ItemId:  6828 |isrecommendation: false
+2015-03-15 22:40:03,006 | 13223 | 6834 | false
+2015-03-15 22:40:07,756 | 13223 | 6835 | false
+2015-03-15 22:40:14,290 | 13223 | 6831 | false
+2015-03-15 22:40:15,517 | 13223 | 6832 | false
+2015-03-15 22:40:16,498 | 13223 | 6888 | false
+2015-03-16 00:36:59,062 | 13223 | 6828 | true
+2015-03-16 21:41:35,923 | 13223 | 6857 | false
+2015-03-16 21:41:47,898 | 13223 | 6857 | false
+2015-03-16 23:02:37,601 | 13223 | 6836 | false
+2015-03-16 23:02:39,467 | 13223 | 6843 | false
+2015-03-16 23:02:40,991 | 13223 | 6836 | false
+2015-03-16 23:02:41,894 | 13223 | 6837 | false
+2015-03-16 23:02:42,655 | 13223 | 6838 | false
+2015-03-16 23:02:43,319 | 13223 | 6842 | false
+2015-03-16 23:02:43,873 | 13223 | 6843 | false
+2015-03-16 23:02:44,454 | 13223 | 6836 | false
+2015-03-16 23:03:20,119 | 13223 | 6836 | false
+2015-03-16 23:03:21,375 | 13223 | 6843 | false
+2015-03-16 23:03:22,412 | 13223 | 6836 | false
+2015-03-16 23:03:23,000 | 13223 | 6837 | false
+2015-03-16 23:03:23,584 | 13223 | 6838 | false
+2015-03-16 23:03:24,151 | 13223 | 6842 | false
+2015-03-16 23:03:24,737 | 13223 | 6843 | false
+2015-03-16 23:03:25,126 | 13223 | 6836 | false
+2015-03-16 23:03:25,513 | 13223 | 6837 | false
+2015-03-16 23:03:26,688 | 13223 | 6838 | false
+2015-03-16 23:05:37,519 | 13223 | 6836 | false
+2015-03-16 23:05:38,905 | 13223 | 6843 | false
+2015-03-16 23:05:39,965 | 13223 | 6836 | false
+2015-03-16 23:05:40,699 | 13223 | 6837 | false
+2015-03-16 23:06:55,293 | 13223 | 6836 | false
+2015-03-16 23:06:57,453 | 13223 | 6837 | false
+2015-03-16 23:06:58,389 | 13223 | 6838 | false
+2015-03-16 23:06:59,624 | 13223 | 6842 | false
+2015-03-16 23:07:00,595 | 13223 | 6843 | false
+2015-03-16 23:07:03,562 | 13223 | 6836 | false
+2015-03-16 23:07:04,752 | 13223 | 6837 | false
+2015-03-16 23:07:05,646 | 13223 | 6838 | false
+2015-03-16 23:07:06,554 | 13223 | 6842 | false
+2015-03-16 23:07:12,310 | 13223 | 6849 | false
+2015-03-16 23:07:17,519 | 13223 | 6838 | false
+2015-03-16 23:07:18,716 | 13223 | 6842 | false
+2015-03-16 23:07:19,519 | 13223 | 6843 | false
+2015-03-16 23:07:25,551 | 13223 | 6835 | false
+2015-03-16 23:07:26,435 | 13223 | 6834 | false
+2015-03-16 23:07:27,532 | 13223 | 6835 | false
+2015-03-16 23:27:31,540 | 13223 | 6899 | true
+2015-03-16 23:27:38,964 | 13223 | 6893 | false

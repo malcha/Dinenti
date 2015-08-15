@@ -1,0 +1,111 @@
+﻿@using MvcApplication2.Resource;
+@using MvcApplication2.Models;
+@model List<Clouth>
+    @{
+        ViewBag.Title = "";
+    }
+
+
+    @section PageScripts{
+
+        <script type="text/javascript">
+            jQuery(document).ready(function () {
+                jQuery('#mycarousel').jcarousel({
+                    scroll: 1,
+                    animation: "slow",
+                    wrap: "both"
+                });
+                $("a[rel=example_group]").fancybox({
+                    'transitionIn': 'none',
+                    'transitionOut': 'none',
+                    'titlePosition': 'over',
+                    autoSize: false,
+                    autoDimensions: false,
+                    //'autoScale': false,
+                    titleFormat: function (title, currentArray, currentIndex, currentOpts) {
+                        return '<span id="fancybox-title-over">Foto ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+                    }
+                });
+
+
+            });
+
+
+        </script>
+    }
+    @{
+        Html.RenderPartial("Botonera", null);
+    }
+
+    <div style="clear:both; padding-top:10px">
+        <span class="clouthpage-title">Pantalones y Shrots de baño para Bebes </span>
+    </div>
+    <div id="content_container">
+        <div id="productos_container">
+            @foreach (Clouth item in Model)
+            {
+                <div class="producto_container" style="">
+                    <a rel="example_group" href="@item.getHighImgPath()" title="@item.Description">
+                        <img src="@item.getLowImgPath()" alt="" class="foto">
+                        <h2>@item.ShortDescription</h2>
+                        <div class="codigo">Art. 	@item.Id.ToString()</div>
+                    </a>
+                </div>
+            }
+            @*<div class="producto_container" style="">
+                <a rel="example_group" href="/Content/images/alta/6642.jpg" title="Art. 6642 – Short de baño con recortes – Talles: 1 al 6 – Colores: Rojo – Turquesa – Francia">
+                    <img src="/Content/images/baja/6642.gif" alt="" class="foto">
+                    <h2>Short de baño con recortes</h2>
+                    <div class="codigo">Art. 	6642</div>
+                </a>
+            </div>
+
+            <div class="producto_container" style="">
+                <a rel="example_group" href="/Content/images/alta/6643.jpg" title="Art. 6643 – Short de baño con recortes – Talles: 1 al 6 – Colores: Gris - Francia - Rojo">
+                    <img src="/Content/images/baja/6643.gif" alt="" class="foto">
+                    <h2>Short de baño con recortes</h2>
+                    <div class="codigo">Art. 	6643</div>
+                </a>
+            </div>
+
+            <div class="producto_container" style="">
+                <a rel="example_group" href="/Content/images/alta/6644.jpg" title="Art. 6644 – Short de baño estampado – Talles: 1 al 6 – Colores: Rojo – Turquesa – Francia">
+                    <img src="/Content/images/baja/6644.gif" alt="" class="foto">
+                    <h2>Short de baño estampado</h2>
+                    <div class="codigo">Art. 	6644</div>
+                </a>
+            </div>
+
+            <div class="producto_container" style="">
+                <a rel="example_group" href="/Content/images/alta/6644_2.jpg" title="Art. 6644 – Short de baño estampado – Talles: 1 al 6 – Colores: Rojo – Turquesa – Francia">
+                    <img src="/Content/images/baja/6644_2.gif" alt="" class="foto">
+                    <h2>Short de baño estampado</h2>
+                    <div class="codigo">Art. 	6644</div>
+                </a>
+            </div>
+
+            <div class="producto_container" style="">
+                <a rel="example_group" href="/Content/images/alta/6706.jpg" title="Art. 6706 – Short de baño liso y estampado – Talles: 1 al 6 – Colores: Rojo - Turquesa - Francia">
+                    <img src="/Content/images/baja/6706.gif" alt="" class="foto">
+                    <h2>Short de baño liso y estampado</h2>
+                    <div class="codigo">Art. 	6706</div>
+                </a>
+            </div>
+
+            <div class="producto_container" style="">
+                <a rel="example_group" href="/Content/images/alta/6636.jpg" title="Art. 6636 – Pantalón cargo – Talles: 1 al 6 – Colores: Gris - Francia" class="fancybox-image">
+                    <img src="/Content/images/baja/6636.gif" alt="" class="foto">
+                    <h2>Pantalón cargo</h2>
+                    <div class="codigo">Art. 	6636</div>
+                </a>
+            </div>
+            <div class="producto_container" style="">
+                <a rel="example_group" href="/Content/images/alta/6637.jpg" title="Art. 6637 – Pantalón gabardina chupin – Talles: 1 al 6 – Colores: Francia - Turquesa – Verde menta">
+                    <img src="/Content/images/baja/6637.gif" alt="" class="foto">
+                    <h2>Pantalón gabardina chupin</h2>
+                    <div class="codigo">Art. 	6637</div>
+                </a>
+            </div>*@
+            <div class="sep_gral"></div>
+        </div>
+    </div>
