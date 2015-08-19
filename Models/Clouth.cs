@@ -22,18 +22,21 @@ namespace MvcApplication2.Models
             REMERON = 2,
             PANTALON = 3,
             CALZAS = 4,
-            BUZOS=5,
-            CAMPERAS=6,
+            BUZOS = 5,
+            CAMPERAS = 6,
             CAMISAS = 7,
-            ABRIGOS=8,
-            JUMPER=9,
+            ABRIGOS = 8,
+            JUMPER = 9,
             VESTIDOS = 10,
             BODY = 11,
             ENTERITOS = 12,
-            ASTRONAUTAS=13,
-            CHALECOS=14,
+            ASTRONAUTAS = 13,
+            CHALECOS = 14,
             SHORTDEBANO = 15,
-            SOLEROS = 16
+            SOLEROS = 16,
+            SHORT = 17,
+            CHOMBAS
+
         }
 
         public Clouth (int id,string description, string size, string colours,SUBCATEGORY subcategory,CATEGORY category, string action ){
@@ -145,11 +148,11 @@ namespace MvcApplication2.Models
 
         public String getLowImgPath()
         {
-            return String.Format("/{0}/{1}.gif", "Content/images/bajaNew", Id.ToString());
+            return String.Format("/{0}/{1}.gif", "Content/images/baja", Id.ToString());
         }
         public String getHighImgPath()
         {
-            return String.Format("/{0}/{1}.jpg", "Content/images/altaNew", Id.ToString());
+            return String.Format("/{0}/{1}.jpg", "Content/images/alta", Id.ToString());
         }
 
 

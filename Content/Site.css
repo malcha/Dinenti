@@ -35,6 +35,11 @@ p, ul {
     line-height: 1.6em;
 }
 
+/*imgResize {
+   max-width:64%;
+   max-height:64%;
+}*/
+
 header,
 footer,
 nav,

@@ -21,10 +21,10 @@ namespace MvcApplication2.Controllers
             return View("todos", list);
         }
 
-        public ActionResult vestidos()
+        public ActionResult vestidossoleros()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Vestidos para nenas";
+            ViewBag.TitleName = "Vestidos y soleros para nenas";
             var list = new ClouthManager()
                 .FindAll()
                 .Where(x => x.Category == Clouth.CATEGORY.NENA)
@@ -34,25 +34,25 @@ namespace MvcApplication2.Controllers
             return View("todos", list);
         }
 
-        public ActionResult pantalonescalzas()
+        public ActionResult calzasshorts()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Pantalones y calzas para nenas";
+            ViewBag.TitleName = "Calzas y shorts para nenas";
             var list = new ClouthManager()
                 .FindAll()
                 .Where(x => x.Category == Clouth.CATEGORY.NENA)
-                .Where(x => x.SubCategory == Clouth.SUBCATEGORY.PANTALON || x.SubCategory == Clouth.SUBCATEGORY.CALZAS)
+                .Where(x => x.SubCategory == Clouth.SUBCATEGORY.SHORT || x.SubCategory == Clouth.SUBCATEGORY.CALZAS)
                 .ToList();
 
             return View("todos", list);
         }
-        public ActionResult camperasbuzos()
+        public ActionResult enteritos()
         {
-            ViewBag.TitleName = "Camperas y buzos para nenas";
+            ViewBag.TitleName = "Enteritos para nenas";
             var list = new ClouthManager()
                 .FindAll()
                 .Where(x => x.Category == Clouth.CATEGORY.NENA)
-                .Where(x => x.SubCategory == Clouth.SUBCATEGORY.BUZOS || x.SubCategory == Clouth.SUBCATEGORY.CAMPERAS)
+                .Where(x => x.SubCategory == Clouth.SUBCATEGORY.ENTERITOS)
                 .ToList();
 
             return View("todos", list);

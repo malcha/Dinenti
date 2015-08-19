@@ -11,8 +11,8 @@ namespace MvcApplication2.Helpers
         public static void WriteCookie()
         {
 
-            var a = new Hyalcore("http://192.168.0.102:4567");
-            var test = a.GetMostViewByCategory();
+            //var a = new Hyalcore("http://192.168.0.102:4567");
+            //var test = a.GetMostViewByCategory();
 
             Random r = new Random();
             int n = r.Next(1, 100000);

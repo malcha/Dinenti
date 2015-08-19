@@ -77,14 +77,14 @@ namespace MvcApplication2.Providers.Recommender
 
             using (var streamWriter = new StreamWriter(request.GetRequestStream()))
             {
-                JsonConvert.SerializeObject(object);
+                string json = JsonConvert.SerializeObject(streamWriter);
                 //string json = new JavaScriptSerializer().Serialize(new
                 //{
                 //    user = "Foo",
                 //    password = "Baz"
                 //});
 
-                //streamWriter.Write(json);
+                streamWriter.Write(json);
             }
         }
 

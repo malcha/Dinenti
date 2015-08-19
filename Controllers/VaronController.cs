@@ -9,19 +9,6 @@ namespace MvcApplication2.Controllers
 {
     public class VaronController : Controller
     {
-        public ActionResult camperasbuzos()
-        {
-            Cookies.WriteCookie();
-            ViewBag.TitleName = "Camperas y buzos para varones";
-            var list = new ClouthManager()
-                            .FindAll()
-                            .Where(x => x.Category == Clouth.CATEGORY.VARON)
-                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.CAMPERAS || x.SubCategory == Clouth.SUBCATEGORY.BUZOS)
-                            .ToList();
-
-            return View("todos", list);
-        }
-
         public ActionResult remerascamisas()
         {
             Cookies.WriteCookie();
@@ -35,31 +22,19 @@ namespace MvcApplication2.Controllers
             return View("todos", list);
         }
 
-        public ActionResult Pantalones()
+        public ActionResult PantalonesShorts()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Pantalones para varones";
+            ViewBag.TitleName = "Pantalones y shorts de baño para varones";
             var list = new ClouthManager()
                         .FindAll()
                         .Where(x => x.Category == Clouth.CATEGORY.VARON)
-                        .Where(x => x.SubCategory == Clouth.SUBCATEGORY.PANTALON)
+                        .Where(x => x.SubCategory == Clouth.SUBCATEGORY.PANTALON || x.SubCategory == Clouth.SUBCATEGORY.SHORT)
                         .ToList();
 
             return View("todos", list);
         }
 
-        public ActionResult Abrigos()
-        {
-            Cookies.WriteCookie();
-            ViewBag.TitleName = "Abrigos para varones";
-            var list = new ClouthManager()
-                .FindAll()
-                .Where(x => x.Category == Clouth.CATEGORY.VARON)
-                .Where(x => x.SubCategory == Clouth.SUBCATEGORY.ABRIGOS)
-                .ToList();
-
-            return View("todos", list);
-        }
 
     }
 }

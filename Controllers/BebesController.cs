@@ -9,56 +9,57 @@ namespace MvcApplication2.Controllers
     public class BebesController : Controller
     {
         
-        public ActionResult remerascamisas()
+        public ActionResult remeraschombas()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Remeras y camisas para bebes";
+            ViewBag.TitleName = "Remeras y chombas para bebes";
             var list = new ClouthManager()
                             .FindAll()
                             .Where(x => x.Category == Clouth.CATEGORY.BEBES)
-                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.REMERAS || x.SubCategory == Clouth.SUBCATEGORY.CAMISAS)
+                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.REMERAS || x.SubCategory == Clouth.SUBCATEGORY.CHOMBAS)
                             .ToList();
 
             return View("todos", list);
         }
 
-        public ActionResult camperasbuzos()
+        public ActionResult camisas()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Camperas y buzos para bebes";
+            ViewBag.TitleName = "Camisas para bebes";
             var list = new ClouthManager()
                             .FindAll()
                             .Where(x => x.Category == Clouth.CATEGORY.BEBES)
-                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.CAMPERAS || x.SubCategory == Clouth.SUBCATEGORY.BUZOS)
+                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.CAMISAS)
                             .ToList();
 
             return View("todos", list);
         }
 
-        public ActionResult Pantalones()
+        public ActionResult camperas()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Pantalones para bebes";
+            ViewBag.TitleName = "Camperas para bebes";
             var list = new ClouthManager()
                             .FindAll()
                             .Where(x => x.Category == Clouth.CATEGORY.BEBES)
-                            .Where(x=> x.SubCategory==Clouth.SUBCATEGORY.PANTALON)
+                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.CAMPERAS )
+                            .ToList();
+
+            return View("todos", list);
+        }
+
+        public ActionResult pantalonesshorts()
+        {
+            Cookies.WriteCookie();
+            ViewBag.TitleName = "Pantalones y shorts de baño para bebes";
+            var list = new ClouthManager()
+                            .FindAll()
+                            .Where(x => x.Category == Clouth.CATEGORY.BEBES)
+                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.PANTALON || x.SubCategory == Clouth.SUBCATEGORY.SHORTDEBANO)
                             .ToList();
 
             return View("todos",list);
         }
 
-        public ActionResult Abrigos()
-        {
-            Cookies.WriteCookie();
-            ViewBag.TitleName = "Abrigos para bebes";
-            var list = new ClouthManager()
-                            .FindAll()
-                            .Where(x => x.Category == Clouth.CATEGORY.BEBES)
-                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.ABRIGOS || x.SubCategory == Clouth.SUBCATEGORY.CHALECOS)
-                            .ToList();
-
-            return View("todos", list);
-        }
     }
 }
