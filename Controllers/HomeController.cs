@@ -43,7 +43,9 @@ namespace MvcApplication2.Controllers
         public ActionResult Index()
         {
             Cookies.WriteCookie();
-            var list = new ClouthManager().FindAll().Where(x=> x.Id ==7083 ||x.Id ==7073 || x.Id ==7037 ||x.Id ==7046 ||x.Id ==7013).ToList();
+            //var list = new ClouthManager().FindAll().Where(x => x.Id == 7001 || x.Id == 7001 || x.Id == 7001 || x.Id == 7001 || x.Id == 7001).ToList();
+
+            var list = new ClouthManager().FindAll().Where(x => x.Id == 7083 || x.Id == 7073 || x.Id == 7037 || x.Id == 7046 || x.Id == 7013).ToList();
             ViewBag.Message = ResourceHome.WelcomeTitle;
             return View(list);
         }

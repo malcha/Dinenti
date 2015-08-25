@@ -21,10 +21,10 @@ p  { clear: both; margin: 5px 0 15px; line-height: 1.7em; }
 .clear { clear: both; }
 
 
-/*imgResize {
+imgResize2 {
    max-width:64%;
    max-height:64%;
-}*/
+}
 
 .wrap { margin: 0 auto; width: 900px; }
 

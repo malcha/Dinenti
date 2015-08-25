@@ -415,6 +415,8 @@
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Global.asax" />
     <Content Include="log4net.xml" />
+    <Content Include="Properties\PublishProfiles\test.pubxml.user" />
+    <Content Include="Properties\PublishProfiles\test2.pubxml.user" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\fancybox\blank.gif" />
     <Content Include="Scripts\fancybox\fancybox_loading%402x.gif" />
@@ -528,6 +530,7 @@
     <Content Include="Views\Bebas\Todos.cshtml" />
     <Content Include="Views\Nena\Todos.cshtml" />
     <Content Include="Views\Varon\Todos.cshtml" />
+    <None Include="Properties\PublishProfiles\test.pubxml" />
     <None Include="Properties\PublishProfiles\test2.pubxml" />
     <Content Include="Scripts\Views\BaseModel.js.map" />
     <Content Include="Scripts\Helpers\Hyalcore.js.map" />

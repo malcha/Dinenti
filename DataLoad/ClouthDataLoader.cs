@@ -23,8 +23,8 @@ namespace MvcApplication2.DataLoad
         {
             var list = new List<Models.Clouth>();
             list.Add(new Models.Clouth(7049, "Vestido body", "0 al 3", "Rosa con lila- Rosa con verde", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.MINIBEBES, "all"));
-            list.Add(new Models.Clouth(7046, "Vestido estampado con body", "0 al 3", "Rojo - Rosa", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.MINIBEBES, "all"));
-            list.Add(new Models.Clouth(7041, "Vestido liso c/body", "0 al 3", "Blanco- Natural", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.MINIBEBES, "all"));
+            list.Add(new Models.Clouth(70461, "Vestido estampado con body", "0 al 3", "Rojo - Rosa", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.MINIBEBES, "all"));
+            list.Add(new Models.Clouth(7046, "Vestido liso c/body", "0 al 3", "Blanco- Natural", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.MINIBEBES, "all"));
             list.Add(new Models.Clouth(7053, "Jardinero jean unisex", "1 al 4", "", Models.Clouth.SUBCATEGORY.JUMPER, Models.Clouth.CATEGORY.MINIBEBES, "all"));
             list.Add(new Models.Clouth(7052, "Enterito escoces", "0 al 3", "Azul con rojo - Turquesa con verde - Aero con blanco", Models.Clouth.SUBCATEGORY.ENTERITOS, Models.Clouth.CATEGORY.MINIBEBES, "all"));
             return list;
@@ -116,7 +116,7 @@ namespace MvcApplication2.DataLoad
             list.Add(new Models.Clouth(70561, "Remera con encaje", "4 al 14", "Blanco - Natural - Fucsia - Coral", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, "remerascamisas"));
             list.Add(new Models.Clouth(7057, "Musculosa mariposa", "4 al 14", "Blanco - Natural", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, "remerascamisas"));
             list.Add(new Models.Clouth(7101, "Musculosa yeah", "4 al 14", "Blanco - Natural", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, "remerascamisas"));
-            list.Add(new Models.Clouth(7056, "Camisa fibrana", "4 al 14", "Blanco/Fucsia - Blanco/Turquesa", Models.Clouth.SUBCATEGORY.CAMISAS, Models.Clouth.CATEGORY.NENA, "remerascamisas"));
+            list.Add(new Models.Clouth(7065, "Camisa fibrana", "4 al 14", "Blanco/Fucsia - Blanco/Turquesa", Models.Clouth.SUBCATEGORY.CAMISAS, Models.Clouth.CATEGORY.NENA, "remerascamisas"));
 
 
             //Calzas pantalones
