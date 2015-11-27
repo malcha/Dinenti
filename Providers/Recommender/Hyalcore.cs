@@ -8,7 +8,10 @@ using MvcApplication2.Helpers.Mvc;
 using MvcApplication2.Providers.DTO;
 using MvcApplication2.Providers.Recommender;
 using Newtonsoft.Json;
-
+using log4net;
+using MvcApplication2.Controllers;
+using System.Text;
+using System.Net;
 
 namespace MvcApplication2.Providers.Recommender
 {
@@ -18,10 +21,6 @@ namespace MvcApplication2.Providers.Recommender
         //IDictionary<string, bool> GetUserPermissions(string username);
     }
 
-    //public class ClassTest
-    //{
-    //     public IEnumerable<int> data   { get; set; }
-    //}
 
 
     public class Hyalcore : IRecommendationClient
@@ -31,7 +30,7 @@ namespace MvcApplication2.Providers.Recommender
         private string _username;
         private string _password;
         private TimeSpan _timeout;
-
+        static readonly ILog loguer = LogManager.GetLogger(typeof(HyalcoreController));
         public Hyalcore(string url, string username="", string password="", TimeSpan? timeout= null)
         {
             if (timeout == null)
@@ -50,6 +49,11 @@ namespace MvcApplication2.Providers.Recommender
             return aux;
         }
 
+        public Recommendation GetRecommendation(string actionParameters)
+        {
+
+            return Call<Recommendation>(actionParameters);
+        }
 
         public void AddUser()
         {
@@ -57,8 +61,13 @@ namespace MvcApplication2.Providers.Recommender
             var aux = Call<Recommendation>("recommend/most-viewed-by-category");
         }
 
+        public void ViewInteraction(String userId, String itemId)
+        {
+            var interactionName = "view";
+            Post(String.Format("/interactions?user_id={0}&interaction_name={1}&item_id={2}", userId, interactionName, itemId));
+        }
 
-        public void AddItem()
+        public void AddItemsToHyalcore()
         {
             var aux = Call<Recommendation>("/additem");
         }
@@ -88,6 +97,49 @@ namespace MvcApplication2.Providers.Recommender
             }
         }
 
+        public void Post(string action, string json) {
+            var url = this._url + "/" + action;
+            var request = (HttpWebRequest)WebRequest.Create(url);
+
+            var data = Encoding.ASCII.GetBytes(json);
+
+            request.Method = "POST";
+            request.ContentType = "application/x-www-form-urlencoded";
+            request.ContentLength = data.Length;
+
+            using (var stream = request.GetRequestStream())
+            {
+                stream.Write(data, 0, data.Length);
+            }
+
+            var response = (HttpWebResponse)request.GetResponse();
+
+            var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+
+        }
+
+        public void Post(string action)
+        {
+            var url = this._url + "/" + action;
+
+            try
+            {
+                var request = (HttpWebRequest)WebRequest.Create(url);
+
+                request.Method = "POST";
+                request.ContentType = "application/x-www-form-urlencoded";
+                var response = (HttpWebResponse)request.GetResponse();
+
+                var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+            }
+            catch (Exception ex)
+            {
+                loguer.Error(String.Format("Invalid JSON. {0}", ex.Message));
+                throw new FormatException("Invalid JSON. {0}", ex.Message);
+            }
+
+        }
+
 
         private TResult Call<TResult>(string action)
         {
@@ -96,21 +148,7 @@ namespace MvcApplication2.Providers.Recommender
             System.Net.HttpWebRequest wr = (System.Net.HttpWebRequest) System.Net.WebRequest.Create(url);
             wr.Method = "GET";
             wr.Accept = "application/json";
-            //wr.ContentType = "application/x-www-form-urlencoded";
             wr.Timeout = (int) this._timeout.TotalMilliseconds;
-            //wr.Headers["USERNAME_REST"] = this._username;
-            //wr.Headers["PASSWORD_REST"] = this._password;
-            //using (var writer = new StreamWriter(wr.GetRequest()))
-            //using (WebResponse response = wr.GetResponse())
-            //{
-                
-            //    var test2 = response.ResponseUri;
-            //    //response.Write(string.Format("{0}={1}", Uri.EscapeDataString("app"), Uri.EscapeDataString(this._app)));
-            //    //if (username != null)
-            //    //    writer.Write(string.Format("&{0}={1}", Uri.EscapeDataString("username"),
-            //    //        Uri.EscapeDataString(username)));
-            //}
-
             try
             {
                 var json = wr.ReadAllResponseString();
@@ -119,11 +157,14 @@ namespace MvcApplication2.Providers.Recommender
             }
             catch (System.Net.WebException wex)
             {
+
+                loguer.Error(String.Format("WebException. {0}", wex.Message));
                 throw new FormatException("WebException. {0}", wex.Message);
             }
             catch (JsonSerializationException ex)
             {
-                throw new FormatException("Invalid JSON. {0}", ex.Message);
+                loguer.Error(String.Format("WebException. {0}", ex.Message));
+                throw new FormatException("WebException. {0}", ex.Message);
             }
         }
 

@@ -43,10 +43,18 @@ namespace MvcApplication2.Controllers
         public ActionResult Index()
         {
             Cookies.WriteCookie();
-            //var list = new ClouthManager().FindAll().Where(x => x.Id == 7001 || x.Id == 7001 || x.Id == 7001 || x.Id == 7001 || x.Id == 7001).ToList();
+            var cookie = System.Web.HttpContext.Current.Request.Cookies["DinentiComHyalCore"];
+            String userId = "NoUSER";
+            if (!String.IsNullOrEmpty(cookie.Value))
+                userId = cookie.Value;
 
-            var list = new ClouthManager().FindAll().Where(x => x.Id == 7083 || x.Id == 7073 || x.Id == 7037 || x.Id == 7046 || x.Id == 7013).ToList();
+            var test = new Hyalcore("http://162.243.105.143:9293").GetRecommendation("/recommendation?api_key=bd54a9bce84f7b6db6d1fa3b3a76e241&user_id=NOUser&section_code=home");
+            //var list = new ClouthManager().FindAll().Where(x => x.Id == 7001 || x.Id == 7001 || x.Id == 7001 || x.Id == 7001 || x.Id == 7001).ToList();
+            
+            //var list = new ClouthManager().FindAll().Where(x => x.Id == 7083 || x.Id == 7073 || x.Id == 7037 || x.Id == 7046 || x.Id == 7013).ToList();
+            var list = new ClouthManager().FindAll().Where(x => test.data.Contains(x.Id.ToString())).Select(x => new MvcApplication2.Models.HyalcoreClouth{clouth=x,RecommendationId=test.metadata.recommendation_id }).ToList();
             ViewBag.Message = ResourceHome.WelcomeTitle;
+            //return View(list.Select(x=>x.clouth).ToList());
             return View(list);
         }
 

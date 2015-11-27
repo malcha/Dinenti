@@ -5,6 +5,13 @@ using System.Web;
 
 namespace MvcApplication2.Models
 {
+    public class HyalcoreClouth
+    {
+        public Clouth clouth { get; set; }
+
+        public string RecommendationId { get; set; }
+    }
+
     public class Clouth
     {
         public enum CATEGORY
