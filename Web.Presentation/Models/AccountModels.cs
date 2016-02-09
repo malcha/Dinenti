@@ -1,0 +1,158 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
+using System.Globalization;
+using System.Web.Security;
+
+namespace Web.Presentation.Models
+{
+    public class LoginModel 
+    {
+        [Required(ErrorMessage = "Email can't be empty")]
+        [Display(Name = "Email")]
+        public string UserName { get; set; }
+
+        [Required(ErrorMessage = "Password can't be empty")]
+        [DataType(DataType.Password)]
+        [Display(Name = "Password")]
+        public string Password { get; set; }
+
+        [Display(Name = "Remember me?")]
+        public bool RememberMe { get; set; }
+
+        //[Display(Name = "Reenviar Mail Confirmacion")]
+        //public bool? ReenviarMail { get; set; }
+    }
+
+    public class RegisterModel
+    {
+        [Required(ErrorMessage = "Email can't be empty")]
+        [RegularExpression("\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*", ErrorMessage = @"Ingrese un e-mail válido.")]
+        [Display(Name = "Email")]
+        public string UserName { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [DataType(DataType.Password)]
+        [Display(Name = "Password")]
+        public string Password { get; set; }
+
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirm password")]
+        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        public string ConfirmPassword { get; set; }
+
+        [Required(ErrorMessage = "Debe ingresar el nombre")]
+        [Display(Name = "FirstName")]
+        [RegularExpression("^[a-zA-Z ]*$", ErrorMessage = "Only letters")]
+        public string FirstName { get; set; }
+
+        [Required(ErrorMessage = "Debe ingresar el nombre")]
+        [Display(Name = "LastName")]
+        [RegularExpression("^[a-zA-Z ]*$", ErrorMessage = "Only letters")]
+        public string LastName { get; set; }
+
+        [Required(ErrorMessage = @"Debe seleccionar un país")]
+        [Display(Name = "Country")]
+        public int? CountryId { get; set; }
+
+        [RegularExpression("^[0-9]*$", ErrorMessage = "Debe ingresar solo números")]
+        [Display(Name = "Phone")]
+        [DataType(DataType.PhoneNumber)]
+        public string Phone { get; set; }
+
+        [Display(Name = "Address")]
+        public string Address { get; set; }
+    }
+
+
+    //public class UsersContext : DbContext
+    //{
+    //    public UsersContext()
+    //        : base("DefaultConnection")
+    //    {
+    //    }
+
+    //    public DbSet<UserProfile> UserProfiles { get; set; }
+    //}
+
+    //[Table("UserProfile")]
+    //public class UserProfile
+    //{
+    //    [Key]
+    //    [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+    //    public int UserId { get; set; }
+    //    public string UserName { get; set; }
+    //}
+
+    //public class RegisterExternalLoginModel
+    //{
+    //    [Required]
+    //    [Display(Name = "User name")]
+    //    public string UserName { get; set; }
+
+    //    public string ExternalLoginData { get; set; }
+    //}
+
+    //public class LocalPasswordModel
+    //{
+    //    [Required]
+    //    [DataType(DataType.Password)]
+    //    [Display(Name = "Current password")]
+    //    public string OldPassword { get; set; }
+
+    //    [Required]
+    //    [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+    //    [DataType(DataType.Password)]
+    //    [Display(Name = "New password")]
+    //    public string NewPassword { get; set; }
+
+    //    [DataType(DataType.Password)]
+    //    [Display(Name = "Confirm new password")]
+    //    [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+    //    public string ConfirmPassword { get; set; }
+    //}
+
+    //public class LoginModel
+    //{
+    //    [Required]
+    //    [Display(Name = "User name")]
+    //    public string UserName { get; set; }
+
+    //    [Required]
+    //    [DataType(DataType.Password)]
+    //    [Display(Name = "Password")]
+    //    public string Password { get; set; }
+
+    //    [Display(Name = "Remember me?")]
+    //    public bool RememberMe { get; set; }
+    //}
+
+    //public class RegisterModel
+    //{
+    //    [Required]
+    //    [Display(Name = "User name")]
+    //    public string UserName { get; set; }
+
+    //    [Required]
+    //    [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+    //    [DataType(DataType.Password)]
+    //    [Display(Name = "Password")]
+    //    public string Password { get; set; }
+
+    //    [DataType(DataType.Password)]
+    //    [Display(Name = "Confirm password")]
+    //    [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+    //    public string ConfirmPassword { get; set; }
+    //}
+
+    //public class ExternalLogin
+    //{
+    //    public string Provider { get; set; }
+    //    public string ProviderDisplayName { get; set; }
+    //    public string ProviderUserId { get; set; }
+    //}
+    
+}
