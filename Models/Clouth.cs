@@ -7,7 +7,7 @@ namespace MvcApplication2.Models
 {
     public class HyalcoreClouth
     {
-        public Clouth clouth { get; set; }
+        public Clouth Clouth { get; set; }
 
         public string RecommendationId { get; set; }
     }

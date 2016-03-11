@@ -61,10 +61,15 @@ namespace MvcApplication2.Providers.Recommender
             var aux = Call<Recommendation>("recommend/most-viewed-by-category");
         }
 
-        public void ViewInteraction(String userId, String itemId)
+        public void ViewInteraction(String userId, String itemId,string recommendationId)
         {
             var interactionName = "view";
-            Post(String.Format("/interactions?user_id={0}&interaction_name={1}&item_id={2}", userId, interactionName, itemId));
+            var recommendation="";
+            if (!String.IsNullOrEmpty(recommendationId))
+                recommendation = String.Format("&recommendation_id={0}", recommendationId);
+
+
+            Post(String.Format("/interactions?api_key=bd54a9bce84f7b6db6d1fa3b3a76e241&user_id={0}&interaction_name={1}&item_id={2}{3}", userId, interactionName, itemId, recommendation));
         }
 
         public void AddItemsToHyalcore()

@@ -16,9 +16,9 @@ var Helpers;
         };
         Hyalcore.postInteraction = function (elem) {
             var id = elem.data("hyalcore-id");
-            var isRecommendations = elem.data("hyalcore-recommendation");
-            var fromRecommendation = (isRecommendations === 'true' || isRecommendations === true);
-            $.get("/hyalcore/interaction", { id: id.toString(), recommendation: fromRecommendation });
+            var RecommendationId = elem.data("hyalcore-recommendation");
+            //var fromRecommendation = (isRecommendations === 'true' || isRecommendations === true);
+            $.get("/hyalcore/interaction", { id: id.toString(), recommendation: RecommendationId });
         };
         return Hyalcore;
     })();

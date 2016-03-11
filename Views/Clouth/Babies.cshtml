@@ -11,110 +11,11 @@
 <div>
 
     <table>
-        
-        @*
-        @foreach (var babyClouth in @Model)
-        {
-          *@  
+@*            @Html.RenderPartial("_DisplayClouth", babyClouth);*@
             
-            
-@*        <tr style="width: 40%;">
-            <td  rowspan="2" style="width: 20%;">
-                    <img src="@babyClouth.ImageSrc" alt="@babyClouth.AltDescription" class="imgClouth" />
-            </td>
-            <td  class="imgClouth-Title">
-                @babyClouth.Title 
-            </td>
-        </tr>
-        <tr>
-            <td  class="imgClouth-Description" >
-                @babyClouth.Description
-            </td>
-        </tr>*@
-@*            <div>
-            @babyClouth.Description;
-            </div>*@
-            @Html.RenderPartial("_DisplayClouth", babyClouth);
-            
-        @*@Html.RenderPartial("_DisplayClouth", babyClouth);*@
-        @*<div id="SearchResultsContent">
-	        <div class="SearchPic">
-		        <a href="Hola">
-			        <img width="80px" height="105px" src="img.jpg" alt="<%=Html.Encode(Model.ProductTitle)%>"/>
-		        </a>
-	        </div>
-	        <div class="SearchInfo">
-		        <div class="SearchResultsTitle">
-			        @Html.RouteLink(Model.ProductTitle, "ProductDetails",new{ productType = Model.ProductType, Title = Model.ProductTitle, productId = Model.ProductId, endecaNavigationId = Model.EndecaNavigationId });
-		        </div>
-		
-		        <ul>
-			        @if (Model.Speakers!=null && Model.Speakers.Count>0){
-				        <li>
-					        @foreach (string author in Model.Speakers)
-					        {
-						        Response.Write(Html.LablelPropertyText(author.Contains("Autor") ? author.Replace("Autor", "Autor/es") : author));
-					        }
-				        </li>
-			        }
-			        @if (!string.IsNullOrEmpty(Model.AdminInfo)) { %>	
-				        <li>
-					        @Html.LablelPropertyText(Model.AdminInfo)
-				        </li>
-			        }
-			        @if (Model.Discount != null && Model.Discount.PercentageDiscounted!=0){ 
-				        <li>
-					        <div>
-						        <span style=" font-weight: normal;">></span>
-						        <label class="label">
-							        @Html.Encode(ViewRes.Product.Book.SavePrice) + ": "
-						        </label> 
-						        <span class="BoldText orange"><%=Html.Encode(Model.Discount.PercentageDiscounted)%>%</span>
-					        </div>
-				        </li>
-			        }
-		        </ul>
-		        @if (!string.IsNullOrEmpty(Model.PromotionPriceWithTax)) {
-			        <div class="SearchPrice">
-				        <div id="SearchResultsBuyButton">
-					        @Html.RenderPartial("PartialViews/Product/BuyButton", Model); 
-				        </div>
-			        </div>
-		        }
-	        </div>
-        </div>*@
-        @*}*@
+
 
     </table>
 
-@*    <table>
-<tr><td>@Html.ActionLink("Link", "Comprar", new {id = 1})</td> <td  > ActionLink </td> <td> . </td></tr>
-<tr><td>Third Row</td><td> 3 </td><td> 3 </td></tr>
-</table>
-*@
-@*    @foreach (var babyClouth in @Model)
-    {
-        <div class= "cluster" style="width: 30%;margin: 0 0 20px 0;">
-            <span style="width: 20%;float: left;">
-                <img src="@babyClouth.ImageSrc" alt="@babyClouth.AltDescription" class="imgClouth" />
-            </span>
-            <span style="width:10%;" >
-                <span class="imgClouth-Title" >
-                    @babyClouth.Title 
-                </span>    
-                <br/> 
-                <span class="imgClouth-Description" >
-                    @babyClouth.Description 
-                </span>    
-            </span>
-        </div>
-
-        <br/><br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-    }
-*@
 
 </div>

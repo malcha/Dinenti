@@ -19,16 +19,16 @@ namespace MvcApplication2.Controllers
     {
         private static readonly ILog loguer = LogManager.GetLogger(typeof(HyalcoreController));
 
-        private Hyalcore hyalcore;
+        //private Hyalcore hyalcore;
         private string apikey;
         
         public HyalcoreController()
         {
-            hyalcore = new Hyalcore("http://162.243.105.143:9293");
+            //hyalcore = new Hyalcore("http://162.243.105.143:9293");
             apikey = "bd54a9bce84f7b6db6d1fa3b3a76e241";
         }
         //[HttpPost]
-        public void Interaction(string id, bool recommendation)
+        public void Interaction(string id, string recommendation)
         {
             var cookie = System.Web.HttpContext.Current.Request.Cookies["DinentiComHyalCore"];
             String userId ="NoUSER";
@@ -36,8 +36,8 @@ namespace MvcApplication2.Controllers
                 userId = cookie.Value;
             
             //"USERID ID ISRECOMMENDATION"
-            loguer.Info(String.Format("{0} | {1} | {2}", userId, id, recommendation.ToString().ToLower()));
-            hyalcore.ViewInteraction(userId, id);
+            loguer.Info(String.Format("{0} | {1} | {2}", userId, id, (String.IsNullOrEmpty(recommendation)?"":recommendation.ToLower())));
+            //hyalcore.ViewInteraction(userId, id, recommendation);
 
 
         }
@@ -67,7 +67,7 @@ namespace MvcApplication2.Controllers
                 //var aux2 = new JavaScriptSerializer().Serialize(aaa2);
                 try
                 {
-                    hyalcore.Post("items", formData);
+                    //hyalcore.Post("items", formData);
                     i++;
                 }
                 catch (Exception e)

@@ -47,14 +47,26 @@ namespace MvcApplication2.Controllers
             String userId = "NoUSER";
             if (!String.IsNullOrEmpty(cookie.Value))
                 userId = cookie.Value;
+            else
+                userId = cookie.Value;
 
-            var test = new Hyalcore("http://162.243.105.143:9293").GetRecommendation("/recommendation?api_key=bd54a9bce84f7b6db6d1fa3b3a76e241&user_id=NOUser&section_code=home");
-            //var list = new ClouthManager().FindAll().Where(x => x.Id == 7001 || x.Id == 7001 || x.Id == 7001 || x.Id == 7001 || x.Id == 7001).ToList();
-            
-            //var list = new ClouthManager().FindAll().Where(x => x.Id == 7083 || x.Id == 7073 || x.Id == 7037 || x.Id == 7046 || x.Id == 7013).ToList();
-            var list = new ClouthManager().FindAll().Where(x => test.data.Contains(x.Id.ToString())).Select(x => new MvcApplication2.Models.HyalcoreClouth{clouth=x,RecommendationId=test.metadata.recommendation_id }).ToList();
+            //var hyRecommendation= new Hyalcore("http://162.243.105.143:9293").GetRecommendation("/recommendation?api_key=bd54a9bce84f7b6db6d1fa3b3a76e241&user_id=NOUser&section_code=home");
+            IEnumerable<string> recommendation;
+            string recommendationId = String.Empty;
+            recommendation = new List<string>() { "7083", "7073", "7037", "7046", "7013" };
+            //if (hyRecommendation == null || !hyRecommendation.data.Any())
+            //{
+            //    recommendation = new List<string>() { "7083", "7073", "7037", "7046", "7013" };
+            //} else {
+            //    recommendation = hyRecommendation.data;
+            //}
+            //if (hyRecommendation != null &&  hyRecommendation.metadata != null)
+            //{
+            //    recommendationId = hyRecommendation.metadata.recommendation_id;
+            //}
+
+            var list = new ClouthManager().FindAll().Where(x => recommendation.Contains(x.Id.ToString())).Select(x => new MvcApplication2.Models.HyalcoreClouth { Clouth = x, RecommendationId = recommendationId }).ToList();
             ViewBag.Message = ResourceHome.WelcomeTitle;
-            //return View(list.Select(x=>x.clouth).ToList());
             return View(list);
         }
 
