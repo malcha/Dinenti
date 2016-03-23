@@ -9,14 +9,15 @@ namespace MvcApplication2.Controllers
     public class BebesController : Controller
     {
         
-        public ActionResult remeraschombas()
+        public ActionResult remerascamisas()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Remeras y chombas para bebes";
+            ViewBag.TitleName = "Remeras y camisa para bebes";
             var list = new ClouthManager()
                             .FindAll()
                             .Where(x => x.Category == Clouth.CATEGORY.BEBES)
                             .Where(x => x.SubCategory == Clouth.SUBCATEGORY.REMERAS || x.SubCategory == Clouth.SUBCATEGORY.CHOMBAS)
+                            .OrderBy(x => x.ShortDescription)
                             .ToList();
 
             return View("todos", list);
@@ -30,6 +31,7 @@ namespace MvcApplication2.Controllers
                             .FindAll()
                             .Where(x => x.Category == Clouth.CATEGORY.BEBES)
                             .Where(x => x.SubCategory == Clouth.SUBCATEGORY.CAMISAS)
+                            .OrderBy(x => x.ShortDescription)
                             .ToList();
 
             return View("todos", list);
@@ -38,24 +40,26 @@ namespace MvcApplication2.Controllers
         public ActionResult camperas()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Camperas para bebes";
+            ViewBag.TitleName = "Camperas y Buzos para bebes";
             var list = new ClouthManager()
                             .FindAll()
                             .Where(x => x.Category == Clouth.CATEGORY.BEBES)
                             .Where(x => x.SubCategory == Clouth.SUBCATEGORY.CAMPERAS )
+                            .OrderBy(x => x.ShortDescription)
                             .ToList();
 
             return View("todos", list);
         }
 
-        public ActionResult pantalonesshorts()
+        public ActionResult pantalones()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Pantalones y shorts de baño para bebes";
+            ViewBag.TitleName = "Pantalones y Jardineros para bebes";
             var list = new ClouthManager()
                             .FindAll()
                             .Where(x => x.Category == Clouth.CATEGORY.BEBES)
-                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.PANTALON || x.SubCategory == Clouth.SUBCATEGORY.SHORTDEBANO)
+                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.PANTALON)
+                            .OrderBy(x => x.ShortDescription)
                             .ToList();
 
             return View("todos",list);

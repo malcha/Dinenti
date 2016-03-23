@@ -16,43 +16,47 @@ namespace MvcApplication2.Controllers
                 .FindAll()
                 .Where(x => x.Category == Clouth.CATEGORY.NENA)
                 .Where(x => x.SubCategory == Clouth.SUBCATEGORY.REMERAS || x.SubCategory == Clouth.SUBCATEGORY.CAMISAS)
+                .OrderBy(x => x.ShortDescription)
                 .ToList();
 
             return View("todos", list);
         }
 
-        public ActionResult vestidossoleros()
+        public ActionResult vestidos()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Vestidos y soleros para nenas";
+            ViewBag.TitleName = "Vestidos para nenas";
             var list = new ClouthManager()
                 .FindAll()
                 .Where(x => x.Category == Clouth.CATEGORY.NENA)
                 .Where(x => x.SubCategory == Clouth.SUBCATEGORY.VESTIDOS)
+                .OrderBy(x => x.ShortDescription)
                 .ToList();
 
             return View("todos", list);
         }
 
-        public ActionResult calzasshorts()
+        public ActionResult calzas()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Calzas y shorts para nenas";
+            ViewBag.TitleName = "Calzas para nenas";
             var list = new ClouthManager()
                 .FindAll()
                 .Where(x => x.Category == Clouth.CATEGORY.NENA)
-                .Where(x => x.SubCategory == Clouth.SUBCATEGORY.SHORT || x.SubCategory == Clouth.SUBCATEGORY.CALZAS)
+                .Where(x => x.SubCategory == Clouth.SUBCATEGORY.PANTALON || x.SubCategory == Clouth.SUBCATEGORY.CALZAS)
+                .OrderBy(x => x.ShortDescription)
                 .ToList();
 
             return View("todos", list);
         }
-        public ActionResult enteritos()
+        public ActionResult CamperasBuzos()
         {
-            ViewBag.TitleName = "Enteritos para nenas";
+            ViewBag.TitleName = "Camperas Buzos y Chalecos para nenas";
             var list = new ClouthManager()
                 .FindAll()
                 .Where(x => x.Category == Clouth.CATEGORY.NENA)
-                .Where(x => x.SubCategory == Clouth.SUBCATEGORY.ENTERITOS)
+                .Where(x => x.SubCategory == Clouth.SUBCATEGORY.CAMPERAS || x.SubCategory == Clouth.SUBCATEGORY.CHALECOS || x.SubCategory == Clouth.SUBCATEGORY.BUZOS)
+                .OrderBy(x => x.ShortDescription)
                 .ToList();
 
             return View("todos", list);
@@ -66,6 +70,7 @@ namespace MvcApplication2.Controllers
                 .FindAll()
                 .Where(x => x.Category == Clouth.CATEGORY.NENA)
                 .Where(x => x.SubCategory == Clouth.SUBCATEGORY.ABRIGOS)
+                .OrderBy(x => x.ShortDescription)
                 .ToList();
 
             return View("todos", list);

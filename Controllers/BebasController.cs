@@ -23,6 +23,7 @@ namespace MvcApplication2.Controllers
                             .FindAll()
                             .Where(x => x.Category == Clouth.CATEGORY.BEBAS)
                             .Where(x => x.SubCategory == Clouth.SUBCATEGORY.CAMPERAS)
+                            .OrderBy(x => x.ShortDescription)
                             .ToList();
 
             return View("todos", list);
@@ -37,12 +38,13 @@ namespace MvcApplication2.Controllers
                             .FindAll()
                             .Where(x => x.Category == Clouth.CATEGORY.BEBAS)
                             .Where(x => x.SubCategory == Clouth.SUBCATEGORY.REMERAS || x.SubCategory == Clouth.SUBCATEGORY.REMERON)
+                            .OrderBy(x => x.ShortDescription)
                             .ToList();
 
             return View("todos", list);
         }
 
-        public ActionResult PantalonesCalzasShorts()
+        public ActionResult PantalonesCalzas()
         {
             Cookies.WriteCookie();
             ViewBag.TitleName = "Pantalones y calzas para Bebas";
@@ -50,6 +52,7 @@ namespace MvcApplication2.Controllers
                             .FindAll()
                             .Where(x => x.Category == Clouth.CATEGORY.BEBAS)
                             .Where(x => x.SubCategory == Clouth.SUBCATEGORY.PANTALON || x.SubCategory == Clouth.SUBCATEGORY.CALZAS || x.SubCategory == Clouth.SUBCATEGORY.SHORT)
+                            .OrderBy(x => x.ShortDescription)
                             .ToList();
 
             return View("todos", list);
@@ -63,6 +66,7 @@ namespace MvcApplication2.Controllers
                             .FindAll()
                             .Where(x => x.Category == Clouth.CATEGORY.BEBAS)
                             .Where(x => x.SubCategory == Clouth.SUBCATEGORY.CAMISAS)
+                            .OrderBy(x => x.ShortDescription)
                             .ToList();
 
             return View("todos", list);
@@ -76,6 +80,7 @@ namespace MvcApplication2.Controllers
                             .FindAll()
                             .Where(x => x.Category == Clouth.CATEGORY.BEBAS)
                             .Where(x => x.SubCategory == Clouth.SUBCATEGORY.VESTIDOS)
+                            .OrderBy(x => x.ShortDescription)
                             .ToList();
 
             return View("todos", list);

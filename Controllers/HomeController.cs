@@ -53,7 +53,9 @@ namespace MvcApplication2.Controllers
             //var hyRecommendation= new Hyalcore("http://162.243.105.143:9293").GetRecommendation("/recommendation?api_key=bd54a9bce84f7b6db6d1fa3b3a76e241&user_id=NOUser&section_code=home");
             IEnumerable<string> recommendation;
             string recommendationId = String.Empty;
-            recommendation = new List<string>() { "7083", "7073", "7037", "7046", "7013" };
+            recommendation = new List<string>() { "7292", "7236", "7277", "7245", "7266" };
+
+            //recommendation = new List<string>() { "7083", "7073", "7037", "7046", "7013" };
             //if (hyRecommendation == null || !hyRecommendation.data.Any())
             //{
             //    recommendation = new List<string>() { "7083", "7073", "7037", "7046", "7013" };

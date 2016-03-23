@@ -42,15 +42,19 @@ namespace MvcApplication2.Models
             SHORTDEBANO = 15,
             SOLEROS = 16,
             SHORT = 17,
-            CHOMBAS
+            CHOMBAS=18,
+            GENERAL = 19
 
         }
 
-        public Clouth (int id,string description, string size, string colours,SUBCATEGORY subcategory,CATEGORY category, string action ){
+        public Clouth (int id,string description, string size, string colours,SUBCATEGORY subcategory,CATEGORY category, string action="", string imgName=null, string code=null ){
             Id=id;
-            LowImg = id.ToString();
-            HighImg = id.ToString();
-            ShortDescription=description;
+
+            LowImg = imgName == null? id.ToString(): imgName;
+            HighImg = imgName == null ? id.ToString() : imgName;
+            GetCode = code == null ? Id.ToString() : code;
+
+            ShortDescription=description.ToLower();
             SubCategory = subcategory;
             Category = category;
             Action = action;
@@ -155,15 +159,18 @@ namespace MvcApplication2.Models
 
         public String getLowImgPath()
         {
-            return String.Format("/{0}/{1}.gif", "Content/images/baja", Id.ToString());
+            return String.Format("/{0}/{1}.gif", "Content/images/baja", LowImg);
         }
         public String getHighImgPath()
         {
-            return String.Format("/{0}/{1}.jpg", "Content/images/alta", Id.ToString());
+            return String.Format("/{0}/{1}.jpg", "Content/images/alta", HighImg);
+        }
+        public String getHomeImgPath()
+        {
+            return String.Format("/{0}/{1}.jpg", "Content/images/recomendaciones", LowImg);
         }
 
-
-
+        public string GetCode { get; set; }
         public int Id { get; set; }
         public String ShortDescription { get; set; }
         public String Description { get; set; }

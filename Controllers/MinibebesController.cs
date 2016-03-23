@@ -15,6 +15,7 @@ namespace MvcApplication2.Controllers
             var list = new ClouthManager()
                             .FindAll()
                             .Where(x => x.Category == Clouth.CATEGORY.MINIBEBES)
+                            .OrderBy(x => x.ShortDescription)
                             .ToList();
 
             return View("todos", list);

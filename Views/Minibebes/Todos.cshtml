@@ -60,7 +60,8 @@
                     <a rel="example_group" href="@item.getHighImgPath()" title="@item.Description" data-hyalcore="" data-hyalcore-id="@item.Id.ToString()">
                         <img src="@item.getLowImgPath()" alt="" class="foto" >
                         <h2>@item.ShortDescription</h2>
-                        <div class="codigo">Art. 	@item.Id.ToString()</div>
+                        @*<div class="codigo">Art. 	@item.Id.ToString()</div>*@
+                        <div class="codigo">Art. 	@item.GetCode</div>
                     </a>
                 </div>
             }

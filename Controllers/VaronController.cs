@@ -17,19 +17,37 @@ namespace MvcApplication2.Controllers
                             .FindAll()
                             .Where(x => x.Category == Clouth.CATEGORY.VARON)
                             .Where(x => x.SubCategory == Clouth.SUBCATEGORY.REMERAS || x.SubCategory == Clouth.SUBCATEGORY.CAMISAS)
+                            .OrderBy(x => x.ShortDescription)
                             .ToList();
 
             return View("todos", list);
         }
 
+
+        public ActionResult buzoscamperas()
+        {
+            Cookies.WriteCookie();
+            ViewBag.TitleName = "Buzos camperas y chalecos para varones";
+            var list = new ClouthManager()
+                        .FindAll()
+                        .Where(x => x.Category == Clouth.CATEGORY.VARON)
+                        .Where(x => x.SubCategory == Clouth.SUBCATEGORY.BUZOS || x.SubCategory == Clouth.SUBCATEGORY.CAMPERAS || x.SubCategory == Clouth.SUBCATEGORY.CHALECOS)
+                        .OrderBy(x => x.ShortDescription)
+                        .ToList();
+
+            return View("todos", list);
+        }
+
+
         public ActionResult PantalonesShorts()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Pantalones y shorts de baño para varones";
+            ViewBag.TitleName = "Pantalones para varones";
             var list = new ClouthManager()
                         .FindAll()
                         .Where(x => x.Category == Clouth.CATEGORY.VARON)
                         .Where(x => x.SubCategory == Clouth.SUBCATEGORY.PANTALON || x.SubCategory == Clouth.SUBCATEGORY.SHORT)
+                        .OrderBy(x => x.ShortDescription)
                         .ToList();
 
             return View("todos", list);

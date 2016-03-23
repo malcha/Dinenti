@@ -7,161 +7,100 @@ namespace MvcApplication2.DataLoad
 {
     public class ClouthDataLoader
     {
+
+        private static IEnumerable<Models.Clouth> all=null;
         public static IEnumerable<Models.Clouth> Data()
         {
-            var list = new List<Models.Clouth>();
-            list.AddRange(DataLoadMiniBebaBebe());
-            list.AddRange(DataLoadBeba());
-            list.AddRange(DataLoadBebe());
-            list.AddRange(DataLoadNena());
-            list.AddRange(DataLoadVaron());
+            if (all==null){
+                all = GetAll();
+            }
 
-            return list;
-        }
-
-        public static IEnumerable<Models.Clouth> DataLoadMiniBebaBebe()
-        {
-            var list = new List<Models.Clouth>();
-            list.Add(new Models.Clouth(7049, "Vestido body", "0 al 3", "Rosa con lila- Rosa con verde", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.MINIBEBES, "all"));
-            list.Add(new Models.Clouth(70461, "Vestido estampado con body", "0 al 3", "Rojo - Rosa", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.MINIBEBES, "all"));
-            list.Add(new Models.Clouth(7046, "Vestido liso c/body", "0 al 3", "Blanco- Natural", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.MINIBEBES, "all"));
-            list.Add(new Models.Clouth(7053, "Jardinero jean unisex", "1 al 4", "", Models.Clouth.SUBCATEGORY.JUMPER, Models.Clouth.CATEGORY.MINIBEBES, "all"));
-            list.Add(new Models.Clouth(7052, "Enterito escoces", "0 al 3", "Azul con rojo - Turquesa con verde - Aero con blanco", Models.Clouth.SUBCATEGORY.ENTERITOS, Models.Clouth.CATEGORY.MINIBEBES, "all"));
-            return list;
+            //IEnumerable<Models.Clouth> list = GetAll();
+            return all;
         }
 
 
-        public static IEnumerable<Models.Clouth> DataLoadBeba()
+        public static IEnumerable<Models.Clouth> GetAll()
         {
+
             var list = new List<Models.Clouth>();
-            //remeras
-            list.Add(new Models.Clouth(7001, "Remera con anteojos", "1 al 6", "Blanco - Natural - Salmon - Fucsia - Coral", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, "remerasremerones"));
-            list.Add(new Models.Clouth(7002, "Remera ardilla ", "1 al 6", "Blanco - Natural", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, "remerasremerones"));
-            list.Add(new Models.Clouth(7025, "Remera 'I saw'", "1 al 6", "Blanco - Natural - Salmon - Fucsia - Coral", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, "remerasremerones"));
-            list.Add(new Models.Clouth(7003, "Remera estampada", "1 al 6", "Rosa con lila - Rosa con verde", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, "remerasremerones"));
-            list.Add(new Models.Clouth(7005, "Remeron con puntilla", "1 al 6", "Blanco - Natural - Salmon - Fucsia - Coral", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, "remerasremerones"));
-            list.Add(new Models.Clouth(7006, "Remeron con encaje", "1 al 6", "Blanco - Natural - Salmon - Fucsia - Coral", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, "remerasremerones"));
-
-
-            //vestidos
-            list.Add(new Models.Clouth(7008, "Vestido 2 volados", "1 al 6", "Estampado turquesa - Coral - Chickle", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.BEBAS, "vestidos"));
-            list.Add(new Models.Clouth(7009, "Vestido con flores", "1 al 6", "estampado Amarillo - Rojo", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.BEBAS, "vestidos"));
-            list.Add(new Models.Clouth(7010, "Vestido plumeti", "1 al 6", "Blanco - Natural", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.BEBAS, "vestidos"));
-            list.Add(new Models.Clouth(7011, "Vestido 4 volados", "1 al 6", "Tosa - Rojo", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.BEBAS, "vestidos"));
-            list.Add(new Models.Clouth(7013, "Solero con guarda", "1 al 6", "Fucsia - Azul", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.BEBAS, "vestidos"));
-
-            //Enteritos
-            list.Add(new Models.Clouth(7014, "Monito con  1 volado", "1 al 6", "Rosa con lila - Rosa con verde", Models.Clouth.SUBCATEGORY.ENTERITOS, Models.Clouth.CATEGORY.BEBAS, "enteritos"));
-            list.Add(new Models.Clouth(7015, "Monito estampado", "1 al 6", "Turquesa - Coral - Chickle", Models.Clouth.SUBCATEGORY.ENTERITOS, Models.Clouth.CATEGORY.BEBAS, "enteritos"));
-            list.Add(new Models.Clouth(7017, "Monito largo fibrana", "1 al 6", "Blanco - Verde agua", Models.Clouth.SUBCATEGORY.ENTERITOS, Models.Clouth.CATEGORY.BEBAS, "enteritos"));
-
-            //Calzas short y pantalon
-            list.Add(new Models.Clouth(7019, "Calza estampada", "1 al 6", "Turquesa - Coral - Chickle", Models.Clouth.SUBCATEGORY.CALZAS, Models.Clouth.CATEGORY.BEBAS, "pantalonescalzasshorts"));
-            list.Add(new Models.Clouth(7018, "Pantalón", "1 al 6", "Fucsia", Models.Clouth.SUBCATEGORY.PANTALON, Models.Clouth.CATEGORY.BEBAS, "pantalonescalzasshorts"));
-            list.Add(new Models.Clouth(7024, "Short con volados", "1 al 6", "Blanco - Chickle - Coral", Models.Clouth.SUBCATEGORY.SHORT, Models.Clouth.CATEGORY.BEBAS, "pantalonescalzasshorts"));
-            list.Add(new Models.Clouth(7026, "Short rústico estampado", "1 al 6", "Manteca - Rosa", Models.Clouth.SUBCATEGORY.SHORT, Models.Clouth.CATEGORY.BEBAS, "pantalonescalzasshorts"));
-
-
-            //camperas
-            list.Add(new Models.Clouth(7022, "Campera rústica estampada", "1 al 6", "Rosa - Manteca", Models.Clouth.SUBCATEGORY.CAMPERAS, Models.Clouth.CATEGORY.BEBAS, "camperas"));
-            list.Add(new Models.Clouth(7023, "Campera rústica lisa", "1 al 6", "Coral - Melange - Fucsia", Models.Clouth.SUBCATEGORY.CAMPERAS, Models.Clouth.CATEGORY.BEBAS, "camperas"));
-            
-            //camisas
-            list.Add(new Models.Clouth(7020, "Camisa plumeti", "1 al 6", "Blanca - Natural", Models.Clouth.SUBCATEGORY.CAMISAS, Models.Clouth.CATEGORY.BEBAS, "camisas"));
-            list.Add(new Models.Clouth(7021, "Camisola estampada", "1 al 6", "Rosa - Rojo", Models.Clouth.SUBCATEGORY.CAMISAS, Models.Clouth.CATEGORY.BEBAS, "camisas"));
-
-            return list;
-        }
-
-        public static IEnumerable<Models.Clouth> DataLoadBebe()
-        {
-            var list = new List<Models.Clouth>();
-            //REMERA CAMISA
-            list.Add(new Models.Clouth(7027, "Remera 'We are'", "1 al 6", "Blanco - Turquesa - Francia - Verde -Rojo", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, "remeraschombas"));
-            list.Add(new Models.Clouth(7028, "Remera triangulo", "1 al 6", "Blanco - Turquesa - Francia - Verde -Rojo", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, "remeraschombas"));
-            list.Add(new Models.Clouth(7029, "Remera tremb", "1 al 6", "Blanco - Turquesa - Francia - Verde -Rojo", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, "remeraschombas"));
-            list.Add(new Models.Clouth(7030, "Remera rayada con anteojos", "1 al 6", "Turquesa - Rojo", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, "remeraschombas"));
-            list.Add(new Models.Clouth(7031, "Chomba", "1 al 6", "Blanco - Turquesa - Francia - Verde -Rojo", Models.Clouth.SUBCATEGORY.CHOMBAS, Models.Clouth.CATEGORY.BEBES, "remeraschombas"));
-            list.Add(new Models.Clouth(7033, "Camisa blanca", "1 al 6", "Blanco", Models.Clouth.SUBCATEGORY.CAMISAS, Models.Clouth.CATEGORY.BEBES, "remeraschombas"));
-            list.Add(new Models.Clouth(7034, "Camisa escocesa", "1 al 6", "Rojo/Azul - Turquesa/Verde - Aero/Blanco", Models.Clouth.SUBCATEGORY.CAMISAS, Models.Clouth.CATEGORY.BEBES, "remeraschombas"));
-            list.Add(new Models.Clouth(7036, "Camisa de jean", "1 al 6", "", Models.Clouth.SUBCATEGORY.CAMISAS, Models.Clouth.CATEGORY.BEBES, "remeraschombas"));
-
-            //campera
-            list.Add(new Models.Clouth(7044, "Ca,éra rústica", "1 al 6", "Melange - Aero", Models.Clouth.SUBCATEGORY.CAMPERAS, Models.Clouth.CATEGORY.BEBES, "Camperas"));
-
-            //PANTALON - BERMUDA - SHORT BAÑO		
-            list.Add(new Models.Clouth(7037, "Pantalón gabardina", "1 al 6", "Francia - Verde - Aero", Models.Clouth.SUBCATEGORY.PANTALON, Models.Clouth.CATEGORY.BEBES, "pantalonesshorts"));
-            list.Add(new Models.Clouth(7039, "Bermuda gabardina", "1 al 6", "Francia - Verde - Aero", Models.Clouth.SUBCATEGORY.PANTALON, Models.Clouth.CATEGORY.BEBES, "pantalonesshorts"));
-            list.Add(new Models.Clouth(7041, "Bermuda de jean", "1 al 6", "", Models.Clouth.SUBCATEGORY.PANTALON, Models.Clouth.CATEGORY.BEBES, "pantalonesshorts"));
-            list.Add(new Models.Clouth(7042, "Short de baño combinado", "1 al 6", "Pescaditos turquesa/Verde - Letras Rojo/Turquesa ", Models.Clouth.SUBCATEGORY.SHORTDEBANO, Models.Clouth.CATEGORY.BEBES, "pantalonesshorts"));
-            list.Add(new Models.Clouth(7043, "Short de baño  estampado", "1 al 6", "Barquitos de fondo verde - Fucsia / Celeeste - Turquesa ", Models.Clouth.SUBCATEGORY.SHORTDEBANO, Models.Clouth.CATEGORY.BEBES, "pantalonesshorts"));
-
-            //Abrigos
-            list.Add(new Models.Clouth(6901, "Campera con puños", "1 al 6", "Francia - Marino - Rojo", Models.Clouth.SUBCATEGORY.ABRIGOS, Models.Clouth.CATEGORY.BEBES, "camisas"));
-            list.Add(new Models.Clouth(6902, "Campera combinada", "1 al 6", "", Models.Clouth.SUBCATEGORY.ABRIGOS, Models.Clouth.CATEGORY.BEBES, "camisas"));
-            list.Add(new Models.Clouth(6891, "Chaleco combinado", "1 al 6", "", Models.Clouth.SUBCATEGORY.CHALECOS, Models.Clouth.CATEGORY.BEBES, "camisas"));
-            
-            return list;
-        }
-
-
-        public static IEnumerable<Models.Clouth> DataLoadNena()
-        {
-            var list = new List<Models.Clouth>();
-            //REMERA CAMISA
-            list.Add(new Models.Clouth(7054, "Remera love", "4 al 14", "Blanco - Natual - Fucsia - Salmón - Coral", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, "remerascamisas"));
-            list.Add(new Models.Clouth(7055, "Remerón corazón", "4 al 14", "Blanco - Fucsia - Coral", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, "remerascamisas"));
-            list.Add(new Models.Clouth(7100, "Remera dream", "4 al 14", "Blanco - Fucsia - Coral", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, "remerascamisas"));
-            list.Add(new Models.Clouth(7056, "Remera con encaje", "4 al 14", "Blanco - Natural - Fucsia - Coral", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, "remerascamisas"));
-            list.Add(new Models.Clouth(70561, "Remera con encaje", "4 al 14", "Blanco - Natural - Fucsia - Coral", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, "remerascamisas"));
-            list.Add(new Models.Clouth(7057, "Musculosa mariposa", "4 al 14", "Blanco - Natural", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, "remerascamisas"));
-            list.Add(new Models.Clouth(7101, "Musculosa yeah", "4 al 14", "Blanco - Natural", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, "remerascamisas"));
-            list.Add(new Models.Clouth(7065, "Camisa fibrana", "4 al 14", "Blanco/Fucsia - Blanco/Turquesa", Models.Clouth.SUBCATEGORY.CAMISAS, Models.Clouth.CATEGORY.NENA, "remerascamisas"));
-
-
-            //Calzas pantalones
-            list.Add(new Models.Clouth(7064, "Calza larga", "4 al 14", "Salmón - Fucsia", Models.Clouth.SUBCATEGORY.CALZAS, Models.Clouth.CATEGORY.NENA, "calzashorts"));
-            list.Add(new Models.Clouth(7070, "Short fibrana", "4 al 14", "Azul - Salmón", Models.Clouth.SUBCATEGORY.SHORT, Models.Clouth.CATEGORY.NENA, "calzashorts"));
-            list.Add(new Models.Clouth(7071, "Short encaje", "4 al 14", "Blanco - Coral - Fucsia", Models.Clouth.SUBCATEGORY.SHORT, Models.Clouth.CATEGORY.NENA, "calzashorts"));
-            list.Add(new Models.Clouth(7072, "Short rústico", "4 al 14", "Blanco con Fucsia", Models.Clouth.SUBCATEGORY.SHORT, Models.Clouth.CATEGORY.NENA, "calzashorts"));
-
-            //Enteritos
-            list.Add(new Models.Clouth(7058, "Enterito modal estampado", "4 al 14", "Coral - Fucsia", Models.Clouth.SUBCATEGORY.ENTERITOS, Models.Clouth.CATEGORY.NENA, "enteritos"));
-            list.Add(new Models.Clouth(7059, "Enterito con botones", "4 al 14", "Azul - Coral - Turquesa", Models.Clouth.SUBCATEGORY.ENTERITOS, Models.Clouth.CATEGORY.NENA, "enteritos"));
-            list.Add(new Models.Clouth(7060, "Enterito fibrana", "4 al 14", "Azul - Salmón", Models.Clouth.SUBCATEGORY.ENTERITOS, Models.Clouth.CATEGORY.NENA, "enteritos"));
-            list.Add(new Models.Clouth(7061, "Enterito con volados", "4 al 14", "Agua marina - Salmón", Models.Clouth.SUBCATEGORY.ENTERITOS, Models.Clouth.CATEGORY.NENA, "enteritos"));
-            list.Add(new Models.Clouth(7062, "Enterito largo", "4 al 14", "Blanco/Fucsia - Verde agua/Fucsia", Models.Clouth.SUBCATEGORY.ENTERITOS, Models.Clouth.CATEGORY.NENA, "enteritos"));
-            list.Add(new Models.Clouth(7098, "Enterito nena estampado", "4 al 14", "Blanco con Turquesa - Blanco con Fucsia - Blanco con Amarillo", Models.Clouth.SUBCATEGORY.ENTERITOS, Models.Clouth.CATEGORY.NENA, "enteritos"));
-
-
-            //Vestido - SOLEROS
-            list.Add(new Models.Clouth(7075, "Vestido con encaje", "4 al 14", "Blanco - Natural - Fucsia - Salmón - Coral", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.NENA, "vestidossoleros"));
-            list.Add(new Models.Clouth(7076, "Vestido fibrana", "4 al 14", "Salmón - Fucsia", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.NENA, "vestidossoleros"));
-            list.Add(new Models.Clouth(7077, "Solero fibrana", "4 al 14", "Blanco con Fucsia - Blanco con Turquesa", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.NENA, "vestidossoleros"));
-            list.Add(new Models.Clouth(7078, "Solero con puntilla", "2 al 10", "Blanco - Natural", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.NENA, "vestidossoleros"));
-            list.Add(new Models.Clouth(7073, "Solero con flores grandes", "4 al 14", "Blanco/Fucsia - Blanco/Salmón", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.NENA, "vestidossoleros"));
-            list.Add(new Models.Clouth(7096, "Vestido jean", "4 al 14", "", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.NENA, "vestidossoleros"));
-            list.Add(new Models.Clouth(7094, "Vestido jersey", "4 al 14", "Azul - Coral - Turquesa", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.NENA, "vestidossoleros"));
-
-            return list;
-        }
-
-        public static IEnumerable<Models.Clouth> DataLoadVaron()
-        {
-            var list = new List<Models.Clouth>();
-            //REMERA CAMISA
-            list.Add(new Models.Clouth(7080, "Remera athletic", "4 al 14", "Blanco - Turquesa - Francia - Verde - Rojo", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.VARON, "remerascamisas"));
-            list.Add(new Models.Clouth(7081, "Remera tigre", "4 al 14", "Blanco - Turquesa - Francia - Verde - Rojo", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.VARON, "remerascamisas"));
-            list.Add(new Models.Clouth(7082, "Remera pacific", "4 al 14", "Blanco - Turquesa - Francia - Verde - Rojo", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.VARON, "remerascamisas"));
-            list.Add(new Models.Clouth(7083, "Camisa escocesa", "4 al 14", "Rojo/Azul - Turquesa/Verde - Aero/Blanco", Models.Clouth.SUBCATEGORY.CAMISAS, Models.Clouth.CATEGORY.VARON, "remerascamisas"));
-            list.Add(new Models.Clouth(7084, "Camisa escocesa", "4 al 14", "Rojo/Azul - Turquesa/Verde - Aero/Blanco", Models.Clouth.SUBCATEGORY.CAMISAS, Models.Clouth.CATEGORY.VARON, "remerascamisas"));
-            list.Add(new Models.Clouth(7085, "Camisa jean", "4 al 14", "", Models.Clouth.SUBCATEGORY.CAMISAS, Models.Clouth.CATEGORY.VARON, "remerascamisas"));
-
-            //PANTALON -  BERMUDA - SHORT BAÑO
-            list.Add(new Models.Clouth(7086, "Pantalón gabardina", "4 al 14", "Francia - Verde - Aero", Models.Clouth.SUBCATEGORY.PANTALON, Models.Clouth.CATEGORY.VARON, "pantalonesshorts"));
-            list.Add(new Models.Clouth(7087, "Bermuda gabardina", "4 al 14", "Francia - Verde - Aero", Models.Clouth.SUBCATEGORY.PANTALON, Models.Clouth.CATEGORY.VARON, "pantalonesshorts"));
-            list.Add(new Models.Clouth(7089, "Short de baño combinado", "4 al 14", "Negro - Azul - Blanco/Negro - Rojo - Blanco", Models.Clouth.SUBCATEGORY.SHORT, Models.Clouth.CATEGORY.VARON, "pantalonesshorts"));
-            list.Add(new Models.Clouth(7091, "Short de baño estampado", "4 al 14", "Azul - Rojo", Models.Clouth.SUBCATEGORY.SHORT, Models.Clouth.CATEGORY.VARON, "pantalonesshorts"));
+            //list.Add(new Models.Clouth(7201, "REMERA PINGUINOS", "1 AL 5", "Chicle - Blanco - Natural", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
+            list.Add(new Models.Clouth(7202, "REMERA CON POMPON", "1 AL 5", "Chicle - Blanco - Natural", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
+            list.Add(new Models.Clouth(7203, "REMERA CON ANTEOJOS", "1 AL 5", "Chicle - Blanco - Natural", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
+            list.Add(new Models.Clouth(7204, "REMERON CON ENCAJE", "1 AL 5", "Chicle - Blanco - Natural", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
+            list.Add(new Models.Clouth(7205, "REMERON RAYADO Y ESTAMPADO", "1 AL 5", "Rojo - Bordeaux", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
+            list.Add(new Models.Clouth(7206, "CAMISOLA ESTAMPADA", "1 AL 5", "Azul con Fucsia - Gris con turquesa", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.BEBAS));
+            list.Add(new Models.Clouth(7207, "CAMISOLA PLUMETI", "1 AL 5", "Blanco - Natural", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.BEBAS));
+            list.Add(new Models.Clouth(7209, "VESTIDO CON VOLADOS", "1 AL 5", "Rosa - Fucsia", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.BEBAS));
+            list.Add(new Models.Clouth(7210, "CALZA ESTAMPADA", "1 AL 5", "Rosa - Verde agua - Rojo - Bordeaux", Models.Clouth.SUBCATEGORY.PANTALON, Models.Clouth.CATEGORY.BEBAS));
+            list.Add(new Models.Clouth(7211, "CALZA SIMIL JEAN", "1 AL 5", "Azul - Negro", Models.Clouth.SUBCATEGORY.PANTALON, Models.Clouth.CATEGORY.BEBAS));
+            list.Add(new Models.Clouth(7212, "CALZA RUSTICA ELASTIZADA", "1 AL 5", "Fucsia - Coral", Models.Clouth.SUBCATEGORY.PANTALON, Models.Clouth.CATEGORY.BEBAS));
+            list.Add(new Models.Clouth(7213, "VESTIDO COMBINADO CON CORAZON", "1 AL 5", "Rojo - Bordeaux", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.BEBAS));
+            list.Add(new Models.Clouth(7214, "VESTIDO ESCOCES", "1 AL 5", "Tomate con Gris - Azul con Fucsia", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.BEBAS));
+            list.Add(new Models.Clouth(7215, "VESTIDO JEAN ESTAMPADO", "1 AL 5", "Azul", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.BEBAS));
+            list.Add(new Models.Clouth(7218, "CAMPERA ESTAMPADA", "1 AL 5", "Rosa - Gris", Models.Clouth.SUBCATEGORY.CAMPERAS, Models.Clouth.CATEGORY.BEBAS));
+            list.Add(new Models.Clouth(7219, "CAMPERA CON PUNTILLA", "1 AL 5", "Fucsia - Melange - Rojo - Coral", Models.Clouth.SUBCATEGORY.CAMPERAS, Models.Clouth.CATEGORY.BEBAS));
+            list.Add(new Models.Clouth(7221, "SACO DE PIEL", "1 AL 5", "Chicle - Natural - Coral", Models.Clouth.SUBCATEGORY.CAMPERAS, Models.Clouth.CATEGORY.BEBAS));
+            list.Add(new Models.Clouth(7222, "VESTIDO CON CHALECO", "1 AL 5", "Azul con Fucsia - Gris con Turquesa", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.BEBAS));
+            list.Add(new Models.Clouth(7224, "JUMPER CORDEROY", "1 AL 6", "Chicle - Rojo", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.BEBAS));
+            list.Add(new Models.Clouth(7226, "REMERA CON BORDADOR", "1 AL 5", "Melange - Francia - Petróleo - Azul - Oxido", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES));
+            list.Add(new Models.Clouth(7227, "REMERA CARICATURAS", "1 AL 5", "Melange - Francia - Petróleo - Azul - Oxido", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES));
+            list.Add(new Models.Clouth(7228, "BUZO CALIFORNIA", "1 AL 6", "Bordeaux - Petróleo", Models.Clouth.SUBCATEGORY.CAMPERAS, Models.Clouth.CATEGORY.BEBES));
+            list.Add(new Models.Clouth(7231, "CAMPERA COMBINADA", "1 AL 5", "Melange con Petróleo - Melange con Bordeaux", Models.Clouth.SUBCATEGORY.CAMPERAS, Models.Clouth.CATEGORY.BEBES));
+            list.Add(new Models.Clouth(7232, "CAMPERA UNIVERSITARIA", "1 AL 5", "Melange con Bordeaux - Melange Petróleo - Aero Gris", Models.Clouth.SUBCATEGORY.CAMPERAS, Models.Clouth.CATEGORY.BEBES));
+            list.Add(new Models.Clouth(7235, "CAMPERA DNT", "1 AL 5", "Aero - Rojo - Francia", Models.Clouth.SUBCATEGORY.CAMPERAS, Models.Clouth.CATEGORY.BEBES));
+            list.Add(new Models.Clouth(7236, "CAMPERA DE PIEL", "1 AL 5", "Chicle - Natural - Coral - Rojo - Beige - Gris", Models.Clouth.SUBCATEGORY.CAMPERAS, Models.Clouth.CATEGORY.BEBAS,action:"camperas"  ));
+            list.Add(new Models.Clouth(7237, "PANTALON DE FRISA", "1 AL 5", "Fucsia - Coral - Melange - Rojo - Aero - Marino", Models.Clouth.SUBCATEGORY.PANTALON, Models.Clouth.CATEGORY.BEBES));
+            list.Add(new Models.Clouth(7238, "PANTALON DE GABARDINA", "1 AL 6", "Petróleo - Bordeaux", Models.Clouth.SUBCATEGORY.PANTALON, Models.Clouth.CATEGORY.BEBES));
+            list.Add(new Models.Clouth(7239, "CAMISA ESCOCESA", "1 AL 5", "Azul con Violeta - Rojo con Azul - Azul con Verde - Rojo con Gris", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES));
+            list.Add(new Models.Clouth(7240, "JARDINERO DE JEAN", "1 AL 4", "Azul", Models.Clouth.SUBCATEGORY.PANTALON, Models.Clouth.CATEGORY.BEBES));
+            list.Add(new Models.Clouth(7240, "JARDINERO DE JEAN", "1 AL 4", "Azul", Models.Clouth.SUBCATEGORY.PANTALON, Models.Clouth.CATEGORY.BEBAS,imgName: "7240_beba"));
+            list.Add(new Models.Clouth(7242, "REMERA CON FLECOS", "4 AL 8 y 10 AL 14", "Blanco - Natural - Chicle", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA));
+            list.Add(new Models.Clouth(7243, "REMERA ESTAMPADA", "4 AL 8 y 10 AL 14", "Fucsia - Azul - Gris", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA));
+            list.Add(new Models.Clouth(7244, "REMERON CON BRODERIE", "4 AL 8 y 10 AL 14", "Blanco - Natural - Chicle", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA));
+            list.Add(new Models.Clouth(7245, "CAMPERA DE FRISA", "4 AL 8 y 10 AL 14", "Melange - Fucsia - Coral - Violeta", Models.Clouth.SUBCATEGORY.BUZOS, Models.Clouth.CATEGORY.NENA, action: "CamperasBuzos"));
+            list.Add(new Models.Clouth(7247, "BUZO CLASICO", "4 AL 8 y 10 AL 14", "Melange - Fucsia - Coral - Violeta", Models.Clouth.SUBCATEGORY.BUZOS, Models.Clouth.CATEGORY.NENA));
+            list.Add(new Models.Clouth(7249, "CAMPERA UNIVERSITARIA NENA", "4 AL 8 y 10 AL 14", "Melange con Fucsia - Melange con Negro - Gris con Violeta", Models.Clouth.SUBCATEGORY.BUZOS, Models.Clouth.CATEGORY.NENA));
+            list.Add(new Models.Clouth(7250, "CALZA ESTAMPADA", "4 AL 8 y 10 AL 14", "Fondo claro con Azul - Fondo claro con Fucsia - Fucsia con Azul y Gris", Models.Clouth.SUBCATEGORY.PANTALON, Models.Clouth.CATEGORY.NENA));
+            list.Add(new Models.Clouth(7251, "CALZA SIMIL JEAN", "4 AL 8 y 10 AL 14", "Azul - Negro", Models.Clouth.SUBCATEGORY.PANTALON, Models.Clouth.CATEGORY.NENA));
+            list.Add(new Models.Clouth(7252, "CALZA SIMIL JEAN OXFORD", "4 AL 8 y 10 AL 14", "Azul - Negro", Models.Clouth.SUBCATEGORY.PANTALON, Models.Clouth.CATEGORY.NENA));
+            list.Add(new Models.Clouth(7253, "CALZA RUSTICA ELASTIZADA", "4 AL 8 y 10 AL 14", "Negro Fucsia", Models.Clouth.SUBCATEGORY.PANTALON, Models.Clouth.CATEGORY.NENA));
+            list.Add(new Models.Clouth(7254, "CAMISA ESTAMPADA", "4 AL 8 y 10 AL 14", "Azul con Fucsia - Azul con Mostaza", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA));
+            list.Add(new Models.Clouth(7255, "SACO CRUZADO DE PIEL", "4 AL 8 y 10 AL 14", "Negro - Gris - Beige", Models.Clouth.SUBCATEGORY.BUZOS, Models.Clouth.CATEGORY.NENA));
+            list.Add(new Models.Clouth(7256, "VESTIDO CON VOLADO", "4 AL 8 y 10 AL 14", "Azul - Bordeaux", Models.Clouth.SUBCATEGORY.VESTIDOS, Models.Clouth.CATEGORY.NENA));
+            list.Add(new Models.Clouth(7260, "PANTALON FRISA NENA", "4 AL 8 y 10 AL 14", "Melange - Violeta - Fucsia - Coral", Models.Clouth.SUBCATEGORY.PANTALON, Models.Clouth.CATEGORY.NENA));
+            list.Add(new Models.Clouth(7261, "REMERA", "4 AL 8 y 10 AL 14", "Melange - Francia - Petróleo - Azul - Oxido", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.VARON));
+            list.Add(new Models.Clouth(7263, "BUZO CON BOLSILLOS", "4 AL 8 y 10 AL 14", "Bordeaux - Petróleo - Marino - Melange", Models.Clouth.SUBCATEGORY.BUZOS, Models.Clouth.CATEGORY.VARON));
+            list.Add(new Models.Clouth(7266, "CAMPERA UNIVERSITARIA VARON", "4 AL 8 y 10 AL 14", "Petróleo con Topo - Melange con Negro - Bordeaux con Topo", Models.Clouth.SUBCATEGORY.BUZOS, Models.Clouth.CATEGORY.VARON, action: "buzoscamperas"));
+            list.Add(new Models.Clouth(7267, "PANTALON DE FRISA", "4 AL 8 y 10 AL 14", "Melange - Topo - Negro - Marino", Models.Clouth.SUBCATEGORY.PANTALON, Models.Clouth.CATEGORY.VARON));
+            list.Add(new Models.Clouth(7268, "PANTALON DE GABARDINA", "4 AL 8 y 10 AL 14", "Petróleo - Bordeaux - Negro", Models.Clouth.SUBCATEGORY.PANTALON, Models.Clouth.CATEGORY.VARON));
+            list.Add(new Models.Clouth(7269, "CAMISA ESCOCESA", "4 AL 8 y 10 AL 14", "Azul con Violeta - Rojo con Azul - Azul con Verde - Rojo con Gris", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.VARON));
+            list.Add(new Models.Clouth(7270, "ASTRONAUTA", "1 AL 3", "Rojo - Fucsia - Francia", Models.Clouth.SUBCATEGORY.GENERAL, Models.Clouth.CATEGORY.MINIBEBES));
+            list.Add(new Models.Clouth(7271, "ASTRONAUTA ESTAMPADO", "1 AL 3", "Azul - Fucsia - Rojo", Models.Clouth.SUBCATEGORY.GENERAL, Models.Clouth.CATEGORY.MINIBEBES));
+            list.Add(new Models.Clouth(7271, "ASTRONAUTA ESTAMPADO", "1 AL 3", "Azul - Fucsia - Rojo", Models.Clouth.SUBCATEGORY.GENERAL, Models.Clouth.CATEGORY.MINIBEBES, imgName: "7271_beba"));
+            list.Add(new Models.Clouth(7272, "CHALECO BEBA", "1 AL 5", "Rojo - Fucsia ", Models.Clouth.SUBCATEGORY.CAMPERAS, Models.Clouth.CATEGORY.BEBAS));
+            list.Add(new Models.Clouth(7273, "CHALECO BEBE", "1 AL 5", "", Models.Clouth.SUBCATEGORY.CAMPERAS, Models.Clouth.CATEGORY.BEBES));
+            list.Add(new Models.Clouth(7274, "CHALECO DE NENA ESTAMPADO", "4 AL 8 y 10 AL 14", "Azul - Fucsia", Models.Clouth.SUBCATEGORY.CHALECOS, Models.Clouth.CATEGORY.NENA));
+            list.Add(new Models.Clouth(7275, "CHALECO DE VARON", "4 AL 8 y 10 AL 14", "Negro - Gris - Marino - Francia", Models.Clouth.SUBCATEGORY.CHALECOS, Models.Clouth.CATEGORY.VARON));
+            list.Add(new Models.Clouth(7276, "CAMPERA CON VOLADOS", "1 AL 5", "Rojo - Fucsia ", Models.Clouth.SUBCATEGORY.CAMPERAS, Models.Clouth.CATEGORY.BEBAS));
+            list.Add(new Models.Clouth(7277, "CAMPERA ESTAMPADA", "1 AL 5", "Azul - Fucsia", Models.Clouth.SUBCATEGORY.CAMPERAS, Models.Clouth.CATEGORY.BEBAS, action: "camperas"));
+            list.Add(new Models.Clouth(7278, "CAMPERA DE BEBE", "1 AL 5", "Francia - Rojo - Gris", Models.Clouth.SUBCATEGORY.CAMPERAS, Models.Clouth.CATEGORY.BEBES));
+            list.Add(new Models.Clouth(7280, "CAMPERA ESTAMPADA NENA", "4 AL 8 y 10 AL 14", "Fucsia - Mostaza - Gris", Models.Clouth.SUBCATEGORY.CAMPERAS, Models.Clouth.CATEGORY.NENA));
+            list.Add(new Models.Clouth(7283, "CAMPERA UNISEX", "4 AL 8 y 10 AL 14", "Rojo - Negro - Gris - Marino - Francia", Models.Clouth.SUBCATEGORY.CHALECOS, Models.Clouth.CATEGORY.VARON));
+            list.Add(new Models.Clouth(7285, "CONJUNTO INTERLOK", "0 AL 2", "Azul - Rojo", Models.Clouth.SUBCATEGORY.GENERAL, Models.Clouth.CATEGORY.MINIBEBES));
+            list.Add(new Models.Clouth(7286, "CALZA MINI JEAN", "0 AL 3", "Azul", Models.Clouth.SUBCATEGORY.PANTALON, Models.Clouth.CATEGORY.MINIBEBES));
+            list.Add(new Models.Clouth(7287, "ENTERITO DE FRISA ESTAMPADO", "0 AL 2", "Rosa - Gris", Models.Clouth.SUBCATEGORY.ENTERITOS, Models.Clouth.CATEGORY.MINIBEBES));
+            list.Add(new Models.Clouth(7288, "ENTERITO RAYADO", "0 AL 2", "Gris francia - Aero beige - Rojo -Azul", Models.Clouth.SUBCATEGORY.ENTERITOS, Models.Clouth.CATEGORY.MINIBEBES));
+            list.Add(new Models.Clouth(7289, "PANTALON DE FRISA MINI", "0 AL 3", "Melange - Marino - Aero - Rojo", Models.Clouth.SUBCATEGORY.PANTALON, Models.Clouth.CATEGORY.MINIBEBES));
+            list.Add(new Models.Clouth(7291, "CAMISA BODY ESCOCESA", "0 AL 3", "Azul con Violeta - Azul con Verde - Rojo con Gris", Models.Clouth.SUBCATEGORY.GENERAL, Models.Clouth.CATEGORY.MINIBEBES));
+            list.Add(new Models.Clouth(7292, "ENTERITO DE PIEL", "0 AL 2", "Natural con Rojo / Gris / Beige / Fucsia / Coral", Models.Clouth.SUBCATEGORY.CAMPERAS, Models.Clouth.CATEGORY.MINIBEBES, action:"all"));
+            list.Add(new Models.Clouth(7293, "7293 CAMPERA DE PLUSH RAYADA y 7299 PANTALON PLUSH", "0 AL 3", "Rosa con Fucsia - Amarillo,  Azul y Rojo ", Models.Clouth.SUBCATEGORY.CAMPERAS, Models.Clouth.CATEGORY.MINIBEBES,code: "7293 y 7299"));
+            list.Add(new Models.Clouth(7293, "7293 CAMPERA DE PLUSH RAYADA y 7299 PANTALON PLUSH", "0 AL 3", "Amarillo con Azul y Rojo ", Models.Clouth.SUBCATEGORY.CAMPERAS, Models.Clouth.CATEGORY.MINIBEBES, imgName: "72931", code: "7293 y 7299"));
+            list.Add(new Models.Clouth(7295, "CAMPERA CON VOLADOS", "1 AL 5", "Fucsia - Coral", Models.Clouth.SUBCATEGORY.CAMPERAS, Models.Clouth.CATEGORY.BEBAS));
+            list.Add(new Models.Clouth(7296, "REMERA BEBA C/PUNTILLA", "1 AL 5", "Chicle - Blanco - Natural", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
+            list.Add(new Models.Clouth(7297, "REMERA VARON PAISAJE", "4 AL 8 y 10 AL 14", "Melange - Francia - Petróleo - Azul - Oxido", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.VARON));
+            list.Add(new Models.Clouth(7298, "BUZO VARON", "4 AL 8 y 10 AL 14", "Francia - Topo - Melange", Models.Clouth.SUBCATEGORY.BUZOS, Models.Clouth.CATEGORY.VARON));
+            list.Add(new Models.Clouth(7300, "CAMPERA BEBE", "1 AL 5", "Marino - Francia - Rojo - Gris", Models.Clouth.SUBCATEGORY.CAMPERAS, Models.Clouth.CATEGORY.BEBES));
 
             return list;
         }
