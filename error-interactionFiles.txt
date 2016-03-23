@@ -1,0 +1,7 @@
+2015-09-23 13:00:28,881 | Invalid JSON. Error test
+2015-11-27 14:42:35,982 | WebException. The remote server returned an error: (404) Not Found.
+2015-11-27 14:43:01,706 | WebException. The remote server returned an error: (404) Not Found.
+2015-11-27 14:47:16,049 | WebException. The remote server returned an error: (404) Not Found.
+2015-11-27 16:17:03,403 | WebException. The remote server returned an error: (500) Internal Server Error.
+2015-11-27 19:51:38,208 | Invalid JSON. The remote server returned an error: (422) Unprocessable Entity.
+2016-02-01 22:29:08,271 | WebException. Unable to connect to the remote server
