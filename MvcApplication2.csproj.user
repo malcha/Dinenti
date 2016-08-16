@@ -2,8 +2,9 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
-    <NameOfLastUsedPublishProfile>test</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>test2</NameOfLastUsedPublishProfile>
     <ToolsVersionPromptShown>1.6</ToolsVersionPromptShown>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

@@ -12,12 +12,12 @@ namespace MvcApplication2.Controllers
         public ActionResult remerascamisas()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Remeras y camisas para varones";
+            ViewBag.TitleName = "Remeras y Musculosas para varones";
             var list = new ClouthManager()
                             .FindAll()
                             .Where(x => x.Category == Clouth.CATEGORY.VARON)
-                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.REMERAS || x.SubCategory == Clouth.SUBCATEGORY.CAMISAS)
-                            .OrderBy(x => x.ShortDescription)
+                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.REMERAS)
+                            .OrderBy(x => x.Id)
                             .ToList();
 
             return View("todos", list);
@@ -27,12 +27,12 @@ namespace MvcApplication2.Controllers
         public ActionResult buzoscamperas()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Buzos camperas y chalecos para varones";
+            ViewBag.TitleName = "Camisas y Camperas para varones";
             var list = new ClouthManager()
                         .FindAll()
                         .Where(x => x.Category == Clouth.CATEGORY.VARON)
-                        .Where(x => x.SubCategory == Clouth.SUBCATEGORY.BUZOS || x.SubCategory == Clouth.SUBCATEGORY.CAMPERAS || x.SubCategory == Clouth.SUBCATEGORY.CHALECOS)
-                        .OrderBy(x => x.ShortDescription)
+                        .Where(x => x.SubCategory == Clouth.SUBCATEGORY.BUZOS || x.SubCategory == Clouth.SUBCATEGORY.CAMPERAS || x.SubCategory == Clouth.SUBCATEGORY.CAMISAS)
+                        .OrderBy(x => x.Id)
                         .ToList();
 
             return View("todos", list);
@@ -42,12 +42,12 @@ namespace MvcApplication2.Controllers
         public ActionResult PantalonesShorts()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Pantalones para varones";
+            ViewBag.TitleName = "Bermudas y Shorts de baño para varones";
             var list = new ClouthManager()
                         .FindAll()
                         .Where(x => x.Category == Clouth.CATEGORY.VARON)
-                        .Where(x => x.SubCategory == Clouth.SUBCATEGORY.PANTALON || x.SubCategory == Clouth.SUBCATEGORY.SHORT)
-                        .OrderBy(x => x.ShortDescription)
+                        .Where(x => x.SubCategory == Clouth.SUBCATEGORY.PANTALON || x.SubCategory == Clouth.SUBCATEGORY.SHORTDEBANO)
+                        .OrderBy(x => x.Id)
                         .ToList();
 
             return View("todos", list);
