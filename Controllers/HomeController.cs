@@ -53,19 +53,8 @@ namespace MvcApplication2.Controllers
             //var hyRecommendation= new Hyalcore("http://162.243.105.143:9293").GetRecommendation("/recommendation?api_key=bd54a9bce84f7b6db6d1fa3b3a76e241&user_id=NOUser&section_code=home");
             IEnumerable<string> recommendation;
             string recommendationId = String.Empty;
-            recommendation = new List<string>() { "7476", "7456", "7425", "7401", "7445" };
-
-            //recommendation = new List<string>() { "7083", "7073", "7037", "7046", "7013" };
-            //if (hyRecommendation == null || !hyRecommendation.data.Any())
-            //{
-            //    recommendation = new List<string>() { "7083", "7073", "7037", "7046", "7013" };
-            //} else {
-            //    recommendation = hyRecommendation.data;
-            //}
-            //if (hyRecommendation != null &&  hyRecommendation.metadata != null)
-            //{
-            //    recommendationId = hyRecommendation.metadata.recommendation_id;
-            //}
+            //7561,7546,7525,7502
+            recommendation = new List<string>() { "7561", "7546", "7525", "7502", "7568" };
 
             var list = new ClouthManager().FindAll().Where(x => recommendation.Contains(x.Id.ToString())).Select(x => new MvcApplication2.Models.HyalcoreClouth { Clouth = x, RecommendationId = recommendationId }).ToList();
             ViewBag.Message = ResourceHome.WelcomeTitle;

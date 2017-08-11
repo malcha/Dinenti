@@ -8,7 +8,7 @@ var Views;
             //this.api = new Helpers.Api();
         }
         return BaseView;
-    })();
+    }());
     Views.BaseView = BaseView;
 })(Views || (Views = {}));
 //# sourceMappingURL=BaseView.js.map

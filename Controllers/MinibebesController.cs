@@ -21,18 +21,44 @@ namespace MvcApplication2.Controllers
             return View("todos", list);
         }
 
-        //public ActionResult BodyEnteritos()
-        //{
-        //    Cookies.WriteCookie();
-        //    ViewBag.TitleName = "Body y enteritos para mini bebes";
-        //    var list = new ClouthManager()
-        //                    .FindAll()
-        //                    .Where(x => x.Category == Clouth.CATEGORY.MINIBEBES)
-        //                    .Where(x => x.SubCategory == Clouth.SUBCATEGORY.BODY || x.SubCategory == Clouth.SUBCATEGORY.ENTERITOS)
-        //                    .ToList();
+        public ActionResult MiniBebas()
+        {
+            Cookies.WriteCookie();
+            ViewBag.TitleName = "Mini bebas";
+            var list = new ClouthManager()
+                            .FindAll()
+                            .Where(x => x.Category == Clouth.CATEGORY.MINIBEBES)
+                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.MINIBEBA)
+                            .ToList();
 
-        //    return View("todos", list);
-        //}
+            return View("todos", list);
+        }
+
+        public ActionResult MiniBebes()
+        {
+            Cookies.WriteCookie();
+            ViewBag.TitleName = "Mini bebes";
+            var list = new ClouthManager()
+                            .FindAll()
+                            .Where(x => x.Category == Clouth.CATEGORY.MINIBEBES)
+                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.MINIBEBE)
+                            .ToList();
+
+            return View("todos", list);
+        }
+
+        public ActionResult Abrigos()
+        {
+            Cookies.WriteCookie();
+            ViewBag.TitleName = "Abrigos";
+            var list = new ClouthManager()
+                            .FindAll()
+                            .Where(x => x.Category == Clouth.CATEGORY.MINIBEBES)
+                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.ABRIGOS)
+                            .ToList();
+
+            return View("todos", list);
+        }
 
 
     }

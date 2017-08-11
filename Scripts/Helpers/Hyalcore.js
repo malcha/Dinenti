@@ -21,7 +21,7 @@ var Helpers;
             $.get("/hyalcore/interaction", { id: id.toString(), recommendation: RecommendationId });
         };
         return Hyalcore;
-    })();
+    }());
     Helpers.Hyalcore = Hyalcore;
 })(Helpers || (Helpers = {}));
 //# sourceMappingURL=Hyalcore.js.map

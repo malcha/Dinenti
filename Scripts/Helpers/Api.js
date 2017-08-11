@@ -4,7 +4,7 @@ var Helpers;
         function Api() {
         }
         return Api;
-    })();
+    }());
     Helpers.Api = Api;
 })(Helpers || (Helpers = {}));
 //# sourceMappingURL=Api.js.map

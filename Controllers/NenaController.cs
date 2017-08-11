@@ -8,24 +8,24 @@ namespace MvcApplication2.Controllers
 {
     public class NenaController : Controller
     {
-        public ActionResult remerascamisas()
+        public ActionResult remerasbuzos()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Remeras y camisolas para nenas";
+            ViewBag.TitleName = "Remeras y Buzos para nenas";
             var list = new ClouthManager()
                 .FindAll()
                 .Where(x => x.Category == Clouth.CATEGORY.NENA)
-                .Where(x => x.SubCategory == Clouth.SUBCATEGORY.REMERAS || x.SubCategory == Clouth.SUBCATEGORY.CAMISAS)
+                .Where(x => x.SubCategory == Clouth.SUBCATEGORY.REMERAS)
                 .OrderBy(x => x.Id)
                 .ToList();
 
             return View("todos", list);
         }
 
-        public ActionResult vestidos()
+        public ActionResult vestidoscamisolas()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Vestidos, Soleros e Enteritos para nenas";
+            ViewBag.TitleName = "Vestidos y Camisolas para nenas";
             var list = new ClouthManager()
                 .FindAll()
                 .Where(x => x.Category == Clouth.CATEGORY.NENA)
@@ -36,10 +36,10 @@ namespace MvcApplication2.Controllers
             return View("todos", list);
         }
 
-        public ActionResult calzas()
+        public ActionResult calzaspantalones()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Calzas y Shorts para nenas";
+            ViewBag.TitleName = "Calzas y Pantalones para nenas";
             var list = new ClouthManager()
                 .FindAll()
                 .Where(x => x.Category == Clouth.CATEGORY.NENA)
@@ -49,13 +49,13 @@ namespace MvcApplication2.Controllers
 
             return View("todos", list);
         }
-        public ActionResult CamperasBuzos()
+        public ActionResult Camperas()
         {
-            ViewBag.TitleName = "Camperas para nenas";
+            ViewBag.TitleName = "Camperas y Abrigos para nenas";
             var list = new ClouthManager()
                 .FindAll()
                 .Where(x => x.Category == Clouth.CATEGORY.NENA)
-                .Where(x => x.SubCategory == Clouth.SUBCATEGORY.CAMPERAS || x.SubCategory == Clouth.SUBCATEGORY.CHALECOS || x.SubCategory == Clouth.SUBCATEGORY.BUZOS)
+                .Where(x => x.SubCategory == Clouth.SUBCATEGORY.CAMPERAS || x.SubCategory == Clouth.SUBCATEGORY.ABRIGOS || x.SubCategory == Clouth.SUBCATEGORY.BUZOS)
                 .OrderBy(x => x.Id)
                 .ToList();
 

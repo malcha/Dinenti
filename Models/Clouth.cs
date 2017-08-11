@@ -43,25 +43,39 @@ namespace MvcApplication2.Models
             SOLEROS = 16,
             SHORT = 17,
             CHOMBAS=18,
-            GENERAL = 19
-
+            GENERAL = 19,
+            MINIBEBA = 20,
+            MINIBEBE = 21
         }
 
-        public Clouth (int id,string description, string size, string colours,SUBCATEGORY subcategory,CATEGORY category, string action="", string imgName=null, string code=null ){
+        public Clouth (int id,string description, string size, string colours,SUBCATEGORY subcategory,CATEGORY category, string action="", string imgName=null, string code=null,string anotherDesc="", string shortDescription=""){
             Id=id;
 
             LowImg = imgName == null? id.ToString(): imgName;
             HighImg = imgName == null ? id.ToString() : imgName;
             GetCode = code == null ? Id.ToString() : code;
+            //string IdToString = String.IsNullOrEmpty(imgName) ? id.ToString(): imgName;
+            string IdToString = id.ToString();
 
-            ShortDescription=description.ToLower();
+            
+            ShortDescription = String.IsNullOrEmpty(shortDescription)? description.ToLower(): shortDescription.ToLower();
             SubCategory = subcategory;
             Category = category;
             Action = action;
-            if (String.IsNullOrEmpty(colours))
-                Description = String.Format("Art. {0} -  {1} - Talles: {2}", id.ToString(), description, size);
+            if (String.IsNullOrEmpty(code))
+            {
+                Description = String.Format("Art. {0} -  {1}", IdToString, description);
+            }
+            else {
+                Description = String.Format("{0}", description);
+            }
+
+            if (!String.IsNullOrEmpty(colours))
+                Description = String.Format("{0} - Talles: {1} - Colores: {2}", Description, size, colours);
+            else if (!String.IsNullOrEmpty(anotherDesc))
+                Description = String.Format("{0} - Talles: {1} - {2}", Description, size,anotherDesc);
             else
-                Description = String.Format("Art. {0} -  {1} - Talles: {2} - Colores: {3}",id.ToString(), description, size, colours);
+                Description = String.Format("{0} - Talles: {1}", Description, size);
         }
 
         #region "privateMethods"

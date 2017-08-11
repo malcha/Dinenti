@@ -8,7 +8,7 @@ namespace MvcApplication2.Controllers
 {
     public class BebesController : Controller
     {
-        public ActionResult remerascamisas()
+        public ActionResult remeras()
         {
             Cookies.WriteCookie();
             ViewBag.TitleName = "Remeras, chombas y camisas para bebes";
@@ -39,11 +39,11 @@ namespace MvcApplication2.Controllers
         public ActionResult camperas()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Camperas y Rompevientos para bebes";
+            ViewBag.TitleName = "Camperas y Abrigos para bebes";
             var list = new ClouthManager()
                             .FindAll()
                             .Where(x => x.Category == Clouth.CATEGORY.BEBES)
-                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.CAMPERAS )
+                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.CAMPERAS || x.SubCategory == Clouth.SUBCATEGORY.ABRIGOS)
                             .OrderBy(x => x.Id)
                             .ToList();
 
@@ -53,11 +53,11 @@ namespace MvcApplication2.Controllers
         public ActionResult pantalones()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Bermudas y Shorts de baño para bebes";
+            ViewBag.TitleName = "Pantalones y Buzosde baño para bebes";
             var list = new ClouthManager()
                             .FindAll()
                             .Where(x => x.Category == Clouth.CATEGORY.BEBES)
-                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.SHORTDEBANO)
+                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.PANTALON || x.SubCategory == Clouth.SUBCATEGORY.BUZOS)
                             .OrderBy(x => x.Id)
                             .ToList();
 

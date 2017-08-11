@@ -3,7 +3,7 @@
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
     <NameOfLastUsedPublishProfile>test2</NameOfLastUsedPublishProfile>
-    <ToolsVersionPromptShown>1.6</ToolsVersionPromptShown>
+    <ToolsVersionPromptShown>2.1</ToolsVersionPromptShown>
     <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <ProjectExtensions>
