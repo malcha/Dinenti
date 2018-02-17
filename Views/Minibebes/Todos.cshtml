@@ -1,4 +1,6 @@
 ﻿@using MvcApplication2.Resource;
+@using System.Web.Mvc.Html;
+@using MvcApplication2.Helpers.Mvc;
 @using MvcApplication2.Models;
 
 @model List<Clouth>
@@ -9,100 +11,46 @@
 
     @section PageScripts{
         <script type="text/javascript">
-            
-            //$("[data-hyalcore]").click(function (event) {
-            //    var elem = $(event.target);
-            //    Helpers.Hyalcore.postInteraction(elem);
-            //});
             jQuery(document).ready(function () {
                 var view = new Views.BaseModel();
-                //jQuery('#mycarousel').jcarousel({
-                //    scroll: 1,
-                //    animation: "slow",
-                //    wrap: "both"
-                //});
-                //$("a[rel=example_group]").fancybox({
-                //    afterLoad: function (current, prev) {
-                //        var from = current.href.lastIndexOf("/")+1;
-                //        var to = current.href.lastIndexOf(".");
-                //        var id = current.href.substring(from, to);
-                //        var elem= $("[data-hyalcore-id=" + id + "]");
-                //        if (elem.length >0 ) {
-                //            Helpers.Hyalcore.postInteraction(elem);
-                //        }
-                //    },
-                //    'transitionIn': 'none',
-                //    'transitionOut': 'none',
-                //    'titlePosition': 'over',
-                //    autoSize: false,
-                //    autoDimensions: false,
-                //    //'autoScale': false,
-                //    titleFormat: function (title, currentArray, currentIndex, currentOpts) {
-                //        return '<span id="fancybox-title-over">Foto ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
-                //    }
-                //});
             });
         </script>
     }
 
-    @{
-        Html.RenderPartial("Botonera", null);
-    }
 
-    <div style="clear:both; padding-top:10px">
-        <span class="clouthpage-title">@ViewBag.TitleName</span>
+    <div class="page-title">
+        <h3>@ViewBag.TitleName</h3>
     </div>
-    <div id="content_container">
-        <div id="productos_container">
-            @foreach (Clouth item in Model)
-            {
-                <div class="producto_container" style="" >
-                    <a rel="example_group" href="@item.getHighImgPath()" title="@item.Description" data-hyalcore="" data-hyalcore-id="@item.Id.ToString()">
-                        <img src="@item.getLowImgPath()" alt="" class="foto" >
-                        <h2>@item.ShortDescription</h2>
-                        @*<div class="codigo">Art. 	@item.Id.ToString()</div>*@
-                        <div class="codigo">Art. 	@item.GetCode</div>
-                    </a>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row rowcontainer">
+
+            <div class="col-md-2">
+                <!-- <p class="lead">Shop Name</p> -->
+                <div class="list-group">
+                    @Html.ActionLink("Mini bebes", "minibebes", "minibebes", new { @class = "list-group-item list-group-item-dinenti" })
+                    @Html.ActionLink("Mini bebas", "minibebas", "minibebes", new { @class = "list-group-item list-group-item-dinenti" })
                 </div>
-            }
-            @*<div class="producto_container" style="">
-                <a rel="example_group" href="/Content/images/alta/6645.gif" title="Art. 6645 – Body mini beba con tul – Talles: 0 al 3 – Colores: Rosa - Chicle - Blanco" data-hyalcore="" data-hyalcore-id="@item.Id.ToString()" class="fancybox-image">
-                    <img src="/Content/images/baja/6645.gif" alt="" class="foto">
-                    <h2>Body mini beba con tul</h2>
-                    <div class="codigo">Art. 	6301</div>
-                </a>
-            </div>
-            <div class="producto_container" style="">
-                <a rel="example_group" href="/Content/images/alta/6647.gif" title="Art. 6647 y 6648 – Remeron y short mini beba – Talles: 0 al 3 – Colores: Rosa - Chicle - Blanco">
-                    <img src="/Content/images/baja/6647.gif" alt="" class="foto">
-                    <h2>Remeron y short mini beba</h2>
-                    <div class="codigo">Art. 	6647</div>
-                </a>
             </div>
 
-            <div class="producto_container" style="">
-                <a rel="example_group" href="/Content/images/alta/6649.gif" title="Art. 6649 y 6650 – Remera y short mini bebe – Talles: 0 al 3 – Colores: Turquesa - Verde">
-                    <img src="/Content/images/baja/6649.gif" alt="" class="foto">
-                    <h2>Remera y short</h2>
-                    <div class="codigo">Art. 	6649</div>
-                </a>
+            <div class="col-md-9">
+                <div class="row rowcontainer">
+                    @foreach (Clouth item in Model)
+                    {
+                        <div class="col-sm-3 col-lg-3 col-md-3">
+                            <div class="thumbnail back-ligh-blue">
+                                <a class="fancybox" rel="gallery1" href='@item.getHighImgPath()' title='@item.Description'>
+                                    <img src='@item.getLowImgPath()' alt="" />
+                                    <div class="caption">
+                                        <h6 class="product-title">@item.ShortDescription</h6>
+                                        <h6 class="product-price">@item.GetCode</h6>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    }
+                </div>
             </div>
-
-            <div class="producto_container" style="">
-                <a rel="example_group" href="/Content/images/alta/6651.gif" title="Art. 6651 – Enterito mini bebe rayado – Talles: 0 al 3 – Colores: Rosa - Fucsia">
-                    <img src="/Content/images/baja/6651.gif" alt="" class="foto">
-                    <h2>Enterito mini bebe rayado</h2>
-                    <div class="codigo">Art. 	6651</div>
-                </a>
-            </div>
-
-            <div class="producto_container" style="">
-                <a rel="example_group" href="/Content/images/alta/6652.gif" title="Art. 6652 – Enterito mini bebe combinado – Talles: 0 al 3 – Colores: Turquesa - Francia">
-                    <img src="/Content/images/baja/6652.gif" alt="" class="foto">
-                    <h2>Enterito mini bebe combinado</h2>
-                    <div class="codigo">Art. 	6652</div>
-                </a>
-            </div>*@
-
         </div>
     </div>

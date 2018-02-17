@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA0RdsxXKGukqfb3Pg/YfiaQAAAAACAAAAAAAQZgAAAAEAACAAAAA2wB0FAadN+71v7+rXLH2z7ZE5ok3qMMmOt1HD6/ztgQAAAAAOgAAAAAIAACAAAAA1shrVeuPkVpdvAGMwxj3Z5rXvaWQmAHWUm7BBq4OY+CAAAAC2hTbFTQed7CIwToEzVSsrzYyxLAHytnKq5Rm/60WXv0AAAAAJUTtupiylToYlp2IlxpPzX5qKhCeNvZQKSi7PURacBX4jfpOWaNzVe11a/hJ7LvEdIlSaYXc4l1rbswDCWAVE</EncryptedPassword>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIx1515JF9EuhfAs3TWbkqwAAAAACAAAAAAAQZgAAAAEAACAAAACaETldf2lu21i5DnXuxImyk8+zGNdrV19CeDsyE7GZJQAAAAAOgAAAAAIAACAAAAAl75XUWDbHOJRECO+XBlUFM7TEBIKOHc8/Qi0dJKxqCCAAAAB/T02SbKcatRjRP9hVB84V8WQ7FMQ8IDPtzHlxbsd/gkAAAACSTSiw/iN4XcGxEU2syUKb488azTLEj704iM3An7s/Y+sZ1h9fSKopm7orIEIcjqi2DeSkmbD2rCLL5IY6H80B</EncryptedPassword>
     <_PublishTargetUrl>ftp://dinenti.com/dinenti.com/wwwroot</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
@@ -20,7 +20,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/16/2015 00:32:55</publishTime>
     </File>
     <File Include="bin/MvcApplication2.dll">
-      <publishTime>03/13/2017 21:33:26</publishTime>
+      <publishTime>08/27/2017 22:39:31</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>11/27/2015 19:23:02</publishTime>
@@ -42,6 +42,21 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="bin/System.Web.WebPages.Razor.dll">
       <publishTime>03/16/2015 00:32:55</publishTime>
+    </File>
+    <File Include="Content/css/dinenti.css">
+      <publishTime>08/11/2017 00:09:23</publishTime>
+    </File>
+    <File Include="Content/font/AirplanesintheNightSky.ttf">
+      <publishTime>03/10/2010 08:42:06</publishTime>
+    </File>
+    <File Include="Content/font/ALBAS.TTF">
+      <publishTime>09/19/2004 00:31:34</publishTime>
+    </File>
+    <File Include="Content/font/LittleBird.ttf">
+      <publishTime>01/10/2013 13:21:06</publishTime>
+    </File>
+    <File Include="Content/font/OratorStd.otf">
+      <publishTime>03/16/2014 18:53:51</publishTime>
     </File>
     <File Include="Content/HappyLayout/css/dev.css">
       <publishTime>09/23/2015 12:53:10</publishTime>
@@ -89,7 +104,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/12/2017 20:31:45</publishTime>
     </File>
     <File Include="Content/images/abrigos.gif">
-      <publishTime>02/01/2015 17:12:26</publishTime>
+      <publishTime>01/02/2015 17:12:26</publishTime>
     </File>
     <File Include="Content/images/alta/6601.jpg">
       <publishTime>02/01/2015 17:12:26</publishTime>
@@ -1314,6 +1329,300 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Content/images/alta/7598.jpg">
       <publishTime>03/11/2017 15:10:59</publishTime>
+    </File>
+    <File Include="Content/images/alta/7601.jpg">
+      <publishTime>06/08/2017 18:32:02</publishTime>
+    </File>
+    <File Include="Content/images/alta/7602.jpg">
+      <publishTime>08/13/2017 16:39:02</publishTime>
+    </File>
+    <File Include="Content/images/alta/7603.jpg">
+      <publishTime>07/08/2017 21:45:39</publishTime>
+    </File>
+    <File Include="Content/images/alta/7604.jpg">
+      <publishTime>06/08/2017 18:33:35</publishTime>
+    </File>
+    <File Include="Content/images/alta/7605.jpg">
+      <publishTime>07/08/2017 21:46:35</publishTime>
+    </File>
+    <File Include="Content/images/alta/7606.jpg">
+      <publishTime>06/08/2017 18:35:43</publishTime>
+    </File>
+    <File Include="Content/images/alta/7607.jpg">
+      <publishTime>05/08/2017 10:35:52</publishTime>
+    </File>
+    <File Include="Content/images/alta/7609.jpg">
+      <publishTime>05/08/2017 10:35:45</publishTime>
+    </File>
+    <File Include="Content/images/alta/7610.jpg">
+      <publishTime>06/08/2017 10:27:40</publishTime>
+    </File>
+    <File Include="Content/images/alta/7611.jpg">
+      <publishTime>05/08/2017 10:35:37</publishTime>
+    </File>
+    <File Include="Content/images/alta/7612.jpg">
+      <publishTime>06/08/2017 18:37:02</publishTime>
+    </File>
+    <File Include="Content/images/alta/7613.jpg">
+      <publishTime>06/08/2017 18:38:34</publishTime>
+    </File>
+    <File Include="Content/images/alta/7614.jpg">
+      <publishTime>06/08/2017 18:39:07</publishTime>
+    </File>
+    <File Include="Content/images/alta/7615.jpg">
+      <publishTime>05/08/2017 10:35:37</publishTime>
+    </File>
+    <File Include="Content/images/alta/7616.jpg">
+      <publishTime>05/08/2017 10:41:00</publishTime>
+    </File>
+    <File Include="Content/images/alta/7617.jpg">
+      <publishTime>05/08/2017 15:25:57</publishTime>
+    </File>
+    <File Include="Content/images/alta/7618.jpg">
+      <publishTime>06/08/2017 10:30:30</publishTime>
+    </File>
+    <File Include="Content/images/alta/7619.jpg">
+      <publishTime>06/08/2017 18:41:36</publishTime>
+    </File>
+    <File Include="Content/images/alta/7620.jpg">
+      <publishTime>07/08/2017 21:47:27</publishTime>
+    </File>
+    <File Include="Content/images/alta/7621.jpg">
+      <publishTime>07/08/2017 23:23:18</publishTime>
+    </File>
+    <File Include="Content/images/alta/7622.jpg">
+      <publishTime>06/08/2017 10:31:55</publishTime>
+    </File>
+    <File Include="Content/images/alta/7701.jpg">
+      <publishTime>06/08/2017 18:43:16</publishTime>
+    </File>
+    <File Include="Content/images/alta/7702.jpg">
+      <publishTime>06/08/2017 18:44:04</publishTime>
+    </File>
+    <File Include="Content/images/alta/7703.jpg">
+      <publishTime>06/08/2017 18:46:50</publishTime>
+    </File>
+    <File Include="Content/images/alta/7704.jpg">
+      <publishTime>06/08/2017 18:47:23</publishTime>
+    </File>
+    <File Include="Content/images/alta/7705.jpg">
+      <publishTime>06/08/2017 18:49:12</publishTime>
+    </File>
+    <File Include="Content/images/alta/7706.jpg">
+      <publishTime>06/08/2017 18:50:08</publishTime>
+    </File>
+    <File Include="Content/images/alta/7708.jpg">
+      <publishTime>06/08/2017 18:52:04</publishTime>
+    </File>
+    <File Include="Content/images/alta/7709.jpg">
+      <publishTime>06/08/2017 18:57:23</publishTime>
+    </File>
+    <File Include="Content/images/alta/7710.jpg">
+      <publishTime>08/13/2017 18:32:51</publishTime>
+    </File>
+    <File Include="Content/images/alta/7711.jpg">
+      <publishTime>06/08/2017 18:59:28</publishTime>
+    </File>
+    <File Include="Content/images/alta/7712.jpg">
+      <publishTime>06/08/2017 18:59:55</publishTime>
+    </File>
+    <File Include="Content/images/alta/7713.jpg">
+      <publishTime>06/08/2017 19:00:52</publishTime>
+    </File>
+    <File Include="Content/images/alta/7715.jpg">
+      <publishTime>06/08/2017 19:01:44</publishTime>
+    </File>
+    <File Include="Content/images/alta/7716.jpg">
+      <publishTime>06/08/2017 19:02:33</publishTime>
+    </File>
+    <File Include="Content/images/alta/7717.jpg">
+      <publishTime>06/08/2017 19:03:53</publishTime>
+    </File>
+    <File Include="Content/images/alta/7718.jpg">
+      <publishTime>07/08/2017 21:48:22</publishTime>
+    </File>
+    <File Include="Content/images/alta/7719.jpg">
+      <publishTime>07/08/2017 21:49:17</publishTime>
+    </File>
+    <File Include="Content/images/alta/7720.jpg">
+      <publishTime>07/08/2017 21:50:06</publishTime>
+    </File>
+    <File Include="Content/images/alta/7721.jpg">
+      <publishTime>07/08/2017 21:55:16</publishTime>
+    </File>
+    <File Include="Content/images/alta/7722.jpg">
+      <publishTime>07/08/2017 22:02:20</publishTime>
+    </File>
+    <File Include="Content/images/alta/7723.jpg">
+      <publishTime>07/08/2017 22:03:19</publishTime>
+    </File>
+    <File Include="Content/images/alta/7724.jpg">
+      <publishTime>07/08/2017 22:04:07</publishTime>
+    </File>
+    <File Include="Content/images/alta/7725.jpg">
+      <publishTime>07/08/2017 22:05:01</publishTime>
+    </File>
+    <File Include="Content/images/alta/7726.jpg">
+      <publishTime>07/08/2017 22:05:47</publishTime>
+    </File>
+    <File Include="Content/images/alta/7727.jpg">
+      <publishTime>08/08/2017 00:01:41</publishTime>
+    </File>
+    <File Include="Content/images/alta/7728.jpg">
+      <publishTime>08/08/2017 00:02:08</publishTime>
+    </File>
+    <File Include="Content/images/alta/7729.jpg">
+      <publishTime>07/08/2017 22:06:33</publishTime>
+    </File>
+    <File Include="Content/images/alta/7730.jpg">
+      <publishTime>06/08/2017 10:46:39</publishTime>
+    </File>
+    <File Include="Content/images/alta/77301.jpg">
+      <publishTime>06/08/2017 10:59:02</publishTime>
+    </File>
+    <File Include="Content/images/alta/77302.jpg">
+      <publishTime>06/08/2017 10:59:29</publishTime>
+    </File>
+    <File Include="Content/images/alta/77303.jpg">
+      <publishTime>07/08/2017 22:00:13</publishTime>
+    </File>
+    <File Include="Content/images/alta/7731.gif">
+      <publishTime>08/08/2017 00:05:24</publishTime>
+    </File>
+    <File Include="Content/images/alta/7731.jpg">
+      <publishTime>08/08/2017 00:05:03</publishTime>
+    </File>
+    <File Include="Content/images/alta/7733.jpg">
+      <publishTime>07/08/2017 21:35:57</publishTime>
+    </File>
+    <File Include="Content/images/alta/7734.jpg">
+      <publishTime>07/08/2017 21:37:54</publishTime>
+    </File>
+    <File Include="Content/images/alta/7735.jpg">
+      <publishTime>07/08/2017 21:38:56</publishTime>
+    </File>
+    <File Include="Content/images/alta/7736.jpg">
+      <publishTime>07/08/2017 21:40:28</publishTime>
+    </File>
+    <File Include="Content/images/alta/7737.jpg">
+      <publishTime>07/08/2017 21:41:55</publishTime>
+    </File>
+    <File Include="Content/images/alta/7738.jpg">
+      <publishTime>07/08/2017 21:43:13</publishTime>
+    </File>
+    <File Include="Content/images/alta/7739.jpg">
+      <publishTime>05/08/2017 10:40:23</publishTime>
+    </File>
+    <File Include="Content/images/alta/7740.jpg">
+      <publishTime>05/08/2017 10:40:34</publishTime>
+    </File>
+    <File Include="Content/images/alta/7741.jpg">
+      <publishTime>05/08/2017 19:27:39</publishTime>
+    </File>
+    <File Include="Content/images/alta/7742.jpg">
+      <publishTime>05/08/2017 19:28:41</publishTime>
+    </File>
+    <File Include="Content/images/alta/7743.jpg">
+      <publishTime>05/08/2017 19:33:08</publishTime>
+    </File>
+    <File Include="Content/images/alta/7744.jpg">
+      <publishTime>05/08/2017 19:36:04</publishTime>
+    </File>
+    <File Include="Content/images/alta/7745.jpg">
+      <publishTime>05/08/2017 19:37:32</publishTime>
+    </File>
+    <File Include="Content/images/alta/7746.jpg">
+      <publishTime>05/08/2017 19:38:50</publishTime>
+    </File>
+    <File Include="Content/images/alta/7747.jpg">
+      <publishTime>05/08/2017 19:41:11</publishTime>
+    </File>
+    <File Include="Content/images/alta/7748.jpg">
+      <publishTime>08/27/2017 22:27:27</publishTime>
+    </File>
+    <File Include="Content/images/alta/7749.jpg">
+      <publishTime>05/08/2017 10:40:42</publishTime>
+    </File>
+    <File Include="Content/images/alta/7750.jpg">
+      <publishTime>05/08/2017 19:44:50</publishTime>
+    </File>
+    <File Include="Content/images/alta/7751.jpg">
+      <publishTime>05/08/2017 19:46:06</publishTime>
+    </File>
+    <File Include="Content/images/alta/7752.jpg">
+      <publishTime>05/08/2017 19:47:26</publishTime>
+    </File>
+    <File Include="Content/images/alta/7753.jpg">
+      <publishTime>05/08/2017 19:48:46</publishTime>
+    </File>
+    <File Include="Content/images/alta/7754.jpg">
+      <publishTime>05/08/2017 10:40:51</publishTime>
+    </File>
+    <File Include="Content/images/alta/7755.jpg">
+      <publishTime>06/08/2017 10:33:40</publishTime>
+    </File>
+    <File Include="Content/images/alta/7756.jpg">
+      <publishTime>06/08/2017 10:34:55</publishTime>
+    </File>
+    <File Include="Content/images/alta/7757.jpg">
+      <publishTime>07/08/2017 23:57:30</publishTime>
+    </File>
+    <File Include="Content/images/alta/7758.jpg">
+      <publishTime>06/08/2017 10:41:28</publishTime>
+    </File>
+    <File Include="Content/images/alta/7759.jpg">
+      <publishTime>08/13/2017 16:04:23</publishTime>
+    </File>
+    <File Include="Content/images/alta/7760.jpg">
+      <publishTime>06/08/2017 10:42:36</publishTime>
+    </File>
+    <File Include="Content/images/alta/7761.jpg">
+      <publishTime>06/08/2017 10:45:12</publishTime>
+    </File>
+    <File Include="Content/images/alta/7762.jpg">
+      <publishTime>06/08/2017 10:46:39</publishTime>
+    </File>
+    <File Include="Content/images/alta/77621.jpg">
+      <publishTime>06/08/2017 10:59:02</publishTime>
+    </File>
+    <File Include="Content/images/alta/77622.jpg">
+      <publishTime>06/08/2017 10:59:29</publishTime>
+    </File>
+    <File Include="Content/images/alta/77623.jpg">
+      <publishTime>07/08/2017 21:59:43</publishTime>
+    </File>
+    <File Include="Content/images/alta/7763.jpg">
+      <publishTime>06/08/2017 10:48:07</publishTime>
+    </File>
+    <File Include="Content/images/alta/7764.jpg">
+      <publishTime>06/08/2017 10:49:45</publishTime>
+    </File>
+    <File Include="Content/images/alta/7765.jpg">
+      <publishTime>06/08/2017 10:51:49</publishTime>
+    </File>
+    <File Include="Content/images/alta/7766.jpg">
+      <publishTime>06/08/2017 10:53:00</publishTime>
+    </File>
+    <File Include="Content/images/alta/7767.jpg">
+      <publishTime>06/08/2017 10:54:27</publishTime>
+    </File>
+    <File Include="Content/images/alta/7768.jpg">
+      <publishTime>05/08/2017 19:50:19</publishTime>
+    </File>
+    <File Include="Content/images/alta/7769.jpg">
+      <publishTime>07/08/2017 22:07:12</publishTime>
+    </File>
+    <File Include="Content/images/alta/7771.jpg">
+      <publishTime>08/13/2017 16:03:11</publishTime>
+    </File>
+    <File Include="Content/images/alta/Book1.xlsx">
+      <publishTime>03/12/2017 16:16:05</publishTime>
+    </File>
+    <File Include="Content/images/alta/ImgAlta.jpg">
+      <publishTime>06/08/2017 10:27:34</publishTime>
+    </File>
+    <File Include="Content/images/alta/XXX7721-77621.jpg">
+      <publishTime>06/08/2017 10:56:46</publishTime>
     </File>
     <File Include="Content/images/altaNew/6801.jpg">
       <publishTime>12/03/2015 10:10:52</publishTime>
@@ -2809,8 +3118,305 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/images/baja/7598.gif">
       <publishTime>03/11/2017 15:46:41</publishTime>
     </File>
+    <File Include="Content/images/baja/7601.gif">
+      <publishTime>06/08/2017 18:31:17</publishTime>
+    </File>
+    <File Include="Content/images/baja/7602.gif">
+      <publishTime>08/13/2017 16:39:51</publishTime>
+    </File>
+    <File Include="Content/images/baja/7603.gif">
+      <publishTime>07/08/2017 21:45:58</publishTime>
+    </File>
+    <File Include="Content/images/baja/7604.gif">
+      <publishTime>06/08/2017 18:32:49</publishTime>
+    </File>
+    <File Include="Content/images/baja/7605.gif">
+      <publishTime>07/08/2017 21:46:52</publishTime>
+    </File>
+    <File Include="Content/images/baja/7606.gif">
+      <publishTime>06/08/2017 18:36:18</publishTime>
+    </File>
+    <File Include="Content/images/baja/7607.gif">
+      <publishTime>05/08/2017 08:53:17</publishTime>
+    </File>
+    <File Include="Content/images/baja/7609.gif">
+      <publishTime>05/08/2017 08:53:05</publishTime>
+    </File>
+    <File Include="Content/images/baja/7610.gif">
+      <publishTime>06/08/2017 10:26:35</publishTime>
+    </File>
+    <File Include="Content/images/baja/7611.gif">
+      <publishTime>05/08/2017 08:52:55</publishTime>
+    </File>
+    <File Include="Content/images/baja/7612.gif">
+      <publishTime>06/08/2017 18:37:28</publishTime>
+    </File>
+    <File Include="Content/images/baja/7613.gif">
+      <publishTime>06/08/2017 18:38:07</publishTime>
+    </File>
+    <File Include="Content/images/baja/7614.gif">
+      <publishTime>06/08/2017 18:39:35</publishTime>
+    </File>
+    <File Include="Content/images/baja/7615.gif">
+      <publishTime>08/08/2017 21:49:54</publishTime>
+    </File>
+    <File Include="Content/images/baja/7616.gif">
+      <publishTime>05/08/2017 10:24:06</publishTime>
+    </File>
+    <File Include="Content/images/baja/7617.gif">
+      <publishTime>05/08/2017 10:24:18</publishTime>
+    </File>
+    <File Include="Content/images/baja/7618.gif">
+      <publishTime>06/08/2017 10:28:53</publishTime>
+    </File>
+    <File Include="Content/images/baja/7619.gif">
+      <publishTime>06/08/2017 18:42:07</publishTime>
+    </File>
+    <File Include="Content/images/baja/7620.gif">
+      <publishTime>07/08/2017 21:47:49</publishTime>
+    </File>
+    <File Include="Content/images/baja/7621.gif">
+      <publishTime>08/11/2017 01:45:37</publishTime>
+    </File>
+    <File Include="Content/images/baja/7622.gif">
+      <publishTime>06/08/2017 10:31:23</publishTime>
+    </File>
+    <File Include="Content/images/baja/7701.gif">
+      <publishTime>06/08/2017 18:42:45</publishTime>
+    </File>
+    <File Include="Content/images/baja/7702.gif">
+      <publishTime>06/08/2017 18:44:35</publishTime>
+    </File>
+    <File Include="Content/images/baja/7703.gif">
+      <publishTime>06/08/2017 18:46:22</publishTime>
+    </File>
+    <File Include="Content/images/baja/7704.gif">
+      <publishTime>06/08/2017 18:47:58</publishTime>
+    </File>
+    <File Include="Content/images/baja/7705.gif">
+      <publishTime>06/08/2017 18:48:45</publishTime>
+    </File>
+    <File Include="Content/images/baja/7706.gif">
+      <publishTime>06/08/2017 18:50:41</publishTime>
+    </File>
+    <File Include="Content/images/baja/7708.gif">
+      <publishTime>06/08/2017 18:51:13</publishTime>
+    </File>
+    <File Include="Content/images/baja/7709.gif">
+      <publishTime>06/08/2017 18:53:11</publishTime>
+    </File>
+    <File Include="Content/images/baja/7710.gif">
+      <publishTime>08/13/2017 18:33:23</publishTime>
+    </File>
+    <File Include="Content/images/baja/7711.gif">
+      <publishTime>06/08/2017 18:59:01</publishTime>
+    </File>
+    <File Include="Content/images/baja/7712.gif">
+      <publishTime>06/08/2017 19:00:26</publishTime>
+    </File>
+    <File Include="Content/images/baja/7713.gif">
+      <publishTime>06/08/2017 19:01:13</publishTime>
+    </File>
+    <File Include="Content/images/baja/7715.gif">
+      <publishTime>06/08/2017 19:02:02</publishTime>
+    </File>
+    <File Include="Content/images/baja/7716.gif">
+      <publishTime>06/08/2017 19:03:08</publishTime>
+    </File>
+    <File Include="Content/images/baja/7717.gif">
+      <publishTime>06/08/2017 19:04:25</publishTime>
+    </File>
+    <File Include="Content/images/baja/7718.gif">
+      <publishTime>07/08/2017 21:48:50</publishTime>
+    </File>
+    <File Include="Content/images/baja/7719.gif">
+      <publishTime>07/08/2017 21:49:34</publishTime>
+    </File>
+    <File Include="Content/images/baja/7720.gif">
+      <publishTime>07/08/2017 21:50:30</publishTime>
+    </File>
+    <File Include="Content/images/baja/7721.gif">
+      <publishTime>08/08/2017 21:48:32</publishTime>
+    </File>
+    <File Include="Content/images/baja/7722.gif">
+      <publishTime>07/08/2017 22:02:56</publishTime>
+    </File>
+    <File Include="Content/images/baja/7723.gif">
+      <publishTime>07/08/2017 22:03:40</publishTime>
+    </File>
+    <File Include="Content/images/baja/7724.gif">
+      <publishTime>07/08/2017 22:04:29</publishTime>
+    </File>
+    <File Include="Content/images/baja/7725.gif">
+      <publishTime>07/08/2017 22:05:20</publishTime>
+    </File>
+    <File Include="Content/images/baja/7726.gif">
+      <publishTime>07/08/2017 22:06:08</publishTime>
+    </File>
+    <File Include="Content/images/baja/7727.gif">
+      <publishTime>08/08/2017 00:03:44</publishTime>
+    </File>
+    <File Include="Content/images/baja/7728.gif">
+      <publishTime>08/08/2017 00:02:31</publishTime>
+    </File>
+    <File Include="Content/images/baja/7729.gif">
+      <publishTime>07/08/2017 22:06:46</publishTime>
+    </File>
+    <File Include="Content/images/baja/7730.gif">
+      <publishTime>06/08/2017 10:46:04</publishTime>
+    </File>
+    <File Include="Content/images/baja/77301.gif">
+      <publishTime>06/08/2017 10:58:46</publishTime>
+    </File>
+    <File Include="Content/images/baja/77302.gif">
+      <publishTime>06/08/2017 10:57:58</publishTime>
+    </File>
+    <File Include="Content/images/baja/77303.gif">
+      <publishTime>06/08/2017 11:00:22</publishTime>
+    </File>
+    <File Include="Content/images/baja/7731.gif">
+      <publishTime>08/08/2017 00:05:24</publishTime>
+    </File>
+    <File Include="Content/images/baja/7733.gif">
+      <publishTime>07/08/2017 21:37:18</publishTime>
+    </File>
+    <File Include="Content/images/baja/7734.gif">
+      <publishTime>07/08/2017 21:38:16</publishTime>
+    </File>
+    <File Include="Content/images/baja/7735.gif">
+      <publishTime>07/08/2017 21:39:39</publishTime>
+    </File>
+    <File Include="Content/images/baja/7736.gif">
+      <publishTime>07/08/2017 21:40:47</publishTime>
+    </File>
+    <File Include="Content/images/baja/7737.gif">
+      <publishTime>07/08/2017 21:42:24</publishTime>
+    </File>
+    <File Include="Content/images/baja/7738.gif">
+      <publishTime>07/08/2017 21:43:33</publishTime>
+    </File>
+    <File Include="Content/images/baja/7739.gif">
+      <publishTime>08/08/2017 21:48:41</publishTime>
+    </File>
+    <File Include="Content/images/baja/7740.gif">
+      <publishTime>08/08/2017 21:48:06</publishTime>
+    </File>
+    <File Include="Content/images/baja/7741.gif">
+      <publishTime>05/08/2017 19:27:50</publishTime>
+    </File>
+    <File Include="Content/images/baja/7742.gif">
+      <publishTime>05/08/2017 19:29:23</publishTime>
+    </File>
+    <File Include="Content/images/baja/7743.gif">
+      <publishTime>05/08/2017 19:32:47</publishTime>
+    </File>
+    <File Include="Content/images/baja/7744.gif">
+      <publishTime>05/08/2017 19:36:12</publishTime>
+    </File>
+    <File Include="Content/images/baja/7745.gif">
+      <publishTime>05/08/2017 19:37:02</publishTime>
+    </File>
+    <File Include="Content/images/baja/7746.gif">
+      <publishTime>05/08/2017 19:38:17</publishTime>
+    </File>
+    <File Include="Content/images/baja/7747.gif">
+      <publishTime>05/08/2017 19:41:50</publishTime>
+    </File>
+    <File Include="Content/images/baja/7748.gif">
+      <publishTime>08/27/2017 22:27:09</publishTime>
+    </File>
+    <File Include="Content/images/baja/7749.gif">
+      <publishTime>05/08/2017 08:52:06</publishTime>
+    </File>
+    <File Include="Content/images/baja/7750..gif">
+      <publishTime>05/08/2017 19:44:56</publishTime>
+    </File>
+    <File Include="Content/images/baja/7750.gif">
+      <publishTime>05/08/2017 19:43:55</publishTime>
+    </File>
+    <File Include="Content/images/baja/7751.gif">
+      <publishTime>05/08/2017 19:45:41</publishTime>
+    </File>
+    <File Include="Content/images/baja/7752.gif">
+      <publishTime>05/08/2017 19:46:49</publishTime>
+    </File>
+    <File Include="Content/images/baja/7753.gif">
+      <publishTime>05/08/2017 19:48:54</publishTime>
+    </File>
+    <File Include="Content/images/baja/7754.gif">
+      <publishTime>05/08/2017 08:53:29</publishTime>
+    </File>
+    <File Include="Content/images/baja/7755.gif">
+      <publishTime>06/08/2017 10:32:36</publishTime>
+    </File>
+    <File Include="Content/images/baja/7756.gif">
+      <publishTime>06/08/2017 10:34:18</publishTime>
+    </File>
+    <File Include="Content/images/baja/7757.gif">
+      <publishTime>07/08/2017 23:58:07</publishTime>
+    </File>
+    <File Include="Content/images/baja/7758.gif">
+      <publishTime>06/08/2017 10:40:41</publishTime>
+    </File>
+    <File Include="Content/images/baja/7759.gif">
+      <publishTime>08/13/2017 16:04:51</publishTime>
+    </File>
+    <File Include="Content/images/baja/7760.gif">
+      <publishTime>06/08/2017 10:42:09</publishTime>
+    </File>
+    <File Include="Content/images/baja/7761.gif">
+      <publishTime>06/08/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/images/baja/7762.gif">
+      <publishTime>06/08/2017 10:46:04</publishTime>
+    </File>
+    <File Include="Content/images/baja/77621.gif">
+      <publishTime>06/08/2017 10:58:46</publishTime>
+    </File>
+    <File Include="Content/images/baja/77622.gif">
+      <publishTime>06/08/2017 10:57:58</publishTime>
+    </File>
+    <File Include="Content/images/baja/77623.gif">
+      <publishTime>06/08/2017 11:00:22</publishTime>
+    </File>
+    <File Include="Content/images/baja/7763.gif">
+      <publishTime>06/08/2017 10:47:36</publishTime>
+    </File>
+    <File Include="Content/images/baja/7764.gif">
+      <publishTime>06/08/2017 10:49:04</publishTime>
+    </File>
+    <File Include="Content/images/baja/7765.gif">
+      <publishTime>06/08/2017 10:51:18</publishTime>
+    </File>
+    <File Include="Content/images/baja/7766.gif">
+      <publishTime>06/08/2017 10:52:31</publishTime>
+    </File>
+    <File Include="Content/images/baja/7767.gif">
+      <publishTime>06/08/2017 10:53:41</publishTime>
+    </File>
+    <File Include="Content/images/baja/7768.gif">
+      <publishTime>05/08/2017 19:50:27</publishTime>
+    </File>
+    <File Include="Content/images/baja/7769.gif">
+      <publishTime>07/08/2017 22:07:31</publishTime>
+    </File>
+    <File Include="Content/images/baja/7771.gif">
+      <publishTime>08/13/2017 16:03:44</publishTime>
+    </File>
+    <File Include="Content/images/baja/8000.gif">
+      <publishTime>07/27/2017 22:14:33</publishTime>
+    </File>
+    <File Include="Content/images/baja/8000.jpg">
+      <publishTime>07/26/2017 22:44:38</publishTime>
+    </File>
     <File Include="Content/images/baja/all2.gif">
       <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/images/baja/Book1.xlsx">
+      <publishTime>03/13/2016 12:34:24</publishTime>
+    </File>
+    <File Include="Content/images/baja/mancha.gif">
+      <publishTime>08/08/2017 21:48:25</publishTime>
     </File>
     <File Include="Content/images/bajaNew/6801.gif">
       <publishTime>12/03/2015 17:13:54</publishTime>
@@ -3083,16 +3689,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/03/2015 16:55:42</publishTime>
     </File>
     <File Include="Content/images/botonera2.gif">
-      <publishTime>02/01/2015 17:12:25</publishTime>
+      <publishTime>01/02/2015 17:12:25</publishTime>
     </File>
     <File Include="Content/images/camisas.gif">
-      <publishTime>02/01/2015 17:12:26</publishTime>
+      <publishTime>01/02/2015 17:12:26</publishTime>
     </File>
     <File Include="Content/images/expo.jpg">
-      <publishTime>02/01/2015 17:12:26</publishTime>
+      <publishTime>01/02/2015 17:12:26</publishTime>
     </File>
     <File Include="Content/images/fotoh.jpg">
-      <publishTime>02/01/2015 17:12:25</publishTime>
+      <publishTime>01/02/2015 17:12:25</publishTime>
     </File>
     <File Include="Content/images/home/next.gif">
       <publishTime>01/02/2015 17:12:26</publishTime>
@@ -3109,8 +3715,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/images/home/prev.gif">
       <publishTime>01/02/2015 17:12:26</publishTime>
     </File>
+    <File Include="Content/images/logo-new.gif">
+      <publishTime>07/27/2017 22:29:09</publishTime>
+    </File>
+    <File Include="Content/images/logo-new2.gif">
+      <publishTime>07/27/2017 00:13:31</publishTime>
+    </File>
+    <File Include="Content/images/logo-new3.gif">
+      <publishTime>07/29/2017 12:11:34</publishTime>
+    </File>
     <File Include="Content/images/logo.gif">
-      <publishTime>02/01/2015 17:12:26</publishTime>
+      <publishTime>01/02/2015 17:12:26</publishTime>
     </File>
     <File Include="Content/images/menu/AbrigoCamperasMIniDerecha.gif">
       <publishTime>03/13/2015 00:48:25</publishTime>
@@ -3341,7 +3956,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/15/2016 15:36:29</publishTime>
     </File>
     <File Include="Content/images/pieh.jpg">
-      <publishTime>02/01/2015 17:12:26</publishTime>
+      <publishTime>01/02/2015 17:12:26</publishTime>
     </File>
     <File Include="Content/images/recomendaciones/7236.jpg">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -3391,8 +4006,41 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/images/recomendaciones/7568.jpg">
       <publishTime>03/12/2017 19:39:54</publishTime>
     </File>
+    <File Include="Content/images/recomendation/7605.jpg">
+      <publishTime>08/08/2017 00:34:04</publishTime>
+    </File>
+    <File Include="Content/images/recomendation/7701.jpg">
+      <publishTime>08/08/2017 00:37:16</publishTime>
+    </File>
+    <File Include="Content/images/recomendation/7733.jpg">
+      <publishTime>08/08/2017 00:36:45</publishTime>
+    </File>
+    <File Include="Content/images/recomendation/7738.jpg">
+      <publishTime>08/08/2017 00:36:24</publishTime>
+    </File>
+    <File Include="Content/images/recomendation/7748.jpg">
+      <publishTime>08/08/2017 00:37:46</publishTime>
+    </File>
+    <File Include="Content/images/recomendation/Dinenti-texto.gif">
+      <publishTime>08/13/2017 21:34:20</publishTime>
+    </File>
+    <File Include="Content/images/recomendation/HOMEBANER.jpg">
+      <publishTime>03/08/2017 23:45:26</publishTime>
+    </File>
+    <File Include="Content/images/recomendation/left.gif">
+      <publishTime>08/08/2017 00:15:33</publishTime>
+    </File>
+    <File Include="Content/images/recomendation/right.gif">
+      <publishTime>08/08/2017 00:19:41</publishTime>
+    </File>
+    <File Include="Content/images/recomendation/SIZE.txt">
+      <publishTime>05/08/2017 07:41:19</publishTime>
+    </File>
+    <File Include="Content/images/recomendation/Texto.gif">
+      <publishTime>08/13/2017 21:34:13</publishTime>
+    </File>
     <File Include="Content/images/stand.gif">
-      <publishTime>02/01/2015 17:12:25</publishTime>
+      <publishTime>01/02/2015 17:12:25</publishTime>
     </File>
     <File Include="Content/jssor/cover/0001-B.png">
       <publishTime>03/10/2015 22:29:51</publishTime>
@@ -3515,7 +4163,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/01/2015 17:12:26</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="log4net.xml">
       <publishTime>03/12/2015 18:55:54</publishTime>
@@ -3524,13 +4172,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/27/2015 19:22:53</publishTime>
     </File>
     <File Include="Properties/PublishProfiles/test.pubxml.user">
-      <publishTime>03/13/2017 21:32:40</publishTime>
+      <publishTime>08/27/2017 22:32:43</publishTime>
     </File>
     <File Include="Properties/PublishProfiles/test2.pubxml.user">
-      <publishTime>03/13/2017 21:28:30</publishTime>
+      <publishTime>08/13/2017 21:37:33</publishTime>
     </File>
     <File Include="Scripts/bootstrap.min.js">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Scripts/fancybox/blank.gif">
       <publishTime>06/14/2013 02:12:28</publishTime>
@@ -3581,46 +4229,46 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/14/2013 02:12:28</publishTime>
     </File>
     <File Include="Scripts/Helpers/Api.js">
-      <publishTime>03/13/2017 21:33:26</publishTime>
+      <publishTime>08/27/2017 22:39:31</publishTime>
     </File>
     <File Include="Scripts/Helpers/Api.js.map">
-      <publishTime>03/13/2017 21:33:26</publishTime>
+      <publishTime>08/27/2017 22:39:31</publishTime>
     </File>
     <File Include="Scripts/Helpers/Hyalcore.js">
-      <publishTime>03/13/2017 21:33:26</publishTime>
+      <publishTime>08/27/2017 22:39:31</publishTime>
     </File>
     <File Include="Scripts/Helpers/Hyalcore.js.map">
-      <publishTime>03/13/2017 21:33:26</publishTime>
+      <publishTime>08/27/2017 22:39:31</publishTime>
     </File>
     <File Include="Scripts/jquery-1.10.1.min.js">
       <publishTime>06/14/2013 02:12:28</publishTime>
     </File>
     <File Include="Scripts/jquery-1.8.2.js">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Scripts/jquery-ui-1.8.11.js">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Scripts/jquery-ui-1.8.11.min.js">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Scripts/jquery-ui-1.9.1.custom.js">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Scripts/jquery-ui-1.9.1.custom.min.js">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Scripts/jquery.jcarousel.pack.js">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Scripts/jquery.nivo.slider.js">
       <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Scripts/jquery.unobtrusive-ajax.js">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Scripts/jquery.unobtrusive-ajax.min.js">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Scripts/jquery.validate-vsdoc.js">
       <publishTime>11/27/2015 19:23:05</publishTime>
@@ -3632,109 +4280,253 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/27/2015 19:23:05</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.unobtrusive.js">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.unobtrusive.min.js">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Scripts/MicrosoftAjax.debug.js">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Scripts/MicrosoftAjax.js">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Scripts/MicrosoftMvcAjax.debug.js">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Scripts/MicrosoftMvcAjax.js">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Scripts/MicrosoftMvcValidation.debug.js">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Scripts/MicrosoftMvcValidation.js">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Scripts/modernizr-1.7.js">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Scripts/modernizr-1.7.min.js">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Scripts/slider/jssor.js">
-      <publishTime>03/06/2015 19:46:56</publishTime>
+      <publishTime>06/03/2015 19:46:56</publishTime>
     </File>
     <File Include="Scripts/slider/jssor.slider.mini.js">
-      <publishTime>03/06/2015 19:46:56</publishTime>
+      <publishTime>06/03/2015 19:46:56</publishTime>
     </File>
     <File Include="Scripts/Views/BaseModel.js">
-      <publishTime>03/13/2017 21:33:26</publishTime>
+      <publishTime>08/27/2017 22:39:31</publishTime>
     </File>
     <File Include="Scripts/Views/BaseModel.js.map">
-      <publishTime>03/13/2017 21:33:26</publishTime>
+      <publishTime>08/27/2017 22:39:31</publishTime>
     </File>
     <File Include="Scripts/Views/BaseView.js">
-      <publishTime>03/13/2017 21:33:26</publishTime>
+      <publishTime>08/27/2017 22:39:31</publishTime>
     </File>
     <File Include="Scripts/Views/BaseView.js.map">
-      <publishTime>03/13/2017 21:33:26</publishTime>
+      <publishTime>08/27/2017 22:39:31</publishTime>
     </File>
     <File Include="Scripts/Views/Layout/Layout.js">
-      <publishTime>03/13/2017 21:33:26</publishTime>
+      <publishTime>08/27/2017 22:39:31</publishTime>
     </File>
     <File Include="Scripts/Views/Layout/Layout.js.map">
-      <publishTime>03/13/2017 21:33:26</publishTime>
+      <publishTime>08/27/2017 22:39:31</publishTime>
+    </File>
+    <File Include="thirdparty/css/bootstrap.css">
+      <publishTime>06/08/2017 20:56:56</publishTime>
+    </File>
+    <File Include="thirdparty/css/bootstrap.min.css">
+      <publishTime>07/25/2016 12:58:56</publishTime>
+    </File>
+    <File Include="thirdparty/css/css.rar">
+      <publishTime>06/08/2017 20:48:40</publishTime>
+    </File>
+    <File Include="thirdparty/css/shop-homepage.css">
+      <publishTime>08/08/2017 22:13:46</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/blank.gif">
+      <publishTime>02/28/2017 07:46:20</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/fancybox_loading%402x.gif">
+      <publishTime>02/28/2017 07:46:20</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/fancybox_loading.gif">
+      <publishTime>02/28/2017 07:46:20</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/fancybox_overlay.png">
+      <publishTime>02/28/2017 07:46:20</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/fancybox_sprite%402x.png">
+      <publishTime>02/28/2017 07:46:20</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/fancybox_sprite.png">
+      <publishTime>02/28/2017 07:46:20</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/helpers/fancybox_buttons.png">
+      <publishTime>02/28/2017 07:46:20</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/helpers/jquery.fancybox-buttons.css">
+      <publishTime>02/28/2017 07:46:20</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/helpers/jquery.fancybox-buttons.js">
+      <publishTime>02/28/2017 07:46:20</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/helpers/jquery.fancybox-media.js">
+      <publishTime>02/28/2017 07:46:20</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/helpers/jquery.fancybox-thumbs.css">
+      <publishTime>02/28/2017 07:46:20</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/helpers/jquery.fancybox-thumbs.js">
+      <publishTime>02/28/2017 07:46:20</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/jquery.fancybox.css">
+      <publishTime>02/28/2017 07:46:20</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/jquery.fancybox.js">
+      <publishTime>02/28/2017 07:46:20</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/jquery.fancybox.pack.js">
+      <publishTime>02/28/2017 07:46:20</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/lib/jquery.mousewheel-3.0.6.pack.js">
+      <publishTime>06/14/2013 02:12:28</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/new/jquery.fancybox.css">
+      <publishTime>06/19/2017 00:51:02</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/new/jquery.fancybox.js">
+      <publishTime>06/19/2017 00:51:02</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/new/jquery.fancybox.min.css">
+      <publishTime>06/19/2017 00:51:02</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/new/jquery.fancybox.min.js">
+      <publishTime>06/19/2017 00:51:02</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/old/blank.gif">
+      <publishTime>06/14/2013 02:12:28</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/old/fancybox_loading%402x.gif">
+      <publishTime>06/14/2013 02:12:28</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/old/fancybox_loading.gif">
+      <publishTime>06/14/2013 02:12:28</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/old/fancybox_overlay.png">
+      <publishTime>06/14/2013 02:12:28</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/old/fancybox_sprite%402x.png">
+      <publishTime>06/14/2013 02:12:28</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/old/fancybox_sprite.png">
+      <publishTime>06/14/2013 02:12:28</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/old/helpers/fancybox_buttons.png">
+      <publishTime>06/14/2013 02:12:28</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/old/helpers/jquery.fancybox-buttons.css">
+      <publishTime>06/14/2013 02:12:28</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/old/helpers/jquery.fancybox-buttons.js">
+      <publishTime>06/14/2013 02:12:28</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/old/helpers/jquery.fancybox-media.js">
+      <publishTime>06/14/2013 02:12:28</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/old/helpers/jquery.fancybox-thumbs.css">
+      <publishTime>06/14/2013 02:12:28</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/old/helpers/jquery.fancybox-thumbs.js">
+      <publishTime>06/14/2013 02:12:28</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/old/jquery.fancybox.css">
+      <publishTime>03/14/2015 12:43:39</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/old/jquery.fancybox.js">
+      <publishTime>06/14/2013 02:12:28</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/old/jquery.fancybox.pack.js">
+      <publishTime>06/14/2013 02:12:28</publishTime>
+    </File>
+    <File Include="thirdparty/fancybox/old/jquery.mousewheel-3.0.6.pack.js">
+      <publishTime>06/14/2013 02:12:28</publishTime>
+    </File>
+    <File Include="thirdparty/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>07/25/2016 12:58:56</publishTime>
+    </File>
+    <File Include="thirdparty/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>07/25/2016 12:58:56</publishTime>
+    </File>
+    <File Include="thirdparty/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>07/25/2016 12:58:56</publishTime>
+    </File>
+    <File Include="thirdparty/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>07/25/2016 12:58:56</publishTime>
+    </File>
+    <File Include="thirdparty/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>07/25/2016 12:58:56</publishTime>
+    </File>
+    <File Include="thirdparty/js/bootstrap.js">
+      <publishTime>07/25/2016 12:58:56</publishTime>
+    </File>
+    <File Include="thirdparty/js/bootstrap.min.js">
+      <publishTime>07/25/2016 12:58:56</publishTime>
+    </File>
+    <File Include="thirdparty/js/jquery.js">
+      <publishTime>07/25/2016 12:58:56</publishTime>
     </File>
     <File Include="Views/Account/ChangePassword.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Account/ChangePasswordSuccess.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Account/LogOn.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Account/Register.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Babies/Remeras.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Bebas/Abrigos.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Bebas/Botonera.cshtml">
       <publishTime>03/12/2017 17:31:25</publishTime>
     </File>
     <File Include="Views/Bebas/Camisas.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Bebas/Camperas.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Bebas/Pantalones.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Bebas/Remeras.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Bebas/Todos.cshtml">
-      <publishTime>03/13/2015 19:14:27</publishTime>
+      <publishTime>08/27/2017 22:29:09</publishTime>
     </File>
     <File Include="Views/Bebas/Vestidos.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Bebes/Abrigos.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Bebes/Botonera.cshtml">
       <publishTime>03/12/2017 22:15:43</publishTime>
     </File>
     <File Include="Views/Bebes/Camisas.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Bebes/Camperas.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Bebes/Pantalones.cshtml">
       <publishTime>03/13/2015 12:56:48</publishTime>
@@ -3743,97 +4535,97 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/13/2015 19:26:16</publishTime>
     </File>
     <File Include="Views/Bebes/Todos.cshtml">
-      <publishTime>03/13/2015 20:25:45</publishTime>
+      <publishTime>08/11/2017 01:25:19</publishTime>
     </File>
     <File Include="Views/Clouth/Babies.cshtml">
       <publishTime>11/27/2015 19:27:43</publishTime>
     </File>
     <File Include="Views/Clouth/Index.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Clouth/_DisplayClouth.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Contacts/Index.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>03/21/2016 22:28:43</publishTime>
+      <publishTime>08/11/2017 00:23:50</publishTime>
     </File>
     <File Include="Views/Home/Index3.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Home/Nena.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Minibebes/Botonera.cshtml">
       <publishTime>03/12/2017 22:10:50</publishTime>
     </File>
     <File Include="Views/Minibebes/Todos.cshtml">
-      <publishTime>03/12/2017 22:19:20</publishTime>
+      <publishTime>08/11/2017 01:36:13</publishTime>
     </File>
     <File Include="Views/Nena/Abrigos.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Nena/Botonera.cshtml">
       <publishTime>03/12/2017 17:32:16</publishTime>
     </File>
     <File Include="Views/Nena/Camisas.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Nena/Camperas.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Nena/Pantalones.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Nena/Remeras.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Nena/Todos.cshtml">
-      <publishTime>03/13/2015 20:40:49</publishTime>
+      <publishTime>08/13/2017 16:27:19</publishTime>
     </File>
     <File Include="Views/Nena/Vestidos.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>03/12/2017 16:16:14</publishTime>
+      <publishTime>08/11/2017 00:54:30</publishTime>
     </File>
     <File Include="Views/Shared/_LogOnPartial.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Varon/Abrigos.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Varon/Botonera.cshtml">
       <publishTime>03/12/2017 22:15:21</publishTime>
     </File>
     <File Include="Views/Varon/Camperas.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Varon/Pantalones.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Varon/Remeras.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/Varon/Todos.cshtml">
-      <publishTime>03/14/2015 12:27:49</publishTime>
+      <publishTime>08/13/2017 16:17:44</publishTime>
     </File>
     <File Include="Views/Web.config">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Views/_ViewStart.cshtml">
-      <publishTime>02/01/2015 17:12:20</publishTime>
+      <publishTime>01/02/2015 17:12:20</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/13/2017 21:33:34</publishTime>
+      <publishTime>08/27/2017 22:39:33</publishTime>
     </File>
   </ItemGroup>
 </Project>

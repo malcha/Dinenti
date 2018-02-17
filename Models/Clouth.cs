@@ -27,7 +27,7 @@ namespace MvcApplication2.Models
         {
             REMERAS = 1,
             REMERON = 2,
-            PANTALON = 3,
+            PANTALONES = 3,
             CALZAS = 4,
             BUZOS = 5,
             CAMPERAS = 6,
@@ -45,7 +45,8 @@ namespace MvcApplication2.Models
             CHOMBAS=18,
             GENERAL = 19,
             MINIBEBA = 20,
-            MINIBEBE = 21
+            MINIBEBE = 21,
+            BERMUDAS = 22
         }
 
         public Clouth (int id,string description, string size, string colours,SUBCATEGORY subcategory,CATEGORY category, string action="", string imgName=null, string code=null,string anotherDesc="", string shortDescription=""){
@@ -53,7 +54,7 @@ namespace MvcApplication2.Models
 
             LowImg = imgName == null? id.ToString(): imgName;
             HighImg = imgName == null ? id.ToString() : imgName;
-            GetCode = code == null ? Id.ToString() : code;
+            GetCode = code == null ? "Art. " + Id.ToString() : code;
             //string IdToString = String.IsNullOrEmpty(imgName) ? id.ToString(): imgName;
             string IdToString = id.ToString();
 
@@ -114,7 +115,7 @@ namespace MvcApplication2.Models
                 case SUBCATEGORY.JUMPER:
                     subCat = "jumpers";
                     break;
-                case SUBCATEGORY.PANTALON:
+                case SUBCATEGORY.PANTALONES:
                     subCat = "pantalon";
                     break;
                 case SUBCATEGORY.REMERAS:

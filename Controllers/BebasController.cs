@@ -17,7 +17,7 @@ namespace MvcApplication2.Controllers
         public ActionResult Camperas()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Camperas para Bebas";
+            ViewBag.TitleName = "Camperas -Pantalón Rústico - Rompevientos";
             var list = new ClouthManager()
                             .FindAll()
                             .Where(x => x.Category == Clouth.CATEGORY.BEBAS)
@@ -29,10 +29,10 @@ namespace MvcApplication2.Controllers
 
         }
         
-        public ActionResult RemerasBuzos()
+        public ActionResult Remeras()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Remeras y Buzos para Bebas";
+            ViewBag.TitleName = "Remeras";
             var list = new ClouthManager()
                             .FindAll()
                             .Where(x => x.Category == Clouth.CATEGORY.BEBAS)
@@ -42,24 +42,37 @@ namespace MvcApplication2.Controllers
 
             return View("todos", list);
         }
-
-        public ActionResult pantalonescalzas()
+        public ActionResult Calzas()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Pantalones y Calzas para Bebas";
+            ViewBag.TitleName = "Calzas";
             var list = new ClouthManager()
                             .FindAll()
                             .Where(x => x.Category == Clouth.CATEGORY.BEBAS)
-                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.PANTALON || x.SubCategory == Clouth.SUBCATEGORY.CALZAS)
+                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.CALZAS)
                             .OrderBy(x => x.Id)
                             .ToList();
 
             return View("todos", list);
         }
-        public ActionResult vestidoscamisolas()
+
+        public ActionResult enteritos()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Vestidos y Camisolas para Bebas";
+            ViewBag.TitleName = "Enteritos - Jardineros - Shorts";
+            var list = new ClouthManager()
+                            .FindAll()
+                            .Where(x => x.Category == Clouth.CATEGORY.BEBAS)
+                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.ENTERITOS)
+                            .OrderBy(x => x.Id)
+                            .ToList();
+
+            return View("todos", list);
+        }
+        public ActionResult Vestidos()
+        {
+            Cookies.WriteCookie();
+            ViewBag.TitleName = "Vestidos - Soleros";
             var list = new ClouthManager()
                             .FindAll()
                             .Where(x => x.Category == Clouth.CATEGORY.BEBAS)
@@ -69,20 +82,7 @@ namespace MvcApplication2.Controllers
 
             return View("todos", list);
         }
-
-        public ActionResult Abrigos()
-        {
-            Cookies.WriteCookie();
-            ViewBag.TitleName = "Abrigos para Bebas";
-            var list = new ClouthManager()
-                            .FindAll()
-                            .Where(x => x.Category == Clouth.CATEGORY.BEBAS)
-                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.ABRIGOS)
-                            .OrderBy(x => x.Id)
-                            .ToList();
-
-            return View("todos", list);
-        }
+        
         
     }
 }
