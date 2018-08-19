@@ -9,14 +9,14 @@ namespace MvcApplication2.Controllers
 {
     public class VaronController : Controller
     {
-        public ActionResult camperas()
+        public ActionResult buzos()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Camperas - Pantalones Rústicos";
+            ViewBag.TitleName = "Buzos - Camperas";
             var list = new ClouthManager()
                             .FindAll()
                             .Where(x => x.Category == Clouth.CATEGORY.VARON)
-                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.CAMPERAS)
+                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.BUZOS)
                             .OrderBy(x => x.Id)
                             .ToList();
 
@@ -27,11 +27,11 @@ namespace MvcApplication2.Controllers
         public ActionResult remeras()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Remeras - Camisas - Chomba";
+            ViewBag.TitleName = "Remeras - Chombas";
             var list = new ClouthManager()
                         .FindAll()
                         .Where(x => x.Category == Clouth.CATEGORY.VARON)
-                        .Where(x => x.SubCategory == Clouth.SUBCATEGORY.REMERAS || x.SubCategory == Clouth.SUBCATEGORY.BUZOS || x.SubCategory == Clouth.SUBCATEGORY.CAMISAS)
+                        .Where(x => x.SubCategory == Clouth.SUBCATEGORY.REMERAS)
                         .OrderBy(x => x.Id)
                         .ToList();
 
@@ -39,14 +39,14 @@ namespace MvcApplication2.Controllers
         }
 
 
-        public ActionResult bermudas()
+        public ActionResult Pantalones()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Bermudas - Shorts de baño";
+            ViewBag.TitleName = "Pantalones";
             var list = new ClouthManager()
                         .FindAll()
                         .Where(x => x.Category == Clouth.CATEGORY.VARON)
-                        .Where(x => x.SubCategory == Clouth.SUBCATEGORY.BERMUDAS)
+                        .Where(x => x.SubCategory == Clouth.SUBCATEGORY.PANTALONES)
                         .OrderBy(x => x.Id)
                         .ToList();
 

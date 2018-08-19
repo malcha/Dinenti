@@ -24,11 +24,11 @@ namespace MvcApplication2.Controllers
         public ActionResult MiniBebas()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Mini bebas";
+            ViewBag.TitleName = "Mini bebas y Mini Bebes ";
             var list = new ClouthManager()
                             .FindAll()
                             .Where(x => x.Category == Clouth.CATEGORY.MINIBEBES)
-                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.MINIBEBA)
+                            .Where(x => x.SubCategory == Clouth.SUBCATEGORY.MINIBEBE)
                             .ToList();
 
             return View("todos", list);

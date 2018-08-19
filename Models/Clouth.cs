@@ -20,7 +20,8 @@ namespace MvcApplication2.Models
             NENA = 2,
             BEBES = 3,
             BEBAS = 4,
-            MINIBEBES = 5
+            MINIBEBES = 5,
+            TEENS=6
         }
 
         public enum SUBCATEGORY
@@ -46,7 +47,9 @@ namespace MvcApplication2.Models
             GENERAL = 19,
             MINIBEBA = 20,
             MINIBEBE = 21,
-            BERMUDAS = 22
+            BERMUDAS = 22,
+            NENA=23,
+            NENE=24
         }
 
         public Clouth (int id,string description, string size, string colours,SUBCATEGORY subcategory,CATEGORY category, string action="", string imgName=null, string code=null,string anotherDesc="", string shortDescription=""){

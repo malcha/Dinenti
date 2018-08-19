@@ -29,7 +29,7 @@ namespace MvcApplication2.Controllers
             var list = new ClouthManager()
                 .FindAll()
                 .Where(x => x.Category == Clouth.CATEGORY.NENA)
-                .Where(x => x.SubCategory == Clouth.SUBCATEGORY.PANTALONES)
+                .Where(x => x.SubCategory == Clouth.SUBCATEGORY.PANTALONES || x.SubCategory == Clouth.SUBCATEGORY.CALZAS)
                 .OrderBy(x => x.Id)
                 .ToList();
 
@@ -38,11 +38,11 @@ namespace MvcApplication2.Controllers
         public ActionResult vestidos()
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Vestidos - Soleros";
+            ViewBag.TitleName = "Vestidos";
             var list = new ClouthManager()
                 .FindAll()
                 .Where(x => x.Category == Clouth.CATEGORY.NENA)
-                .Where(x => x.SubCategory == Clouth.SUBCATEGORY.VESTIDOS || x.SubCategory == Clouth.SUBCATEGORY.VESTIDOS)
+                .Where(x => x.SubCategory == Clouth.SUBCATEGORY.VESTIDOS)
                 .OrderBy(x => x.Id)
                 .ToList();
 
@@ -50,7 +50,7 @@ namespace MvcApplication2.Controllers
         }
         public ActionResult Camperas()
         {
-            ViewBag.TitleName = "Camperas Rústicas - Rompevientos";
+            ViewBag.TitleName = "Buzos - Camperas";
             var list = new ClouthManager()
                 .FindAll()
                 .Where(x => x.Category == Clouth.CATEGORY.NENA)

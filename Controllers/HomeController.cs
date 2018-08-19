@@ -9,7 +9,7 @@ using MvcApplication2.Manager;
 using System.Net.Mail;
 using MvcApplication2.Filters;
 using MvcApplication2.Helpers;
-
+using MvcApplication2.Models;
 
 namespace MvcApplication2.Controllers
 {
@@ -54,11 +54,18 @@ namespace MvcApplication2.Controllers
             IEnumerable<string> recommendation;
             string recommendationId = String.Empty;
             //7561,7546,7525,7502
-            recommendation = new List<string>() { "7561", "7546", "7525", "7502", "7568" };
+            recommendation = new List<string>() { "recomendacion4", "recomendacion2", "recomendacion1", "recomendacion5" };
 
-            var list = new ClouthManager().FindAll().Where(x => recommendation.Contains(x.Id.ToString())).Select(x => new MvcApplication2.Models.HyalcoreClouth { Clouth = x, RecommendationId = recommendationId }).ToList();
+            var list = new List<Models.Clouth>();
+            list.Add(new Clouth(7801, "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, imgName: "recomendacion4"));
+            list.Add(new Clouth(7801, "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, imgName: "recomendacion2"));
+            list.Add(new Clouth(7801, "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, imgName: "recomendacion1"));
+            list.Add(new Clouth(7801, "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, imgName: "recomendacion5"));
+
+
+            var list2 = list.Select(x => new MvcApplication2.Models.HyalcoreClouth { Clouth = x, RecommendationId = recommendationId }).ToList();
             ViewBag.Message = ResourceHome.WelcomeTitle;
-            return View(list);
+            return View(list2);
         }
 
         public ActionResult Babies()
