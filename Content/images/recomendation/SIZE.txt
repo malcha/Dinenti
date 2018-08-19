@@ -1,0 +1,6 @@
+HOME
+	LEFT RIGHT
+		W: 255 x h: 425
+	
+	TEXTO (ahora 1035)
+		W 800 x h: 163
