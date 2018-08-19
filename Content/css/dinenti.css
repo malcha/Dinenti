@@ -1,0 +1,185 @@
+
+@font-face {
+    font-family: airplanesintheNightSky;
+    src: url(../font/AirplanesintheNightSky.ttf);
+}
+
+.center {
+     float: none;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+.left {
+     float: left;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+.right {
+     float: right;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+.nav-text {
+    font-family: "AirplanesintheNightSky";
+    font-weight: bold;
+}
+
+.carousel {
+    max-width: 40em;
+    height: auto;
+}
+
+.carousel .item img {
+    width: 30em;
+    height: auto;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+.carousel-control.right {
+    background-image: none;
+}
+.carousel-control.left {
+    background-image: none;
+}
+
+.carousel-control .icon-next, .carousel-control .glyphicon-chevron-right {
+	right: 50%;
+	margin-right:0px;
+}
+.carousel-control .icon-next, .carousel-control .glyphicon-chevron-left {
+	right: 50%;
+	margin-left:0px;
+}
+
+ .list-group-item-custom {
+    color: #337ab7 !important;
+    font-family: AirplanesintheNightSky !important;
+    font-weight: bold;
+    background-color: #a9f6c6 !important;
+} 
+
+
+.list-group-item-dinenti {
+    color: #337ab7;
+    font-family: AirplanesintheNightSky;
+    font-weight: bold;
+    background-color: #a9f6c6;
+    border-color: #000
+}
+
+a.list-group-item-dinenti,
+button.list-group-item-dinenti {
+  color: #337ab7;
+}
+
+.list-group-item-dinenti {
+  color: #337ab7;
+  background-color: #a9f6c6;
+}
+a.list-group-item-dinenti,
+button.list-group-item-dinenti {
+  color: #337ab7;
+}
+a.list-group-item-dinenti .list-group-item-heading,
+button.list-group-item-dinenti .list-group-item-heading {
+  color: inherit;
+}
+a.list-group-item-dinenti:hover,
+button.list-group-item-dinenti:hover,
+a.list-group-item-dinenti:focus,
+button.list-group-item-dinenti:focus {
+  color: #337ab7;
+  background-color: #d0e9c6;
+}
+a.list-group-item-dinenti.active,
+button.list-group-item-dinenti.active,
+a.list-group-item-dinenti.active:hover,
+button.list-group-item-dinenti.active:hover,
+a.list-group-item-dinenti.active:focus,
+button.list-group-item-dinenti.active:focus {
+  color: #fff;
+  background-color: #3c763d;
+  border-color: #3c763d;
+}
+
+.rowcontainer {
+    margin-bottom:3em; 
+}
+
+
+.page-title{
+    margin-bottom:4%;
+    margin-left: 7.5%;    
+    font-family: AirplanesintheNightSky;
+}
+
+
+/* .carousel .item {
+  height: 300px;
+}
+
+.item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 300px;
+} */
+
+/*APPCOMPONENT*/
+/*---------------------------------------------*/
+li {
+    font-size: large;
+}
+
+div.panel-heading {
+   font-size: x-large; 
+}
+
+.navbar-linear{
+    /* position:fixed;
+    bottom: 0;
+    left: 0;
+    right: 0; */
+	/* margin-bottom: 0px; */
+	width: 100%;
+	border-top: 1px solid #E6E6E6;
+	background-color: #E6E6E6;
+	background-image: -moz-linear-gradient(top, #FFF, #E6E6E6);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FFF), to(#E6E6E6));
+	background-image: -webkit-linear-gradient(top, #FFF, #E6E6E6);
+	background-image: -o-linear-gradient(top, #FFF, #E6E6E6);
+	background-image: linear-gradient(to top, #FFF, #E6E6E6);
+	text-align: center;
+	min-height: 33px;
+}
+
+footer.footer_actions{
+	position:fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	margin-bottom: 0px;
+	width: 100%;
+	border-top: 1px solid #E6E6E6;
+	background-color: #E6E6E6;
+	background-image: -moz-linear-gradient(top, #FFF, #E6E6E6);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FFF), to(#E6E6E6));
+	background-image: -webkit-linear-gradient(top, #FFF, #E6E6E6);
+	background-image: -o-linear-gradient(top, #FFF, #E6E6E6);
+	background-image: linear-gradient(to bottom, #FFF, #E6E6E6);
+	/* z-index: 2000; */
+	text-align: center;
+	min-height: 33px;
+}
+.wrap { margin: 0 auto; width: 100%; }
+
+.images-to-middle{
+    width: 65%;
+}
