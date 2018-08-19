@@ -1,0 +1,73 @@
+﻿@using MvcApplication2.Resource;
+@using System.Web.Mvc.Html;
+@using MvcApplication2.Helpers.Mvc;
+@using MvcApplication2.Models;
+
+@model List<Clouth>
+    @{
+    ViewBag.Title = "";
+    }
+
+
+    @section PageScripts{
+    <script type="text/javascript">
+            jQuery(document).ready(function () {
+                var view = new Views.BaseModel();
+            });
+    </script>
+    }
+
+    @*@{
+    Html.RenderPartial("Botonera", null);
+    }*@
+
+    <div class="page-title">
+        <h3>@ViewBag.TitleName</h3>
+    </div>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row rowcontainer">
+
+            <div class="col-md-2">
+                <!-- <p class="lead">Shop Name</p> -->
+                <div class="list-group">
+                    @Html.ActionLink("Ellas", "ellas", "teens",new { @class= "list-group-item list-group-item-dinenti"})
+                    @Html.ActionLink("Ellos", "ellos", "teens", new { @class = "list-group-item list-group-item-dinenti" })
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="row rowcontainer">
+                    @foreach (Clouth item in Model) {
+                    <div class="col-sm-3 col-lg-3 col-md-3">
+                        <div class="thumbnail back-ligh-blue">
+                            <a class="fancybox" rel="gallery1" href='@item.getHighImgPath()' title='@item.Description'>
+                                <img src='@item.getLowImgPath()' alt="" />
+                                <div class="caption">
+                                    <h6 class="product-title">@item.ShortDescription</h6>
+                                    <h6 class="product-price">@item.GetCode</h6>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+    @*<div id="content_container">
+        <div id="productos_container">
+            @foreach (Clouth item in Model)
+            {
+            <div class="producto_container" style="">
+                <a rel="example_group" href="@item.getHighImgPath()" title="@item.Description" data-hyalcore="" data-hyalcore-id="@item.Id.ToString()">
+                    <img src="@item.getLowImgPath()" alt="" class="foto">
+                    <h2>@item.ShortDescription</h2>
+                    <div class="codigo">Art. 	@item.Id.ToString()</div>
+                </a>
+            </div>
+            }
+        </div>
+    </div>*@
