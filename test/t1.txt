@@ -1,0 +1,488 @@
+using FVG.ADN.GatewaySap.Domain.Core.Data;
+using FVG.ADN.GatewaySap.Domain.Core.DTO.Config;
+using FVG.ADN.GatewaySap.Domain.Core.DTO.Cobranza;
+using FVG.ADN.GatewaySap.Domain.Core.Exceptions;
+using FVG.ADN.GatewaySap.Domain.Entities;
+using FVG.ADN.GatewaySap.Domain.Entities.Asientos;
+using FVG.Utils.Logging.Abstractions;
+using Microsoft.Extensions.Options;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using FVG.Utils.Tracing.Abstractions;
+
+namespace FVG.ADN.GatewaySap.Domain.Core.Services
+{
+    public class SapGatewayCobranzaService : ISapGatewayCobranzaService
+    {
+        private readonly IUnitOfWork _uow;
+        private readonly ILogger<SapGatewayCobranzaService> _logger;
+        private readonly IConversorService _conversor;
+        private readonly IOperationTracer _operationTracer;
+        private readonly BalanceConfig _balanceConfig;
+        private decimal _balance;
+
+        private const string _sociedad = "FVG";
+        private const string _pendiente = "Pendiente";
+        private const string _formatoFecha = "yyyyMMdd";
+        private const string _ZUONR = "ZUONR";
+        private const string _HKONT = "HKONT";
+        private const string _HKONT_IMP = "HKONT-IMP";
+        private const string _XREF1 = "XREF1";
+        private const string _XREF2 = "XREF2";
+        private const string _XREF3 = "XREF3";
+        private const string _HZUON = "HZUON";
+        private const string _MWSKZ = "MWSKZ";
+        private const string _PRCTR = "PRCTR";
+        private const string _KOSTL = "KOSTL";
+        private const string _KUNNR = "KUNNR";
+        private const string _LIFNR = "LIFNR";
+        private const string _SGTXT = "SGTXT";
+
+        public SapGatewayCobranzaService(
+            IUnitOfWork uow,
+            ILogger<SapGatewayCobranzaService> logger,
+            IConversorService conversor,
+            IOperationTracer operationTracer, 
+            IOptions<BalanceConfig> balanceConfig
+            )
+        {
+            _uow = uow ?? throw new ArgumentNullException(nameof(uow));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _conversor = conversor ?? throw new ArgumentNullException(nameof(conversor));
+            _operationTracer = operationTracer ?? throw new ArgumentNullException(nameof(operationTracer));
+            _balanceConfig = balanceConfig.Value;
+        }
+        
+        public async Task CrearAsiento(IEnumerable<AsientoDTO> asientos)
+        {
+            try
+            {
+                //Si es un Operation ya procesado, no se hace nada (Idempotencia)
+                if (await _uow.AsientosCobranza.GetOneOrDefaultByOperationId(_operationTracer.TraceId) != null)
+                {
+                    _logger.LogInformation($"Idempotencia: Operacion Duplicada con OperationId:{_operationTracer.TraceId}");
+                    return;
+                };
+
+                var imputacionOrigenDocumentos = (await _uow.ImputacionOrigenDocumento.GetAllAsync()).ToList();
+                var conceptosDB = (await _uow.ImputacionConcepto.GetAllAsync()).ToList();
+                var financiadores = (await _uow.Financiador.GetAllAsync()).ToList();
+                var impuestoTasas = (await _uow.ImputacionImpuestoTasa.GetAllAsync()).ToList();
+                var conversores = (await _uow.Conversor.GetAllAsync()).ToList();
+                var mapeadorAConversors = (await _uow.MapeadorAConversor.GetAllAsync()).ToList();
+                var sapClaseDocumentos = (await _uow.SapClaseDocumento.GetAllAsync()).ToList();
+                var sucursales = (await _uow.AtributosSucursal.GetAllAsync()).ToList();
+                var proveedores = (await _uow.Proveedor.GetAllAsync()).ToList();
+                var claves = (await _uow.ClaveContable.GetAllAsync()).ToList();
+                var cuentas = (await _uow.CuentaContable.GetAllAsync()).ToList();
+                var mediosDePago = (await _uow.MediosDePago.GetAllAsync()).ToList();
+                var conceptoSinFinanciador = (await _uow.ConceptosSinFinanciador.GetAllAsync()).ToList();
+
+                var asientosGenerados = new List<AsientoCobranza>();
+                foreach (var item in asientos)
+                {
+                    var proveedorItem = proveedores.FirstOrDefault(x => x.Origen == item.Cabecera.Origen);
+                    if (proveedorItem == null) throw new ProveedorInexistenteException(item.Cabecera.Origen);
+
+                    var sapClaseDoc = sapClaseDocumentos.FirstOrDefault(x => x.OrigenDoc == item.Cabecera.Origen && x.TipoDoc == item.Cabecera.TipoComprobante);
+                    if (sapClaseDoc == null)
+                        throw new ClaseDocumentoSapInexistenteException(item.Cabecera.Origen, item.Cabecera.TipoComprobante);
+
+                    var sucursal = sucursales.FirstOrDefault(x => x.SucursalCobro == item.Cabecera.SucursalCobro);
+                    if (sucursal == null)
+                        throw new SucursalInexistenteException(item.Cabecera.SucursalCobro.ToString());
+
+                    //HIDRATO
+                    if (proveedorItem.CUIT.HasValue)
+                        item.Cabecera.CuitProveedor = proveedorItem.CUIT.Value;
+                    item.Cabecera.CentroCosto = sucursal.CentroCosto;
+                    item.Cabecera.CentroBeneficio = sucursal.CentroBeneficio;
+                    item.Cabecera.FechaComprobantePagoFacil = $"PF{Convert.ToDateTime(item.Cabecera.FechaComprobante).ToString(_formatoFecha)}";
+
+                    //var op = new Guid("8859b8b0-8620-4d33-8a45-d7d6c501d123");
+
+                    var asiento = new AsientoCobranza(_operationTracer.TraceId)
+                    //var asiento = new AsientoCobranza(op)
+                    {
+                        Estado = _pendiente,
+                        ClaseDocumento = sapClaseDoc.ClaseDoc,
+                        TextoCabecera = item.Cabecera.Origen,
+                        FechaDocumento = Convert.ToDateTime(item.Cabecera.FechaComprobante).ToString(_formatoFecha),
+                        Referencia = $"{item.Cabecera.PuntoDeVenta.ToString().PadLeft(4, '0')}{item.Cabecera.Letra}{item.Cabecera.NroComprobante.PadLeft(8, '0')}",
+                        Sociedad = _sociedad,
+                        FechaContabilizacion = Convert.ToDateTime(item.Cabecera.FechaComprobante).ToString(_formatoFecha),
+                        Moneda = item.Cabecera.Moneda,
+                        TipoDeCambio = null,
+                        XREF2_HD = item.Cabecera.IdGrupoComprobantes,
+                        IdSubGrupoComprobante = item.Cabecera.IdSubGrupoComprobantes
+                    };
+
+                    //HIDRATO -- Si el DTO Referencia viene en nulo es xq es Factura, entonces tomo los datos de la referencia ya formada.
+                    if (string.IsNullOrEmpty(item.Referencia)) item.Cabecera.Referencia = asiento.Referencia;
+                    else item.Cabecera.Referencia = item.Referencia;
+
+                    var detalles = ArmarDetalles(item, imputacionOrigenDocumentos, conceptosDB, financiadores, impuestoTasas, conversores, mapeadorAConversors, claves, cuentas, mediosDePago, conceptoSinFinanciador);
+                    if (detalles.Any())
+                        asiento.Detalles.AddRange(detalles);
+
+                    ValidarBalanceDeAsiento(item.Cabecera.TipoComprobante, item.Cabecera.IdGrupoComprobantes, item.Cabecera.IdComprobante);
+
+                    await _uow.AsientosCobranza.AddAsync(asiento);
+                    asientosGenerados.Add(asiento);
+                }
+
+                await _uow.SaveAsync();
+                _logger.LogInformation("Asientos generados",
+                        new { AsientosGenerados = asientosGenerados.Select(x => new { x.Id, GrupoComprobantes = x.XREF2_HD }) });
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+        private void AgregarImporteEnBalance(IList<ClaveContable> claves, string clave, decimal importe)
+        {
+            var signo = claves.FirstOrDefault(x => x.Clave == clave)?.Signo;
+            if (!signo.HasValue) throw new ClaveContableInexistenteException(clave);
+            _balance += importe * signo.Value;
+        }
+
+        private void ValidarBalanceDeAsiento(string claseDoc, long idGrupoDoc, long idDocumento)
+        {
+            if (Math.Abs(_balance) > _balanceConfig.Tolerancia)
+                throw new BalanceoInvalidoException(claseDoc, idGrupoDoc, idDocumento, _balance);
+        }
+
+        private List<DetalleCobranza> ArmarDetalles(
+            AsientoDTO request,
+            IList<ImputacionOrigenDocumento> imputacionOrigenDocumentos,
+            IList<ImputacionConcepto> conceptosDB,
+            IList<Financiador> financiadores,
+            IList<ImputacionImpuestoTasa> impuestoTasas,
+            IList<Conversor> conversores,
+            IList<MapeadorAConversor> mapeadorAConversors,
+            IList<ClaveContable> claves,
+            IList<CuentaContable> cuentas,
+            IList<ImputacionMediosDePago> mediosDePago,
+            IList<ConceptoSinFinanciador> conceptoSinFinanciador)
+        {
+            var asientos = new List<DetalleCobranza>();
+            var order = 1;
+            _balance = 0;
+
+            var imputacionOrigenDocumento = imputacionOrigenDocumentos.First(e => e.OrigenDocumento == request.Cabecera.Origen && e.TipoDocumento == request.Cabecera.TipoComprobante);
+            if (imputacionOrigenDocumento == null) throw new ImputacionOrigenDocumentoInvalidaException(request.Cabecera.Origen, request.Cabecera.TipoComprobante);
+
+            if (!string.IsNullOrEmpty(imputacionOrigenDocumento.ClaveContable))
+            {
+                ImputarCabecera(request.Cabecera, request.Cliente, imputacionOrigenDocumento.CuentaContable, imputacionOrigenDocumento.ClaveContable,
+                    ref order, ref asientos, claves, cuentas, conversores, mapeadorAConversors, Math.Abs(request.Cabecera.ImporteTotal), true);
+            }
+
+            if (request.MediosDePago != null)
+                foreach (var itemMedios in request.MediosDePago)
+                {
+                    var medio = mediosDePago.FirstOrDefault(x => x.Origen == request.Cabecera.Origen && x.MedioDePago == itemMedios.Codigo && x.TipoDocumento == request.Cabecera.TipoComprobante);
+                    if (medio == null) throw new MedioDePagoInvalidoException(request.Cabecera.Origen, itemMedios.Codigo, request.Cabecera.TipoComprobante);
+
+                    ImputarCabecera(request.Cabecera, request.Cliente, medio.CuentaContable, medio.ClaveContable, ref order, ref asientos, 
+                        claves, cuentas, conversores, mapeadorAConversors, itemMedios.Importe);
+                }
+
+            foreach (var item in request.Detalle)
+            {
+                //TODO: A futuro cuando haya materiales, esta lógica, tiene que cambiar.
+                var conceptos = conceptosDB.Where(x => x.Origen == request.Cabecera.Origen && x.Concepto == item.Key && x.TipoDocumento == request.Cabecera.TipoComprobante).ToList();
+                if (!conceptos.Any())
+                    throw new ConceptoInvalidoException(request.Cabecera.Origen, item.Key, request.Cabecera.TipoComprobante);
+
+                foreach (var concepto in conceptos)
+                {
+                    ImputarDetalle(item, request.Cabecera, request.Cliente, concepto.CuentaContable, concepto.ClaveContable,
+                        ref order, ref asientos, conceptosDB, financiadores, impuestoTasas, conversores, mapeadorAConversors, claves, cuentas, conceptoSinFinanciador);
+                }
+                    
+            }
+            return asientos;
+        }
+
+        private void ImputarCabecera(
+                CabeceraDTO cabecera,
+                ClienteDTO clienteDTO,
+                long? cuentaContable, 
+                string claveContable,
+                ref int order,
+                ref List<DetalleCobranza> asientos,
+                IList<ClaveContable> claves,
+                IList<CuentaContable> cuentas,
+                IList<Conversor> conversores,
+                IList<MapeadorAConversor> mapeadorAConversors,
+                decimal importe,
+                bool hasImpuestos = false)
+        {
+            //detalle ficticio
+            //Hidrato
+            var detalleAux = new DetalleItemDTO(cuentaContable.Value);
+            var asientoAux = new AsientoRequestItemUnicoImpuesto(cabecera, detalleAux, clienteDTO);
+
+            var asignacion = _conversor.Evaluar(_ZUONR, asientoAux, conversores, mapeadorAConversors);
+            var ctaCteStr = _conversor.Evaluar(_HKONT, asientoAux, conversores, mapeadorAConversors);
+            var clienteStr = _conversor.Evaluar(_KUNNR, asientoAux, conversores, mapeadorAConversors);
+            var proveedorStr = _conversor.Evaluar(_LIFNR, asientoAux, conversores, mapeadorAConversors);
+            string indiceImpuesto = "";
+            if (hasImpuestos)
+                indiceImpuesto = _conversor.Evaluar(_MWSKZ, asientoAux, conversores, mapeadorAConversors);
+            var asignacionCME = _conversor.Evaluar(_HZUON, asientoAux, conversores, mapeadorAConversors);
+            var centroCosto = _conversor.Evaluar(_KOSTL, asientoAux, conversores, mapeadorAConversors);
+            var centroBeneficio = _conversor.Evaluar(_PRCTR, asientoAux, conversores, mapeadorAConversors);
+
+            long? ctaCorriente = null;
+            if (!string.IsNullOrEmpty(ctaCteStr))
+                ctaCorriente = Convert.ToInt64(ctaCteStr);
+
+            long? cliente = null;
+            if (!string.IsNullOrEmpty(clienteStr))
+                cliente = Convert.ToInt64(clienteStr);
+
+            long? proveedor = null;
+            if (!string.IsNullOrEmpty(proveedorStr))
+                proveedor = Convert.ToInt64(proveedorStr);
+
+            AgregarImporteEnBalance(claves, claveContable, importe);
+
+            var detalleItem = CrearDetalle(
+            cuentas,
+            order,
+            claveContable,
+            cabecera.Moneda,
+            cuentaContable.Value,
+            ctaCorriente, // Cuenta corriente / CUIL / DNI
+            importe,
+            cabecera.IdComprobante.ToString(),
+            centroCosto,
+            centroBeneficio,
+            asignacion,
+            asignacionCME,
+            "",
+            indiceImpuesto,
+            "",
+            "",
+            "",
+            $"I{cabecera.IdComprobante.ToString()}",
+            "",
+            cliente,
+            proveedor);
+
+            order++;
+            asientos.Add(detalleItem);
+        }
+
+        private void ImputarDetalle(DetalleDTO item,
+            CabeceraDTO cabeceraDTO,
+            ClienteDTO clienteDTO,
+            long cuentaContable,
+            string claveContable,
+            ref int order,
+            ref List<DetalleCobranza> asientos,
+            IList<ImputacionConcepto> conceptosDB,
+            IList<Financiador> financiadores,
+            IList<ImputacionImpuestoTasa> impuestoTasas,
+            IList<Conversor> conversores,
+            IList<MapeadorAConversor> mapeadorAConversors,
+            IList<ClaveContable> claves,
+            IList<CuentaContable> cuentas,
+            IList<ConceptoSinFinanciador> conceptoSinFinanciador)
+        {
+            //Resumen de tarjeta no tiene financiador.
+            var conFinanciador = conceptoSinFinanciador.FirstOrDefault(x => x.Concepto == item.Key);
+            if (conFinanciador == null)
+            {
+                var financiadorItem = financiadores.FirstOrDefault(x => x.Codigo == item.Financiador);
+                if (financiadorItem == null) throw new FinanciadorInexistenteException(item.Financiador);
+                item.NombreFinanciador = financiadorItem.Nombre;
+                item.CuitFinanciador = financiadorItem.CUIT;
+            }
+
+            item.NroCuenta = cuentaContable;
+            
+
+            var detalle = new DetalleItemDTO(item);
+            var asientoReq = new AsientoRequestItemUnicoImpuesto(cabeceraDTO, detalle, clienteDTO);
+
+            var XREF1 = _conversor.Evaluar(_XREF1, asientoReq, conversores, mapeadorAConversors);
+            var XREF2 = _conversor.Evaluar(_XREF2, asientoReq, conversores, mapeadorAConversors);
+            var XREF3 = _conversor.Evaluar(_XREF3, asientoReq, conversores, mapeadorAConversors);
+            var asignacion = _conversor.Evaluar(_ZUONR, asientoReq, conversores, mapeadorAConversors);
+            var asignacionCME = _conversor.Evaluar(_HZUON, asientoReq, conversores, mapeadorAConversors);
+            var asignacionLote = _conversor.Evaluar(_SGTXT, asientoReq, conversores, mapeadorAConversors);
+            var cuentaCorriente = _conversor.Evaluar(_HKONT, asientoReq, conversores, mapeadorAConversors);
+            var centroCosto = _conversor.Evaluar(_KOSTL, asientoReq, conversores, mapeadorAConversors);
+            var centroBeneficio = _conversor.Evaluar(_PRCTR, asientoReq, conversores, mapeadorAConversors);
+
+            long? ctaCorriente = null;
+            if (!string.IsNullOrEmpty(cuentaCorriente))
+                ctaCorriente = Convert.ToInt64(cuentaCorriente);
+
+            var clienteStr = _conversor.Evaluar(_KUNNR, asientoReq, conversores, mapeadorAConversors);
+            long? cliente = null;
+            if (!string.IsNullOrEmpty(clienteStr))
+                cliente = Convert.ToInt64(clienteStr);
+
+            var proveedorStr = _conversor.Evaluar(_LIFNR, asientoReq, conversores, mapeadorAConversors);
+            long? proveedor = null;
+            if (!string.IsNullOrEmpty(proveedorStr))
+                proveedor = Convert.ToInt64(proveedorStr);
+
+            var indiceImpuestoDetalle = "";
+
+            if (item.Impuestos?.Any() ?? false)
+            {
+                var codigoImpuesto = item.Impuestos.FirstOrDefault(x => x.EsIVA)?.CodigoImpuestoTasa;
+                if (codigoImpuesto == null) throw new DetalleSinIVAException(item.Key);
+                indiceImpuestoDetalle = _conversor.Evaluar(codigoImpuesto, asientoReq, conversores, mapeadorAConversors);
+            }
+            var importe = Math.Abs(item.ImporteUnitario);
+            AgregarImporteEnBalance(claves, claveContable, importe);
+
+            var detalleItem = CrearDetalle(
+                cuentas,
+                order,
+                claveContable,
+                cabeceraDTO.Moneda,
+                cuentaContable,
+                ctaCorriente,
+                importe,
+                item.IdItem.ToString(),
+                centroCosto,
+                centroBeneficio,
+                asignacion,
+                asignacionCME,
+                asignacionLote,
+                indiceImpuestoDetalle,
+                XREF1,
+                XREF2,
+                XREF3,
+                $"I{item.IdItem.ToString()}",
+                "",
+                cliente,
+                proveedor);
+
+            asientos.Add(detalleItem);
+
+            // Me guardo la posicion para guardar BUZEI2
+            var posicionReferenciaImpuesto = order;
+            order++;
+
+            if (item.Impuestos != null)
+            {
+                foreach (var itemImpuesto in item.Impuestos)
+                {
+                    var imputacionImpuestoTasa = impuestoTasas.FirstOrDefault(x => x.ImpuestoTasa == itemImpuesto.CodigoImpuestoTasa);
+                    if (imputacionImpuestoTasa == null) throw new ImputacionImpuestoTasaInvalidaException(itemImpuesto.CodigoImpuestoTasa);
+
+                    //Hidrato
+                    asientoReq.Detalle.Impuestos = itemImpuesto;
+                    asientoReq.Detalle.Impuestos.NroCuenta = imputacionImpuestoTasa.CuentaContable;
+
+                    //TODO: Se podría poner en algun lado si es 01 o 02
+                    var indiceImpuesto = _conversor.Evaluar(itemImpuesto.CodigoImpuestoTasa, asientoReq, conversores, mapeadorAConversors);
+                    var asignacionDetalle = _conversor.Evaluar(_ZUONR, asientoReq, conversores, mapeadorAConversors);
+
+                    var ctaCteStr = _conversor.Evaluar(_HKONT_IMP, asientoReq, conversores, mapeadorAConversors);
+                    long? ctaCorrienteImp = null;
+                    if (!string.IsNullOrEmpty(ctaCteStr))
+                        ctaCorrienteImp = Convert.ToInt64(ctaCteStr);
+                    var importeImp = Math.Abs(itemImpuesto.Importe);
+                    AgregarImporteEnBalance(claves, claveContable, importeImp);
+
+                    detalleItem = CrearDetalle(
+                        cuentas,
+                        order,
+                        claveContable,
+                        cabeceraDTO.Moneda,
+                        imputacionImpuestoTasa.CuentaContable,
+                        ctaCorrienteImp,
+                        importeImp,
+                        itemImpuesto.IdItemImpuesto.ToString(),
+                        "",
+                        "",
+                        asignacionDetalle,
+                        "",
+                        "",
+                        indiceImpuesto,
+                        "",
+                        "",
+                        "",
+                        $"T{itemImpuesto.IdItemImpuesto.ToString()}",
+                        null,
+                        null,
+                        null,
+                        posicionReferenciaImpuesto);
+
+                    order++;
+                    asientos.Add(detalleItem);
+                }
+            }
+        }
+
+        private DetalleCobranza CrearDetalle(
+            IList<CuentaContable> cuentas,
+            int order,
+            string claveContable,
+            string moneda,
+            long cuentaContableMayor,
+            long? cuenta,
+            decimal importeUnitario,
+            string idItem,
+            string ceCo,
+            string ceBe,
+            string asignacion = "",
+            string asinacionCME = "",
+            string fechaLote = "",
+            string IndiceImpuesto = "",
+            string xRef1 = "",
+            string xRef2 = "",
+            string xRef3 = "",
+            string xREF1_HD = "",
+            string xREF2_HD = "",
+            long? cliente = null,
+            long? proveedor = null,
+            int? posicionRefImpuesto = null)
+        {
+
+            var cuentaEntity = cuentas.FirstOrDefault(x => x.Cuenta == cuentaContableMayor);
+            if (cuentaEntity == null) throw new CuentaContableInexistenteException(cuentaContableMayor.ToString());
+
+            return new DetalleCobranza
+            {
+                Posicion = order,
+                ClaveDeContabilizacion = claveContable,
+                CME = cuentaEntity.CME,
+                Moneda = moneda,
+                CuentaCorriente = cuenta,
+                CuentaMayor = cuentaContableMayor,
+                Importe = importeUnitario,
+                Denominacion = cuentaEntity.Descripcion,
+                Asignacion = asignacion,
+                AsignacionCME = asinacionCME,
+                IndiceImpuesto = IndiceImpuesto,
+                XRef1 = xRef1,
+                XRef2 = xRef2,
+                XRef3 = xRef3,
+                CeCo = ceCo,
+                CeBe = ceBe,
+                IdentificacionUnoSistemaOrigen = xREF1_HD,
+                IdentificacionDosSistemaOrigen = xREF2_HD,
+                Cliente = cliente,
+                Proveedor = proveedor,
+                PosicionRefImpuesto = posicionRefImpuesto,
+                FechaLote = fechaLote
+            };
+        }
+    }
+}
