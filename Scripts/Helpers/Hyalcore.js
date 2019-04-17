@@ -1,7 +1,7 @@
 ///// <reference path="../baseview.ts" />
 var Helpers;
 (function (Helpers) {
-    var Hyalcore = (function () {
+    var Hyalcore = /** @class */ (function () {
         function Hyalcore() {
             this.init();
         }
@@ -21,7 +21,7 @@ var Helpers;
             $.get("/hyalcore/interaction", { id: id.toString(), recommendation: RecommendationId });
         };
         return Hyalcore;
-    })();
+    }());
     Helpers.Hyalcore = Hyalcore;
 })(Helpers || (Helpers = {}));
 //# sourceMappingURL=Hyalcore.js.map

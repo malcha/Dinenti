@@ -10,9 +10,13 @@ namespace MvcApplication2.Manager
     public class ClouthManager
     {
 
+        public IEnumerable<Clouth> FindAll(Guid? type)
+        {
+            return ClouthDataLoader.Data(type);
+        }
         public IEnumerable<Clouth> FindAll()
         {
-            return ClouthDataLoader.Data();
+            return ClouthDataLoader.Data(null);
         }
 
 

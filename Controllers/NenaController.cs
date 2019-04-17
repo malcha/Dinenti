@@ -3,20 +3,20 @@ using MvcApplication2.Manager;
 using MvcApplication2.Models;
 using System.Linq;
 using MvcApplication2.Helpers;
+using System;
 
 namespace MvcApplication2.Controllers
 {
     public class NenaController : Controller
     {
-        public ActionResult remerascamisas()
+        public ActionResult all(Guid? type)
         {
             Cookies.WriteCookie();
-            ViewBag.TitleName = "Remeras y camisas para nenas";
+            ViewBag.TitleName = "Nenas";
             var list = new ClouthManager()
-                .FindAll()
+                .FindAll(type)
                 .Where(x => x.Category == Clouth.CATEGORY.NENA)
-                .Where(x => x.SubCategory == Clouth.SUBCATEGORY.REMERAS || x.SubCategory == Clouth.SUBCATEGORY.CAMISAS)
-                .OrderBy(x => x.ShortDescription)
+                .OrderBy(x => x.Id)
                 .ToList();
 
             return View("todos", list);

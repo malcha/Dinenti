@@ -44,17 +44,129 @@ namespace MvcApplication2.Models
             SHORT = 17,
             CHOMBAS=18,
             GENERAL = 19
+        }
 
+        public Clouth(
+            int id, string description, 
+            string size1, string price1, 
+            string size2, string price2, 
+            string size3, string price3, 
+            string colours, SUBCATEGORY subcategory, 
+            CATEGORY category, 
+            string action = "", 
+            string imgName = null, 
+            string code = null,
+            bool promocion=false)
+        {
+            Promocion = promocion;
+            Id = id;
+            //LowImg = imgName == null ? id.ToString() : imgName;
+            //HighImg = imgName == null ? id.ToString() : imgName;
+            LowImg = imgName == null ? 7202.ToString() : imgName;
+            //HighImg = (id % 2).ToString();
+            HighImg = imgName == null ? id.ToString() : imgName; 
+            GetCode = code == null ? Id.ToString() : code;
+
+            TienePrecio = !String.IsNullOrWhiteSpace(price1)
+                              || !String.IsNullOrWhiteSpace(price2)
+                              || !String.IsNullOrWhiteSpace(price3);
+
+            Talles = new List<string>();
+            //if (!String.IsNullOrEmpty(size1))
+                Talles.Add($"{size1}  {price1}");
+            //if (!String.IsNullOrEmpty(size2))
+                Talles.Add($"{size2}  {price2}");
+                Talles.Add($"{size3}  {price3}");
+            Colores = colours;
+            ShortDescription = description.ToLower();
+            SubCategory = subcategory;
+            Category = category;
+            
+            Action = action;
+            if (String.IsNullOrEmpty(colours))
+                Description = String.Format("Art. {0} -  {1} - Talles: {2}", id.ToString(), description, String.Join(" / ", String.Join("/",Talles)));
+            else
+                Description = String.Format("Art. {0} -  {1} - Talles: {2} - Colores: {3}", id.ToString(), description, String.Join(" / ", String.Join("/", Talles)), colours);
+        }
+
+        public Clouth(
+            bool isLocal,
+            int id, string description,
+            string size1, string price1,
+            string size2, string price2,
+            string size3, string price3,
+            string colours, SUBCATEGORY subcategory,
+            CATEGORY category,
+            string action = "",
+            string imgName = null,
+            string code = null,
+            bool promocion = false)
+        {
+            Promocion = promocion;
+            Id = id;
+            HighImg = imgName == null ? id.ToString() : imgName;
+            GetCode = code == null ? Id.ToString() : code;
+
+            TienePrecio = !String.IsNullOrWhiteSpace(price1)
+                              || !String.IsNullOrWhiteSpace(price2)
+                              || !String.IsNullOrWhiteSpace(price3);
+
+
+            Talles = new List<string>();
+            //if (!String.IsNullOrEmpty(size1))
+          
+            if (!string.IsNullOrEmpty(price1))
+            {
+                decimal.TryParse(price1.Replace("$","").Replace(" ",""), out var priceDecimal1);
+                Talles.Add($"{size1}  Mayor {Decimal.Ceiling(Decimal.Multiply(priceDecimal1, 1.21m))} / Menor {Decimal.Ceiling(Decimal.Multiply(priceDecimal1, Decimal.Multiply(1.21m ,1.5m)))}");
+            }
+            else
+            {
+                Talles.Add($"{size1} {price1}");
+            }
+            //if (!String.IsNullOrEmpty(size2))
+            //Talles.Add($"{size2}  {price2}");
+            if (!string.IsNullOrEmpty(price2))
+            {
+                decimal.TryParse(price2.Replace("$", "").Replace(" ", ""), out var priceDecimal);
+                Talles.Add($"{size2}  Mayor {Decimal.Ceiling(Decimal.Multiply(priceDecimal, 1.21m))} / Menor {Decimal.Ceiling(Decimal.Multiply(priceDecimal, Decimal.Multiply(1.21m, 1.5m)))}");
+            }
+            else
+            {
+                Talles.Add($"{size2} {price2}");
+            }
+
+            if (!String.IsNullOrEmpty(size3))
+            {
+                decimal.TryParse(price3.Replace("$", "").Replace(" ", ""), out var priceDecimal);
+                Talles.Add($"{size3}  Mayor {Decimal.Ceiling(Decimal.Multiply(priceDecimal, 1.21m))} / Menor {Decimal.Ceiling(Decimal.Multiply(priceDecimal, Decimal.Multiply(1.21m, 1.5m)))}");
+            }
+            else
+            {
+                Talles.Add($"{size3} {price3}");
+
+            }
+
+            Colores = colours;
+            ShortDescription = description.ToLower();
+            SubCategory = subcategory;
+            Category = category;
+
+            Action = action;
+            if (String.IsNullOrEmpty(colours))
+                Description = String.Format("Art. {0} -  {1} - Talles: {2}", id.ToString(), description, String.Join(" / ", String.Join("/", Talles)));
+            else
+                Description = String.Format("Art. {0} -  {1} - Talles: {2} - Colores: {3}", id.ToString(), description, String.Join(" / ", String.Join("/", Talles)), colours);
         }
 
         public Clouth (int id,string description, string size, string colours,SUBCATEGORY subcategory,CATEGORY category, string action="", string imgName=null, string code=null ){
             Id=id;
-
             LowImg = imgName == null? id.ToString(): imgName;
             HighImg = imgName == null ? id.ToString() : imgName;
             GetCode = code == null ? Id.ToString() : code;
 
-            ShortDescription=description.ToLower();
+            Colores = colours;
+            ShortDescription =description.ToLower();
             SubCategory = subcategory;
             Category = category;
             Action = action;
@@ -163,7 +275,7 @@ namespace MvcApplication2.Models
         }
         public String getHighImgPath()
         {
-            return String.Format("/{0}/{1}.jpg", "Content/images/alta", HighImg);
+            return String.Format("/{0}/{1}.gif", "Content/images/alta", HighImg);
         }
         public String getHomeImgPath()
         {
@@ -176,6 +288,10 @@ namespace MvcApplication2.Models
         public String Description { get; set; }
         public String LowImg { get; set; }
         public String HighImg { get; set; }
+        public String Colores { get; set; }
+        public bool Promocion { get; set; }
+        public bool TienePrecio { get; set; }
+        public IList<string> Talles { get; set; }
         public CATEGORY Category { get; set; }
         public SUBCATEGORY? SubCategory { get; set; }
         public String Action { get; set; }

@@ -9,7 +9,7 @@ using MvcApplication2.Manager;
 using System.Net.Mail;
 using MvcApplication2.Filters;
 using MvcApplication2.Helpers;
-
+using MvcApplication2.Models;
 
 namespace MvcApplication2.Controllers
 {
@@ -40,20 +40,124 @@ namespace MvcApplication2.Controllers
         //    }
         //}
 
-        public ActionResult Index()
+        public ActionResult Varones(Guid? type)
         {
             Cookies.WriteCookie();
-            var cookie = System.Web.HttpContext.Current.Request.Cookies["DinentiComHyalCore"];
-            String userId = "NoUSER";
-            if (!String.IsNullOrEmpty(cookie.Value))
-                userId = cookie.Value;
-            else
-                userId = cookie.Value;
+            ViewBag.TitleName = "Varones";
+            var list = new ClouthManager()
+                            .FindAll(type)
+                            .Where(x => x.Category == Clouth.CATEGORY.VARON)
+                            .OrderBy(x => x.Id)
+                            .ToList();
 
-            //var hyRecommendation= new Hyalcore("http://162.243.105.143:9293").GetRecommendation("/recommendation?api_key=bd54a9bce84f7b6db6d1fa3b3a76e241&user_id=NOUser&section_code=home");
-            IEnumerable<string> recommendation;
-            string recommendationId = String.Empty;
-            recommendation = new List<string>() { "7292", "7236", "7277", "7245", "7266" };
+            return View("todos", list);
+        }
+
+        public ActionResult Nenas(Guid? type)
+        {
+            Cookies.WriteCookie();
+            ViewBag.TitleName = "Nenas";
+            var list = new ClouthManager()
+                .FindAll(type)
+                .Where(x => x.Category == Clouth.CATEGORY.NENA)
+                .OrderBy(x => x.Id)
+                .ToList();
+
+            return View("todos", list);
+        }
+
+        public ActionResult Bebas(Guid? type)
+        {
+            Cookies.WriteCookie();
+            ViewBag.TitleName = "Bebas";
+            var list = new ClouthManager()
+                            .FindAll(type)
+                            .Where(x => x.Category == Clouth.CATEGORY.BEBAS)
+                            .OrderBy(x => x.Id)
+                            .ToList();
+
+            return View("todos", list);
+        }
+
+        public ActionResult Bebes(Guid? type)
+        {
+            Cookies.WriteCookie();
+            ViewBag.TitleName = "Bebes";
+            var list = new ClouthManager()
+                            .FindAll(type)
+                            .Where(x => x.Category == Clouth.CATEGORY.BEBES)
+                            .OrderBy(x => x.Id)
+                            .ToList();
+
+            return View("todos", list);
+        }
+
+        //[Route("Home/Contact")]
+        public ActionResult MiniBebes(Guid? type)
+        {
+            Cookies.WriteCookie();
+            ViewBag.TitleName = "Mini bebes";
+            var list = new ClouthManager()
+                            .FindAll(type)
+                            .Where(x => x.Category == Clouth.CATEGORY.MINIBEBES)
+                            .OrderBy(x => x.Id)
+                            .ToList();
+
+            return View("todos", list);
+        }
+
+        public ActionResult VentaEnLocal()
+        {
+            Cookies.WriteCookie();
+            ViewBag.TitleName = "Venta en el Local";
+            var list = new ClouthManager()
+                            .FindAll(new Guid("15c2bc84-b67e-406b-9e0a-0b8330ebbfec"))
+                            .OrderBy(x => x.Category)
+                            .ToList();
+
+            return View("VentaLocal", list);
+        }
+
+
+
+        public ActionResult all(Guid? type)
+        {
+            var listToExclude = new List<int>() { 8020, 8022 };
+            Cookies.WriteCookie();
+            ViewBag.TitleName = "Todos";
+            var list = new ClouthManager()
+                            .FindAll(type)
+                            .Where(x=> !(listToExclude.Contains(x.Id) &&x.Category==Clouth.CATEGORY.BEBAS) )
+                            .OrderBy(x => x.Id)
+                            .ToList();
+
+            return View("todos", list);
+        }
+
+        public ActionResult Index(Guid? type)
+        {
+            var listToExclude = new List<int>() { 8020, 8022 };
+            Cookies.WriteCookie();
+            ViewBag.TitleName = "Todos";
+            var list = new ClouthManager()
+                            .FindAll(type)
+                            .Where(x => !(listToExclude.Contains(x.Id) && x.Category == Clouth.CATEGORY.BEBAS))
+                            .OrderBy(x => x.Id)
+                            .ToList();
+
+            return View("todos", list);
+            //Cookies.WriteCookie();
+            //var cookie = System.Web.HttpContext.Current.Request.Cookies["DinentiComHyalCore"];
+            //String userId = "NoUSER";
+            //if (!String.IsNullOrEmpty(cookie.Value))
+            //    userId = cookie.Value;
+            //else
+            //    userId = cookie.Value;
+
+            ////var hyRecommendation= new Hyalcore("http://162.243.105.143:9293").GetRecommendation("/recommendation?api_key=bd54a9bce84f7b6db6d1fa3b3a76e241&user_id=NOUser&section_code=home");
+            //IEnumerable<string> recommendation;
+            //string recommendationId = String.Empty;
+            //recommendation = new List<string>() { "7292", "7236", "7277", "7245", "7266" };
 
             //recommendation = new List<string>() { "7083", "7073", "7037", "7046", "7013" };
             //if (hyRecommendation == null || !hyRecommendation.data.Any())
@@ -67,9 +171,9 @@ namespace MvcApplication2.Controllers
             //    recommendationId = hyRecommendation.metadata.recommendation_id;
             //}
 
-            var list = new ClouthManager().FindAll().Where(x => recommendation.Contains(x.Id.ToString())).Select(x => new MvcApplication2.Models.HyalcoreClouth { Clouth = x, RecommendationId = recommendationId }).ToList();
-            ViewBag.Message = ResourceHome.WelcomeTitle;
-            return View(list);
+            //var list = new ClouthManager().FindAll().Where(x => recommendation.Contains(x.Id.ToString())).Select(x => new MvcApplication2.Models.HyalcoreClouth { Clouth = x, RecommendationId = recommendationId }).ToList();
+            //ViewBag.Message = ResourceHome.WelcomeTitle;
+            //return View(list);
         }
 
         public ActionResult Babies()

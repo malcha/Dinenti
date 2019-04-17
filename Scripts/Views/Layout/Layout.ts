@@ -25,6 +25,17 @@ module Views {
             $("#contact #cancel").click(function () {
                 $(this).parent().parent().hide();
             });
+            function validateEmail(email) {
+                var filter = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+                if (filter.test(email)) {
+                    $('#contact').submit();
+                    return true;
+                } else {
+                    return false;
+                }
+                //return true;
+            };
+
             // Contact form popup send-button click event.
             $("#send").click(() => {
                 var name = $("#name").val();
@@ -39,17 +50,7 @@ module Views {
                     } else {
                         alert('Invalid Email Address');
                     }
-                    function validateEmail(email) {
-                        var filter = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
-                        if (filter.test(email)) {
-                            $('#contact').submit();
-                            return true;
-                        } else {
-                            return false;
-                        }
-                        //return true;
                   }
-                }
             });
         }
     }

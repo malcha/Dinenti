@@ -9,100 +9,147 @@
 
     @section PageScripts{
         <script type="text/javascript">
-            
-            //$("[data-hyalcore]").click(function (event) {
-            //    var elem = $(event.target);
-            //    Helpers.Hyalcore.postInteraction(elem);
-            //});
             jQuery(document).ready(function () {
                 var view = new Views.BaseModel();
-                //jQuery('#mycarousel').jcarousel({
-                //    scroll: 1,
-                //    animation: "slow",
-                //    wrap: "both"
-                //});
-                //$("a[rel=example_group]").fancybox({
-                //    afterLoad: function (current, prev) {
-                //        var from = current.href.lastIndexOf("/")+1;
-                //        var to = current.href.lastIndexOf(".");
-                //        var id = current.href.substring(from, to);
-                //        var elem= $("[data-hyalcore-id=" + id + "]");
-                //        if (elem.length >0 ) {
-                //            Helpers.Hyalcore.postInteraction(elem);
-                //        }
-                //    },
-                //    'transitionIn': 'none',
-                //    'transitionOut': 'none',
-                //    'titlePosition': 'over',
-                //    autoSize: false,
-                //    autoDimensions: false,
-                //    //'autoScale': false,
-                //    titleFormat: function (title, currentArray, currentIndex, currentOpts) {
-                //        return '<span id="fancybox-title-over">Foto ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
-                //    }
-                //});
             });
         </script>
     }
 
     @*@{
-        Html.RenderPartial("Botonera", null);
-    }*@
+            Html.RenderPartial("Botonera", null);
+        }*@
 
-    <div style="clear:both; padding-top:10px">
-        <span class="clouthpage-title">@ViewBag.TitleName</span>
-    </div>
-    <div id="content_container">
-        <div id="productos_container">
-            @foreach (Clouth item in Model)
-            {
-                <div class="producto_container" style="" >
-                    <a rel="example_group" href="@item.getHighImgPath()" title="@item.Description" data-hyalcore="" data-hyalcore-id="@item.Id.ToString()">
-                        <img src="@item.getLowImgPath()" alt="" class="foto" >
-                        <h2>@item.ShortDescription</h2>
-                        @*<div class="codigo">Art. 	@item.Id.ToString()</div>*@
-                        <div class="codigo">Art. 	@item.GetCode</div>
-                    </a>
+    <div class="content-top">
+        <div class="container ">
+            <div class="spec ">
+                <h3> @ViewBag.TitleName</h3>
+                <div class="ser-t">
+                    <b></b>
+                    <span><i></i></span>
+                    <b class="line"></b>
                 </div>
-            }
-            @*<div class="producto_container" style="">
-                <a rel="example_group" href="/Content/images/alta/6645.gif" title="Art. 6645 – Body mini beba con tul – Talles: 0 al 3 – Colores: Rosa - Chicle - Blanco" data-hyalcore="" data-hyalcore-id="@item.Id.ToString()" class="fancybox-image">
-                    <img src="/Content/images/baja/6645.gif" alt="" class="foto">
-                    <h2>Body mini beba con tul</h2>
-                    <div class="codigo">Art. 	6301</div>
-                </a>
             </div>
-            <div class="producto_container" style="">
-                <a rel="example_group" href="/Content/images/alta/6647.gif" title="Art. 6647 y 6648 – Remeron y short mini beba – Talles: 0 al 3 – Colores: Rosa - Chicle - Blanco">
-                    <img src="/Content/images/baja/6647.gif" alt="" class="foto">
-                    <h2>Remeron y short mini beba</h2>
-                    <div class="codigo">Art. 	6647</div>
-                </a>
+            <div class=" con-w3l wthree-of">
+
+                @foreach (Clouth item in Model)
+                {
+                    <div class="col-md-3 pro-1">
+                        <div class="col-m">
+                            <a style="cursor:pointer;" data-open-modal-target=""
+                               data-target="#myModal5" class="offer-img" data-src="@item.getHighImgPath()">
+                                <img src="@item.getHighImgPath()" class="img-responsive"
+                                     data-code="@item.GetCode"
+                                     data-description="@item.ShortDescription"
+                                     data-talles="@String.Join( ";",item.Talles.Where(x=> !string.IsNullOrWhiteSpace(x)))"
+                                     data-colores="@item.Colores"
+                                     data-src="@item.getHighImgPath()" alt="">
+                            </a>
+                            <div class="mid-1">
+                                <div class="short-descripcion" style="min-height:40px">
+                                    <h4>@item.ShortDescription</h4>
+                                </div>
+                                <div class="mid-2 talles">
+                                    <div class="">
+                                        <h5>Art: @item.GetCode</h5>
+                                        <h5>Talles: </h5>
+                                    </div>
+                                    @if (item.Talles != null)
+                                    {
+                                        foreach (var t in item.Talles)
+                                        {
+                                            if (String.IsNullOrWhiteSpace(t))
+                                            {
+                                                <div class="women" style="min-height:16px">
+                                                    <h5></h5>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="women" style="min-height:16px">
+                                                    <h5>@t</h5>
+                                                </div>
+                                            }
+
+
+                                        }
+                                        <div class="women" style="min-height:35px">
+                                            <h5>Colores: @item.Colores</h5>
+                                        </div>
+                                    }
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+
+                    @*<div class="col-md-3 pro-1">
+                            <div class="col-m">
+                                <a href="#" data-toggle="modal" data-target="#myModal6" class="offer-img">
+                                    <img src="/Content/big-store/images/of5.png" class="img-responsive" alt="">
+                                    <div class="offer"><p><span>Offer</span></p></div>
+                                </a>
+                                <div class="mid-1">
+                                    <div class="women">
+                                        <h6><a href="single.html">Kurkure</a>(100 g)</h6>
+                                    </div>
+                                    <div class="mid-2">
+                                        <p><label>$1.00</label><em class="item_price">$0.70</em></p>
+                                        <div class="block">
+                                            <div class="starbox small ghosting"> </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="add">
+                                        <button class="btn btn-danger my-cart-btn my-cart-b" data-id="6" data-name="Kurkure" data-summary="summary 6" data-price="0.70" data-quantity="1" data-image="images/of5.png">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+                }
+
+                <div class="clearfix"></div>
             </div>
+        </div>
+    </div>
+    <!--footer-->
+    <!-- product -->
+    @*$('#myModal5').find('#modal-code').attr('text', elem.data("code"));
+        $('#myModal5').find('#modal-description').attr('src', elem.data("description"));
+        $('#myModal5').find('#modal-talles').attr('src', elem.data("talles"));
+        $('#myModal5').find('#modal-colores').attr('src', elem.data("colores"));*@
+    <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content modal-info">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body modal-spa">
+                    <div class="col-md-5 span-2">
+                        <div class="item">
+                            <img src="/Content/big-store/images/of4.png" data-image-modal="" class="img-responsive" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-7 span-1 ">
+                        <h3 id="modal-description"></h3>
+                        <p class="in-para" id="modal-code"> </p>
+                        <p class="in-para" id="modal-colores"> </p>
+                        <p class="in-para" id="modal-colores">Talles: </p>
+                        <div class="in-para" id="modal-talles"> </div>
+                        @*<div class="price_single">
+                                <span class="reducedfrom "><del>$1.00</del>$0.70</span>
 
-            <div class="producto_container" style="">
-                <a rel="example_group" href="/Content/images/alta/6649.gif" title="Art. 6649 y 6650 – Remera y short mini bebe – Talles: 0 al 3 – Colores: Turquesa - Verde">
-                    <img src="/Content/images/baja/6649.gif" alt="" class="foto">
-                    <h2>Remera y short</h2>
-                    <div class="codigo">Art. 	6649</div>
-                </a>
+                                <div class="clearfix"></div>
+                            </div>
+                            <h4 class="quick">Quick Overview:</h4>
+                            <p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
+                            <div class="add-to">
+                                <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="5" data-name="Lays" data-summary="summary 5" data-price="0.70" data-quantity="1" data-image="images/of4.png">Add to Cart</button>
+                            </div>*@
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
             </div>
-
-            <div class="producto_container" style="">
-                <a rel="example_group" href="/Content/images/alta/6651.gif" title="Art. 6651 – Enterito mini bebe rayado – Talles: 0 al 3 – Colores: Rosa - Fucsia">
-                    <img src="/Content/images/baja/6651.gif" alt="" class="foto">
-                    <h2>Enterito mini bebe rayado</h2>
-                    <div class="codigo">Art. 	6651</div>
-                </a>
-            </div>
-
-            <div class="producto_container" style="">
-                <a rel="example_group" href="/Content/images/alta/6652.gif" title="Art. 6652 – Enterito mini bebe combinado – Talles: 0 al 3 – Colores: Turquesa - Francia">
-                    <img src="/Content/images/baja/6652.gif" alt="" class="foto">
-                    <h2>Enterito mini bebe combinado</h2>
-                    <div class="codigo">Art. 	6652</div>
-                </a>
-            </div>*@
-
         </div>
     </div>

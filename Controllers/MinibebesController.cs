@@ -3,19 +3,20 @@ using MvcApplication2.Manager;
 using MvcApplication2.Models;
 using System.Linq;
 using MvcApplication2.Helpers;
+using System;
 
 namespace MvcApplication2.Controllers
 {
     public class MinibebesController : Controller
     {
-        public ActionResult All()
+        public ActionResult All(Guid? type)
         {
             Cookies.WriteCookie();
             ViewBag.TitleName = "Mini bebes";
             var list = new ClouthManager()
-                            .FindAll()
+                            .FindAll(type)
                             .Where(x => x.Category == Clouth.CATEGORY.MINIBEBES)
-                            .OrderBy(x => x.ShortDescription)
+                            .OrderBy(x => x.Id)
                             .ToList();
 
             return View("todos", list);
