@@ -1,39 +1,43 @@
-﻿using System;
+﻿using MvcApplication2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
 namespace MvcApplication2.DataLoad
 {
     public class ClouthDataLoader
     {
-
         public static IEnumerable<Models.Clouth> Data(Guid? type)
         {
-            IEnumerable<Models.Clouth> data=null;
-            if (type== null)
+            IEnumerable<Models.Clouth> data = null;
+            if (type == null)
                 return GetAll();
             switch (type.ToString())
             {
                 case "8f6ecf5a-c8f3-4739-913e-f7c4332aa0c0":
                     data = GetAllXMayorPrecioVenta();
                     break;
+
                 case "b816fa50-7828-4bf8-88d8-1a841c30d51f":
                     //x-mayor
-                    data= GetAllXMayor();
+                    data = GetAllXMayor();
                     break;
+
                 case "213f2fe3-544e-4449-8257-ef8b6e956b2f":
                     //x-NUBE
                     data = GetAllNube();
                     break;
+
                 case "ef384aad-f07a-48e3-a69e-571671e3c004":
                     //GENERAL
                     data = GetAllGeneral();
                     break;
+
                 case "15c2bc84-b67e-406b-9e0a-0b8330ebbfec":
-                    //GENERAL
+                    //LOCAL
                     data = GetAllLocal();
                     break;
+
                 default:
                     data = GetAll();
                     break;
@@ -41,109 +45,106 @@ namespace MvcApplication2.DataLoad
             return data;
         }
 
-
         public static IEnumerable<Models.Clouth> GetAllLocal()
         {
             var list = new List<Models.Clouth>();
-            list.Add(new Models.Clouth(7807, "Calza estampada", "1 AL 5", "$ 100,00","$ 100,00", "", "","","", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, true));
-            list.Add(new Models.Clouth(7806, "Calza estampada", "4 AL 14", "$ 150,00", "4 AL 14", "$ 150,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, true));
-            list.Add(new Models.Clouth(7804, "Camisa manga larga broderie", "1 AL 5", "$ 370,00", "1 AL 5", "$ 249,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            list.Add(new Models.Clouth(7548, "Vestido licra estampado", "10,14,16", "$ 448,00", "10,14,16", "$ 336,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, false));
-            list.Add(new Models.Clouth(7554, "Camiseta estampada", "4 y 10", "$ 298,00", "4 y 10", "$ 199,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, false));
-            list.Add(new Models.Clouth(7823, "Remera manga larga camuflada", "1 AL 5", "$ 298,00", "1 AL 5", "$ 199,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, false));
-            list.Add(new Models.Clouth(5959, "Camiseta escocesa entallada", "4 AL 16", "$ 298,00", "4 AL 16", "$ 199,00", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, true));
-            list.Add(new Models.Clouth(7803, "Remera lanillla algodon", "1 AL 5", "$ 199,00", "1 AL 5", "$ 138,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            list.Add(new Models.Clouth(7562, "Camiseta escocesa", "4 AL 16", "$ 398,00", "4 AL 16", "$ 269,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, false));
-            list.Add(new Models.Clouth(7528, "Campera universitaria friza", "1 y 2", "$ 358,00", "1 y 2", "$ 240,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, false));
-            list.Add(new Models.Clouth(7852, "Remera con cartera manga larga", "4 al 14", "$ 250,00", "4 al 14", "$ 168,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.VARON, false));
-            list.Add(new Models.Clouth(5931, "Pantalon Gabardina", "1 AL 6", "$ 299,00", "1 AL 6", "$ 199,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, false));
-            list.Add(new Models.Clouth(7881, "Jumper", "0 al 3", "$ 299,00", "0 al 3", "$ 199,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.MINIBEBES, false));
-            list.Add(new Models.Clouth(7873, "Enterito plush", "0 al 2", "$ 490,00", "0 al 2", "$ 330,00", "", "", "rojo", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.MINIBEBES, false));
-            list.Add(new Models.Clouth(7849, "Campera unicornio algodon friza", "4 al 14", "$ 550,00", "4 al 14", "$ 370,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, false));
-            list.Add(new Models.Clouth(7872, "Enterito plush", "0 al 2", "$ 450,00", "0 al 2", "$ 298,00", "", "", "fucsia", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.MINIBEBES, false));
-            list.Add(new Models.Clouth(6811, "Pantalon estampado", "1 AL 5", "$ 199,00", "1 AL 5", "$ 100,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, true));
-            list.Add(new Models.Clouth(7874, "Enterito estampado algodon friza", "0 al 2", "$ 348,00", "0 al 2", "$ 229,00", "", "", "varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.MINIBEBES, false));
-            list.Add(new Models.Clouth(3122, "Campera impermeable forrada en polar", "1", "$ 398,00", "1", "$ 298,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, true));
-            list.Add(new Models.Clouth(7863, "Chaleco inflado", "1 al 5", "$ 399,00", "1 al 5", "$ 299,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, false));
-            list.Add(new Models.Clouth(7509, "Campera algodon friza", "2 al 5", "$ 390,00", "2 al 5", "$ 290,00", "", "", "rosa bebe y violeta", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            list.Add(new Models.Clouth(7835, "Saco cruzado forrado en coorderito", "1, 2, 4 y 5", "$ 665,00", "1, 2, 4 y 5", "$ 445,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, false));
-            list.Add(new Models.Clouth(7822, "Tapadito piel largo", "1, 2 y 3", "$ 448,00", "1, 2 y 3", "$ 299,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            //list.Add(new Models.Clouth(3222, "", "1 AL 5", "", "1 AL 5", "#VALUE!", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY., false));
-            list.Add(new Models.Clouth(7563, "Body", "0 al 3", "$ 199,00", "0 al 3", "$ 100,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.MINIBEBES, true));
-            list.Add(new Models.Clouth(7519, "Tapado piel", "3 al 5", "$ 398,00", "3 al 5", "$ 298,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            list.Add(new Models.Clouth(3223, "Saco piel", "1", "$ 398,00", "1", "$ 298,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            list.Add(new Models.Clouth(4822, "Vestido modal", "1", "$ 199,00", "1", "$ 149,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, true));
-            list.Add(new Models.Clouth(3224, "Vestido gatitos", "1", "$ 199,00", "1", "$ 149,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, true));
-            list.Add(new Models.Clouth(7213, "Vestido rayado", "1 y 2", "$ 199,00", "1 y 2", "$ 149,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            list.Add(new Models.Clouth(7293, "Campera plush rayada", "0", "$ 349,00", "0", "$ 268,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            list.Add(new Models.Clouth(7214, "Vestido escocesa", "1", "$ 299,00", "1", "$ 199,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            list.Add(new Models.Clouth(7878, "Body escoces", "0  al 3", "$ 295,00", "0  al 3", "$ 195,00", "", "", "varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.MINIBEBES, false));
-            list.Add(new Models.Clouth(7222, "Vestido estampado", "1 al 5", "$ 298,00", "1 al 5", "$ 199,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            list.Add(new Models.Clouth(8001, "Remera manga larga gatito", "1 al 5", "$ 273,00", "1 al 5", "$ 182,00", "", "", "rosa, crudo y blanco", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            list.Add(new Models.Clouth(7205, "Remera manga larga rayada", "1", "$ 199,00", "1", "$ 149,00", "", "", "rosa, crudo y blanco", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            list.Add(new Models.Clouth(7877, "Enterito piel", "1 y 2", "$ 548,00", "1 y 2", "$ 368,00", "", "", "Manteca y crudo", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.MINIBEBES, false));
-            list.Add(new Models.Clouth(7296, "Remeron beba", "1", "$ 169,00", "1", "$ 119,00", "", "", "Blanco y fucsia", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.MINIBEBES, false));
-            list.Add(new Models.Clouth(7209, "Vestido lanilla estampado", "2", "$ 298,00", "2", "$ 199,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.MINIBEBES, false));
-            list.Add(new Models.Clouth(7831, "Jardinero jean con escoces", "1 al 4", "$ 360,00", "1 al 4", "$ 240,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            list.Add(new Models.Clouth(7811, "Jardinero jean con bordado", "1 al 4", "$ 480,00", "1 al 4", "$ 320,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            list.Add(new Models.Clouth(3225, "Chaleco inflado nena", "1", "$ 399,00", "1", "$ 299,00", "", "", "Rosa y rojo", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            list.Add(new Models.Clouth(7865, "Campera beba forrado polar", "1", "$ 678,00", "1", "$ 498,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            list.Add(new Models.Clouth(7810, "Jean bordado", "1 al 5", "$ 398,00", "1 al 5", "$ 289,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            list.Add(new Models.Clouth(7531, "Jean liso", "1 al 5", "$ 248,00", "1 al 5", "$ 198,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            list.Add(new Models.Clouth(7904, "Rompeviento", "1 al 3", "$ 520,00", "1 al 3", "$ 349,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, false));
-            list.Add(new Models.Clouth(7901, "Campera impermeable", "1 y 2", "$ 550,00", "1 y 2", "$ 369,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, false));
-            list.Add(new Models.Clouth(7864, "Campera camuflada", "2 al 4", "$ 850,00", "2 al 4", "$ 565,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.VARON, false));
-            list.Add(new Models.Clouth(7864, "Campera camuflada", "2 al 4", "$ 850,00", "2 al 4", "$ 565,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.VARON, false));
-            list.Add(new Models.Clouth(7887, "Campera inflable estampada", "1", "$ 748,00", "1", "$ 530,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, true));
-            list.Add(new Models.Clouth(3226, "Campera inflable forrada polar", "6", "$ 680,00", "6", "$ 460,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, true));
-            list.Add(new Models.Clouth(3227, "Campera estampada forrada polar", "6", "$ 680,00", "6", "$ 460,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, true));
-            list.Add(new Models.Clouth(6849, "Saco rústico", "1 AL 3", "$ 328,00", "1 AL 3", "$ 200,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            list.Add(new Models.Clouth(6125, "Campera estampada rústica", "1 al 5", "$ 299,00", "1 al 5", "$ 199,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            list.Add(new Models.Clouth(7505, "Buzo friza", "1", "$ 278,00", "1", "$ 178,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, false));
-            list.Add(new Models.Clouth(7816, "Buzo bordado piel", "2 al 4", "$ 298,00", "2 al 4", "$ 225,00", "", "", "piel, rosa y fucsia", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            list.Add(new Models.Clouth(3228, "Buzo algodon friza", "1", "$ 298,00", "1", "$ 198,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, false));
-            list.Add(new Models.Clouth(7603, "Campera rústica estampada", "1 al 3", "$ 348,00", "1 al 3", "$ 230,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, false));
-            list.Add(new Models.Clouth(7832, "Camisa escocesa", "1 al 5", "$ 199,00", "1 al 5", "$ 158,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            list.Add(new Models.Clouth(7829, "Pantalón friza", "1 al 5", "$ 220,00", "1 al 5", "$ 139,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            list.Add(new Models.Clouth(3229, "Campera", "6", "$ 990,00", "6", "$ 690,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            list.Add(new Models.Clouth(7521, "Campera rústica estampada", "x", "$ 298,00", "x", "$ 198,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
-            list.Add(new Models.Clouth(7598, "Tapado con piel", "4 al 14", "$ 890,00", "4 al 14", "$ 620,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, true));
-            list.Add(new Models.Clouth(8068, "Chaleco metalizado nena", "4 al 14", "$ 708,00", "4 al 14", "$ 472,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, true));
+            list.Add(new Models.Clouth(7807, "Calza estampada", new TallePrecio("1 AL 5", "$ 100,00", "$ 100,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, true));
+            list.Add(new Models.Clouth(7806, "Calza estampada", new TallePrecio("4 AL 14", "$ 150,00", "$ 150,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, true));
+            list.Add(new Models.Clouth(7804, "Camisa manga larga broderie", new TallePrecio("1 AL 5", "$ 370,00", "$ 249,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(7548, "Vestido licra estampado", new TallePrecio("10,14,16", "$ 448,00", "$ 336,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, false));
+            list.Add(new Models.Clouth(7554, "Camiseta estampada", new TallePrecio("4 y 10", "$ 298,00", "$ 199,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, false));
+            list.Add(new Models.Clouth(7823, "Remera manga larga camuflada", new TallePrecio("1 AL 5", "$ 298,00", "$ 199,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, false));
+            list.Add(new Models.Clouth(5959, "Camiseta escocesa entallada", new TallePrecio("4 AL 16", "$ 298,00", "$ 199,00"), "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, true));
+            list.Add(new Models.Clouth(7803, "Remera lanillla algodon", new TallePrecio("1 AL 5", "$ 199,00", "$ 138,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(7562, "Camiseta escocesa", new TallePrecio("4 AL 16", "$ 398,00", "$ 269,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, false));
+            list.Add(new Models.Clouth(7528, "Campera universitaria friza", new TallePrecio("1 y 2", "$ 358,00", "$ 240,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, false));
+            list.Add(new Models.Clouth(7852, "Remera con cartera manga larga", new TallePrecio("4 al 14", "$ 250,00", "$ 168,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.VARON, false));
+            list.Add(new Models.Clouth(5931, "Pantalon Gabardina", new TallePrecio("1 AL 6", "$ 299,00", "$ 199,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, false));
+            list.Add(new Models.Clouth(7881, "Jumper", new TallePrecio("0 al 3", "$ 299,00", "$ 199,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.MINIBEBES, false));
+            list.Add(new Models.Clouth(7873, "Enterito plush", new TallePrecio("0 al 2", "$ 490,00", "$ 330,00"), "", "", "", "rojo", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.MINIBEBES, false));
+            list.Add(new Models.Clouth(7849, "Campera unicornio algodon friza", new TallePrecio("4 al 14", "$ 550,00", "$ 370,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, false));
+            list.Add(new Models.Clouth(7872, "Enterito plush", new TallePrecio("0 al 2", "$ 450,00", "$ 298,00"), "", "", "", "fucsia", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.MINIBEBES, false));
+            list.Add(new Models.Clouth(6811, "Pantalon estampado", new TallePrecio("1 AL 5", "$ 199,00", "$ 100,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, true));
+            list.Add(new Models.Clouth(7874, "Enterito estampado algodon friza", new TallePrecio("0 al 2", "$ 348,00", "$ 229,00"), "", "", "", "varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.MINIBEBES, false));
+            list.Add(new Models.Clouth(3122, "Campera impermeable forrada en polar", new TallePrecio("1", "$ 398,00", "$ 298,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, true));
+            list.Add(new Models.Clouth(7863, "Chaleco inflado", new TallePrecio("1 al 5", "$ 399,00", "$ 299,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, false));
+            list.Add(new Models.Clouth(7509, "Campera algodon friza", new TallePrecio("2 al 5", "$ 390,00", "$ 290,00"), "", "", "", "rosa bebe y violeta", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(7835, "Saco cruzado forrado en coorderito", new TallePrecio("1, 2, 4 y 5", "$ 665,00", "$ 445,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, false));
+            list.Add(new Models.Clouth(7822, "Tapadito piel largo", new TallePrecio("1, 2 y 3", "$ 448,00", "$ 299,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(7563, "Body", new TallePrecio("0 al 3", "$ 199,00", "$ 100,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.MINIBEBES, true));
+            list.Add(new Models.Clouth(7519, "Tapado piel", new TallePrecio("3 al 5", "$ 398,00", "$ 298,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(3223, "Saco piel", new TallePrecio("1", "$ 398,00", "$ 298,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(4822, "Vestido modal", new TallePrecio("1", "$ 199,00", "$ 149,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, true));
+            list.Add(new Models.Clouth(3224, "Vestido gatitos", new TallePrecio("1", "$ 199,00", "$ 149,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, true));
+            list.Add(new Models.Clouth(7213, "Vestido rayado", new TallePrecio("1 y 2", "$ 199,00", "$ 149,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(7293, "Campera plush rayada", new TallePrecio("0", "$ 349,00", "$ 268,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(7214, "Vestido escocesa", new TallePrecio("1", "$ 299,00", "$ 199,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(7878, "Body escoces", new TallePrecio("0  al 3", "$ 295,00", "$ 195,00"), "", "", "", "varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.MINIBEBES, false));
+            list.Add(new Models.Clouth(7222, "Vestido estampado", new TallePrecio("1 al 5", "$ 298,00", "$ 199,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(8001, "Remera manga larga gatito", new TallePrecio("1 al 5", "$ 273,00", "$ 182,00"), "", "", "", "rosa, crudo y blanco", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(7205, "Remera manga larga rayada", new TallePrecio("1", "$ 199,00", "$ 149,00"), "", "", "", "rosa, crudo y blanco", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(7877, "Enterito piel", new TallePrecio("1 y 2", "$ 548,00", "$ 368,00"), "", "", "", "Manteca y crudo", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.MINIBEBES, false));
+            list.Add(new Models.Clouth(7296, "Remeron beba", new TallePrecio("1", "$ 169,00", "$ 119,00"), "", "", "", "Blanco y fucsia", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.MINIBEBES, false));
+            list.Add(new Models.Clouth(7209, "Vestido lanilla estampado", new TallePrecio("2", "$ 298,00", "$ 199,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.MINIBEBES, false));
+            list.Add(new Models.Clouth(7831, "Jardinero jean con escoces", new TallePrecio("1 al 4", "$ 360,00", "$ 240,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(7811, "Jardinero jean con bordado", new TallePrecio("1 al 4", "$ 480,00", "#REF!"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(3225, "Chaleco inflado nena", new TallePrecio("1", "$ 399,00", "$ 299,00"), "", "", "", "Rosa y rojo", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(7865, "Campera beba forrado polar", new TallePrecio("1", "$ 678,00", "$ 498,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(7810, "Jean bordado", new TallePrecio("1 al 5", "$ 398,00", "$ 289,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(7531, "Jean liso", new TallePrecio("1 al 5", "$ 248,00", "$ 198,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(7904, "Rompeviento", new TallePrecio("1 al 3", "$ 520,00", "$ 349,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, false));
+            list.Add(new Models.Clouth(7901, "Campera impermeable", new TallePrecio("1 y 2", "$ 550,00", "$ 369,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, false));
+            list.Add(new Models.Clouth(7864, "Campera camuflada", new TallePrecio("2 al 4", "$ 850,00", "$ 565,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.VARON, false));
+            list.Add(new Models.Clouth(7864, "Campera camuflada", new TallePrecio("2 al 4", "$ 850,00", "$ 565,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.VARON, false));
+            list.Add(new Models.Clouth(7887, "Campera inflable estampada", new TallePrecio("1", "$ 748,00", "$ 530,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, true));
+            list.Add(new Models.Clouth(3226, "Campera inflable forrada polar", new TallePrecio("6", "$ 680,00", "$ 460,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, true));
+            list.Add(new Models.Clouth(3227, "Campera estampada forrada polar", new TallePrecio("6", "$ 680,00", "$ 460,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, true));
+            list.Add(new Models.Clouth(6849, "Saco rústico", new TallePrecio("1 AL 3", "$ 328,00", "$ 200,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(6125, "Campera estampada rústica", new TallePrecio("1 al 5", "$ 299,00", "$ 199,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(7505, "Buzo friza", new TallePrecio("1", "$ 278,00", "$ 178,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, false));
+            list.Add(new Models.Clouth(7816, "Buzo bordado piel", new TallePrecio("2 al 4", "$ 298,00", "$ 225,00"), "", "", "", "piel, rosa y fucsia", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(3228, "Buzo algodon friza", new TallePrecio("1", "$ 298,00", "$ 198,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, false));
+            list.Add(new Models.Clouth(7603, "Campera rústica estampada", new TallePrecio("1 al 3", "$ 348,00", "$ 230,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, false));
+            list.Add(new Models.Clouth(7832, "Camisa escocesa", new TallePrecio("1 al 5", "$ 199,00", "$ 158,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(7829, "Pantalón friza", new TallePrecio("1 al 5", "$ 220,00", "$ 139,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(3229, "Campera", new TallePrecio("6", "$ 990,00", "$ 690,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(7521, "Campera rústica estampada", new TallePrecio("x", "$ 298,00", "$ 198,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false));
+            list.Add(new Models.Clouth(7598, "Tapado con piel", new TallePrecio("4 al 14", "$ 890,00", "$ 620,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, true));
+            list.Add(new Models.Clouth(8068, "Chaleco metalizado nena", new TallePrecio("4 al 14", "$ 708,00", "$ 472,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, true));
 
+            //list.Add(new Models.Clouth(8081, "REMERA CON VOLADO", "4 al 8", "$ 250","4 al 8", "$ 165", "10 al 14", "$ 260", "10 al 14", "$ 175", "Gris, fucsia, blanco", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));             
+            list.Add(new Models.Clouth(8001, "REMERA GATITA BEBA", new TallePrecio("1 AL 5", "$ 252,00", "$ 168,00"), "", "", "", "Rosa, crudo, blanco", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false, imgName: "8001-1"));
+            list.Add(new Models.Clouth(8016, "BUZO DINO", new TallePrecio("1 AL 5", "$ 471,00", "$ 314,00"), "", "", "", "Marino, melange, verde beneton", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, false, imgName: "8016-1"));
+            list.Add(new Models.Clouth(8020, "CAMPERA PIEL", new TallePrecio("1 AL 5", "$ 592,50", "$ 395,00"), "", "", "", "Rojo, aero, crudo", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, false, imgName: "8020-1"));
+            list.Add(new Models.Clouth(8037, "BUZO UNICORNIO", new TallePrecio("4 AL 8", "$ 550,50", "$ 367,00"), new TallePrecio("10 AL 14", "595,5", "$ 397,00"), "Rosa chicle, melange", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, false, imgName: "8037-1"));
+            list.Add(new Models.Clouth(8038, "BUZO PIEL", new TallePrecio("4 AL 8", "$ 568,50", "$ 379,00"), new TallePrecio("10 AL 14", "613,5", "$ 409,00"), "Crudo, beige, rosa nude, rosa chicle", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, false, imgName: "8038-1"));
+            list.Add(new Models.Clouth(8044, "CAMPERA PIEL", new TallePrecio("4 AL 8", "$ 718,50", "$ 479,00"), new TallePrecio("10 AL 14", "778,5", "$ 519,00"), "Rojo, beige, rosa nude, rosa chicle", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, false, imgName: "8044-1"));
+            list.Add(new Models.Clouth(8055, "ENTERITO PIEL CONEJO", new TallePrecio("0 AL 2", "$ 667,50", "$ 445,00"), "", "", "", "Rosa, rojo, aero", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.MINIBEBES, false, imgName: "8055-1"));
+            list.Add(new Models.Clouth(8059, "ASTRONAUTA ESTAMPADO", new TallePrecio("1 AL 3", "$ 1.018,50", "$ 679,00"), "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.MINIBEBES, false, imgName: "8059-1"));
+            list.Add(new Models.Clouth(8059, "ASTRONAUTA ESTAMPADO", new TallePrecio("1 AL 3", "$ 1.018,50", "$ 679,00"), "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.MINIBEBES, false, imgName: "8059-2"));
+            list.Add(new Models.Clouth(8065, "CHALECO BEBA OREJAS", new TallePrecio("1 AL 5", "$ 672,00", "$ 448,00"), "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false, imgName: "8065-1"));
+            list.Add(new Models.Clouth(8065, "CHALECO BEBA OREJAS", new TallePrecio("1 AL 5", "$ 672,00", "$ 448,00"), "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false, imgName: "8065-2"));
+            list.Add(new Models.Clouth(8065, "CHALECO BEBA OREJAS", new TallePrecio("1 AL 5", "$ 672,00", "$ 448,00"), "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false, imgName: "8065-3"));
+            list.Add(new Models.Clouth(8065, "CHALECO BEBA OREJAS", new TallePrecio("1 AL 5", "$ 672,00", "$ 448,00"), "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false, imgName: "8065-4"));
+            list.Add(new Models.Clouth(8068, "CHALECO METALIZADO NENA", new TallePrecio("4 al 14", "$ 585,00", "$ 390,00"), "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, false, imgName: "8068-1"));
+            list.Add(new Models.Clouth(8074, "TAPADO ESTAMPADA BEBA", new TallePrecio("1 AL 5", "$ 471,00", "$ 314,00"), "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false, imgName: "8074-1"));
+            list.Add(new Models.Clouth(8074, "TAPADO ESTAMPADA BEBA", new TallePrecio("1 AL 5", "$ 592,50", "$ 395,00"), "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false, imgName: "8074-2"));
+            list.Add(new Models.Clouth(8075, "TAPADO CON CORDERITO", new TallePrecio("1 AL 5", "$ 550,50", "$ 367,00"), "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false, imgName: "8075-2"));
+            list.Add(new Models.Clouth(8075, "TAPADO CON CORDERITO", new TallePrecio("1 AL 5", "$ 568,50", "$ 379,00"), "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false, imgName: "8075-3"));
 
-            //list.Add(new Models.Clouth(8081, "REMERA CON VOLADO", "4 al 8", "$ 250","4 al 8", "$ 165", "10 al 14", "$ 260", "10 al 14", "$ 175", "Gris, fucsia, blanco", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
-            list.Add(new Models.Clouth(8001, "REMERA GATITA BEBA", "1 AL 5", "$ 150,00", "", "", "", "", "Rosa, crudo, blanco", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false, imgName: "8001-1"));
-            list.Add(new Models.Clouth(8016, "BUZO DINO", "1 AL 5", "$ 280,00", "", "", "", "", "Marino, melange, verde beneton", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, false, imgName: "8016-1"));
-            list.Add(new Models.Clouth(8020, "CAMPERA PIEL", "1 AL 5", "$ 360,00", "", "", "", "", "Crudo, rojo, rosa", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false, imgName: "8020-1"));
-            list.Add(new Models.Clouth(8037, "BUZO UNICORNIO", "4 AL 8", "$ 330,00", "10 AL 14", "$ 355,00", "", "", "Rosa chicle, melange", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, false, imgName: "8037-1"));
-            list.Add(new Models.Clouth(8038, "BUZO PIEL", "4 AL 8", "$ 340,00", "10 AL 14", "$ 365,00", "", "", "Crudo, beige, rosa nude, rosa chicle", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, false, imgName: "8038-1"));
-            list.Add(new Models.Clouth(8044, "CAMPERA PIEL", "4 AL 8", "$ 440,00", "10 AL 14", "$ 465,00", "", "", "Rojo, beige, rosa nude, rosa chicle", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, false, imgName: "8044-1"));
-            list.Add(new Models.Clouth(8055, "ENTERITO PIEL CONEJO", "0 AL 2", "$ 399,00", "", "", "", "", "Rosa, rojo, aero", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.MINIBEBES, false, imgName: "8055-1"));
-            list.Add(new Models.Clouth(8059, "ASTRONAUTA ESTAMPADO", "1 AL 3", "$ 610,00", "", "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.MINIBEBES, false, imgName: "8059-1"));
-            list.Add(new Models.Clouth(8059, "ASTRONAUTA ESTAMPADO", "1 AL 3", "$ 610,00", "", "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.MINIBEBES, false, imgName: "8059-2"));
-            list.Add(new Models.Clouth(8065, "CHALECO BEBA OREJAS", "1 AL 5", "$ 399,00", "", "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false, imgName: "8065-1"));
-            list.Add(new Models.Clouth(8065, "CHALECO BEBA OREJAS", "1 AL 5", "$ 399,00", "", "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false, imgName: "8065-2"));
-            list.Add(new Models.Clouth(8065, "CHALECO BEBA OREJAS", "1 AL 5", "$ 399,00", "", "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false, imgName: "8065-3"));
-            list.Add(new Models.Clouth(8065, "CHALECO BEBA OREJAS", "1 AL 5", "$ 399,00", "", "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false, imgName: "8065-4"));
-            list.Add(new Models.Clouth(8068, "CHALECO METALIZADO NENA", "4 al 14", "$ 390,00", "", "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, false, imgName: "8068-1"));
-            list.Add(new Models.Clouth(8074, "TAPADO ESTAMPADO CON POLAR BEBA (GRIS)", "1 AL 5", "$ 625,00", "", "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false, imgName: "8074-2"));
-            list.Add(new Models.Clouth(8074, "TAPADO ESTAMPADO CON POLAR BEBA (CELESTE)", "1 AL 5", "$ 625,00", "", "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false, imgName: "8074-2"));
-            list.Add(new Models.Clouth(8075, "TAPADO ESTAMPADO CON CORDERITO BEBA (GRIS)", "1 AL 5", "$ 625,00", "", "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false, imgName: "8075-2"));
-            list.Add(new Models.Clouth(8075, "TAPADO ESTAMPADO CON CORDERITO BEBA (CELESTE)", "1 AL 5", "$ 625,00", "", "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, false, imgName: "8075-3"));
 
             return list;
         }
 
         public static IEnumerable<Models.Clouth> GetAllXMayor()
         {
-
             var list = new List<Models.Clouth>();
             //list.Add(new Models.Clouth(7201, "REMERA PINGUINOS", "1 AL 5", "Chicle - Blanco - Natural", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
             //list.Add(new Models.Clouth(7202, "REMERA CON POMPON", "1 AL 5", "Chicle - Blanco - Natural", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
             //list.Add(new Models.Clouth(7203, "REMERA CON ANTEOJOS", "1 AL 5", "Chicle - Blanco - Natural", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
             //list.Add(new Models.Clouth(7204, "REMERON CON ENCAJE", "1 AL 5", "Chicle - Blanco - Natural", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
 
-            list.Add(new Models.Clouth(8001, "REMERA GATITA BEBA", "1 AL 5", "$ 150,00", "", "", "", "", "Rosa, crudo, blanco", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS,action:""));
+            list.Add(new Models.Clouth(8001, "REMERA GATITA BEBA", "1 AL 5", "$ 150,00", "", "", "", "", "Rosa, crudo, blanco", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, action: ""));
             list.Add(new Models.Clouth(8002, "REMERA ARCOÍRIS", "1 AL 5", "$ 155,00", "", "", "", "", "Rosa, crudo, blanco", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
             list.Add(new Models.Clouth(8003, "CALZA RÚSTICA BEBA", "1 AL 5", "$ 143,00", "", "", "", "", "Melange, fucsia, negro", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
             list.Add(new Models.Clouth(8004, "CALZA LANILLA BEBA", "1 AL 5", "$ 122,00", "", "", "", "", "Rosa, negro y gris", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
@@ -213,9 +214,9 @@ namespace MvcApplication2.DataLoad
             list.Add(new Models.Clouth(8080, "CAMPERA PIEL CON FOIL", "1 AL 5", "$ 378,00", "", "", "", "", "Fucsia, rosa chicle, crudo", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
 
             list.Add(new Models.Clouth(8081, "REMERA CON VOLADO", "4 al 8", "$ 165", "10 al 14", "$ 175", "", "", "Gris, fucsia, blanco", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
-            
+
             list.Add(new Models.Clouth(8001, "REMERA GATITA BEBA", "1 AL 5", "$ 150,00", "", "", "", "", "Rosa, crudo, blanco", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, imgName: "8001-1"));
-            list.Add(new Models.Clouth(8016, "BUZO DINO", "1 AL 5", "$ 280,00", "", "", "", "", "Marino, melange, verde beneton", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, imgName:"8016-1"));
+            list.Add(new Models.Clouth(8016, "BUZO DINO", "1 AL 5", "$ 280,00", "", "", "", "", "Marino, melange, verde beneton", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES, imgName: "8016-1"));
             list.Add(new Models.Clouth(8020, "CAMPERA PIEL", "1 AL 5", "$ 360,00", "", "", "", "", "Crudo, rojo, rosa", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, imgName: "8020-1"));
             list.Add(new Models.Clouth(8037, "BUZO UNICORNIO", "4 AL 8", "$ 330,00", "10 AL 14", "$ 355,00", "", "", "Rosa chicle, melange", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, imgName: "8037-1"));
             list.Add(new Models.Clouth(8038, "BUZO PIEL", "4 AL 8", "$ 340,00", "10 AL 14", "$ 365,00", "", "", "Crudo, beige, rosa nude, rosa chicle", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA, imgName: "8038-1"));
@@ -233,12 +234,11 @@ namespace MvcApplication2.DataLoad
             list.Add(new Models.Clouth(8075, "TAPADO ESTAMPADO CON CORDERITO BEBA (GRIS)", "1 AL 5", "$ 625,00", "", "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, imgName: "8075-2"));
             list.Add(new Models.Clouth(8075, "TAPADO ESTAMPADO CON CORDERITO BEBA (CELESTE)", "1 AL 5", "$ 625,00", "", "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, imgName: "8075-3"));
 
-            return list.OrderBy(x=> x.Id);
+            return list.OrderBy(x => x.Id);
         }
 
         public static IEnumerable<Models.Clouth> GetAllXMayorPrecioVenta()
         {
-
             var list = new List<Models.Clouth>();
             list.Add(new Models.Clouth(true, 8001, "REMERA GATITA BEBA", "1 AL 5", "$ 150,00", "", "", "", "", "Rosa, crudo, blanco", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, action: ""));
             list.Add(new Models.Clouth(true, 8002, "REMERA ARCOÍRIS", "1 AL 5", "$ 155,00", "", "", "", "", "Rosa, crudo, blanco", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
@@ -310,7 +310,7 @@ namespace MvcApplication2.DataLoad
             list.Add(new Models.Clouth(true, 8080, "CAMPERA PIEL CON FOIL", "1 AL 5", "$ 378,00", "", "", "", "", "Fucsia, rosa chicle, crudo", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
             //list.Add(new Models.Clouttrue, h(8081, "REMERA CON VOLADO", "", "", "", "", "", "", "Azul - francia", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.));
             //list.Add(new Models.Clouttrue, h(8082, "", "", "", "", "", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.));
-                                       
+
             list.Add(new Models.Clouth(true, 8020, "CAMPERA PIEL", "1 AL 5", "$ 360,00", "", "", "", "", "Crudo, rojo, rosa", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
             list.Add(new Models.Clouth(true, 8022, "CAMPERA PIEL BORD", "1 AL 5", "$ 405,00", "", "", "", "", "Rojo, rosa", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
             list.Add(new Models.Clouth(true, 8074, "TAPADO ESTAMPADA BEBA", "1 AL 5", "$ 625,00", "", "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, imgName: "8074-2"));
@@ -391,7 +391,7 @@ namespace MvcApplication2.DataLoad
             list.Add(new Models.Clouth(8077, "CAMPERA BEBE CAMUFLADA", "1 AL 5", "$ 598,00", "", "", "", "", "Marino, verde militar", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBES));
             list.Add(new Models.Clouth(8078, "CALZA TERMICA", "1 AL 5", "$ 145,00", "", "", "", "", "Negro, melange", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
             list.Add(new Models.Clouth(8079, "VESTIDO TELA ESTRELLAS", "4 AL 8", "$ 439,00", "10 AL 14", "$ 469,00", "", "", "", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.NENA));
-            list.Add(new Models.Clouth(8080, "CAMPERA PIEL CON FOIL", "1 AL 5", "$ 420,00", "", "", "", "", "Fucsia, rosa chicle, crudo", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));           
+            list.Add(new Models.Clouth(8080, "CAMPERA PIEL CON FOIL", "1 AL 5", "$ 420,00", "", "", "", "", "Fucsia, rosa chicle, crudo", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
 
             list.Add(new Models.Clouth(8020, "CAMPERA PIEL", "1 AL 5", "$ 395,00", "", "", "", "", "Crudo, rojo, rosa", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
             list.Add(new Models.Clouth(8022, "CAMPERA PIEL BORD", "1 AL 5", "$ 448,00", "", "", "", "", "Rojo, rosa", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
@@ -482,7 +482,6 @@ namespace MvcApplication2.DataLoad
 
         public static IEnumerable<Models.Clouth> GetAll()
         {
-
             var list = new List<Models.Clouth>();
             list.Add(new Models.Clouth(8001, "REMERA GATITA BEBA", "1 AL 5", "", "", "", "", "", "Rosa, crudo, blanco", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
             list.Add(new Models.Clouth(8002, "REMERA ARCOÍRIS", "1 AL 5", "", "", "", "", "", "Rosa, crudo, blanco", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS));
@@ -561,6 +560,5 @@ namespace MvcApplication2.DataLoad
             list.Add(new Models.Clouth(8075, "TAPADO CON CORDERITO", "1 AL 5", "", "", "", "", "", "Varios estampados", Models.Clouth.SUBCATEGORY.REMERAS, Models.Clouth.CATEGORY.BEBAS, imgName: "8075-2"));
             return list.OrderBy(x => x.Id);
         }
-
     }
 }

@@ -65,8 +65,109 @@ namespace MvcApplication2.Models
             GENERAL = 19
         }
 
-    //new local
-    public Clouth(
+        //new local
+        public Clouth(
+            int id, string description,
+            TallePrecio talle1,
+            string talle2,
+            string precioMenor2,
+            string precioMayor2,
+            string colours,
+            SUBCATEGORY subcategory,
+            CATEGORY category,
+            bool promocion,
+            string action = "",
+            string imgName = null,
+            string code = null)
+        {
+            Promocion = promocion;
+            Id = id;
+            //LowImg = imgName == null ? id.ToString() : imgName;
+            //HighImg = imgName == null ? id.ToString() : imgName;
+            LowImg = imgName == null ? 7202.ToString() : imgName;
+            //HighImg = (id % 2).ToString();
+            HighImg = imgName == null ? id.ToString() : imgName;
+            GetCode = code == null ? Id.ToString() : code;
+            TienePrecio = true;
+            TallesPrecio = new List<TallePrecio>();
+            TallesPrecio.Add(talle1);
+            TallesMenor = new List<string>();
+            TallesMayor = new List<string>();
+            TallesMenor.Add($"{talle1.Talle}: {talle1.PrecioMenor}");
+            TallesMayor.Add($"{talle1.Talle}: {talle1.PrecioMayor}");
+
+            if (!String.IsNullOrEmpty(talle2))
+            {
+                TallesPrecio.Add(new TallePrecio(talle2, precioMenor2, precioMayor2));
+                TallesMenor.Add($"{talle2}: {precioMenor2}");
+                TallesMayor.Add($"{talle2}: {precioMayor2}");
+            }
+            else {
+                TallesMenor.Add($"");
+                TallesMayor.Add($"");
+            }
+
+            Colores = colours;
+            ShortDescription = description.ToLower();
+            SubCategory = subcategory;
+            Category = category;
+
+            Action = action;
+            Description = String.Format("Art. {0} -  {1}", id.ToString(), description);
+        }
+
+        public Clouth(
+    int id, string description,
+    TallePrecio talle1,
+    TallePrecio talle2,
+    string colours,
+    SUBCATEGORY subcategory,
+    CATEGORY category,
+    bool promocion,
+    string action = "",
+    string imgName = null,
+    string code = null)
+        {
+            Promocion = promocion;
+            Id = id;
+            //LowImg = imgName == null ? id.ToString() : imgName;
+            //HighImg = imgName == null ? id.ToString() : imgName;
+            LowImg = imgName == null ? 7202.ToString() : imgName;
+            //HighImg = (id % 2).ToString();
+            HighImg = imgName == null ? id.ToString() : imgName;
+            GetCode = code == null ? Id.ToString() : code;
+            TienePrecio = true;
+            TallesPrecio = new List<TallePrecio>();
+            TallesMenor = new List<string>();
+            TallesMayor = new List<string>();
+            TallesPrecio.Add(talle1);
+            TallesMenor.Add($"{talle1.Talle}: {talle1.PrecioMenor}");
+            TallesMayor.Add($"{talle1.Talle}: {talle1.PrecioMayor}");
+
+            if (talle2 != null)
+            {
+                TallesPrecio.Add(talle2);
+                TallesMenor.Add($"{talle2.Talle}: {talle2.PrecioMenor}");
+                TallesMayor.Add($"{talle2.Talle}: {talle2.PrecioMayor}");
+            }
+            else {
+                TallesMenor.Add($"");
+                TallesMayor.Add($"");
+            }
+
+            Colores = colours;
+            ShortDescription = description.ToLower();
+            SubCategory = subcategory;
+            Category = category;
+
+            Action = action;
+            Description = String.Format("Art. {0} -  {1}", id.ToString(), description);
+        }
+
+
+
+        //new local
+        public Clouth(
         int id, string description,
         string talle1,
         string precioMenor1,
@@ -81,19 +182,20 @@ namespace MvcApplication2.Models
         string action = "",
         string imgName = null,
         string code = null)
-            {
-                Promocion = promocion;
-                Id = id;
-                //LowImg = imgName == null ? id.ToString() : imgName;
-                //HighImg = imgName == null ? id.ToString() : imgName;
-                LowImg = imgName == null ? 7202.ToString() : imgName;
-                //HighImg = (id % 2).ToString();
-                HighImg = imgName == null ? id.ToString() : imgName;
-                GetCode = code == null ? Id.ToString() : code;
-                TienePrecio = true;
-                TallesPrecio = new List<TallePrecio>();
-                TallesPrecio.Add(new TallePrecio(talle1, precioMenor1, precioMayor1));
-                Talles.Add($"{talle1}  Menor {precioMenor1} / Mayor {precioMayor1}");
+        {
+            Promocion = promocion;
+            Id = id;
+            //LowImg = imgName == null ? id.ToString() : imgName;
+            //HighImg = imgName == null ? id.ToString() : imgName;
+            LowImg = imgName == null ? 7202.ToString() : imgName;
+            //HighImg = (id % 2).ToString();
+            HighImg = imgName == null ? id.ToString() : imgName;
+            GetCode = code == null ? Id.ToString() : code;
+            TienePrecio = true;
+            TallesPrecio = new List<TallePrecio>();
+            TallesPrecio.Add(new TallePrecio(talle1, precioMenor1, precioMayor1));
+            Talles = new List<string>();
+            Talles.Add($"{talle1}  Menor {precioMenor1} / Mayor {precioMayor1}");
 
             if (talle2 != null)
             {
@@ -246,6 +348,7 @@ namespace MvcApplication2.Models
                 Description = String.Format("Art. {0} -  {1} - Talles: {2} - Colores: {3}",id.ToString(), description, size, colours);
         }
 
+
         #region "privateMethods"
         public String getSubCategory()
         {
@@ -362,6 +465,9 @@ namespace MvcApplication2.Models
         public bool Promocion { get; set; }
         public bool TienePrecio { get; set; }
         public IList<string> Talles { get; set; }
+
+        public IList<string> TallesMayor { get; set; }
+        public IList<string> TallesMenor { get; set; }
         public IList<TallePrecio> TallesPrecio { get; set; }
         public CATEGORY Category { get; set; }
         public SUBCATEGORY? SubCategory { get; set; }
