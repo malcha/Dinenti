@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
-    <NameOfLastUsedPublishProfile>test2</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>test</NameOfLastUsedPublishProfile>
     <ToolsVersionPromptShown>1.1</ToolsVersionPromptShown>
     <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
     <UseIISExpress>false</UseIISExpress>
