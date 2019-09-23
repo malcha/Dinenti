@@ -296,4 +296,101 @@ namespace MvcApplication2.Models
         public SUBCATEGORY? SubCategory { get; set; }
         public String Action { get; set; }
     }
+
+
+    public class PriceByList
+    {
+        public string Size1 { get; set; }
+        public string  Price1 { get; set; }
+        public string Size2 { get; set; }
+        public string Price2 { get; set; }
+        public string Size3 { get; set; }
+        public string Price3 { get; set; }
+
+        public PriceByList(
+            string size1 = "", string price1 = "",
+            string size2 = "", string price2 = "",
+            string size3="", string price3="")
+        {
+            Size1 = size1;
+            Price1 = price1;
+            Size2 = size2;
+            Price2 = price2;
+            Size3 = size3;
+            Price3 = price3;
+        }
+    }
+    public class ClouthFactory
+    {
+
+        public string Code { get; set; }
+        public int Id { get; set; }
+        public String Description { get; set; }
+        public String ImgName { get; set; }
+        public String Colores { get; set; }
+        public bool Promocion { get; set; }
+        public bool TienePrecio { get; set; }
+        public IList<string> Talles { get; set; }
+        public Clouth.CATEGORY Category { get; set; }
+        public Clouth.SUBCATEGORY SubCategory { get; set; }
+        public String Action { get; set; }
+
+        private PriceByList PriceGeneral { get; set; }
+        private PriceByList PriceNube { get; set; }
+        private PriceByList PriceNegocio { get; set; }
+
+
+        public ClouthFactory(
+            int id, string description,
+            PriceByList priceGeneral,
+            PriceByList priceNube,
+            PriceByList priceNegocio,
+            string colours, Clouth.SUBCATEGORY subcategory,
+            Clouth.CATEGORY category,
+            string action = "",
+            string imgName = null,
+            string code = null,
+            bool promocion = false)
+        {
+            Promocion = promocion;
+            Id = id;
+            PriceGeneral = priceGeneral;
+            PriceNube = priceNube;
+            PriceNegocio = priceNegocio;
+            ImgName = imgName;
+            Code = code;
+            Colores = colours;
+            Description = description.ToLower();
+            SubCategory = subcategory;
+            Category = category;
+            Action = action;
+        }
+
+        public Clouth GetGeneral()
+            => GetCloth(PriceGeneral);
+
+        public Clouth GetNube()
+            => GetCloth(PriceNube);
+        public Clouth GetNegocio()
+            => GetCloth(PriceNegocio);
+        public Clouth GetSinPrecio()
+            => GetCloth(new PriceByList());
+
+        private Clouth GetCloth(PriceByList price)
+        {
+            return new Clouth(
+             Id,  Description,
+            price.Size1, price.Price1,
+            price.Size2, price.Price2,
+            price.Size3, price.Price3,
+            Colores,  
+            SubCategory,
+            Category,
+             Action,
+             ImgName,
+            Code,
+            Promocion);
+        }
+
+    }
 }
