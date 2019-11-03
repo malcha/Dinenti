@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace MvcApplication2.Models
 {
@@ -42,21 +40,21 @@ namespace MvcApplication2.Models
             SHORTDEBANO = 15,
             SOLEROS = 16,
             SHORT = 17,
-            CHOMBAS=18,
+            CHOMBAS = 18,
             GENERAL = 19
         }
 
         public Clouth(
-            int id, string description, 
-            string size1, string price1, 
-            string size2, string price2, 
-            string size3, string price3, 
-            string colours, SUBCATEGORY subcategory, 
-            CATEGORY category, 
-            string action = "", 
-            string imgName = null, 
+            int id, string description,
+            string size1, string price1,
+            string size2, string price2,
+            string size3, string price3,
+            string colours, SUBCATEGORY subcategory,
+            CATEGORY category,
+            string action = "",
+            string imgName = null,
             string code = null,
-            bool promocion=false)
+            bool promocion = false)
         {
             Promocion = promocion;
             Id = id;
@@ -64,7 +62,7 @@ namespace MvcApplication2.Models
             //HighImg = imgName == null ? id.ToString() : imgName;
             LowImg = imgName == null ? 7202.ToString() : imgName;
             //HighImg = (id % 2).ToString();
-            HighImg = imgName == null ? id.ToString() : imgName; 
+            HighImg = imgName == null ? id.ToString() : imgName;
             GetCode = code == null ? Id.ToString() : code;
 
             TienePrecio = !String.IsNullOrWhiteSpace(price1)
@@ -73,18 +71,18 @@ namespace MvcApplication2.Models
 
             Talles = new List<string>();
             //if (!String.IsNullOrEmpty(size1))
-                Talles.Add($"{size1}  {price1}");
+            Talles.Add($"{size1}  {price1}");
             //if (!String.IsNullOrEmpty(size2))
-                Talles.Add($"{size2}  {price2}");
-                Talles.Add($"{size3}  {price3}");
+            Talles.Add($"{size2}  {price2}");
+            Talles.Add($"{size3}  {price3}");
             Colores = colours;
             ShortDescription = description.ToLower();
             SubCategory = subcategory;
             Category = category;
-            
+
             Action = action;
             if (String.IsNullOrEmpty(colours))
-                Description = String.Format("Art. {0} -  {1} - Talles: {2}", id.ToString(), description, String.Join(" / ", String.Join("/",Talles)));
+                Description = String.Format("Art. {0} -  {1} - Talles: {2}", id.ToString(), description, String.Join(" / ", String.Join("/", Talles)));
             else
                 Description = String.Format("Art. {0} -  {1} - Talles: {2} - Colores: {3}", id.ToString(), description, String.Join(" / ", String.Join("/", Talles)), colours);
         }
@@ -111,14 +109,13 @@ namespace MvcApplication2.Models
                               || !String.IsNullOrWhiteSpace(price2)
                               || !String.IsNullOrWhiteSpace(price3);
 
-
             Talles = new List<string>();
             //if (!String.IsNullOrEmpty(size1))
-          
+
             if (!string.IsNullOrEmpty(price1))
             {
-                decimal.TryParse(price1.Replace("$","").Replace(" ",""), out var priceDecimal1);
-                Talles.Add($"{size1}  Mayor {Decimal.Ceiling(Decimal.Multiply(priceDecimal1, 1.21m))} / Menor {Decimal.Ceiling(Decimal.Multiply(priceDecimal1, Decimal.Multiply(1.21m ,1.5m)))}");
+                decimal.TryParse(price1.Replace("$", "").Replace(" ", ""), out var priceDecimal1);
+                Talles.Add($"{size1}  Mayor {Decimal.Ceiling(Decimal.Multiply(priceDecimal1, 1.21m))} / Menor {Decimal.Ceiling(Decimal.Multiply(priceDecimal1, Decimal.Multiply(1.21m, 1.5m)))}");
             }
             else
             {
@@ -144,7 +141,6 @@ namespace MvcApplication2.Models
             else
             {
                 Talles.Add($"{size3} {price3}");
-
             }
 
             Colores = colours;
@@ -159,24 +155,26 @@ namespace MvcApplication2.Models
                 Description = String.Format("Art. {0} -  {1} - Talles: {2} - Colores: {3}", id.ToString(), description, String.Join(" / ", String.Join("/", Talles)), colours);
         }
 
-        public Clouth (int id,string description, string size, string colours,SUBCATEGORY subcategory,CATEGORY category, string action="", string imgName=null, string code=null ){
-            Id=id;
-            LowImg = imgName == null? id.ToString(): imgName;
+        public Clouth(int id, string description, string size, string colours, SUBCATEGORY subcategory, CATEGORY category, string action = "", string imgName = null, string code = null)
+        {
+            Id = id;
+            LowImg = imgName == null ? id.ToString() : imgName;
             HighImg = imgName == null ? id.ToString() : imgName;
             GetCode = code == null ? Id.ToString() : code;
 
             Colores = colours;
-            ShortDescription =description.ToLower();
+            ShortDescription = description.ToLower();
             SubCategory = subcategory;
             Category = category;
             Action = action;
             if (String.IsNullOrEmpty(colours))
                 Description = String.Format("Art. {0} -  {1} - Talles: {2}", id.ToString(), description, size);
             else
-                Description = String.Format("Art. {0} -  {1} - Talles: {2} - Colores: {3}",id.ToString(), description, size, colours);
+                Description = String.Format("Art. {0} -  {1} - Talles: {2} - Colores: {3}", id.ToString(), description, size, colours);
         }
 
         #region "privateMethods"
+
         public String getSubCategory()
         {
             var subCat = "";
@@ -185,51 +183,67 @@ namespace MvcApplication2.Models
                 case SUBCATEGORY.ABRIGOS:
                     subCat = "abrigos";
                     break;
+
                 case SUBCATEGORY.ASTRONAUTAS:
                     subCat = "astronautas";
                     break;
+
                 case SUBCATEGORY.BODY:
                     subCat = "body";
                     break;
+
                 case SUBCATEGORY.BUZOS:
                     subCat = "buzos";
                     break;
+
                 case SUBCATEGORY.CALZAS:
                     subCat = "calzas";
                     break;
+
                 case SUBCATEGORY.CAMISAS:
                     subCat = "camisas";
                     break;
+
                 case SUBCATEGORY.CAMPERAS:
                     subCat = "camperas";
                     break;
+
                 case SUBCATEGORY.CHALECOS:
                     subCat = "chalecos";
                     break;
+
                 case SUBCATEGORY.ENTERITOS:
                     subCat = "enteritos";
                     break;
+
                 case SUBCATEGORY.JUMPER:
                     subCat = "jumpers";
                     break;
+
                 case SUBCATEGORY.PANTALON:
                     subCat = "pantalon";
                     break;
+
                 case SUBCATEGORY.REMERAS:
                     subCat = "remeras";
                     break;
+
                 case SUBCATEGORY.REMERON:
                     subCat = "remeron";
                     break;
+
                 case SUBCATEGORY.SHORTDEBANO:
                     subCat = "shortdebano";
                     break;
+
                 case SUBCATEGORY.SOLEROS:
                     subCat = "soleros";
                     break;
+
                 case SUBCATEGORY.VESTIDOS:
                     subCat = "vestidos";
                     break;
+
                 default:
                     break;
             }
@@ -245,15 +259,19 @@ namespace MvcApplication2.Models
                 case CATEGORY.BEBAS:
                     category = "bebas";
                     break;
+
                 case CATEGORY.BEBES:
                     category = "bebes";
                     break;
+
                 case CATEGORY.MINIBEBES:
                     category = "minibebes";
                     break;
+
                 case CATEGORY.NENA:
                     category = "nena";
                     break;
+
                 case CATEGORY.VARON:
                     category = "varon";
                     break;
@@ -261,9 +279,8 @@ namespace MvcApplication2.Models
             return category;
         }
 
-        #endregion
+        #endregion "privateMethods"
 
-        
         public String getUrlPath()
         {
             return String.Format("/{0}/{1}", getCategory(), Action);
@@ -273,10 +290,12 @@ namespace MvcApplication2.Models
         {
             return String.Format("/{0}/{1}.gif", "Content/images/baja", LowImg);
         }
+
         public String getHighImgPath()
         {
             return String.Format("/{0}/{1}.gif", "Content/images/alta", HighImg);
         }
+
         public String getHomeImgPath()
         {
             return String.Format("/{0}/{1}.jpg", "Content/images/recomendaciones", LowImg);
@@ -297,11 +316,10 @@ namespace MvcApplication2.Models
         public String Action { get; set; }
     }
 
-
     public class PriceByList
     {
         public string Size1 { get; set; }
-        public string  Price1 { get; set; }
+        public string Price1 { get; set; }
         public string Size2 { get; set; }
         public string Price2 { get; set; }
         public string Size3 { get; set; }
@@ -310,7 +328,7 @@ namespace MvcApplication2.Models
         public PriceByList(
             string size1 = "", string price1 = "",
             string size2 = "", string price2 = "",
-            string size3="", string price3="")
+            string size3 = "", string price3 = "")
         {
             Size1 = size1;
             Price1 = price1;
@@ -320,9 +338,9 @@ namespace MvcApplication2.Models
             Price3 = price3;
         }
     }
+
     public class ClouthFactory
     {
-
         public string Code { get; set; }
         public int Id { get; set; }
         public String Description { get; set; }
@@ -338,13 +356,16 @@ namespace MvcApplication2.Models
         private PriceByList PriceGeneral { get; set; }
         private PriceByList PriceNube { get; set; }
         private PriceByList PriceNegocio { get; set; }
-
+        private PriceByList PriceListaMayor { get; set; }
+        private PriceByList PricePorMenor { get; set; }
 
         public ClouthFactory(
             int id, string description,
             PriceByList priceGeneral,
             PriceByList priceNube,
             PriceByList priceNegocio,
+            PriceByList priceListaMayor,
+            PriceByList pricePorMenor,
             string colours, Clouth.SUBCATEGORY subcategory,
             Clouth.CATEGORY category,
             string action = "",
@@ -357,6 +378,7 @@ namespace MvcApplication2.Models
             PriceGeneral = priceGeneral;
             PriceNube = priceNube;
             PriceNegocio = priceNegocio;
+            PriceListaMayor = priceListaMayor;
             ImgName = imgName;
             Code = code;
             Colores = colours;
@@ -371,19 +393,27 @@ namespace MvcApplication2.Models
 
         public Clouth GetNube()
             => GetCloth(PriceNube);
+
         public Clouth GetNegocio()
             => GetCloth(PriceNegocio);
+
+        public Clouth GetListaMayor()
+            => GetCloth(PriceListaMayor);
+
+        public Clouth GetPorMenor()
+            => GetCloth(PriceNegocio);
+
         public Clouth GetSinPrecio()
             => GetCloth(new PriceByList());
 
         private Clouth GetCloth(PriceByList price)
         {
             return new Clouth(
-             Id,  Description,
+             Id, Description,
             price.Size1, price.Price1,
             price.Size2, price.Price2,
             price.Size3, price.Price3,
-            Colores,  
+            Colores,
             SubCategory,
             Category,
              Action,
@@ -391,6 +421,5 @@ namespace MvcApplication2.Models
             Code,
             Promocion);
         }
-
     }
 }
