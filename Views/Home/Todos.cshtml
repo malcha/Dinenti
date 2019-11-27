@@ -33,19 +33,21 @@
 
                 @foreach (Clouth item in Model)
                 {
-                    <div class="col-md-3 pro-1">
+                    <div class="col-md-4 pro-1">
                         <div class="col-m">
-                            <a style="cursor:pointer;" data-open-modal-target=""
-                               data-target="#myModal5" class="offer-img" data-src="@item.getHighImgPath()">
-                                <img src="@item.getHighImgPath()" class="img-responsive"
-                                     data-code="@item.GetCode"
-                                     data-description="@item.ShortDescription"
-                                     data-talles="@String.Join( ";",item.Talles.Where(x=> !string.IsNullOrWhiteSpace(x)))"
-                                     data-colores="@item.Colores"
-                                     data-src="@item.getHighImgPath()"
-                                     data-tiene-precio="@item.TienePrecio.ToString().ToLower()"
-                                     alt="">
-                            </a>
+                            <div class="zoom">
+                                <a style="cursor:pointer;" data-open-modal-target=""
+                                   data-target="#myModal5" class="offer-img" data-src="@item.getHighImgPath()">
+                                    <img src="@item.getHighImgPath()" class="img-responsive"
+                                         data-code="@item.GetCode"
+                                         data-description="@item.ShortDescription"
+                                         data-talles="@String.Join( ";",item.Talles.Where(x=> !string.IsNullOrWhiteSpace(x)))"
+                                         data-colores="@item.Colores"
+                                         data-src="@item.getHighImgPath()"
+                                         data-tiene-precio="@item.TienePrecio.ToString().ToLower()"
+                                         alt="">
+                                </a>
+                            </div>
                             <div class="mid-1">
                                 <div class="short-descripcion" style="min-height:40px">
                                     <h4>@item.ShortDescription</h4>
@@ -53,37 +55,49 @@
                                 <div class="mid-2 talles">
                                     <div class="">
                                         <h5>Art: @item.GetCode</h5>
-                                        <h5>Talles: </h5>
-                                    </div>
-                                    @if (item.Talles != null)
-                                    {
-                                        foreach (var t in item.Talles)
-                                        {
-                                            if (String.IsNullOrWhiteSpace(t))
-                                            {
-                                                <div class="women" style="min-height:16px">
-                                                    <h5>@t</h5>
-                                                </div>
-                                            }
-                                            else
-                                            {
-                                                <div class="women" style="min-height:16px">
-                                                    <h5>@t</h5>
-                                                </div>
-                                            }
-
-                                        }
-
-                                        if (item.TienePrecio)
-                                        {
-                                            <div class="women" style="min-height:20px">
-                                                <p class="iva">Estos precios no incluyen IVA</p>
-                                            </div>
-                                        }
                                         <div class="women" style="min-height:35px">
-                                            <h5>Colores: @item.Colores</h5>
+
+                                            <h5>@(item.Colores.Any() ? String.Format("Colores: {0}", item.Colores) : "Colores: -")</h5>
+                                        </div>
+                                        <h5>Precios: </h5>
+                                    </div>
+                            @if (item.Talles != null)
+                            {
+                                <div style="overflow-x:auto;">
+                                    <table>
+                                        <tr>
+                                            <th>Talles</th>
+                                            <th>Precio</th>
+                                        </tr>
+                                        @foreach (var t in item.TallesConDetalle.Where(x => !string.IsNullOrEmpty(x.Size)))
+                                        {
+
+                                            <tr>
+                                                <td>@t.Size</td>
+                                                <td>
+                                                    @(!string.IsNullOrEmpty(t.Price1) ? t.Price1 : "-")
+                                                </td>
+                                            </tr>
+                                        }
+                                    </table>
+                                    @if (item.TienePrecio)
+                                    {
+                                        <div class="women" style="min-height:20px">
+                                            <p class="iva">Estos precios no incluyen IVA</p>
                                         </div>
                                     }
+                                    @for (int i = 0; i < item.TallesConDetalle.Where(x => string.IsNullOrEmpty(x.Size)).Count() - 1; i++)
+                                    {
+                                        <div class="mindivheight">
+                                        </div>
+                                    }
+                                    @*foreach (var t in item.TallesConDetalle.Where(x => string.IsNullOrEmpty(x.Size)))
+                                    {
+                                        <div class="mindivheight">
+                                        </div>
+                                    }*@
+                                </div>
+                            }
                                     <div class="clearfix"></div>
                                 </div>
                             </div>

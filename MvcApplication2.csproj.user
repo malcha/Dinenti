@@ -3,7 +3,7 @@
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
     <NameOfLastUsedPublishProfile>test</NameOfLastUsedPublishProfile>
-    <ToolsVersionPromptShown>1.1</ToolsVersionPromptShown>
+    <ToolsVersionPromptShown>2.9</ToolsVersionPromptShown>
     <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
     <UseIISExpress>false</UseIISExpress>
     <Use64BitIISExpress />

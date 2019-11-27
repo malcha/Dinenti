@@ -127,7 +127,6 @@ namespace MvcApplication2.Controllers
             ViewBag.TitleName = "Todos";
             var list = new ClouthManager()
                             .FindAll(type)
-                            .Where(x=> !(listToExclude.Contains(x.Id) &&x.Category==Clouth.CATEGORY.BEBAS) )
                             .OrderBy(x => x.Id)
                             .ToList();
 
@@ -136,12 +135,10 @@ namespace MvcApplication2.Controllers
 
         public ActionResult Index(Guid? type)
         {
-            var listToExclude = new List<int>() { 8020, 8022 };
             Cookies.WriteCookie();
             ViewBag.TitleName = "Todos";
             var list = new ClouthManager()
                             .FindAll(type)
-                            .Where(x => !(listToExclude.Contains(x.Id) && x.Category == Clouth.CATEGORY.BEBAS))
                             .OrderBy(x => x.Id)
                             .ToList();
 

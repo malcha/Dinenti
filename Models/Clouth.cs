@@ -44,17 +44,23 @@ namespace MvcApplication2.Models
             GENERAL = 19
         }
 
+
+
         public Clouth(
             int id, string description,
-            string size1, string price1,
-            string size2, string price2,
-            string size3, string price3,
+            string size1, string price1Size1,
+            string size2, string price1Size2,
+            string size3, string price1Size3,
             string colours, SUBCATEGORY subcategory,
             CATEGORY category,
             string action = "",
             string imgName = null,
             string code = null,
-            bool promocion = false)
+            bool promocion = false,
+            string price2Size1= null,
+            string price2Size2 = null,
+            string price2Size3= null
+            )
         {
             Promocion = promocion;
             Id = id;
@@ -65,16 +71,27 @@ namespace MvcApplication2.Models
             HighImg = imgName == null ? id.ToString() : imgName;
             GetCode = code == null ? Id.ToString() : code;
 
-            TienePrecio = !String.IsNullOrWhiteSpace(price1)
-                              || !String.IsNullOrWhiteSpace(price2)
-                              || !String.IsNullOrWhiteSpace(price3);
+            TienePrecio = !String.IsNullOrWhiteSpace(price1Size1)
+                              || !String.IsNullOrWhiteSpace(price1Size2)
+                              || !String.IsNullOrWhiteSpace(price1Size3);
 
             Talles = new List<string>();
+            TallesConDetalle = new List<PriceByTalleDetail>();
+            TallesConDetalle.Add(
+                new PriceByTalleDetail() { Size = size1, Price1 = price1Size1, Price2 = price2Size1 }
+                );
+            TallesConDetalle.Add(
+                new PriceByTalleDetail() { Size = size2, Price1 = price1Size2, Price2 = price2Size2 }
+                );
+            TallesConDetalle.Add(
+                new PriceByTalleDetail() { Size = size3, Price1 = price1Size3, Price2 = price2Size3 }
+                );
+
             //if (!String.IsNullOrEmpty(size1))
-            Talles.Add($"{size1}  {price1}");
+            Talles.Add($"{size1}  {price1Size1}");
             //if (!String.IsNullOrEmpty(size2))
-            Talles.Add($"{size2}  {price2}");
-            Talles.Add($"{size3}  {price3}");
+            Talles.Add($"{size2}  {price1Size2}");
+            Talles.Add($"{size3}  {price1Size3}");
             Colores = colours;
             ShortDescription = description.ToLower();
             SubCategory = subcategory;
@@ -87,91 +104,91 @@ namespace MvcApplication2.Models
                 Description = String.Format("Art. {0} -  {1} - Talles: {2} - Colores: {3}", id.ToString(), description, String.Join(" / ", String.Join("/", Talles)), colours);
         }
 
-        public Clouth(
-            bool isLocal,
-            int id, string description,
-            string size1, string price1,
-            string size2, string price2,
-            string size3, string price3,
-            string colours, SUBCATEGORY subcategory,
-            CATEGORY category,
-            string action = "",
-            string imgName = null,
-            string code = null,
-            bool promocion = false)
-        {
-            Promocion = promocion;
-            Id = id;
-            HighImg = imgName == null ? id.ToString() : imgName;
-            GetCode = code == null ? Id.ToString() : code;
+        //public Clouth(
+        //    bool isLocal,
+        //    int id, string description,
+        //    string size1, string price1,
+        //    string size2, string price2,
+        //    string size3, string price3,
+        //    string colours, SUBCATEGORY subcategory,
+        //    CATEGORY category,
+        //    string action = "",
+        //    string imgName = null,
+        //    string code = null,
+        //    bool promocion = false)
+        //{
+        //    Promocion = promocion;
+        //    Id = id;
+        //    HighImg = imgName == null ? id.ToString() : imgName;
+        //    GetCode = code == null ? Id.ToString() : code;
 
-            TienePrecio = !String.IsNullOrWhiteSpace(price1)
-                              || !String.IsNullOrWhiteSpace(price2)
-                              || !String.IsNullOrWhiteSpace(price3);
+        //    TienePrecio = !String.IsNullOrWhiteSpace(price1)
+        //                      || !String.IsNullOrWhiteSpace(price2)
+        //                      || !String.IsNullOrWhiteSpace(price3);
 
-            Talles = new List<string>();
-            //if (!String.IsNullOrEmpty(size1))
+        //    Talles = new List<string>();
+        //    //if (!String.IsNullOrEmpty(size1))
 
-            if (!string.IsNullOrEmpty(price1))
-            {
-                decimal.TryParse(price1.Replace("$", "").Replace(" ", ""), out var priceDecimal1);
-                Talles.Add($"{size1}  Mayor {Decimal.Ceiling(Decimal.Multiply(priceDecimal1, 1.21m))} / Menor {Decimal.Ceiling(Decimal.Multiply(priceDecimal1, Decimal.Multiply(1.21m, 1.5m)))}");
-            }
-            else
-            {
-                Talles.Add($"{size1} {price1}");
-            }
-            //if (!String.IsNullOrEmpty(size2))
-            //Talles.Add($"{size2}  {price2}");
-            if (!string.IsNullOrEmpty(price2))
-            {
-                decimal.TryParse(price2.Replace("$", "").Replace(" ", ""), out var priceDecimal);
-                Talles.Add($"{size2}  Mayor {Decimal.Ceiling(Decimal.Multiply(priceDecimal, 1.21m))} / Menor {Decimal.Ceiling(Decimal.Multiply(priceDecimal, Decimal.Multiply(1.21m, 1.5m)))}");
-            }
-            else
-            {
-                Talles.Add($"{size2} {price2}");
-            }
+        //    if (!string.IsNullOrEmpty(price1))
+        //    {
+        //        decimal.TryParse(price1.Replace("$", "").Replace(" ", ""), out var priceDecimal1);
+        //        Talles.Add($"{size1}  Mayor {Decimal.Ceiling(Decimal.Multiply(priceDecimal1, 1.21m))} / Menor {Decimal.Ceiling(Decimal.Multiply(priceDecimal1, Decimal.Multiply(1.21m, 1.5m)))}");
+        //    }
+        //    else
+        //    {
+        //        Talles.Add($"{size1} {price1}");
+        //    }
+        //    //if (!String.IsNullOrEmpty(size2))
+        //    //Talles.Add($"{size2}  {price2}");
+        //    if (!string.IsNullOrEmpty(price2))
+        //    {
+        //        decimal.TryParse(price2.Replace("$", "").Replace(" ", ""), out var priceDecimal);
+        //        Talles.Add($"{size2}  Mayor {Decimal.Ceiling(Decimal.Multiply(priceDecimal, 1.21m))} / Menor {Decimal.Ceiling(Decimal.Multiply(priceDecimal, Decimal.Multiply(1.21m, 1.5m)))}");
+        //    }
+        //    else
+        //    {
+        //        Talles.Add($"{size2} {price2}");
+        //    }
 
-            if (!String.IsNullOrEmpty(size3))
-            {
-                decimal.TryParse(price3.Replace("$", "").Replace(" ", ""), out var priceDecimal);
-                Talles.Add($"{size3}  Mayor {Decimal.Ceiling(Decimal.Multiply(priceDecimal, 1.21m))} / Menor {Decimal.Ceiling(Decimal.Multiply(priceDecimal, Decimal.Multiply(1.21m, 1.5m)))}");
-            }
-            else
-            {
-                Talles.Add($"{size3} {price3}");
-            }
+        //    if (!String.IsNullOrEmpty(size3))
+        //    {
+        //        decimal.TryParse(price3.Replace("$", "").Replace(" ", ""), out var priceDecimal);
+        //        Talles.Add($"{size3}  Mayor {Decimal.Ceiling(Decimal.Multiply(priceDecimal, 1.21m))} / Menor {Decimal.Ceiling(Decimal.Multiply(priceDecimal, Decimal.Multiply(1.21m, 1.5m)))}");
+        //    }
+        //    else
+        //    {
+        //        Talles.Add($"{size3} {price3}");
+        //    }
 
-            Colores = colours;
-            ShortDescription = description.ToLower();
-            SubCategory = subcategory;
-            Category = category;
+        //    Colores = colours;
+        //    ShortDescription = description.ToLower();
+        //    SubCategory = subcategory;
+        //    Category = category;
 
-            Action = action;
-            if (String.IsNullOrEmpty(colours))
-                Description = String.Format("Art. {0} -  {1} - Talles: {2}", id.ToString(), description, String.Join(" / ", String.Join("/", Talles)));
-            else
-                Description = String.Format("Art. {0} -  {1} - Talles: {2} - Colores: {3}", id.ToString(), description, String.Join(" / ", String.Join("/", Talles)), colours);
-        }
+        //    Action = action;
+        //    if (String.IsNullOrEmpty(colours))
+        //        Description = String.Format("Art. {0} -  {1} - Talles: {2}", id.ToString(), description, String.Join(" / ", String.Join("/", Talles)));
+        //    else
+        //        Description = String.Format("Art. {0} -  {1} - Talles: {2} - Colores: {3}", id.ToString(), description, String.Join(" / ", String.Join("/", Talles)), colours);
+        //}
 
-        public Clouth(int id, string description, string size, string colours, SUBCATEGORY subcategory, CATEGORY category, string action = "", string imgName = null, string code = null)
-        {
-            Id = id;
-            LowImg = imgName == null ? id.ToString() : imgName;
-            HighImg = imgName == null ? id.ToString() : imgName;
-            GetCode = code == null ? Id.ToString() : code;
+        //public Clouth(int id, string description, string size, string colours, SUBCATEGORY subcategory, CATEGORY category, string action = "", string imgName = null, string code = null)
+        //{
+        //    Id = id;
+        //    LowImg = imgName == null ? id.ToString() : imgName;
+        //    HighImg = imgName == null ? id.ToString() : imgName;
+        //    GetCode = code == null ? Id.ToString() : code;
 
-            Colores = colours;
-            ShortDescription = description.ToLower();
-            SubCategory = subcategory;
-            Category = category;
-            Action = action;
-            if (String.IsNullOrEmpty(colours))
-                Description = String.Format("Art. {0} -  {1} - Talles: {2}", id.ToString(), description, size);
-            else
-                Description = String.Format("Art. {0} -  {1} - Talles: {2} - Colores: {3}", id.ToString(), description, size, colours);
-        }
+        //    Colores = colours;
+        //    ShortDescription = description.ToLower();
+        //    SubCategory = subcategory;
+        //    Category = category;
+        //    Action = action;
+        //    if (String.IsNullOrEmpty(colours))
+        //        Description = String.Format("Art. {0} -  {1} - Talles: {2}", id.ToString(), description, size);
+        //    else
+        //        Description = String.Format("Art. {0} -  {1} - Talles: {2} - Colores: {3}", id.ToString(), description, size, colours);
+        //}
 
         #region "privateMethods"
 
@@ -311,9 +328,17 @@ namespace MvcApplication2.Models
         public bool Promocion { get; set; }
         public bool TienePrecio { get; set; }
         public IList<string> Talles { get; set; }
+        public IList<PriceByTalleDetail> TallesConDetalle { get; set; }
         public CATEGORY Category { get; set; }
         public SUBCATEGORY? SubCategory { get; set; }
         public String Action { get; set; }
+    }
+
+    public class PriceByTalleDetail
+    {
+        public string Size { get; set; }
+        public string Price1 { get; set; }
+        public string Price2 { get; set; }
     }
 
     public class PriceByList
@@ -379,6 +404,7 @@ namespace MvcApplication2.Models
             PriceNube = priceNube;
             PriceNegocio = priceNegocio;
             PriceListaMayor = priceListaMayor;
+            PricePorMenor = pricePorMenor;
             ImgName = imgName;
             Code = code;
             Colores = colours;
@@ -401,10 +427,31 @@ namespace MvcApplication2.Models
             => GetCloth(PriceListaMayor);
 
         public Clouth GetPorMenor()
-            => GetCloth(PriceNegocio);
-
+        {
+            return GetCloth(PriceNegocio, PricePorMenor);
+        }
         public Clouth GetSinPrecio()
             => GetCloth(new PriceByList());
+
+        private Clouth GetCloth(PriceByList price, PriceByList price2)
+        {
+            return new Clouth(
+             Id, Description,
+            price.Size1, price.Price1,
+            price.Size2, price.Price2,
+            price.Size3, price.Price3,
+            Colores,
+            SubCategory,
+            Category,
+             Action,
+             ImgName,
+            Code,
+            Promocion,
+            price2Size1: price2?.Price1,
+            price2Size2: price2?.Price2,
+            price2Size3: price2?.Price3);
+        }
+
 
         private Clouth GetCloth(PriceByList price)
         {

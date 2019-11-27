@@ -10,3 +10,49 @@ p.iva, .iva {
     font-size: 9px;
     color: #908d8d;
 }
+
+
+.zoom {
+    /*padding: 50px;
+    background-color: green;*/
+    transition: transform .2s;
+    /*width: 200px;
+    height: 200px;
+    margin: 0 auto;*/
+}
+
+.zoom:hover {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.5);
+}
+
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+.mindivheight {
+    min-height: 35px
+}
+
+.mindivheightlocal {
+    min-height: 31px
+}
+
+.size-talles-ventalocal {
+    font-size: 11px;
+}

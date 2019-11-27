@@ -4,14 +4,13 @@
 @model List<Clouth>
     @{
         ViewBag.Title = "";
-        Layout = "~/Views/Shared/_LayoutLocal.cshtml";
     }
 
 
     @section PageScripts{
         <script type="text/javascript">
             jQuery(document).ready(function () {
-                var view = new Views.BaseModelLocal();
+                var view = new Views.BaseModel();
             });
         </script>
     }
@@ -34,24 +33,21 @@
 
                 @foreach (Clouth item in Model)
                 {
-                    <div class="col-md-3 pro-1">
+                    <div class="col-md-4 pro-1">
                         <div class="col-m">
-                            <a style="cursor:pointer;" data-open-modal-target=""
-                               data-target="#myModal5" class="offer-img" data-src="@item.getHighImgPath()">
-                                <img src="@item.getHighImgPath()" class="img-responsive"
-                                     data-code="@item.GetCode"
-                                     data-description="@item.ShortDescription"
-                                     data-talle-por-menor="@item.Talles.First()"
-                                     data-talle-por-mayor="@item.Talles.ToArray()[1]" 
-                                     @*data-talle-por-menor="@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(item.TallesMenor.ToList()))"
-                                     data-talle-por-menor2="@Json.Encode(item.TallesMenor.ToList())"
-                                     data-talle-por-mayor="@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(item.TallesMayor.ToList()))"
-                                     data-talles="@String.Join( ";",item.TallesMayor.Where(x=> !string.IsNullOrWhiteSpace(x)))"*@
-                                     data-colores="@item.Colores"
-                                     data-src="@item.getHighImgPath()"
-                                     data-tiene-precio="@item.TienePrecio.ToString().ToLower()"
-                                     alt="">
-                            </a>
+                            <div class="zoom">
+                                <a style="cursor:pointer;" data-open-modal-target=""
+                                   data-target="#myModal5" class="offer-img" data-src="@item.getHighImgPath()">
+                                    <img src="@item.getHighImgPath()" class="img-responsive"
+                                         data-code="@item.GetCode"
+                                         data-description="@item.ShortDescription"
+                                         data-talles="@String.Join( ";",item.Talles.Where(x=> !string.IsNullOrWhiteSpace(x)))"
+                                         data-colores="@item.Colores"
+                                         data-src="@item.getHighImgPath()"
+                                         data-tiene-precio="@item.TienePrecio.ToString().ToLower()"
+                                         alt="">
+                                </a>
+                            </div>
                             <div class="mid-1">
                                 <div class="short-descripcion" style="min-height:40px">
                                     <h4>@item.ShortDescription</h4>
@@ -59,42 +55,44 @@
                                 <div class="mid-2 talles">
                                     <div class="">
                                         <h5>Art: @item.GetCode</h5>
+                                        <div class="women" style="min-height:35px">
+
+                                            <h5>@(item.Colores.Any() ? String.Format("Colores: {0}", item.Colores) : "Colores: -")</h5>
+                                        </div>
+                                        <h5>Precios: </h5>
                                     </div>
-                                    @if (item.Promocion)
+                                    @if (item.Talles != null)
                                     {
-                                        <div class="offer"><p><span>Oferta</span></p></div>
-                                    }
-                                    @if (item.Talles.Any())
-                                    {
-                                        <div class="women" style="min-height:16px">
-                                            <h5 style="font-weight: bold;">Precio por Menor:</h5>
-                                            <h5>@item.Talles.First()</h5>
-                                        </div>
-                                    }
-                                    @if (item.Talles.ToList().Count() > 1)
-                                    {
-                                        <div class="women" style="min-height:16px">
-                                            <h5 style="font-weight: bold;">Precio por Mayor: </h5>
-                                            <h5>@item.Talles.ToArray()[1]</h5>
-                                        </div>
-                                    }
-                                    else
-                                    {
-                                        <div class="women" style="min-height:16px">
-                                            <h5 style="font-weight: bold;"></h5>
-                                            <h5></h5>
-                                        </div>
-                                    }
-                                    @*<div class="women" style="min-height:16px">
-                                        <h5 style="font-weight: bold;">Precio por Mayor: </h5>
-                                        <h5>Talles: @item.Talles.ToArray()[1]</h5>
-                                    </div>*@
-                                    <div class="women" style="min-height:35px">
-                                        @if (!String.IsNullOrEmpty(item.Colores))
+                                <div style="overflow-x:auto;" class="size-talles-ventalocal">
+                                    <table>
+                                        <tr>
+                                            <th>Talles</th>
+                                            <th>Mayor</th>
+                                            <th>Menor</th>
+                                        </tr>
+                                        @foreach (var t in item.TallesConDetalle.Where(x => !string.IsNullOrEmpty(x.Size)))
                                         {
-                                            <h5>Colores: @item.Colores</h5>
+
+                                            <tr>
+                                                <td>@t.Size</td>
+                                                <td>@(!string.IsNullOrEmpty(t.Price1) ? t.Price1 : "-")</td>
+                                                <td>@(!string.IsNullOrEmpty(t.Price2) ? t.Price2 : "-")</td>
+                                            </tr>
                                         }
-                                    </div>
+                                    </table>
+                                    @if (item.TienePrecio)
+                                    {
+                                        <div class="women" style="min-height:20px">
+                                            <p class="iva">Estos precios no incluyen IVA</p>
+                                        </div>
+                                    }
+                                    @for (int i = 0; i < item.TallesConDetalle.Where(x => string.IsNullOrEmpty(x.Size)).Count() - 1; i++)
+                                    {
+                                        <div class="mindivheightlocal">
+                                        </div>
+                                    }
+                                </div>
+                                    }
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
@@ -102,30 +100,6 @@
                         <div class="clearfix"></div>
                     </div>
 
-
-                    @*<div class="col-md-3 pro-1">
-                            <div class="col-m">
-                                <a href="#" data-toggle="modal" data-target="#myModal6" class="offer-img">
-                                    <img src="/Content/big-store/images/of5.png" class="img-responsive" alt="">
-                                    <div class="offer"><p><span>Offer</span></p></div>
-                                </a>
-                                <div class="mid-1">
-                                    <div class="women">
-                                        <h6><a href="single.html">Kurkure</a>(100 g)</h6>
-                                    </div>
-                                    <div class="mid-2">
-                                        <p><label>$1.00</label><em class="item_price">$0.70</em></p>
-                                        <div class="block">
-                                            <div class="starbox small ghosting"> </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="add">
-                                        <button class="btn btn-danger my-cart-btn my-cart-b" data-id="6" data-name="Kurkure" data-summary="summary 6" data-price="0.70" data-quantity="1" data-image="images/of5.png">Add to Cart</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>*@
                 }
 
                 <div class="clearfix"></div>
@@ -154,20 +128,8 @@
                         <h3 id="modal-description"></h3>
                         <p class="in-para" id="modal-code"> </p>
                         <p class="in-para" id="modal-colores"> </p>
-                        <p class="in-para" id="modal-colores">Precio por menor: </p>
-                        <div class="in-para" id="modal-talle-menor"> </div>
-                        <p class="in-para" id="modal-colores">Precio por mayor: </p>
-                        <div class="in-para" id="modal-talle-mayor"> </div>
-                        @*<div class="price_single">
-            <span class="reducedfrom "><del>$1.00</del>$0.70</span>
-
-            <div class="clearfix"></div>
-        </div>
-        <h4 class="quick">Quick Overview:</h4>
-        <p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
-        <div class="add-to">
-            <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="5" data-name="Lays" data-summary="summary 5" data-price="0.70" data-quantity="1" data-image="images/of4.png">Add to Cart</button>
-        </div>*@
+                        <p class="in-para" id="modal-colores">Talles: </p>
+                        <div class="in-para" id="modal-talles"> </div>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
