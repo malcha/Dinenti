@@ -652,6 +652,13 @@ ul.nav.tabs {
 .add{
 	text-align:center;
 }
+.min-col-heigth-35 {
+    min-height: 35em;
+}
+.col-m-local {
+    min-height: 41em;
+    max-height: 41em;
+}
 .col-m {
     padding: 1em;
     border: 1px solid #B2B2B2;

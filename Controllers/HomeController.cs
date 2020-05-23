@@ -50,7 +50,9 @@ namespace MvcApplication2.Controllers
                             .OrderBy(x => x.Id)
                             .ToList();
 
-            return View("todos", list);
+            return type == TypeLocalConPrecio
+                ? View("VentaLocal", list)
+                : View("todos", list);
         }
 
         public ActionResult Nenas(Guid? type)
@@ -63,7 +65,9 @@ namespace MvcApplication2.Controllers
                 .OrderBy(x => x.Id)
                 .ToList();
 
-            return View("todos", list);
+            return type == TypeLocalConPrecio
+                ? View("VentaLocal", list)
+                : View("todos", list);
         }
 
         public ActionResult Bebas(Guid? type)
@@ -76,7 +80,9 @@ namespace MvcApplication2.Controllers
                             .OrderBy(x => x.Id)
                             .ToList();
 
-            return View("todos", list);
+            return type == TypeLocalConPrecio
+                ? View("VentaLocal", list)
+                : View("todos", list);
         }
 
         public ActionResult Bebes(Guid? type)
@@ -89,7 +95,10 @@ namespace MvcApplication2.Controllers
                             .OrderBy(x => x.Id)
                             .ToList();
 
-            return View("todos", list);
+            return type == TypeLocalConPrecio
+                ? View("VentaLocal", list)
+                : View("todos", list);
+
         }
 
         //[Route("Home/Contact")]
@@ -97,32 +106,82 @@ namespace MvcApplication2.Controllers
         {
             Cookies.WriteCookie();
             ViewBag.TitleName = "Mini bebes";
+            
             var list = new ClouthManager()
                             .FindAll(type)
                             .Where(x => x.Category == Clouth.CATEGORY.MINIBEBES)
                             .OrderBy(x => x.Id)
                             .ToList();
 
-            return View("todos", list);
+            return type==TypeLocalConPrecio
+                ? View("VentaLocal", list)
+                : View("todos", list);
+            
         }
-
-        public ActionResult VentaEnLocal()
+        public Guid TypeLocalConPrecio => new Guid("15c2bc84-b67e-406b-9e0a-0b8330ebbfec");
+        public ActionResult VentaEnLocal(Guid? type)
         {
+            if (type == null)
+            {
+                var nameValues = HttpUtility.ParseQueryString(Request.QueryString.ToString());
+                nameValues.Set("type", TypeLocalConPrecio.ToString());
+                string url = Request.Url.AbsolutePath;
+
+                Response.Redirect(url + "?" + nameValues);
+            }
             Cookies.WriteCookie();
             ViewBag.TitleName = "Venta en el Local";
             var list = new ClouthManager()
-                            .FindAll(new Guid("15c2bc84-b67e-406b-9e0a-0b8330ebbfec"))
+                            .FindAll(type)
                             .OrderBy(x => x.Category)
                             .ToList();
 
             return View("VentaLocal", list);
+            
         }
 
+        //public ActionResult VentaEnLocalVaron()
+        //{
+        //    Cookies.WriteCookie();
+        //    ViewBag.TitleName = "Venta en el Local - Varon";
+        //    var list = new ClouthManager()
+        //                    .FindAll(TypeLocalConPrecio)
+        //                    .Where(x => x.Category == Clouth.CATEGORY.VARON)
+        //                    .OrderByDescending(x => x.Id)
+        //                    .ToList();
+
+        //    return View("VentaLocal", list);
+        //}
+
+        //public ActionResult VentaEnLocalNenas()
+        //{
+        //    Cookies.WriteCookie();
+        //    ViewBag.TitleName = "Venta en el Local - Nenas";
+        //    var list = new ClouthManager()
+        //                    .FindAll(TypeLocalConPrecio)
+        //                    .Where(x => x.Category == Clouth.CATEGORY.NENA)
+        //                    .OrderByDescending(x => x.Id)
+        //                    .ToList();
+
+        //    return View("VentaLocal", list);
+        //}
+        //public ActionResult VentaEnLocalBebes()
+        //{
+        //    Cookies.WriteCookie();
+        //    ViewBag.TitleName = "Venta en el Local - Nenas";
+        //    var list = new ClouthManager()
+        //                    .FindAll(TypeLocalConPrecio)
+        //                    .Where(x => x.Category == Clouth.CATEGORY.NENA)
+        //                    .OrderByDescending(x => x.Id)
+        //                    .ToList();
+
+        //    return View("VentaLocal", list);
+        //}
 
 
         public ActionResult all(Guid? type)
         {
-            var listToExclude = new List<int>() { 8020, 8022 };
+            //var listToExclude = new List<int>() { 8020, 8022 };
             Cookies.WriteCookie();
             ViewBag.TitleName = "Todos";
             var list = new ClouthManager()
@@ -130,7 +189,10 @@ namespace MvcApplication2.Controllers
                             .OrderBy(x => x.Id)
                             .ToList();
 
-            return View("todos", list);
+            return type == TypeLocalConPrecio
+                ? View("VentaLocal", list)
+                : View("todos", list);
+
         }
 
         public ActionResult Index(Guid? type)
@@ -141,36 +203,27 @@ namespace MvcApplication2.Controllers
                             .FindAll(type)
                             .OrderBy(x => x.Id)
                             .ToList();
+            return type == TypeLocalConPrecio
+                ? View("VentaLocal", list)
+                : View("todos", list);
+        }
 
-            return View("todos", list);
-            //Cookies.WriteCookie();
-            //var cookie = System.Web.HttpContext.Current.Request.Cookies["DinentiComHyalCore"];
-            //String userId = "NoUSER";
-            //if (!String.IsNullOrEmpty(cookie.Value))
-            //    userId = cookie.Value;
-            //else
-            //    userId = cookie.Value;
+        public ActionResult Talles(Guid? type)
+        {
 
-            ////var hyRecommendation= new Hyalcore("http://162.243.105.143:9293").GetRecommendation("/recommendation?api_key=bd54a9bce84f7b6db6d1fa3b3a76e241&user_id=NOUser&section_code=home");
-            //IEnumerable<string> recommendation;
-            //string recommendationId = String.Empty;
-            //recommendation = new List<string>() { "7292", "7236", "7277", "7245", "7266" };
+            return View("talles");
+        }
 
-            //recommendation = new List<string>() { "7083", "7073", "7037", "7046", "7013" };
-            //if (hyRecommendation == null || !hyRecommendation.data.Any())
-            //{
-            //    recommendation = new List<string>() { "7083", "7073", "7037", "7046", "7013" };
-            //} else {
-            //    recommendation = hyRecommendation.data;
-            //}
-            //if (hyRecommendation != null &&  hyRecommendation.metadata != null)
-            //{
-            //    recommendationId = hyRecommendation.metadata.recommendation_id;
-            //}
+        public ActionResult IndexLocal(Guid? type)
+        {
+            Cookies.WriteCookie();
+            ViewBag.TitleName = "Todos";
+            var list = new ClouthManager()
+                            .FindAll(type)
+                            .OrderBy(x => x.Id)
+                            .ToList();
 
-            //var list = new ClouthManager().FindAll().Where(x => recommendation.Contains(x.Id.ToString())).Select(x => new MvcApplication2.Models.HyalcoreClouth { Clouth = x, RecommendationId = recommendationId }).ToList();
-            //ViewBag.Message = ResourceHome.WelcomeTitle;
-            //return View(list);
+            return View("local-pormayorymenor", list);
         }
 
         public ActionResult Babies()

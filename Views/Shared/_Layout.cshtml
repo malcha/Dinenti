@@ -137,74 +137,76 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>*@
 
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-                            <ul class="nav navbar-nav ">
-                                @*<li><a href="@Url.Action("")" class="hyper "><span>Home</span></a></li>*@
-                                @if (Request["type"] != null)
-                                {
-                                    <li><a href="@Url.Action("all", "home", new { type = new Guid(Request["type"]) })" class="hyper "><span>Todos</span></a></li>
-                                    <li><a href="@Url.Action( "varones", "home", new { type = new Guid(Request["type"]) })" class="hyper "><span>Varon</span></a></li>
-                                    <li><a href="@Url.Action( "nenas", "home", new { type = new Guid(Request["type"]) })" class="hyper "><span>Nena</span></a></li>
-                                    <li><a href="@Url.Action( "bebes", "home", new { type = new Guid(Request["type"]) })" class="hyper "><span>Bebe</span></a></li>
-                                    <li><a href="@Url.Action( "bebas", "home", new { type = new Guid(Request["type"]) })" class="hyper "><span>Beba</span></a></li>
-                                    <li><a href="@Url.Action( "minibebes", "home", new { type = new Guid(Request["type"]) })" class="hyper "><span>Minibebe</span></a></li>
-                                }
-                                else
-                                {
-                                    <li><a href="@Url.Action("all", "home")" class="hyper "><span>Todos</span></a></li>
-                                    <li><a href="@Url.Action("varones", "home")" class="hyper "><span>Varon</span></a></li>
-                                    <li><a href="@Url.Action("nenas", "home")" class="hyper "><span>Nena</span></a></li>
-                                    <li><a href="@Url.Action("bebes", "home")" class="hyper "><span>Bebe</span></a></li>
-                                    <li><a href="@Url.Action("bebas", "home")" class="hyper "><span>Beba</span></a></li>
-                                    <li><a href="@Url.Action("minibebes", "home")" class="hyper "><span>Minibebe</span></a></li>
+							<ul class="nav navbar-nav ">
+								@*<li><a href="@Url.Action("")" class="hyper "><span>Home</span></a></li>*@
+								@if (Request["type"] != null)
+								{
+									<li><a href="@Url.Action("all", "home", new { type = new Guid(Request["type"]) })" class="hyper "><span>Todos</span></a></li>
+									<li><a href="@Url.Action( "varones", "home", new { type = new Guid(Request["type"]) })" class="hyper "><span>Varon</span></a></li>
+									<li><a href="@Url.Action( "nenas", "home", new { type = new Guid(Request["type"]) })" class="hyper "><span>Nena</span></a></li>
+									<li><a href="@Url.Action( "bebes", "home", new { type = new Guid(Request["type"]) })" class="hyper "><span>Bebe</span></a></li>
+									<li><a href="@Url.Action( "bebas", "home", new { type = new Guid(Request["type"]) })" class="hyper "><span>Beba</span></a></li>
+									<li><a href="@Url.Action( "minibebes", "home", new { type = new Guid(Request["type"]) })" class="hyper "><span>Minibebe</span></a></li>
+									<li><a href="@Url.Action( "talles", "home", new { type = new Guid(Request["type"]) })" class="hyper "><span>Talles</span></a></li>
+								}
+								else
+								{
+									<li><a href="@Url.Action("all", "home")" class="hyper "><span>Todos</span></a></li>
+									<li><a href="@Url.Action("varones", "home")" class="hyper "><span>Varon</span></a></li>
+									<li><a href="@Url.Action("nenas", "home")" class="hyper "><span>Nena</span></a></li>
+									<li><a href="@Url.Action("bebes", "home")" class="hyper "><span>Bebe</span></a></li>
+									<li><a href="@Url.Action("bebas", "home")" class="hyper "><span>Beba</span></a></li>
+									<li><a href="@Url.Action("minibebes", "home")" class="hyper "><span>Minibebe</span></a></li>
+									<li><a href="@Url.Action( "talles", "home")" class="hyper "><span>Talles</span></a></li>
 
-                                }
+								}
 
-                                @*<li class="dropdown">
-            <a href="#" class="dropdown-toggle hyper" data-toggle="dropdown" ><span>Household<b class="caret"></b></span></a>
-            <ul class="dropdown-menu multi multi2">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <ul class="multi-column-dropdown">
-                            <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Cleaning Accessories</a></li>
-                            <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>CookWear</a></li>
-                            <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Detergents</a></li>
-                            <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Gardening Needs</a></li>
+								@*<li class="dropdown">
+			<a href="#" class="dropdown-toggle hyper" data-toggle="dropdown" ><span>Household<b class="caret"></b></span></a>
+			<ul class="dropdown-menu multi multi2">
+				<div class="row">
+					<div class="col-sm-3">
+						<ul class="multi-column-dropdown">
+							<li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Cleaning Accessories</a></li>
+							<li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>CookWear</a></li>
+							<li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Detergents</a></li>
+							<li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Gardening Needs</a></li>
 
-                        </ul>
+						</ul>
 
-                    </div>
-                    <div class="col-sm-3">
+					</div>
+					<div class="col-sm-3">
 
-                        <ul class="multi-column-dropdown">
-                            <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Kitchen & Dining</a></li>
-                            <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>KitchenWear</a></li>
-                            <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Pet Care</a></li>
-                            <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Plastic Wear</a></li>
+						<ul class="multi-column-dropdown">
+							<li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Kitchen & Dining</a></li>
+							<li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>KitchenWear</a></li>
+							<li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Pet Care</a></li>
+							<li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Plastic Wear</a></li>
 
-                        </ul>
+						</ul>
 
-                    </div>
-                    <div class="col-sm-3">
+					</div>
+					<div class="col-sm-3">
 
-                        <ul class="multi-column-dropdown">
-                            <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Pooja Needs</a></li>
-                            <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Serveware</a></li>
-                            <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Safety Accessories</a></li>
-                            <li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Festive Decoratives </a></li>
+						<ul class="multi-column-dropdown">
+							<li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Pooja Needs</a></li>
+							<li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Serveware</a></li>
+							<li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Safety Accessories</a></li>
+							<li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Festive Decoratives </a></li>
 
-                        </ul>
-                    </div>
-                    <div class="col-sm-3 w3l">
-                        <a href="hold.html"><img src="/Content/big-store/images/me2.png" class="img-responsive" alt=""></a>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </ul>
-        </li>*@
+						</ul>
+					</div>
+					<div class="col-sm-3 w3l">
+						<a href="hold.html"><img src="/Content/big-store/images/me2.png" class="img-responsive" alt=""></a>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</ul>
+		</li>*@
 
-                                @*<li><a href="codes.html" class="hyper"> <span>Codes</span></a></li>
-        <li><a href="contact.html" class="hyper"><span>Contact Us</span></a></li>*@
-                            </ul>
+								@*<li><a href="codes.html" class="hyper"> <span>Codes</span></a></li>
+		<li><a href="contact.html" class="hyper"><span>Contact Us</span></a></li>*@
+							</ul>
 					</div>
 					</nav>
 					<div class="clearfix"></div>

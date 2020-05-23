@@ -282,8 +282,14 @@
     <Content Include="Content\images\alta\3227.gif" />
     <Content Include="Content\images\alta\3228.gif" />
     <Content Include="Content\images\alta\3229.gif" />
+    <Content Include="Content\images\alta\33.gif" />
     <Content Include="Content\images\alta\4822.gif" />
     <Content Include="Content\images\alta\5010.gif" />
+    <Content Include="Content\images\alta\5167.gif" />
+    <Content Include="Content\images\alta\5168.gif" />
+    <Content Include="Content\images\alta\5169.gif" />
+    <Content Include="Content\images\alta\5170.gif" />
+    <Content Include="Content\images\alta\5503.gif" />
     <Content Include="Content\images\alta\5811.gif" />
     <Content Include="Content\images\alta\5931.gif" />
     <Content Include="Content\images\alta\5959.gif" />
@@ -297,6 +303,8 @@
     <Content Include="Content\images\alta\7213.gif" />
     <Content Include="Content\images\alta\7214.gif" />
     <Content Include="Content\images\alta\7222.gif" />
+    <Content Include="Content\images\alta\7236.gif" />
+    <Content Include="Content\images\alta\7287.gif" />
     <Content Include="Content\images\alta\7293.gif" />
     <Content Include="Content\images\alta\7296.gif" />
     <Content Include="Content\images\alta\7477.gif" />
@@ -313,6 +321,7 @@
     <Content Include="Content\images\alta\7563.gif" />
     <Content Include="Content\images\alta\7598.gif" />
     <Content Include="Content\images\alta\7603.gif" />
+    <Content Include="Content\images\alta\7604.gif" />
     <Content Include="Content\images\alta\7725.gif" />
     <Content Include="Content\images\alta\7737.gif" />
     <Content Include="Content\images\alta\7744.gif" />
@@ -348,6 +357,7 @@
     <Content Include="Content\images\alta\7887.gif" />
     <Content Include="Content\images\alta\7901.gif" />
     <Content Include="Content\images\alta\7904.gif" />
+    <Content Include="Content\images\alta\7906.gif" />
     <Content Include="Content\images\alta\7907.gif" />
     <Content Include="Content\images\alta\7914.gif" />
     <Content Include="Content\images\alta\7915.gif" />
@@ -371,6 +381,7 @@
     <Content Include="Content\images\alta\7951.gif" />
     <Content Include="Content\images\alta\7951_1.gif" />
     <Content Include="Content\images\alta\7951_2.gif" />
+    <Content Include="Content\images\alta\7954.gif" />
     <Content Include="Content\images\alta\7956.gif" />
     <Content Include="Content\images\alta\7956_2.gif" />
     <Content Include="Content\images\alta\7961.gif" />
@@ -402,6 +413,7 @@
     <Content Include="Content\images\alta\8007.gif" />
     <Content Include="Content\images\alta\8008.gif" />
     <Content Include="Content\images\alta\8009.gif" />
+    <Content Include="Content\images\alta\8009_1.gif" />
     <Content Include="Content\images\alta\8010.gif" />
     <Content Include="Content\images\alta\8011.gif" />
     <Content Include="Content\images\alta\8012.gif" />
@@ -492,6 +504,7 @@
     <Content Include="Content\images\alta\8069-4.gif" />
     <Content Include="Content\images\alta\8069-5.gif" />
     <Content Include="Content\images\alta\8069.gif" />
+    <Content Include="Content\images\alta\8069_1.gif" />
     <Content Include="Content\images\alta\8070.gif" />
     <Content Include="Content\images\alta\8072.gif" />
     <Content Include="Content\images\alta\8073.gif" />
@@ -505,6 +518,7 @@
     <Content Include="Content\images\alta\8077.gif" />
     <Content Include="Content\images\alta\8078.gif" />
     <Content Include="Content\images\alta\8079.gif" />
+    <Content Include="Content\images\alta\8079_1.gif" />
     <Content Include="Content\images\alta\8080.gif" />
     <Content Include="Content\images\alta\8081.gif" />
     <Content Include="Content\images\alta\8083-1.gif" />
@@ -516,6 +530,7 @@
     <Content Include="Content\images\alta\8084.gif" />
     <Content Include="Content\images\alta\8085-1.gif" />
     <Content Include="Content\images\alta\8085.gif" />
+    <Content Include="Content\images\alta\8086.gif" />
     <Content Include="Content\images\alta\8102.gif" />
     <Content Include="Content\images\alta\8103.gif" />
     <Content Include="Content\images\alta\8104.gif" />
@@ -653,6 +668,7 @@
     <Content Include="Content\images\alta\8256.gif" />
     <Content Include="Content\images\alta\8257.gif" />
     <Content Include="Content\images\alta\8258.gif" />
+    <Content Include="Content\images\alta\8258_1.gif" />
     <Content Include="Content\images\alta\8259.gif" />
     <Content Include="Content\images\alta\8260.gif" />
     <Content Include="Content\images\alta\8261.gif" />
@@ -676,6 +692,7 @@
     <Content Include="Content\images\alta\8276_1.gif" />
     <Content Include="Content\images\alta\8277.gif" />
     <Content Include="Content\images\alta\8277_1.gif" />
+    <Content Include="Content\images\alta\8859.gif" />
     <Content Include="Content\images\botonera2.gif" />
     <Content Include="Content\images\camisas.gif" />
     <Content Include="Content\images\expo.jpg" />
@@ -929,6 +946,7 @@
     <Content Include="Scripts\Helpers\Hyalcore.js.map" />
     <Content Include="Views\Home\VentaLocal.cshtml" />
     <Content Include="Views\Shared\_LayoutLocal.cshtml" />
+    <Content Include="Views\Home\Talles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

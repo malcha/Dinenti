@@ -33,7 +33,7 @@
 
                 @foreach (Clouth item in Model)
                 {
-                    <div class="col-md-4 pro-1">
+                    <div class="col-md-4 pro-1 min-col-heigth-35">
                         <div class="col-m">
                             <div class="zoom">
                                 <a style="cursor:pointer;" data-open-modal-target=""
@@ -80,12 +80,15 @@
                                             </tr>
                                         }
                                     </table>
-                                    @if (item.TienePrecio)
+                                    <div class="women" style="min-height:20px">
+                                        <p class="iva">Estos precios no incluyen IVA</p>
+                                    </div>
+                                    @*@if (item.TienePrecio)
                                     {
                                         <div class="women" style="min-height:20px">
                                             <p class="iva">Estos precios no incluyen IVA</p>
                                         </div>
-                                    }
+                                    }*@
                                     @for (int i = 0; i < item.TallesConDetalle.Where(x => string.IsNullOrEmpty(x.Size)).Count() - 1; i++)
                                     {
                                         <div class="mindivheightlocal">
@@ -107,11 +110,6 @@
         </div>
     </div>
     <!--footer-->
-    <!-- product -->
-    @*$('#myModal5').find('#modal-code').attr('text', elem.data("code"));
-        $('#myModal5').find('#modal-description').attr('src', elem.data("description"));
-        $('#myModal5').find('#modal-talles').attr('src', elem.data("talles"));
-        $('#myModal5').find('#modal-colores').attr('src', elem.data("colores"));*@
     <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content modal-info">
