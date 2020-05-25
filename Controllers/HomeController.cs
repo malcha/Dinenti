@@ -50,9 +50,11 @@ namespace MvcApplication2.Controllers
                             .OrderBy(x => x.Id)
                             .ToList();
 
-            return type == TypeLocalConPrecio
-                ? View("VentaLocal", list)
-                : View("todos", list);
+            //return type == TypeLocalConPrecio
+            //    ? View("VentaLocal", list)
+            //    : View("todos", list);
+            return View("todos", list);
+
         }
 
         public ActionResult Nenas(Guid? type)
@@ -65,9 +67,11 @@ namespace MvcApplication2.Controllers
                 .OrderBy(x => x.Id)
                 .ToList();
 
-            return type == TypeLocalConPrecio
-                ? View("VentaLocal", list)
-                : View("todos", list);
+            //return type == TypeLocalConPrecio
+            //    ? View("VentaLocal", list)
+            //    : View("todos", list);
+            return View("todos", list);
+
         }
 
         public ActionResult Bebas(Guid? type)
@@ -80,9 +84,11 @@ namespace MvcApplication2.Controllers
                             .OrderBy(x => x.Id)
                             .ToList();
 
-            return type == TypeLocalConPrecio
-                ? View("VentaLocal", list)
-                : View("todos", list);
+            //return type == TypeLocalConPrecio
+            //    ? View("VentaLocal", list)
+            //    : View("todos", list);
+            return View("todos", list);
+
         }
 
         public ActionResult Bebes(Guid? type)
@@ -95,9 +101,11 @@ namespace MvcApplication2.Controllers
                             .OrderBy(x => x.Id)
                             .ToList();
 
-            return type == TypeLocalConPrecio
-                ? View("VentaLocal", list)
-                : View("todos", list);
+            //return type == TypeLocalConPrecio
+            //    ? View("VentaLocal", list)
+            //    : View("todos", list);
+            return View("todos", list);
+
 
         }
 
@@ -113,12 +121,36 @@ namespace MvcApplication2.Controllers
                             .OrderBy(x => x.Id)
                             .ToList();
 
-            return type==TypeLocalConPrecio
-                ? View("VentaLocal", list)
-                : View("todos", list);
-            
+            //return type == TypeLocalConPrecio
+            //    ? View("VentaLocal", list)
+            //    : View("todos", list);
+            return View("todos", list);
+
+
         }
-        public Guid TypeLocalConPrecio => new Guid("15c2bc84-b67e-406b-9e0a-0b8330ebbfec");
+        //public Guid TypeLocalConPrecio => new Guid("15c2bc84-b67e-406b-9e0a-0b8330ebbfec");
+        public Guid TypeLocalConPrecio => new Guid("b816fa50-7828-4bf8-88d8-1a841c30d51f");
+
+
+        public ActionResult Catalogo(Guid? type)
+        {
+            if (type == null)
+            {
+                var nameValues = HttpUtility.ParseQueryString(Request.QueryString.ToString());
+                nameValues.Set("type", TypeLocalConPrecio.ToString());
+                string url = Request.Url.AbsolutePath;
+
+                Response.Redirect(url + "?" + nameValues);
+            }
+            Cookies.WriteCookie();
+            ViewBag.TitleName = "Catalogo";
+            var list = new ClouthManager()
+                            .FindAll(type)
+                            .OrderBy(x => x.Category)
+                            .ToList();
+            return View("todos", list);
+        }
+
         public ActionResult VentaEnLocal(Guid? type)
         {
             if (type == null)
@@ -135,8 +167,8 @@ namespace MvcApplication2.Controllers
                             .FindAll(type)
                             .OrderBy(x => x.Category)
                             .ToList();
-
-            return View("VentaLocal", list);
+            return View("todos", list);
+            //return View("VentaLocal", list);
             
         }
 
@@ -189,9 +221,10 @@ namespace MvcApplication2.Controllers
                             .OrderBy(x => x.Id)
                             .ToList();
 
-            return type == TypeLocalConPrecio
-                ? View("VentaLocal", list)
-                : View("todos", list);
+            //return type == TypeLocalConPrecio
+            //    ? View("VentaLocal", list)
+            //    : View("todos", list);
+            return View("todos", list);
 
         }
 
@@ -203,9 +236,11 @@ namespace MvcApplication2.Controllers
                             .FindAll(type)
                             .OrderBy(x => x.Id)
                             .ToList();
-            return type == TypeLocalConPrecio
-                ? View("VentaLocal", list)
-                : View("todos", list);
+            //return type == TypeLocalConPrecio
+            //    ? View("VentaLocal", list)
+            //    : View("todos", list);
+            return View("todos", list);
+
         }
 
         public ActionResult Talles(Guid? type)
